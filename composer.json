@@ -1,0 +1,20 @@
+{
+    "name": "terwey/plugin-newscoop-articleeditscreen",
+    "license": "GPL-3.0",
+    "type": "newscoop-plugin",
+    "authors": [
+        {
+            "name": "Yorick Terweijden",
+            "email": "yorick.terweijden@sourcefabric.org"
+        }
+    ],
+    "require": {
+        "php":        ">=5.3",
+        "newscoop/plugins-installer": "*"
+    },
+    "autoload": {
+        "psr-0": { "Newscoop\\EditorBundle": "" }
+    },
+    "target-dir": "Newscoop/EditorBundle",
+    "minimum-stability": "dev"
+}
