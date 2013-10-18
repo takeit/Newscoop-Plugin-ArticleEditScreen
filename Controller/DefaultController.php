@@ -11,6 +11,7 @@ class DefaultController extends Controller
 {
     /**
      * @Route("/admin/editor_plugin")
+     * @Template()
      */
     public function adminAction(Request $request)
     {   
