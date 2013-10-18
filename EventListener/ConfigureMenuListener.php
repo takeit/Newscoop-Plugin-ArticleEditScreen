@@ -23,8 +23,8 @@ class ConfigureMenuListener
     {
         $menu = $event->getMenu();
 
-        $menu[$this->translator->trans('Plugins')]->addChild(
-                $this->translator->trans('plugin.admin.titlecontent'), 
+        $menu['Plugins']->addChild(
+                'Editor', 
                 array('uri' => $event->getRouter()->generate('newscoop_editor_default_admin'))
         );
     }

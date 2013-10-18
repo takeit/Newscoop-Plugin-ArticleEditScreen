@@ -13,7 +13,7 @@ class DefaultController extends Controller
      * @Route("/admin/editor_plugin")
      */
     public function adminAction(Request $request)
-    {
-        return $this->render('NewscoopEditorBundle:Default:admin.html.twig');
+    {   
+        return array();
     }
 }
