@@ -1,0 +1,4 @@
+newscoop_editor:
+    resource: "@NewscoopEditorBundle/Controller/DefaultController.php"
+    type:     annotation
+    prefix:   /

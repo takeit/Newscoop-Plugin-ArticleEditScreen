@@ -1,0 +1,5 @@
+services:
+    newscoop_editor.configure_menu_listener:
+        class: Newscoop\EditorBundle\EventListener\ConfigureMenuListener
+        tags:
+          - { name: kernel.event_listener, event: newscoop_newscoop.menu_configure, method: onMenuConfigure }
