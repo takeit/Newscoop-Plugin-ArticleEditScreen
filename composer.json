@@ -1,5 +1,6 @@
 {
     "name": "terwey/plugin-newscoop-articleeditscreen",
+    "description": "The new and improved Article Edit Screen",
     "license": "GPL-3.0",
     "type": "newscoop-plugin",
     "authors": [
