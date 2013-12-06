@@ -1,86 +1,55 @@
-{% extends 'NewscoopEditorBundle:Default:admin_layout.html.twig' %}
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <base href="/bundles/newscoopeditor/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-{% block admin_stylesheets %}
-<link type="text/css" rel="stylesheet" media="all" href="{{ asset('public/bundles/newscoopeditor/css/main.css') }}" />
-<link type='text/css' rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' />
-<link type="text/css" rel="stylesheet" media="all" href="{{ asset('public/bundles/newscoopeditor/css/bootstrap.css') }}" />
-<link type="text/css" rel="stylesheet" media="all" href="{{ asset('public/bundles/newscoopeditor/css/font-awesome.min.css') }}" />
-<link type="text/css" rel="stylesheet" media="all" href="{{ asset('public/bundles/newscoopeditor/css/booki-new.css') }}" />
-<link type="text/css" rel="stylesheet" media="all" href="{{ asset('public/bundles/newscoopeditor/css/aloha.css') }}" />
-<style>
-div.aloha-toolbar {
-    display: none !important;
-}
+        <link rel="stylesheet" href="styles/2b86941a.bootstrap.css"/>
+</head>
+  <body ng-app="authoringEnvironmentApp">
+    <div id="cs-specific">
+        {% include "NewscoopNewscoopBundle::admin_menu.html.twig" %}
+    </div>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-.aloha-editable-highlight {
-    outline: 0 !important;
-}
-</style>
-{% endblock %}
+    <!--[if lt IE 9]>
+      <script src="bower_components/es5-shim/es5-shim.js"></script>
+      <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
 
-{% block admin_scripts %}
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-<script>
-    Aloha = window.Aloha || {};
+    <!-- Add your site or application content here -->
+    <div class="container" ng-view=""></div>
 
-    Aloha.settings = {
-        // jQuery: window.jQuery.noConflict(true),
-        baseUrl: '{{ Newscoop['WEBSITE_URL'] }}/public/bundles/newscoopeditor/js/aloha/plugins',
-        sidebar: { disabled: true },
-        predefinedModules: {
-            'jquery19': window.jQuery,
-        //     'jqueryui': window.jQuery.ui
-        }
-    };
-</script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
 
-<script type="text/javascript" src="http://cdn.aloha-editor.org/latest/lib/require.js"></script>
-<script type="text/javascript" src="http://cdn.aloha-editor.org/latest/lib/vendor/jquery-1.7.2.js"></script>
-{# <script type="text/javascript" src="{{ asset('/public/bundles/newscoopeditor/js/aloha/require.js') }}"></script> #}
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
 
-<script src="http://cdn.aloha-editor.org/latest/lib/aloha.js"
-                                   data-aloha-plugins="common/ui,
-                                                    oer/toolbar,
-                                                    common/format,
-                                                    common/list,
-                                                    common/link,
-                                                    common/highlighteditables">
-</script>
+        <script src="scripts/d41d8cd9.plugins.js"></script>
 
-<script type="text/javascript">
-Aloha.ready( function() {
-    Aloha.jQuery('.editable').aloha();
-});
-</script>
-{% endblock %}
-{% block admin_title %}Editor{% endblock %}
+        <script src="scripts/2b3f0065.modules.js"></script>
 
-{% block admin_page_title_box %}
-<div class="bookbar">
-    <h1>Editor</h1>
-    {% include "NewscoopEditorBundle:Includes:toolbar.html.twig" %}
-</div>
-{% endblock %}
+        <script src="scripts/83843257.scripts.js"></script>
 
-{% block admin_content %}
-{% include "NewscoopEditorBundle:Includes:content.html.twig" %}
-{% include "NewscoopEditorBundle:Includes:sidebar.html.twig" %}
-{% endblock %}
-
-{% block admin_scripts_footer %}
-<script type="text/javascript">
-    Aloha.settings.jQuery = window.jQuery.noConflict(true);
-</script>
-
-<script type="text/javascript" src="{{ asset('public/bundles/newscoopeditor/js/button.js') }}"></script>
-<script type="text/javascript" src="{{ asset('public/bundles/newscoopeditor/js/dropdown.js') }}"></script>
-<script type="text/javascript" src="{{ asset('public/bundles/newscoopeditor/js/tooltip.js') }}"></script>
-<script type="text/javascript" src="{{ asset('public/bundles/newscoopeditor/js/modal.js') }}"></script>
-<script type="text/javascript" src="{{ asset('public/bundles/newscoopeditor/js/tab.js') }}"></script>
-<script type="text/javascript" src="{{ asset('public/bundles/newscoopeditor/js/transition.js') }}"></script>
-<script type="text/javascript" src="{{ asset('public/bundles/newscoopeditor/js/jquery.ui.touch-punch.js') }}"></script>
-<script type="text/javascript" src="{{ asset('public/bundles/newscoopeditor/js/jquery.mjs.nestedSortable.js') }}"></script>
-<script type="text/javascript" src="{{ asset('public/bundles/newscoopeditor/js/booki-init.js') }}"></script>
-{% endblock %}
+        <script src="scripts/bootstrap.min.js"></script>
+</body>
+</html>
