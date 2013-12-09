@@ -5,20 +5,28 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
     <base href="/bundles/newscoopeditor/">
-    <meta charset="utf-8">
+        <script type="text/javascript">
+      var CSBaseUrl = '';
+      // devcode:newscoop
+      CSBaseUrl = '/bundles/newscoopeditor/';
+      // endcode
+    </script>
+        <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="styles/2b86941a.bootstrap.css"/>
+        <link rel="stylesheet" href="styles/e69f5afe.bootstrap.css"/>
+        <link rel="stylesheet" href="styles/aloha.css">
+        <link type="text/css" rel="stylesheet" href="http://uidesign.lab.sourcefabric.org/superdesk/assets/styles/css/font-awesome.css">
 </head>
   <body ng-app="authoringEnvironmentApp">
     <div id="cs-specific">
         {% include "NewscoopNewscoopBundle::admin_menu.html.twig" %}
     </div>
-    <!--[if lt IE 7]>
+        <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
@@ -44,11 +52,50 @@
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
 
-        <script src="scripts/d41d8cd9.plugins.js"></script>
+    <script type="text/javascript">
+    Aloha = window.Aloha || {};
+
+    Aloha.settings = {
+      baseUrl: '/scripts/aloha/plugins',
+      logLevels: {'error': true, 'warn': true, 'info': false, 'debug': false},
+      errorhandling : true,
+
+      predefinedModules: {
+        'jquery19': window.jQuery
+      },
+
+      requireConfig: {
+        paths: {
+            // Override location of jquery-ui and use our own. Because
+            // jquery-ui and bootstrap conflict in a few cases (buttons,
+            // tooltip) our copy has those removed.
+            jqueryui: 'scripts/oerpub/js/jquery-ui-1.9.0.custom-aloha'
+        }
+      }
+
+    };
+
+  </script>
+
+  <script type="text/javascript" src="http://cdn.aloha-editor.org/latest/lib/require.js"></script>
+  <script type="text/javascript" src="http://cdn.aloha-editor.org/latest/lib/vendor/jquery-1.7.2.js"></script>
+
+  <script src="scripts/aloha/lib/aloha.js" data-aloha-plugins="
+    common/ui,
+    common/format,
+    common/paste,
+    common/block,
+    common/list,
+    common/table,
+    extra/draganddropfiles,
+    common/image
+    "></script>
+
+        
 
         <script src="scripts/2b3f0065.modules.js"></script>
 
-        <script src="scripts/83843257.scripts.js"></script>
+        <script src="scripts/29b562eb.scripts.js"></script>
 
         <script src="scripts/bootstrap.min.js"></script>
 </body>

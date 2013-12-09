@@ -24,17 +24,45 @@
                      data-tagname is used both to identify if the cursor is in one of these and
                is used to change one heading to another
                -->
-                <li><a href="#" class="action changeHeading" data-tagname="p">Normal Text</a></li>
-                <li><a href="#" class="action changeHeading" data-tagname="h1">Heading</a></li>
-                <li><a href="#" class="action changeHeading" data-tagname="h2">Subheading</a></li>
-                <li><a href="#" class="action changeHeading" data-tagname="h3">SubSubHeading</a></li>
+                <li><a class="action changeHeading" data-tagname="p">Normal Text</a></li>
+                <li><a class="action changeHeading" data-tagname="h1">Heading</a></li>
+                <li><a class="action changeHeading" data-tagname="h2">Subheading</a></li>
+                <li><a class="action changeHeading" data-tagname="h3">SubSubHeading</a></li>
             </ul>
         </div>
 
+        <script>
+            // Bind to Aloha Ready Event
+            // Aloha.ready(function () {
+            //     var button = jQuery('.editoricon-bold');
+ 
+            //     button.attr('disabled', (Aloha.queryCommandSupported('bold') && Aloha.queryCommandEnabled('bold')));
+ 
+            //     button.click(function () {
+            //         Aloha.execCommand('bold', false, '');
+            //         updateBoldColor();
+            //     });
+ 
+            //     Aloha.bind('aloha-selection-changed', function () {
+            //         updateBoldColor();
+            //     });
+ 
+            //     function updateBoldColor() {
+            //         if (Aloha.queryCommandIndeterm('bold')) {
+            //             button.css('background-color', 'yellow');
+            //             return;
+            //         }
+            //         button.css('background-color', Aloha.queryCommandState('bold') ? 'lightgreen' : 'orange');
+            //     }
+            //     // update the color on startup
+            //     updateBoldColor();
+            // });
+        </script>
+
         <div class="btn-group">
-            <button class="btn action strong" rel="tooltip" title="Bold"><i class="editoricon-bold"></i></button>
-            <button class="btn action emphasis" rel="tooltip" title="Italics"><i class="editoricon-italic"></i></button>
-            <button class="btn action underline" rel="tooltip" title="Underline"><i class="editoricon-underline"></i></button>
+            <button sf-aloha-format-bold=""></button>
+            <button sf-aloha-format-italic=""></button>
+            <button sf-aloha-format-underline=""></button>
         </div>
 
         <div class="btn-group">
@@ -57,8 +85,8 @@
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
-                <li><a href="#" class="action addrowbefore">Add Row Before</a></li>
-                <li><a href="#" class="action addrowafter">Add Row After</a></li>
+                <li><a class="action addrowbefore">Add Row Before</a></li>
+                <li><a class="action addrowafter">Add Row After</a></li>
             </ul>
         </div>
 
