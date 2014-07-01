@@ -17,4 +17,12 @@ class DefaultController extends Controller
     {   
         return array();
     }
+
+    /**
+     * @Route("/bundles/newscoopeditor/views/toolbar/navigation.html")
+     */
+    public function navAction(Request $request)
+    {   
+        return $this->render("NewscoopNewscoopBundle::admin_menu.html.twig");
+    }
 }

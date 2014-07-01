@@ -1,0 +1,69 @@
+<div class="left-border-wrapper"> <!-- needed just for style reasons -->
+  <div class="bottom-border-wrapper"> <!-- needed just for style reasons -->
+    <input class="selected-checkbox" type="checkbox" ng-model="model.selected">
+    <div class="right">
+      <div class="image-and-author-details">
+        <!--img class="author" ng-src="model.image" /-->
+        <div class="dropdown status-dropdown pull-right">
+          <button class="btn dropdown-toggle status-button" type="button" data-toggle="dropdown">
+            {{model.status}}
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li ng-click="model.changeStatus('pending')">
+              Pending
+            </li>
+            <li ng-click="model.changeStatus('approved')">
+              Approved
+            </li>
+            <li ng-click="onHide({commentId: model.id})">
+              Hidden
+            </li>
+          </ul>
+        </div>
+        <img class="pull-right" ng-src="/images/icon-nested-comment-level-{{model.thread_level}}.png">
+        <div class="date-and-name">
+          <div class="date" ng-bind="model.created | niceDate"></div>
+          <div class="author-name" ng-bind="model.author" ng-click="model.toggle()"></div>
+        </div>
+      </div>
+      <div class="subject" ng-bind="model.subject" ng-click="model.toggle()" ng-hide="model.isEdited"></div>
+      <input class="editable subject" ng-model="model.editing.subject" ng-show="model.isEdited">
+      <div ng-bind="model.message" ng-hide="model.isEdited" class="comment"></div>
+      <textarea class="message" ng-model="model.editing.message" ng-show="model.isEdited"></textarea>
+    </div>
+    <!-- reply-to-comment form -->
+    <div class="add-reply right" ng-show="model.isReplyMode">
+
+      <div class="heading">
+        <span class="add-reply-text">REPLY TO THIS COMMENT</span>
+      </div>
+
+      <div class="body">
+        <input class="editor-input" placeholder="Subject" ng-model="model.reply.subject" ng-disabled="model.sendingReply">
+
+        <textarea class="editor-input" placeholder="Comment reply here..." ng-model="model.reply.message" ng-disabled="model.sendingReply"></textarea>
+
+        <div class="replyToControls">
+          <button class="btn btn-primary btn-sm pull-right" ng-click="model.sendReply()" ng-disabled="model.sendingReply">
+            Reply
+          </button>
+          <button class="btn btn-default btn-sm pull-right" ng-click="model.cancelReply()" ng-disabled="model.sendingReply">
+            Cancel
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="controls" ng-hide="model.isReplyMode">
+      <span class="glyphicon glyphicon-chevron-up" ng-hide="model.isEdited" ng-click="model.collapse()" title="Collapse"></span>
+      <span class="glyphicon glyphicon-pencil" ng-click="model.edit()" ng-hide="model.isEdited" title="Edit"></span>
+      <span class="glyphicon glyphicon-floppy-disk" ng-click="model.save()" ng-show="model.isEdited" title="Save"></span>
+      <span class="glyphicon glyphicon-remove" ng-click="model.cancel()" ng-show="model.isEdited" title="Cancel"></span>
+      <span class="fa fa-reply" ng-class="{disabled: !allowreplying }" ng-hide="model.isEdited" title="{{allowreplying ? 'Reply' : ''}}" ng-click="allowreplying &amp;&amp; model.replyTo()"></span>
+      <span class="fa fa-thumbs-up" ng-class="{recommended: model.recommended}" ng-hide="model.isEdited" ng-click="model.toggleRecommended()" title="{{model.recommended ? 'Unrecommend' : 'Recommend'}}"></span>
+      <span class="glyphicon glyphicon-trash" ng-hide="model.isEdited" ng-click="onDelete({commentId: model.id})" title="Delete"></span>
+    </div>
+  </div>
+</div>

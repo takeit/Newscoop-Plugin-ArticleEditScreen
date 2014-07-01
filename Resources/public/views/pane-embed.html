@@ -1,0 +1,78 @@
+<section class="tabcontent embed-panel" ng-controller="PaneSnippetsCtrl">
+  <div class="panel-title">
+    Embed Code
+  </div>
+
+  <div class="add-element" ng-class="{expanded: showAddSnippet}">
+    <div class="heading">
+      <button class="btn btn-sf-invisible" ng-click="showAddSnippet = !showAddSnippet">
+        <span class="glyphicon" ng-class="{'glyphicon-plus': !showAddSnippet,
+                         'glyphicon-minus': showAddSnippet}"></span><span class="add-text">ADD A SNIPPET</span>
+      </button>
+    </div>
+
+    <form name="addSnippet" class="body" ng-show="showAddSnippet">
+      <div class="input-name">Title</div>
+      <input name="snippetTitle" required="" class="editor-input" placeholder="Title" ng-model="newSnippet.name">
+
+      <div class="input-name">Snippet Template</div>
+      <select name="snippetTemplate" required="" ng-model="newSnippet.template" ng-options="template as template.name for
+                      template in snippetTemplates" ng-disabled="addingNewSnippet">
+        <option value="">-- choose a template --</option>
+      </select>
+
+      <label ng-if="newSnippet.template">(template fields marked with (*) are required)</label>
+
+      <div class="input-name" ng-repeat-start="field in (newSnippet ? newSnippet.template.fields : [])">{{field.name}}<span ng-if="field.required">*</span>
+            ({{field.type}})
+      </div>
+      <div class="template-field" ng-switch="field.type" ng-repeat-end="">
+        <textarea ng-switch-when="textarea" name="{{field.name}}" ng-required="field.required" ng-model="field.value"></textarea>
+        <input ng-switch-default="" type="{{inputFieldTypes[field.type] || 'text'}}" name="{{field.name}}" ng-required="field.required" ng-model="field.value">
+      </div>
+
+      <div class="controls">
+        <button class="btn btn-primary btn-sm pull-right" data-test-button="new" ng-click="addSnippet.$valid && addNewSnippetToArticle(newSnippet)" ng-disabled="addingNewSnippet">Add</button>
+        <button class="btn btn-default btn-sm pull-right" ng-click="clearNewSnippetForm()" ng-disabled="addingNewSnippet ||
+                        (!newSnippet.name && !newSnippet.template)">Clear</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="attached-title">Attached code snippets</div>
+  <div class="list" ng-class="{low: showAddSnippet, high: !showAddSnippet}">
+
+    <div ng-repeat="snippet in snippets" ng-class="{collapsed: !snippet.expanded}" class="panel panel-default" data-draggable-type="embed" data-id="{{snippet.id}}" sf-draggable="">
+      <div class="panel-heading draggable-panel-heading">
+        <span class="expand"></span>
+        <div class="pull-right">
+          <button class="btn btn-sf-invisible pull-right" title="Remove" ng-click="confirmRemoveSnippet(snippet)">
+              <i class="fa fa-trash-o"></i>
+          </button>
+          <button class="btn btn-sf-invisible pull-right" title="Edit">
+              <i class="fa fa-pencil"></i>
+            </button>
+        </div>
+        
+        <div class="pull-left">
+          <button class="btn btn-sf-invisible" ng-hide="snippet.expanded" ng-click="snippet.expanded = true">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </button>
+          <button class="btn btn-sf-invisible" ng-show="snippet.expanded" ng-click="snippet.expanded = false">
+            <span class="glyphicon glyphicon-chevron-down"></span>
+          </button>
+        </div>
+        <div class="pull-left title-block">
+          <span class="title" ng-bind="snippet.name" ng-hide="snippet.editing">
+          </span>
+        </div>
+
+      </div><!-- end panel heading -->
+
+      <div class="panel-body" ng-show="snippet.expanded">
+        <textarea rows="3" class="code" ng-model="snippet.render" ng-readonly="true"></textarea>
+      </div><!-- end panel body -->
+    </div><!-- end panel -->
+
+  </div><!-- end  list -->
+</section>

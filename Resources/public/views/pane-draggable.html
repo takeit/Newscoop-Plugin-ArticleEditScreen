@@ -1,0 +1,33 @@
+<section class="tabcontent image-panel" id="media-tab" style="display: block" ng-controller="ImagePaneCtrl">
+  <div class="panel-title">
+    Images
+  </div>
+  <div class="attach-image-section">
+    <button class="btn btn-default btn-sm" id="add-media" data-test-button="image-attach" role="button" ng-click="attachModal()"><span class="glyphicon glyphicon-plus-sign"></span>
+      Attach image
+    </button>
+  </div>
+  <div class="images-wrapper">
+    <div class="attached-title">Attached Images</div>
+    <div class="media-tab">
+      <ul class="media-items media-images" id="media-images">
+        <li class="media-image draggable" ng-repeat="image in images.attached" sf-draggable="" data-draggable-type="image" data-width="{{defaultWidth}}" data-id="{{image.id}}">
+           <div class="drag-bar"></div>
+          <div class="detach" ng-click="detachImage(image.id)">
+            <span class="glyphicon glyphicon-remove"></span>
+          </div>
+          <div ng-if="image.included" class="attached">
+            <span class="glyphicon glyphicon-ok"></span>
+          </div>
+          <figure>
+            <img ng-src="{{root}}/images/thumbnails/{{image.thumbnailPath}}">
+          </figure>
+          <div class="media-description approved">
+            {{image.description || "No description"}}
+            <span class="size-info">{{image.width}} x {{image.height}}</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

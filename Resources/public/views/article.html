@@ -1,11 +1,26 @@
-<article class="main-article-container" id="main-article" ng-controller="ArticleCtrl">
-    <section class="article-date">
-        <p>{{article.published | date}}</p>
-    </section>
-
-    <section class="article-full-text" ng-repeat="field in editableFields = (type.fields | orderBy:'fieldWeight' | filter:editable)">
-        <div ng-bind-html="article.fields[field.name]" aloha="">
-        </div>
+<article class="main-article-container" id="main-article" ng-controller="ArticleCtrl" ng-class="[panes.articleClass, platform.current]">
+  <div class="zen-buttons">
+    <button class="btn btn-primary" ng-disabled="!articleService.modified" ng-click="save()">
+      Save
+    </button>
+    <button class="btn btn-sf-invisible zen-close" id="test-go-normal" ng-click="mode.goNormal()">
+      <span class="glyphicon glyphicon-remove"></span>
+    </button>
+  </div>
+  <div class="switch-article-view" id="switch_article_view">
+    <ul class="switch-view-tabs">
+      <li target-view="desktop" ng-click="platform.go.desktop()" ng-class="{'active-view': platform.current=='desktop'}"></li>
+      <li target-view="tablet" ng-click="platform.go.tablet()" ng-class="{'active-view': platform.current=='tablet'}"></li>
+      <li target-view="mobile" ng-click="platform.go.mobile()" ng-class="{'active-view': platform.current=='mobile'}"></li>
+    </ul>
+  </div>
+    <section class="article-full-text article-field {{field.name}}" ng-repeat="field in editableFields = (type.fields | orderBy:'fieldWeight' | filter:editable)" ng-switch="" on="field.name">
+      <div ng-switch-when="title" data-aloha-content="article.title" class="article-editable-title" aloha="">
+      </div>
+      <fixed-image-placeholder ng-switch-when="main_image" ng-controller="FixedImagePlaceholderCtrl">
+      </fixed-image-placeholder>
+      <div ng-switch-default="" data-aloha-content="article.fields[field.name]" aloha="" sf-droppable="">
+      </div>
     </section>
     <div ng-hide="editableFields.length">
       There are no editable fields for this type of article
