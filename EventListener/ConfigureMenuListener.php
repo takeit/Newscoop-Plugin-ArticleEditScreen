@@ -25,7 +25,7 @@ class ConfigureMenuListener
 
         $menu['Plugins']->addChild(
                 'Editor', 
-                array('uri' => $event->getRouter()->generate('newscoop_editor_default_admin'))
+                array('uri' => $event->getRouter()->generate('newscoop_admin_aes'))
         );
     }
 }

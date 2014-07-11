@@ -15,6 +15,11 @@ class DefaultController extends Controller
      */
     public function adminAction(Request $request)
     {   
+		$ladybug = \Zend_Registry::get('container')->getService('ladybug');
+		$em = $this->container->get('em');
+		$preferencesService = $this->container->get('system_preferences_service');
+		$client = $em->getRepository('\Newscoop\GimmeBundle\Entity\Client')->findByName('newscoop_aes_'.$preferencesService->SiteSecretKey);
+		$ladybug->log($client);
         return array();
     }
 
