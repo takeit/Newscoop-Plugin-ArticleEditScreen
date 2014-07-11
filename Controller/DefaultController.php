@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/admin/editor_plugin")
+     * @Route("/admin/editor_plugin", options={"expose":true}, name="newscoop_admin_aes")
      * @Template()
      */
     public function adminAction(Request $request)
