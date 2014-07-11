@@ -10,5 +10,7 @@ services:
         class: Newscoop\EditorBundle\EventListener\LifecycleSubscriber
         arguments:
             - @em
+            - @fos_oauth_server.client_manager.default
+            - @system_preferences_service
         tags:
             - { name: kernel.event_subscriber}

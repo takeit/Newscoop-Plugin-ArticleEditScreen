@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="css/plugin.css">
     <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
     <script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
-        <script type="text/javascript">
-    CSBaseUrl = '/bundles/newscoopeditor/';
+    <script type="text/javascript">
+    var clientId = {{ clientId }};
+    var CSBaseUrl = '/bundles/newscoopeditor/';
     </script>
         <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
