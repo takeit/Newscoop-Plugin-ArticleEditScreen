@@ -25,7 +25,8 @@ class LifecycleSubscriber implements EventSubscriberInterface
 		$client = $this->clientManager->createClient();
 		$client->setName('newscoop_aes_'.$this->syspref->SiteSecretKey);
 		$client->setPublication($publication);
-		$client->setAllowedGrantTypes(array('token'));
+		$client->setRedirectUris(array($publication->getDefaultAlias()->getName()));
+		$client->setAllowedGrantTypes(array('authorization_code'));
 		$client->setTrusted(true);
 		$this->clientManager->updateClient($client);
     }
