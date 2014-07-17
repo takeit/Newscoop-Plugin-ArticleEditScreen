@@ -42,7 +42,7 @@ class LifecycleSubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return array(
-            'terwey_plugin_newscoop_articleeditscreen' => array('install', 1),
+            'plugin.install.terwey_plugin_newscoop_articleeditscreen' => array('install', 1),
             //'plugin.update.newscoop_editor_bundle' => array('update', 1),
             //'plugin.remove.newscoop_editor_bundle' => array('remove', 1),
         );
