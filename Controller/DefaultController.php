@@ -18,14 +18,9 @@ class DefaultController extends Controller
      */
     public function adminAction(Request $request)
     {   
-		$ladybug = \Zend_Registry::get('container')->getService('ladybug');
 		$em = $this->container->get('em');
 		$preferencesService = $this->container->get('system_preferences_service');
 		$client = $em->getRepository('\Newscoop\GimmeBundle\Entity\Client')->findOneByName('newscoop_aes_'.$preferencesService->SiteSecretKey);
-		$ladybug->log($client);
-
-		//$dispatcher = $this->get('event_dispatcher'); 
-        //$dispatcher->dispatch('plugin.install.newscoop_editor_bundle', new GenericEvent());
 
         return array('clientId'=>$client->getPublicId());
     }

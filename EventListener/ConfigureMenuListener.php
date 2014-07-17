@@ -23,7 +23,7 @@ class ConfigureMenuListener
     {
         $menu = $event->getMenu();
 
-        $menu['Plugins']->addChild(
+        $menu[$this->translator->trans('Plugins')]->addChild(
                 'Editor', 
                 array('uri' => $event->getRouter()->generate('newscoop_admin_aes'))
         );
