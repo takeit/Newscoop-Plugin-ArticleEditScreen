@@ -22,11 +22,11 @@
         original
       </button>
       <span class="pixels"><input class="pixels" type="number" min="1" step="1" pattern="\d+" ng-model="widthPx" ng-change="changePixelSize(widthPx)"> px</span>
-      <button class="btn btn-default btn-xs" data-id="left" ng-click="align('left')">
+      <button class="btn btn-default btn-xs" data-id="left" ng-click="setAlignment('left')">
         <span class="glyphicon glyphicon-align-left"></span>
-      </button><button class="btn btn-default btn-xs" data-id="center" ng-click="align('center')">
+      </button><button class="btn btn-default btn-xs" data-id="center" ng-click="setAlignment('center')">
         <span class="glyphicon glyphicon-align-center"></span>
-      </button><button class="btn btn-default btn-xs" data-id="right" ng-click="align('right')">
+      </button><button class="btn btn-default btn-xs" data-id="right" ng-click="setAlignment('right')">
         <span class="glyphicon glyphicon-align-right"></span>
       </button>
     </div>

@@ -14,12 +14,16 @@
       <li target-view="mobile" ng-click="platform.go.mobile()" ng-class="{'active-view': platform.current=='mobile'}"></li>
     </ul>
   </div>
-    <section class="article-full-text article-field {{field.name}}" ng-repeat="field in editableFields = (type.fields | orderBy:'fieldWeight' | filter:editable)" ng-switch="" on="field.name">
-      <div ng-switch-when="title" data-aloha-content="article.title" class="article-editable-title" aloha="">
+    <section class="article-full-text article-field {{field.name}}" ng-repeat="field in (editableFields | orderBy: 'order')" ng-switch="" on="field.name">
+      <header>
+        <span class="edit-label">{{field.displayName}}</span>
+        <span ng-if="field.name !== 'mainImage'" class="edit-words-info">?? Character(s) / ?? Word(s)</span>
+      </header>
+      <div ng-switch-when="title" data-aloha-content="article.title" class="article-editable-title clearfix" aloha="">
       </div>
-      <fixed-image-placeholder ng-switch-when="main_image" ng-controller="FixedImagePlaceholderCtrl">
+      <fixed-image-placeholder ng-switch-when="mainImage" ng-controller="FixedImagePlaceholderCtrl">
       </fixed-image-placeholder>
-      <div ng-switch-default="" data-aloha-content="article.fields[field.name]" aloha="" sf-droppable="">
+      <div ng-switch-default="" class="clearfix" data-aloha-content="article.fields[field.name]" aloha="" sf-droppable="">
       </div>
     </section>
     <div ng-hide="editableFields.length">

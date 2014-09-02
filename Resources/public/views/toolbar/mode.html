@@ -1,4 +1,4 @@
-<div ng-controller="ArticleCtrl">
+<div ng-controller="ArticleActionsCtrl">
 
   <div class="article-status" ng-class="{
           disabled: changingWfStatus,
@@ -15,7 +15,9 @@
         {{wfStatus.text}} <span class="caret"></span>
       </button>
       <ul class="dropdown-menu" role="menu">
-        <li ng-repeat="status in workflowStatuses" ng-click="setWorkflowStatus(status.value)">
+        <li ng-repeat="status in
+            (workflowStatuses |
+             allowedWfStatuses : article.status : article.issue.workflowStatus)" ng-click="setWorkflowStatus(status.value)">
             {{status.text}}
         </li>
       </ul>
@@ -28,7 +30,8 @@
     </a>
    
   </div>
-  <button class="btn btn-primary btn-sm save-button" ng-disabled="!article.modified" ng-click="save()">
+
+  <button class="btn btn-primary btn-sm save-button" ng-disabled="!articleService.modified" ng-click="save()">
     Save
   </button>
 
