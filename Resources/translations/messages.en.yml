@@ -1,0 +1,10 @@
+aes:
+  alerts:
+    lockedHead: "This article is locked"
+    locked: "The article has been locked by %username% (%realname%) %hours% hour(s) and %minutes% minute(s) ago."
+    notfound: "Article couldn't be found."
+    notfoundHead: "Article doesn't exist"
+  btn:
+    unlock: "Unlock"
+    goback: "Go back"
+    view: "View"
