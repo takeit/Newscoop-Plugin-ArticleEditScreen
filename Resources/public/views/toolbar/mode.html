@@ -2,13 +2,13 @@
 
   <div class="article-status" ng-class="{
           disabled: changingWfStatus,
-          new: !changingWfStatus && wfStatus.value === articleService.wfStatus.NEW,
+          new: !changingWfStatus && wfStatus.value === Article.wfStatus.NEW,
           submitted: !changingWfStatus &&
-              wfStatus.value === articleService.wfStatus.SUBMITTED,
+              wfStatus.value === Article.wfStatus.SUBMITTED,
           published: !changingWfStatus &&
-              wfStatus.value === articleService.wfStatus.PUBLISHED,
+              wfStatus.value === Article.wfStatus.PUBLISHED,
           published_w_iss: !changingWfStatus &&
-              wfStatus.value === articleService.wfStatus.PUBLISHED_W_ISS
+              wfStatus.value === Article.wfStatus.PUBLISHED_W_ISS
         }">
     <div class="btn-group" dropdown="">
       <button type="button" class="btn btn-primary dropdown-toggle" ng-disabled="changingWfStatus">
@@ -24,17 +24,31 @@
     </div>
   </div>
 
-  <div class="controls">
-    <a class="btn btn-default btn-sm" href="#" id="zen-mode" ng-click="mode.goZen()">
-      Zen mode
-    </a>
-   
+  <div ng-controller="ArticlePreviewCtrl as previewCtrl" class="preview-btn">
+    <button type="button" class="btn btn-default btn-sm" title="Preview article" ng-click="previewCtrl.openPreview()">
+      <i class="fa fa-eye"></i>
+    </button>
+    
+    <!-- if article is published, switch button to -->
+    <!--button
+      type="button"
+      class="btn btn-default btn-sm"
+      title="Go to live article"
+    >
+       <i class="fa fa-external-link"></i>
+    </button-->
+
   </div>
 
-  <button class="btn btn-primary btn-sm save-button" ng-disabled="!articleService.modified" ng-click="save()">
-    Save
-  </button>
-
+  <div class="btn-group save-close">
+    <button class="btn btn-default btn-sm">
+      Close
+    </button>
+    <button class="btn btn-primary btn-sm" ng-disabled="!articleService.modified" ng-click="save()">
+      Save
+    </button>
+  </div>
+  
   <div class="main-article-title aloha-editable" id="article-title-fixed">
     Article Editing Environment
   </div>

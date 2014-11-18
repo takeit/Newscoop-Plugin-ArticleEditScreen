@@ -1,13 +1,9 @@
 <nav class="navbar navbar-default navbar-fixed-top">
-  <div style="height:61px;display:block;background-color:black"></div>
-    <div
-     class="sf-upper-toolbar"
-     ng-include
-     src="'views/toolbar/mode.html'">
+  <div id="cs-specific">
+  <div ng-include="'views/toolbar/navigation.html'"></div>
   </div>
-  <div
-     class="sf-lower-toolbar"
-     ng-include
-     src="'views/toolbar/formatting.html'">
+      <div class="sf-upper-toolbar" ng-include="" src="'views/toolbar/mode.html'">
+  </div>
+  <div class="sf-lower-toolbar" ng-include="" src="'views/toolbar/formatting.html'">
   </div>
 </nav>

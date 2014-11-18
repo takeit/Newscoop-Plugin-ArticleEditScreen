@@ -6,6 +6,14 @@
     <button class="btn btn-default btn-sm" id="add-media" data-test-button="image-attach" role="button" ng-click="attachModal()"><span class="glyphicon glyphicon-plus-sign"></span>
       Attach image
     </button>
+
+    <div ng-controller="RenditionsEditorCtrl as renditionsCtrl" class="renditions-btn">
+      <button type="button" class="btn btn-default btn-sm" title="Edit Renditions" ng-click="renditionsCtrl.openRenditionsEditor()">
+        <i class="fa fa-crop"></i>
+        Set renditions
+      </button>
+    </div>
+
   </div>
   <div class="images-wrapper">
     <div class="attached-title">Attached Images</div>
@@ -13,7 +21,7 @@
       <ul class="media-items media-images" id="media-images">
         <li class="media-image draggable" ng-repeat="image in images.attached" sf-draggable="detachingAllowed(image.id)" data-draggable-type="image" data-width="{{defaultWidth}}" data-id="{{image.id}}">
            <div class="drag-bar"></div>
-          <div class="detach" ng-if="detachingAllowed(image.id)" ng-click="detachImage(image.id)">
+          <div class="detach" title="Remove" ng-if="detachingAllowed(image.id)" ng-click="detachImage(image.id)">
             <span class="glyphicon glyphicon-remove"></span>
           </div>
           <div ng-if="!detachingAllowed(image.id)" class="attached">
@@ -23,8 +31,11 @@
             <img ng-src="{{root}}/images/thumbnails/{{image.thumbnailPath}}">
           </figure>
           <div class="media-description approved">
-            {{image.description || "No description"}}
             <span class="size-info">{{image.width}} x {{image.height}}</span>
+            <span class="description">
+              {{image.description || "No description"}}
+            </span>
+            <span ng-if="image.photographer" class="photographer-info">&copy; {{image.photographer}}</span>
           </div>
         </li>
       </ul>

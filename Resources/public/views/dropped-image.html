@@ -3,7 +3,38 @@
   <button class="close" title="Remove">
     <span class="glyphicon glyphicon-remove"></span>
   </button>
-  <div class="caption" ng-bind="image.description"></div>
+
+  <div class="caption">
+    <div ng-show="!editingCaption">
+      <div class="static">{{image.description}}</div>
+
+      <div ng-if="image.photographer" class="photographer">
+        &copy; {{image.photographer}}
+      </div>
+
+      <button class="edit" title="Edit Caption" ng-click="editCaptionMode(true)">
+        <i class="fa fa-pencil"></i>
+      </button>
+    </div>
+
+    <div ng-show="editingCaption">
+      <input type="text" ng-model="newCaption">
+
+      <div ng-if="image.photographer" class="photographer">
+        &copy; {{image.photographer}}
+      </div>
+
+      <div class="btn-group">
+        <button class="save" title="Save" ng-click="updateCaption()">
+          <span class="glyphicon glyphicon-ok"></span>
+        </button>
+        <button class="cancel" title="Cancel" ng-click="editCaptionMode(false)">
+          <span class="glyphicon glyphicon-remove"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <!-- POPOVER BAR USED FOR IMAGE EDITING -->
@@ -12,23 +43,27 @@
   <h3 class="popover-title" ng-bind="title" ng-show="title"></h3>
   <div class="popover-content">
     <div class="popover-markup">
-      <button class="btn btn-default btn-xs small" ng-click="setSize('small')">
+      <button class="btn btn-default btn-xs small" ng-class="{active: activeSize === 'small'}" ng-click="setSize('small')">
         <span class="glyphicon glyphicon-stop"></span> small
-      </button><button class="btn btn-default btn-xs medium" ng-click="setSize('medium')">
+      </button><button class="btn btn-default btn-xs medium" ng-class="{active: activeSize === 'medium'}" ng-click="setSize('medium')">
         <span class="glyphicon glyphicon-stop"></span> medium
-      </button><button class="btn btn-default btn-xs" ng-click="setSize('big')">
+      </button><button class="btn btn-default btn-xs" ng-class="{active: activeSize === 'big'}" ng-click="setSize('big')">
         <span class="glyphicon glyphicon-stop"></span> big
-      </button><button class="btn btn-default btn-xs" data-id="original" ng-click="setSize('original')">
+      </button><button class="btn btn-default btn-xs" ng-class="{active: activeSize === 'original'}" data-id="original" ng-click="setSize('original')">
         original
       </button>
       <span class="pixels"><input class="pixels" type="number" min="1" step="1" pattern="\d+" ng-model="widthPx" ng-change="changePixelSize(widthPx)"> px</span>
-      <button class="btn btn-default btn-xs" data-id="left" ng-click="setAlignment('left')">
-        <span class="glyphicon glyphicon-align-left"></span>
-      </button><button class="btn btn-default btn-xs" data-id="center" ng-click="setAlignment('center')">
-        <span class="glyphicon glyphicon-align-center"></span>
-      </button><button class="btn btn-default btn-xs" data-id="right" ng-click="setAlignment('right')">
-        <span class="glyphicon glyphicon-align-right"></span>
-      </button>
+      <div class="btn-group">
+
+            <button class="btn btn-default btn-xs" ng-class="{active: activeAlignment === 'left'}" data-id="left" ng-click="setAlignment('left')">
+              <span class="glyphicon glyphicon-align-left"></span>
+            </button><button class="btn btn-default btn-xs" ng-class="{active: activeAlignment === 'center'}" data-id="center" ng-click="setAlignment('center')">
+              <span class="glyphicon glyphicon-align-center"></span>
+            </button><button class="btn btn-default btn-xs" ng-class="{active: activeAlignment === 'right'}" data-id="right" ng-click="setAlignment('right')">
+              <span class="glyphicon glyphicon-align-right"></span>
+            </button>
+      </div>
+
     </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-<article class="main-article-container" id="main-article" ng-controller="ArticleCtrl" ng-class="[panes.articleClass, platform.current]">
+<article class="main-article-container" id="main-article" ng-controller="ArticleCtrl" ng-class="[panes.articleClass, platform.current]" dropped-images-container="">
   <div class="zen-buttons">
     <button class="btn btn-primary" ng-disabled="!articleService.modified" ng-click="save()">
       Save
@@ -17,13 +17,13 @@
     <section class="article-full-text article-field {{field.name}}" ng-repeat="field in (editableFields | orderBy: 'order')" ng-switch="" on="field.name">
       <header>
         <span class="edit-label">{{field.displayName}}</span>
-        <span ng-if="field.name !== 'mainImage'" class="edit-words-info">?? Character(s) / ?? Word(s)</span>
+        <span ng-if="field.name !== 'mainImage'" class="edit-words-info">{{field.statsText}}</span>
       </header>
-      <div ng-switch-when="title" data-aloha-content="article.title" class="article-editable-title clearfix" aloha="">
+      <div ng-switch-when="title" class="article-editable-title clearfix" data-field-name="{{field.name}}" aloha="" data-aloha-content="article.title">
       </div>
       <fixed-image-placeholder ng-switch-when="mainImage" ng-controller="FixedImagePlaceholderCtrl">
       </fixed-image-placeholder>
-      <div ng-switch-default="" class="clearfix" data-aloha-content="article.fields[field.name]" aloha="" sf-droppable="">
+      <div ng-switch-default="" class="clearfix" data-field-name="{{field.name}}" aloha="" data-aloha-content="article.fields[field.name]" sf-droppable="">
       </div>
     </section>
     <div ng-hide="editableFields.length">
