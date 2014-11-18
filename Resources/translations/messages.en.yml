@@ -6,5 +6,5 @@ aes:
     notfoundHead: "Article doesn't exist"
   btn:
     unlock: "Unlock"
-    goback: "Go back"
+    cancel: "Cancel"
     view: "View"

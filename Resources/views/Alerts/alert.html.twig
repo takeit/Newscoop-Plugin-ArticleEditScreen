@@ -12,9 +12,9 @@
                 <hr class="message-inner-separator">
                 <p>{{ message }}</p>
                 <hr class="message-inner-separator">
-                <button type="button" class="btn btn-sm btn-primary">{{ 'aes.btn.unlock'|trans }}</button>
+                <a href="{{ path('newscoop_admin_aes_unlock_article', {language: language, articleNumber: articleNumber }) }}"  class="btn btn-sm btn-primary">{{ 'aes.btn.unlock'|trans }}</a>
                 <button type="button" class="btn btn-sm btn-default">{{ 'aes.btn.view'|trans }}</button>
-                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">{{ 'aes.btn.goback'|trans }}</button>
+                <a href="{{ Newscoop['WEBSITE_URL'] }}/admin/articles/?f_publication_id={{ publicationId }}&f_issue_number={{ issueId }}&f_language_id={{ languageId }}&f_section_number={{ sectionId }}" class="btn btn-sm btn-default">{{ 'aes.btn.cancel'|trans }}</a>
             </div>
         </div>
         {% else %}
@@ -24,7 +24,7 @@
                 <hr class="message-inner-separator">
                 <p>{{ message }}</p>
                 <hr class="message-inner-separator">
-                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">{{ 'aes.btn.goback'|trans }}</button>
+                <a href="{{ Newscoop['WEBSITE_URL'] }}/admin/articles/?f_publication_id={{ publicationId }}&f_issue_number={{ issueId }}&f_language_id={{ languageId }}&f_section_number={{ sectionId }}" class="btn btn-sm btn-default">{{ 'aes.btn.cancel'|trans }}</a>
             </div>
         </div>
         {% endif %}
