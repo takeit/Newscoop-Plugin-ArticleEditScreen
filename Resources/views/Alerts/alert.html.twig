@@ -12,9 +12,9 @@
                 <hr class="message-inner-separator">
                 <p>{{ message }}</p>
                 <hr class="message-inner-separator">
-                <button type="button" class="btn btn-sm btn-primary">{{ 'aes.btn.unlock'|trans }}</button>
+                <a href="{{ path('newscoop_admin_aes_unlock_article', {language: article.language.code, articleNumber: article.number }) }}"  class="btn btn-sm btn-primary">{{ 'aes.btn.unlock'|trans }}</a>
                 <button type="button" class="btn btn-sm btn-default">{{ 'aes.btn.view'|trans }}</button>
-                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">{{ 'aes.btn.goback'|trans }}</button>
+                <a href="{{ Newscoop['WEBSITE_URL'] }}/admin/articles/?f_publication_id={{ article.publication.id }}&f_issue_number={{ article.issueId }}&f_language_id={{ article.language.id }}&f_section_number={{ article.sectionId }}" class="btn btn-sm btn-default">{{ 'aes.btn.cancel'|trans }}</a>
             </div>
         </div>
         {% else %}
@@ -24,7 +24,7 @@
                 <hr class="message-inner-separator">
                 <p>{{ message }}</p>
                 <hr class="message-inner-separator">
-                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">{{ 'aes.btn.goback'|trans }}</button>
+                <a href="{{ path('newscoop_zendbridge_bridge_index') }}" class="btn btn-sm btn-default">{{ 'aes.btn.cancel'|trans }}</a>
             </div>
         </div>
         {% endif %}

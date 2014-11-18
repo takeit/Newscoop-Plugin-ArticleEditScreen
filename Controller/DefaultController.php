@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class DefaultController extends Controller
 {
@@ -22,27 +23,32 @@ class DefaultController extends Controller
         if (null !== $articleNumber) {
             $article = $em->getRepository('Newscoop\Entity\Article')
                 ->getArticle($articleNumber, $language)
-                ->getOneOrNullResult();
+                ->getArrayResult();
 
-            if (!$article) {
+            if (empty($article)) {
                 return $this->render("NewscoopEditorBundle:Alerts:alert.html.twig", array(
                     'message' => $translator->trans('aes.alerts.notfound'),
-                    'locked' => false
+                    'locked' => false,
+                    'articleNumber' => $articleNumber,
+                    'language' => $language
                 ));
             }
 
-            if ($article->isLocked()) {
-                $timeDiffrence = $article->getLockTimeDiffrence();
+            $lockTime = $article[0]['lockTime'];
+            $lockUser = $article[0]['lockUser'];
+            if ($lockTime && $lockUser) {
+                $timeDiffrence = $lockTime->diff(new \DateTime());
 
                 return $this->render("NewscoopEditorBundle:Alerts:alert.html.twig", array(
                     'message' => $translator->trans('aes.alerts.locked', array(
-                        '%realname%' => $article->getLockUser()->getRealName(),
-                        '%username%' => $article->getLockUser()->getUsername(),
-                        '%hours%' => $timeDiffrence['hours'],
-                        '%minutes%' => $timeDiffrence['minutes']
+                        '%realname%' => $lockUser['first_name'] . ' ' . $lockUser['last_name'],
+                        '%username%' => $lockUser['username'],
+                        '%hours%' => $timeDiffrence->h,
+                        '%minutes%' => $timeDiffrence->i
 
                     )),
-                    'locked' => true
+                    'locked' => true,
+                    'article' => $article[0]
                 ));
             }
         }
@@ -50,7 +56,9 @@ class DefaultController extends Controller
         $client = $em->getRepository('\Newscoop\GimmeBundle\Entity\Client')->findOneByName('newscoop_aes_'.$preferencesService->SiteSecretKey);
 
         return array(
-            'clientId' => $client->getPublicId()
+            'clientId' => $client->getPublicId(),
+            'articleNumber' => $articleNumber,
+            'language' => $language
         );
     }
 
@@ -60,5 +68,31 @@ class DefaultController extends Controller
     public function navAction(Request $request)
     {
         return $this->render("NewscoopNewscoopBundle::admin_menu.html.twig");
+    }
+
+    /**
+     * @Route("/admin/editor_plugin/{language}/{articleNumber}/unlock", options={"expose":true}, name="newscoop_admin_aes_unlock_article")
+     */
+    public function unlockAction(Request $request, $language, $articleNumber)
+    {
+        $em = $this->container->get('em');
+        $article = $em->getRepository('Newscoop\Entity\Article')
+            ->getArticle($articleNumber, $language)
+            ->getOneOrNullResult();
+
+        if (!$article) {
+            throw new NewscoopException('Article does not exist');
+        }
+
+        if ($article->isLocked()) {
+            $article->setLockUser();
+            $article->setLockTime();
+            $em->flush();
+        }
+
+        return new RedirectResponse($this->generateUrl('newscoop_admin_aes', array(
+            'language' => $language,
+            'articleNumber' => $articleNumber
+        )));
     }
 }
