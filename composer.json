@@ -1,6 +1,6 @@
 {
-    "name": "terwey/plugin-newscoop-articleeditscreen",
-    "version": "1.0.0-alpha1",
+    "name": "newscoop/plugin-newscoop-articleeditscreen",
+    "version": "1.0.0-beta1",
     "description": "The new and improved Article Edit Screen",
     "license": "GPL-3.0",
     "type": "newscoop-plugin",
@@ -8,10 +8,18 @@
         {
             "name": "Yorick Terweijden",
             "email": "yorick.terweijden@sourcefabric.org"
+        },
+        {
+            "name": "Paweł Mikołajczuk",
+            "email": "pawel.mikolajczuk@sourcefabric.org"
+        },
+        {
+            "name": "Rafał Muszyński",
+            "email": "rafal.muszynski@sourcefabric.org"
         }
     ],
     "require": {
-        "php":        ">=5.3",
+        "php": ">=5.3",
         "newscoop/plugins-installer": ">=v0.2"
     },
     "autoload": {
