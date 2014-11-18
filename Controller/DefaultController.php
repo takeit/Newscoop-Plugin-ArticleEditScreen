@@ -23,37 +23,32 @@ class DefaultController extends Controller
         if (null !== $articleNumber) {
             $article = $em->getRepository('Newscoop\Entity\Article')
                 ->getArticle($articleNumber, $language)
-                ->getOneOrNullResult();
+                ->getArrayResult();
 
-            if (!$article) {
+            if (empty($article)) {
                 return $this->render("NewscoopEditorBundle:Alerts:alert.html.twig", array(
                     'message' => $translator->trans('aes.alerts.notfound'),
                     'locked' => false,
-                    'publicationId' => $article->getPublicationId(),
-                    'issueId' => $article->getIssueId(),
-                    'sectionId' =>$article->getSectionId(),
-                    'languageId' => $article->getLanguageId()
+                    'articleNumber' => $articleNumber,
+                    'language' => $language
                 ));
             }
 
-            if ($article->isLocked()) {
-                $timeDiffrence = $article->getLockTimeDiffrence();
+            $lockTime = $article[0]['lockTime'];
+            $lockUser = $article[0]['lockUser'];
+            if ($lockTime && $lockUser) {
+                $timeDiffrence = $lockTime->diff(new \DateTime());
 
                 return $this->render("NewscoopEditorBundle:Alerts:alert.html.twig", array(
                     'message' => $translator->trans('aes.alerts.locked', array(
-                        '%realname%' => $article->getLockUser()->getRealName(),
-                        '%username%' => $article->getLockUser()->getUsername(),
-                        '%hours%' => $timeDiffrence['hours'],
-                        '%minutes%' => $timeDiffrence['minutes']
+                        '%realname%' => $lockUser['first_name'] . ' ' . $lockUser['last_name'],
+                        '%username%' => $lockUser['username'],
+                        '%hours%' => $timeDiffrence->h,
+                        '%minutes%' => $timeDiffrence->i
 
                     )),
                     'locked' => true,
-                    'articleNumber' => $articleNumber,
-                    'language' => $language,
-                    'publicationId' => $article->getPublicationId(),
-                    'issueId' => $article->getIssueId(),
-                    'sectionId' => $article->getSectionId(),
-                    'languageId' => $article->getLanguageId()
+                    'article' => $article[0]
                 ));
             }
         }
