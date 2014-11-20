@@ -13,6 +13,7 @@ class DefaultController extends Controller
 {
     /**
      * @Route("/admin/editor_plugin/{language}/{articleNumber}", options={"expose":true}, name="newscoop_admin_aes")
+     * @Route("/admin/editor_plugin/")
      * @Template()
      */
     public function adminAction(Request $request, $language = null, $articleNumber = null)
@@ -20,6 +21,9 @@ class DefaultController extends Controller
         $em = $this->container->get('em');
         $preferencesService = $this->container->get('system_preferences_service');
         $translator = $this->get('translator');
+        if (!$language || !$articleNumber) {
+            return new RedirectResponse($this->generateUrl('newscoop_zendbridge_bridge_index') . 'articles/add_move.php');
+        }
 
         if (null !== $articleNumber) {
             $article = $em->getRepository('Newscoop\Entity\Article')
