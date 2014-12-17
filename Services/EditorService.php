@@ -8,7 +8,6 @@
 
 namespace Newscoop\EditorBundle\Services;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Newscoop\EditorBundle\Entity\Settings;
 use Newscoop\Entity\User;
 use Doctrine\ORM\EntityManager;
@@ -16,7 +15,7 @@ use Doctrine\ORM\EntityManager;
 /**
  * Editor service
  */
-class EditorService extends Controller
+class EditorService
 {
     /**
      * Entity Manager
