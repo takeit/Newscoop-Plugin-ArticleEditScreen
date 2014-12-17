@@ -3,7 +3,7 @@ services:
         class: Newscoop\EditorBundle\EventListener\ConfigureMenuListener
         tags:
             - { name: kernel.event_listener, event: newscoop_newscoop.menu_configure, method: onMenuConfigure }
-        arguments: 
+        arguments:
             - @translator
 
     newscoop_editor.lifecyclesubscriber:
@@ -14,3 +14,7 @@ services:
             - @system_preferences_service
         tags:
             - { name: kernel.event_subscriber}
+
+    newscoop_editor.editor_service:
+        class: Newscoop\EditorBundle\Services\EditorService
+        arguments:  ["@em"]

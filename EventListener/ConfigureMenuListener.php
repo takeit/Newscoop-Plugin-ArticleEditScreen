@@ -24,8 +24,8 @@ class ConfigureMenuListener
         $menu = $event->getMenu();
 
         $menu[$this->translator->trans('Plugins')]->addChild(
-                'Editor', 
-                array('uri' => $event->getRouter()->generate('newscoop_admin_aes'))
+                $this->translator->trans('aes.name'),
+                array('uri' => $event->getRouter()->generate('newscoop_admin_aes_settings'))
         );
     }
 }

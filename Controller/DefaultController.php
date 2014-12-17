@@ -1,10 +1,15 @@
 <?php
+/**
+ * @package Newscoop\EditorBundle
+ * @author Rafał Muszyński <rafal.muszynski@sourcefabric.org>
+ * @copyright 2014 Sourcefabric z.ú.
+ * @license http://www.gnu.org/licenses/gpl-3.0.txt
+ */
 
 namespace Newscoop\EditorBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -14,13 +19,18 @@ class DefaultController extends Controller
     /**
      * @Route("/admin/editor_plugin/{language}/{articleNumber}", options={"expose":true}, name="newscoop_admin_aes")
      * @Route("/admin/editor_plugin/")
-     * @Template()
      */
     public function adminAction(Request $request, $language = null, $articleNumber = null)
     {
         $em = $this->container->get('em');
         $preferencesService = $this->container->get('system_preferences_service');
         $translator = $this->get('translator');
+        $userService = $this->get('user');
+        $user = $userService->getCurrentUser();
+        if (!$user) {
+            return $this->redirect($this->generateUrl('newscoop_zendbridge_bridge_index'));
+        }
+
         if (!$language || !$articleNumber) {
             return new RedirectResponse($this->generateUrl('newscoop_zendbridge_bridge_index') . 'articles/add_move.php');
         }
@@ -58,13 +68,18 @@ class DefaultController extends Controller
             }
         }
 
+        $editorService = $this->get('newscoop_editor.editor_service');
+        $userSettings = $editorService->getSettingsByUser($user);
         $client = $em->getRepository('\Newscoop\GimmeBundle\Entity\Client')->findOneByName('newscoop_aes_'.$preferencesService->SiteSecretKey);
+        $redirectUris = $client->getRedirectUris();
 
-        return array(
+        return $this->render("NewscoopEditorBundle:Default:admin.html.twig", array(
             'clientId' => $client->getPublicId(),
+            'redirectUri' => $redirectUris[0],
             'articleNumber' => $articleNumber,
-            'language' => $language
-        );
+            'language' => $language,
+            'userSettings' => $userSettings
+        ));
     }
 
     /**

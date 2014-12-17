@@ -1,0 +1,125 @@
+{% extends 'NewscoopNewscoopBundle::admin_layout.html.twig' %}
+{% block admin_title %}{{ parent() }} - {{ 'aes.name'|trans }}{% endblock %}
+{% block admin_page_title_content %}{{ 'aes.name'|trans }} - {{ 'aes.settingstext'|trans }}{% endblock %}
+{% block admin_stylesheets %}
+<link rel="stylesheet" href="{{ Newscoop['WEBSITE_URL'] }}/bundles/newscoopnewscoop/css/bootstrap.css">
+<style>
+.font-fix {
+    font-size: 13px;
+}
+</style>
+{% endblock %}
+{% block admin_scripts %}
+<script type="text/javascript" src="{{ Newscoop['WEBSITE_URL'] }}/bundles/newscoopnewscoop/js/popover.js"></script>
+{% endblock %}
+{% block admin_content %}
+{% if form_errors(form) %}
+ <div class="alert alert-danger alert-dismissible font-fix" role="alert">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">{{ 'aes.btn.close'|trans}}</span></button>
+  {{ form_errors(form) }}
+</div>
+{% endif %}
+{% for flashMessage in app.session.flashbag.get('success') %}
+<div class="alert alert-success alert-dismissible font-fix" role="alert">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">{{ 'aes.btn.close'|trans}}</span></button>
+  <center>{{ flashMessage }}</center>
+</div>
+{% endfor %}
+{{ form_start(form) }}
+<div class="system_pref">
+    <div class="tabbable tabs-left">
+    	<ul class="nav nav-tabs">
+            <li class="active"><a href="#viewports" data-toggle="tab">{{ 'aes.settings.label.viewports'|trans }}</a></li>
+            <li><a href="#images" data-toggle="tab">{{ 'aes.settings.label.images'|trans }}</a></li>
+            <li><a href="#title" data-toggle="tab">{{ 'aes.settings.label.title'|trans }}</a></li>
+            <li><a href="#switches" data-toggle="tab">{{ 'aes.settings.label.switches'|trans }}</a></li>
+            <li><a href="#placeholders" data-toggle="tab">{{ 'aes.settings.label.placeholders'|trans }}</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="viewports">
+            	<h3>{{ 'aes.settings.label.viewportssettings'|trans }}</h3>
+                <dl>
+                    <dt>
+                        <label>{{ form_label(form.mobileview) }}:</label>
+                    </dt>
+                    <dd>
+                        {{ form_widget(form.mobileview, {'attr' : {'class' : 'input_text'}}) }} {{ 'aes.settings.label.pixels'|trans }}
+                    </dd>
+                    <dt>
+                        <label>{{ form_label(form.tabletview) }}:</label>
+                    </dt>
+                    <dd>
+                        {{ form_widget(form.tabletview, {'attr' : {'class' : 'input_text'}}) }} {{ 'aes.settings.label.pixels'|trans }}
+                    </dd>
+                    <dt>
+                        <label>{{ form_label(form.desktopview) }}:</label>
+                    </dt>
+                    <dd>
+                        {{ form_widget(form.desktopview, {'attr' : {'class' : 'input_text'}}) }} {{ 'aes.settings.label.pixels'|trans }}
+                    </dd>
+                </dl>
+            </div>
+            <div class="tab-pane" id="images">
+            	<h3>{{ 'aes.settings.label.imagessettings'|trans }}</h3>
+                <dl>
+                    <dt>
+                        <label>{{ form_label(form.imagesmall) }}:</label>
+                    </dt>
+                    <dd>
+                        {{ form_widget(form.imagesmall, {'attr' : {'class' : 'input_text'}}) }} %
+                    </dd>
+                   	<dt>
+                        <label>{{ form_label(form.imagemedium) }}:</label>
+                    </dt>
+                    <dd>
+                        {{ form_widget(form.imagemedium, {'attr' : {'class' : 'input_text'}}) }} %
+                    </dd>
+                    <dt>
+                        <label>{{ form_label(form.imagelarge) }}:</label>
+                    </dt>
+                    <dd>
+                        {{ form_widget(form.imagelarge, {'attr' : {'class' : 'input_text'}}) }} %
+                    </dd>
+                </dl>
+            </div>
+            <div class="tab-pane" id="title">
+            	<h3>{{ 'aes.settings.label.titlesettings'|trans }}</h3>
+                <dl>
+                    <dt>
+                        <label>{{ form_label(form.titleposition) }}:</label>
+                    </dt>
+                    <dd>
+                        {{ form_widget(form.titleposition, {'attr' : {'class' : 'input_select'}}) }}
+                    </dd>
+                </dl>
+            </div>
+            <div class="tab-pane" id="switches">
+            	<h3>{{ 'aes.settings.label.switchessettings'|trans }}</h3>
+                <dl>
+                    <dt>
+                        <label>{{ form_label(form.showtopics) }}:</label>
+                    </dt>
+                    <dd>
+                        {{ form_widget(form.showtopics) }}
+                    </dd>
+                </dl>
+            </div>
+           	<div class="tab-pane" id="placeholders">
+            	<h3>{{ 'aes.settings.label.placeholdersettings'|trans }}</h3>
+                <dl>
+                    <dt>
+                        <label>{{ form_label(form.placeholder) }}:</label>
+                    </dt>
+                    <dd>
+                        {{ form_widget(form.placeholder, {'attr' : {'class' : 'input_select'}}) }}
+                    </dd>
+                </dl>
+            </div>
+            <div class="save-button-bar">
+                <button type="submit" class="save-button">{{ 'aes.btn.save'|trans }}</button>
+            </div>
+        </div>
+	</div>
+</div>
+{{ form_end(form) }}
+{% endblock %}

@@ -4,7 +4,45 @@ aes:
     locked: "The article has been locked by %username% (%realname%) %hours% hour(s) and %minutes% minute(s) ago."
     notfound: "Article couldn't be found."
     notfoundHead: "Article doesn't exist"
+    saved: "Successfully saved"
   btn:
     unlock: "Unlock"
     cancel: "Cancel"
     view: "View"
+    save: "Save"
+  name: "Editor"
+  settingstext: "Settings"
+  settings:
+    label:
+      viewports: "Viewports"
+      viewportssettings: "Viewports Settings"
+      imagessettings: "Image sizes Settings"
+      titlesettings: "Title position Settings"
+      switchessettings: "Switches Settings"
+      placeholdersettings: "Placeholder Settings"
+      images: "Images"
+      title: "Title position"
+      switches: "Switches"
+      placeholders: "Fields placeholders"
+      mobileview: "Mobile View"
+      pixels: "pixels"
+      yes: "Yes"
+      no: "No"
+    form:
+      viewports:
+        mobile: "Mobile View"
+        tablet: "Tablet View"
+        desktop: "Desktop View"
+        errors:
+          mobile:
+            min: "The value of Mobile View should be {{ limit }} or more."
+            max: "The value of Mobile View cannot be longer than {{ limit }} characters long."
+      images:
+        small: "Small size"
+        medium: "Medium size"
+        large: "Large size"
+      title:
+        position: "Title position"
+      switches: "Show/hide standard switches"
+      placeholder: "Placeholder text"
+      defaultplaceholder: "Type placeholder text here..."
