@@ -35,9 +35,10 @@ class EditorService extends Controller
     }
 
     /**
-     * [addSettings description]
-     * @param array $settings [description]
-     * @param User  $user     [description]
+     * Add settings for given user
+     *
+     * @param array $settings Array of settings
+     * @param User  $user     User
      */
     public function addSettings(array $settings, User $user)
     {
