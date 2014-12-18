@@ -11,6 +11,7 @@ namespace Newscoop\EditorBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class SettingType extends AbstractType
 {
@@ -112,13 +113,7 @@ class SettingType extends AbstractType
                     ))
                 )
             ))
-            ->add('titleposition', 'choice', array(
-                'label' => 'aes.settings.form.title.position',
-                'choices'   => array(1 => '1', 2 => '2', 3 => '3'),
-                'required'  => false,
-                'empty_value'  => null
-            ))
-            ->add('showtopics', 'choice', array(
+            ->add('showswitches', 'choice', array(
                 'label' => 'aes.settings.form.switches',
                 'choices'   => array(
                     'Y' => 'aes.settings.label.yes',
@@ -141,7 +136,19 @@ class SettingType extends AbstractType
                     ))
                 )
             ))
+            ->add('positions', 'collection', array('type' => new PositionType(), 'options'  => array(
+                'em' => $options['em'],
+                'editorService' => $options['editorService']
+            )));
         ;
+    }
+
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setRequired(array(
+            'em',
+            'editorService'
+        ));
     }
 
     public function getName()

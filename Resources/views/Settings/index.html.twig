@@ -84,23 +84,35 @@
             </div>
             <div class="tab-pane" id="title">
             	<h3>{{ 'aes.settings.label.titlesettings'|trans }}</h3>
-                <dl>
-                    <dt>
-                        <label>{{ form_label(form.titleposition) }}:</label>
-                    </dt>
-                    <dd>
-                        {{ form_widget(form.titleposition, {'attr' : {'class' : 'input_select'}}) }}
-                    </dd>
-                </dl>
+                <table class="table table-hover" style="font-size: 13px;">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>{{ 'aes.settings.label.articletype'|trans }}</th>
+                      <th>{{ 'aes.settings.form.title.position'|trans }}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for pos in form.positions %}
+                    <tr>
+                      <td>{{ loop.index }}</td>
+                      <td>{{ pos.vars.value.articleTypeName }}</td>
+                      <td>
+                        {{ form_widget(pos.titlePosition, {'attr' : {'class' : 'input_select'}}) }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
             </div>
             <div class="tab-pane" id="switches">
             	<h3>{{ 'aes.settings.label.switchessettings'|trans }}</h3>
                 <dl>
                     <dt>
-                        <label>{{ form_label(form.showtopics) }}:</label>
+                        <label>{{ form_label(form.showswitches) }}:</label>
                     </dt>
                     <dd>
-                        {{ form_widget(form.showtopics) }}
+                        {{ form_widget(form.showswitches) }}
                     </dd>
                 </dl>
             </div>

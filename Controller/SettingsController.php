@@ -24,6 +24,7 @@ class SettingsController extends Controller
     {
         $editorService = $this->get('newscoop_editor.editor_service');
         $userService = $this->get('user');
+        $em = $this->get('em');
         $translator = $this->get('translator');
         $user = $userService->getCurrentUser();
 
@@ -31,8 +32,8 @@ class SettingsController extends Controller
             return $this->redirect($this->generateUrl('newscoop_zendbridge_bridge_index'));
         }
 
-        $form = $this->createForm(new SettingType(), $editorService->getSettingsByUser($user));
-
+        $userSettings = $editorService->getSettingsByUser($user);
+        $form = $this->createForm(new SettingType(), $userSettings, array('em' => $em, 'editorService' => $editorService));
         if ($request->getMethod() === "POST") {
             $form->handleRequest($request);
             if ($form->isValid()) {
@@ -45,7 +46,8 @@ class SettingsController extends Controller
         }
 
         return $this->render("NewscoopEditorBundle:Settings:index.html.twig", array(
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'articleTypes' => $articleTypes
         ));
     }
 }

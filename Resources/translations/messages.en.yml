@@ -5,6 +5,8 @@ aes:
     notfound: "Article couldn't be found."
     notfoundHead: "Article doesn't exist"
     saved: "Successfully saved"
+  fields:
+    title: "Title"
   btn:
     unlock: "Unlock"
     cancel: "Cancel"
@@ -28,6 +30,8 @@ aes:
       pixels: "pixels"
       yes: "Yes"
       no: "No"
+      articletype: "Article type"
+      defaultplaceholder: "[please provide your content]"
     form:
       viewports:
         mobile: "Mobile View"

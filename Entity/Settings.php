@@ -10,6 +10,7 @@ namespace Newscoop\EditorBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Newscoop\Entity\User;
+use Newscoop\EditorBundle\Model\Settings as BaseSettings;
 
 /**
  * Settigns entity
@@ -17,7 +18,7 @@ use Newscoop\Entity\User;
  * @ORM\Entity()
  * @ORM\Table(name="plugin_editor_bundle_settings")
  */
-class Settings
+class Settings extends BaseSettings
 {
     /**
      * @ORM\Id()
@@ -58,6 +59,7 @@ class Settings
     public function __construct()
     {
         $this->setCreatedAt(new \DateTime());
+        $this->positions = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -136,7 +138,7 @@ class Settings
      *
      * @return self
      */
-    public function setUser(User $user)
+    public function setUser(User $user = null)
     {
         $this->user = $user;
 

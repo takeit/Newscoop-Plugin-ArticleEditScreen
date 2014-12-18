@@ -12,9 +12,10 @@ services:
             - @em
             - @fos_oauth_server.client_manager.default
             - @system_preferences_service
+            - @translator
         tags:
             - { name: kernel.event_subscriber}
 
     newscoop_editor.editor_service:
         class: Newscoop\EditorBundle\Services\EditorService
-        arguments:  ["@em"]
+        arguments:  ["@em", "@user", "@newscoop.cache"]

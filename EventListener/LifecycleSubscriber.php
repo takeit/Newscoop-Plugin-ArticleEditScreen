@@ -18,11 +18,18 @@ class LifecycleSubscriber implements EventSubscriberInterface
 {
     private $em;
 
-    public function __construct($em, $clientManager, $syspref)
+    private $clientManager;
+
+    private $syspref;
+
+    private $translator;
+
+    public function __construct($em, $clientManager, $syspref, $translator)
     {
         $this->em = $em;
         $this->clientManager = $clientManager;
         $this->syspref = $syspref;
+        $this->translator = $translator;
     }
 
     public function install(GenericEvent $event)
@@ -40,6 +47,18 @@ class LifecycleSubscriber implements EventSubscriberInterface
         $tool->updateSchema($this->getClasses(), true);
 
         $this->em->getProxyFactory()->generateProxyClasses($this->getClasses(), __DIR__ . '/../../../../library/Proxy');
+        $settings = array(
+            'mobileview' => 320,
+            'tabletview' => 600,
+            'desktopview' => 920,
+            'imagesmall' => 30,
+            'imagemedium' => 50,
+            'imagelarge' => 100,
+            'showswitches' => "Y",
+            'placeholder' => $this->translator->trans("aes.settings.label.defaultplaceholder")
+        );
+
+        $this->addDefaultSettings($settings);
     }
 
     public function update(GenericEvent $event)
@@ -70,5 +89,23 @@ class LifecycleSubscriber implements EventSubscriberInterface
         return array(
           $this->em->getClassMetadata('Newscoop\EditorBundle\Entity\Settings')
         );
+    }
+
+    /**
+     * Add default settings to database
+     *
+     * @param array $settings Array of settings
+     */
+    private function addDefaultSettings(array $settings)
+    {
+        foreach ($settings as $option => $value) {
+            $setting = new Settings();
+            $setting->setOption($option);
+            $setting->setValue($value);
+            $setting->setUser(null);
+            $this->em->persist($setting);
+        }
+
+        $this->em->flush();
     }
 }
