@@ -47,7 +47,6 @@ class SettingsController extends Controller
 
         return $this->render("NewscoopEditorBundle:Settings:index.html.twig", array(
             'form' => $form->createView(),
-            'articleTypes' => $articleTypes
         ));
     }
 }
