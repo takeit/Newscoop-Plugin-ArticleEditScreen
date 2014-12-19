@@ -138,7 +138,6 @@ class SettingType extends AbstractType
                 )
             ))
             ->add('positions', 'collection', array('type' => new PositionType(), 'options'  => array(
-                'em' => $options['em'],
                 'editorService' => $options['editorService']
             )));
 
@@ -161,7 +160,6 @@ class SettingType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setRequired(array(
-            'em',
             'editorService',
             'user'
         ));
