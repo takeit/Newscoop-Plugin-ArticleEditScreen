@@ -22,6 +22,7 @@ class SettingType extends AbstractType
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $user = $options['user'];
         $builder
             ->add('mobileview', 'integer', array(
                 'label' => 'aes.settings.form.viewports.mobile',
@@ -140,14 +141,29 @@ class SettingType extends AbstractType
                 'em' => $options['em'],
                 'editorService' => $options['editorService']
             )));
-        ;
+
+            if ($user->hasPermission("plugin_editor_api")) {
+                $builder->add('apiendpoint', null, array(
+                    'label' => 'aes.settings.form.apiendpoint',
+                    'error_bubbling' => true,
+                    'required' => false,
+                    'constraints' => array(
+                        new Assert\NotBlank(array('message' => 'aes.form.apiendpoint.blank')),
+                        new Assert\Length(array(
+                            'max' => 20,
+                            'maxMessage' => 'aes.form.apiendpoint.max'
+                        ))
+                    )
+                ));
+            }
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setRequired(array(
             'em',
-            'editorService'
+            'editorService',
+            'user'
         ));
     }
 

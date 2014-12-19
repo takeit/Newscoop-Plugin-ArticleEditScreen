@@ -70,16 +70,76 @@ class DefaultController extends Controller
 
         $editorService = $this->get('newscoop_editor.editor_service');
         $userSettings = $editorService->getSettingsByUser($user);
+
         $client = $em->getRepository('\Newscoop\GimmeBundle\Entity\Client')->findOneByName('newscoop_aes_'.$preferencesService->SiteSecretKey);
-        $redirectUris = $client->getRedirectUris();
+        $settigns = $this->createSettingsJson($request, $userSettings, $client);
 
         return $this->render("NewscoopEditorBundle:Default:admin.html.twig", array(
             'clientId' => $client->getPublicId(),
-            'redirectUri' => $redirectUris[0],
             'articleNumber' => $articleNumber,
             'language' => $language,
-            'userSettings' => $userSettings
+            'userSettings' => $settigns
         ));
+    }
+
+    /**
+     * Creates json with user settings for the editor
+     *
+     * @param Request                            $request      Request object
+     * @param array                              $userSettings $userSettings
+     * @param Newscoop\GimmeBundle\Entity\Client $client       OAuth client
+     *
+     * @return string JSON string
+     */
+    private function createSettingsJson(Request $request, $userSettings, $client)
+    {
+        $translator = $this->get('translator');
+        $redirectUris = $client->getRedirectUris();
+        $types = array();
+        foreach ($userSettings['positions'] as $key => $value) {
+            $types[] = array(
+                $value->getName() => array(
+                    'title' => array(
+                        'name' => 'title',
+                        'displayName' => $translator->trans('aes.fields.title'),
+                        'order' => $value->getPosition()
+                    )
+                )
+            );
+        }
+
+        $settings = array(
+            'API' => array(
+                'rootURI' => $request->getUriForPath(null),
+                'endpoint' => $userSettings["apiendpoint"],
+                'full' => $request->getUriForPath(null) . $userSettings["apiendpoint"]
+            ),
+            'auth' => array(
+                'client_id' => $client->getPublicId(),
+                'redirect_uri' => $redirectUris[0],
+                'server' => $request->getUriForPath($this->generateUrl('fos_oauth_server_authorize'))
+            ),
+            'article' => array(
+                'width' => array(
+                    'desktop' => $userSettings['desktopview'],
+                    'tablet' => $userSettings['tabletview'],
+                    'phone' => $userSettings['mobileview']
+                )
+            ),
+            'image' => array(
+                'width' => array(
+                    'small' => $userSettings['imagesmall'] . "%",
+                    'medium' => $userSettings['imagemedium'] . "%",
+                    'big' => $userSettings['imagelarge'] . "%"
+                ),
+                'float' => 'none'
+            ),
+            'placeholder' => $userSettings['placeholder'],
+            'showSwitches' => $userSettings['showswitches'],
+            'articleTypeFields' => $types
+        );
+
+        return json_encode($settings);
     }
 
     /**

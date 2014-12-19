@@ -34,25 +34,28 @@
             <li><a href="#title" data-toggle="tab">{{ 'aes.settings.label.title'|trans }}</a></li>
             <li><a href="#switches" data-toggle="tab">{{ 'aes.settings.label.switches'|trans }}</a></li>
             <li><a href="#placeholders" data-toggle="tab">{{ 'aes.settings.label.placeholders'|trans }}</a></li>
+            {% if hasPermission('plugin_editor_api') %}
+            <li><a href="#api" data-toggle="tab">{{ 'aes.settings.label.api'|trans }}</a></li>
+            {% endif %}
         </ul>
         <div class="tab-content">
             <div class="tab-pane active" id="viewports">
             	<h3>{{ 'aes.settings.label.viewportssettings'|trans }}</h3>
                 <dl>
                     <dt>
-                        <label>{{ form_label(form.mobileview) }}:</label>
+                        <label>{{ form_label(form.mobileview) }}: <small id="mobileview">(?)</small></label>
                     </dt>
                     <dd>
                         {{ form_widget(form.mobileview, {'attr' : {'class' : 'input_text'}}) }} {{ 'aes.settings.label.pixels'|trans }}
                     </dd>
                     <dt>
-                        <label>{{ form_label(form.tabletview) }}:</label>
+                        <label>{{ form_label(form.tabletview) }}: <small id="tabletview">(?)</small></label>
                     </dt>
                     <dd>
                         {{ form_widget(form.tabletview, {'attr' : {'class' : 'input_text'}}) }} {{ 'aes.settings.label.pixels'|trans }}
                     </dd>
                     <dt>
-                        <label>{{ form_label(form.desktopview) }}:</label>
+                        <label>{{ form_label(form.desktopview) }}: <small id="desktopview">(?)</small></label>
                     </dt>
                     <dd>
                         {{ form_widget(form.desktopview, {'attr' : {'class' : 'input_text'}}) }} {{ 'aes.settings.label.pixels'|trans }}
@@ -63,19 +66,19 @@
             	<h3>{{ 'aes.settings.label.imagessettings'|trans }}</h3>
                 <dl>
                     <dt>
-                        <label>{{ form_label(form.imagesmall) }}:</label>
+                        <label>{{ form_label(form.imagesmall) }}: <small id="imagesmall">(?)</small></label>
                     </dt>
                     <dd>
                         {{ form_widget(form.imagesmall, {'attr' : {'class' : 'input_text'}}) }} %
                     </dd>
                    	<dt>
-                        <label>{{ form_label(form.imagemedium) }}:</label>
+                        <label>{{ form_label(form.imagemedium) }}: <small id="imagemedium">(?)</small></label>
                     </dt>
                     <dd>
                         {{ form_widget(form.imagemedium, {'attr' : {'class' : 'input_text'}}) }} %
                     </dd>
                     <dt>
-                        <label>{{ form_label(form.imagelarge) }}:</label>
+                        <label>{{ form_label(form.imagelarge) }}: <small id="imagelarge">(?)</small></label>
                     </dt>
                     <dd>
                         {{ form_widget(form.imagelarge, {'attr' : {'class' : 'input_text'}}) }} %
@@ -104,12 +107,14 @@
                     {% endfor %}
                   </tbody>
                 </table>
+                {{ renderTip('aes.tip'|trans) }}
+                <br>
             </div>
             <div class="tab-pane" id="switches">
             	<h3>{{ 'aes.settings.label.switchessettings'|trans }}</h3>
                 <dl>
                     <dt>
-                        <label>{{ form_label(form.showswitches) }}:</label>
+                        <label>{{ form_label(form.showswitches) }}: <small id="showswitches">(?)</small></label>
                     </dt>
                     <dd>
                         {{ form_widget(form.showswitches) }}
@@ -120,13 +125,26 @@
             	<h3>{{ 'aes.settings.label.placeholdersettings'|trans }}</h3>
                 <dl>
                     <dt>
-                        <label>{{ form_label(form.placeholder) }}:</label>
+                        <label>{{ form_label(form.placeholder) }}: <small id="placeholder">(?)</small></label>
                     </dt>
                     <dd>
                         {{ form_widget(form.placeholder, {'attr' : {'class' : 'input_select'}}) }}
                     </dd>
                 </dl>
             </div>
+            {% if hasPermission('plugin_editor_api') %}
+            <div class="tab-pane" id="api">
+                <h3>{{ 'aes.settings.label.apisettings'|trans }}</h3>
+                <dl>
+                    <dt>
+                        <label>{{ form_label(form.apiendpoint) }}: <small id="apiendpoint">(?)</small></label>
+                    </dt>
+                    <dd>
+                        {{ form_widget(form.apiendpoint, {'attr' : {'class' : 'input_select'}}) }}
+                    </dd>
+                </dl>
+            </div>
+            {% endif %}
             <div class="save-button-bar">
                 <button type="submit" class="save-button">{{ 'aes.btn.save'|trans }}</button>
             </div>
@@ -134,4 +152,21 @@
 	</div>
 </div>
 {{ form_end(form) }}
+<script type="text/javascript">
+function popover(target, content) {
+    target.popover({
+        trigger: 'hover',
+        content : content
+    });
+};
+popover($('#mobileview'), '{{ 'aes.popover.mobileview'|trans }}');
+popover($('#desktopview'), '{{ 'aes.popover.desktopview'|trans }}');
+popover($('#tabletview'), '{{ 'aes.popover.tabletview'|trans }}');
+popover($('#imagesmall'), '{{ 'aes.popover.imagesmall'|trans }}');
+popover($('#imagemedium'), '{{ 'aes.popover.imagemedium'|trans }}');
+popover($('#imagelarge'), '{{ 'aes.popover.imagelarge'|trans }}');
+popover($('#showswitches'), '{{ 'aes.popover.showswitches'|trans }}');
+popover($('#placeholder'), '{{ 'aes.popover.placeholder'|trans }}');
+popover($('#apiendpoint'), '{{ 'aes.popover.apiendpoint'|trans }}');
+</script>
 {% endblock %}

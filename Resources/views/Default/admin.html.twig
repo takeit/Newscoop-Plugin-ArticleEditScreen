@@ -16,46 +16,7 @@
         language: '{{ language }}'
       };
 
-      var AES_SETTINGS = {
-        API: {
-            rootURI: '{{ Newscoop["WEBSITE_URL"] }}',
-            endpoint: '/content-api',
-            full: '{{ Newscoop["WEBSITE_URL"] }}/content-api'
-        },
-        auth: {
-            client_id: CSClientId,
-            redirect_uri: '{{ redirectUri }}',
-            server: '{{ url('fos_oauth_server_authorize') }}'
-        },
-        article: {
-            width: {
-                desktop: {{ userSettings['desktopview'] }},
-                tablet: {{ userSettings['tabletview'] }},
-                phone: {{ userSettings['mobileview'] }}
-            }
-        },
-        image: {
-            width: {
-                small: "{{ userSettings['imagesmall'] }}%",
-                medium: "{{ userSettings['imagemedium'] }}%",
-                big: "{{ userSettings['imagelarge'] }}%"
-            },
-            float: 'none'
-        },
-        placeholder: "{{ userSettings['placeholder'] }}",
-        showSwitches: "{{ userSettings['showswitches'] }}",
-        articleTypeFields: {
-        {% for fieldType in userSettings.positions %}
-        {{ fieldType.articleTypeName }}: {
-                title: {
-                    name: 'title',
-                    displayName: '{{ 'aes.field.title'|trans }}',
-                    order: {{ fieldType.position }}
-                }
-            },
-        {% endfor %}
-        }
-      };
+      var AES_SETTINGS = {{ userSettings|raw }};
     </script>
             <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

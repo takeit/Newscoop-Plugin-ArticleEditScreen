@@ -10,6 +10,7 @@ namespace Newscoop\EditorBundle\EventListener;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Newscoop\EventDispatcher\Events\GenericEvent;
+use Newscoop\EditorBundle\Entity\Settings;
 
 /**
  * Event lifecycle management
@@ -24,12 +25,15 @@ class LifecycleSubscriber implements EventSubscriberInterface
 
     private $translator;
 
-    public function __construct($em, $clientManager, $syspref, $translator)
+    private $pluginsService;
+
+    public function __construct($em, $clientManager, $syspref, $translator, $pluginsService)
     {
         $this->em = $em;
         $this->clientManager = $clientManager;
         $this->syspref = $syspref;
         $this->translator = $translator;
+        $this->pluginsService = $pluginsService;
     }
 
     public function install(GenericEvent $event)
@@ -47,6 +51,7 @@ class LifecycleSubscriber implements EventSubscriberInterface
         $tool->updateSchema($this->getClasses(), true);
 
         $this->em->getProxyFactory()->generateProxyClasses($this->getClasses(), __DIR__ . '/../../../../library/Proxy');
+        $this->setPermissions();
         $settings = array(
             'mobileview' => 320,
             'tabletview' => 600,
@@ -55,7 +60,8 @@ class LifecycleSubscriber implements EventSubscriberInterface
             'imagemedium' => 50,
             'imagelarge' => 100,
             'showswitches' => "Y",
-            'placeholder' => $this->translator->trans("aes.settings.label.defaultplaceholder")
+            'placeholder' => $this->translator->trans("aes.settings.label.defaultplaceholder"),
+            'apiendpoint' => "/api"
         );
 
         $this->addDefaultSettings($settings);
@@ -107,5 +113,13 @@ class LifecycleSubscriber implements EventSubscriberInterface
         }
 
         $this->em->flush();
+    }
+
+    /**
+     * Collect plugin permissions
+     */
+    private function setPermissions()
+    {
+        $this->pluginsService->savePluginPermissions($this->pluginsService->collectPermissions($this->translator->trans('aes.name')));
     }
 }

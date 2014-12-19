@@ -33,7 +33,12 @@ class SettingsController extends Controller
         }
 
         $userSettings = $editorService->getSettingsByUser($user);
-        $form = $this->createForm(new SettingType(), $userSettings, array('em' => $em, 'editorService' => $editorService));
+        $form = $this->createForm(new SettingType(), $userSettings, array(
+            'em' => $em,
+            'editorService' => $editorService,
+            'user' => $user
+        ));
+
         if ($request->getMethod() === "POST") {
             $form->handleRequest($request);
             if ($form->isValid()) {

@@ -27,5 +27,7 @@ aes:
         max: "The value of Large size should be {{ limit }} or less."
         blank: "The value of Large size cannot be blank."
     placeholder:
-      blank: "The value of Placeholder cannot be blank."
       max: "The value of Placeholder cannot be longer than {{ limit }} characters long."
+    apiendpoint:
+      blank: "The value of API endpoint cannot be blank."
+      max: "The value of API endpoint cannot be longer than {{ limit }} characters long."
