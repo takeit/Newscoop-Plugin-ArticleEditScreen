@@ -67,11 +67,7 @@ class EditorService
         foreach ($settings as $option => $value) {
             $setting = $this->getSingleSettingByUserAndOption($user, $option);
             if (!$setting) {
-                $setting = new Settings();
-                $setting->setOption($option);
-                $setting->setValue($value);
-                $setting->setUser($user);
-                $this->em->persist($setting);
+                $this->updateOrCreateSetting($option, $value);
 
                 continue;
             }
@@ -141,6 +137,39 @@ class EditorService
             ->getOneOrNullResult();
 
         return $setting;
+    }
+
+    /**
+     * Updates default setting or creates new setting for the user
+     *
+     * @param string     $option [description]
+     * @param string|int $value  [description]
+     *
+     * @return void
+     */
+    private function updateOrCreateSetting($option, $value)
+    {
+        $qb = $this->em->createQueryBuilder();
+        $setting = $qb
+            ->select('s')
+            ->from('Newscoop\EditorBundle\Entity\Settings', 's')
+            ->where($qb->expr()->isNull('s.user'))
+            ->andWhere('s.option = :option')
+            ->setParameter('option', $option)
+            ->getQuery()
+            ->getOneOrNullResult();
+
+        if ($setting) {
+            $setting->setValue($value);
+
+            return;
+        }
+
+        $setting = new Settings();
+        $setting->setOption($option);
+        $setting->setValue($value);
+        $setting->setUser($user);
+        $this->em->persist($setting);
     }
 
     /**
