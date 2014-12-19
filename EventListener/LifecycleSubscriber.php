@@ -52,19 +52,7 @@ class LifecycleSubscriber implements EventSubscriberInterface
 
         $this->em->getProxyFactory()->generateProxyClasses($this->getClasses(), __DIR__ . '/../../../../library/Proxy');
         $this->setPermissions();
-        $settings = array(
-            'mobileview' => 320,
-            'tabletview' => 600,
-            'desktopview' => 920,
-            'imagesmall' => 30,
-            'imagemedium' => 50,
-            'imagelarge' => 100,
-            'showswitches' => "Y",
-            'placeholder' => $this->translator->trans("aes.settings.label.defaultplaceholder"),
-            'apiendpoint' => "/api"
-        );
-
-        $this->addDefaultSettings($settings);
+        $this->addDefaultSettings();
     }
 
     public function update(GenericEvent $event)
@@ -73,12 +61,15 @@ class LifecycleSubscriber implements EventSubscriberInterface
         $tool->updateSchema($this->getClasses(), true);
 
         $this->em->getProxyFactory()->generateProxyClasses($this->getClasses(), __DIR__ . '/../../../../library/Proxy');
+        $this->setPermissions();
+        $this->addDefaultSettings();
     }
 
     public function remove(GenericEvent $event)
     {
         $tool = new \Doctrine\ORM\Tools\SchemaTool($this->em);
         $tool->dropSchema($this->getClasses(), true);
+        $this->removePermissions();
     }
 
     public static function getSubscribedEvents()
@@ -99,20 +90,52 @@ class LifecycleSubscriber implements EventSubscriberInterface
 
     /**
      * Add default settings to database
-     *
-     * @param array $settings Array of settings
      */
-    private function addDefaultSettings(array $settings)
+    private function addDefaultSettings()
     {
+        $settings = array(
+            'mobileview' => 320,
+            'tabletview' => 600,
+            'desktopview' => 920,
+            'imagesmall' => 30,
+            'imagemedium' => 50,
+            'imagelarge' => 100,
+            'showswitches' => "Y",
+            'placeholder' => $this->translator->trans("aes.settings.label.defaultplaceholder"),
+            'apiendpoint' => "/api",
+        );
+
+        $qb = $this->em->createQueryBuilder();
         foreach ($settings as $option => $value) {
-            $setting = new Settings();
-            $setting->setOption($option);
-            $setting->setValue($value);
-            $setting->setUser(null);
-            $this->em->persist($setting);
+            $setting = $this->em->getRepository('Newscoop\EditorBundle\Entity\Settings')
+                ->createQueryBuilder('s')
+                ->select('s')
+                ->where($qb->expr()->isNull('s.user'))
+                ->andWhere('s.option = :option')
+                ->setParameter('option', $option)
+                ->getQuery()
+                ->getOneOrNullResult();
+
+            if (!$setting) {
+                $setting = new Settings();
+                $setting->setOption($option);
+                $setting->setValue($value);
+                $setting->setUser(null);
+                $this->em->persist($setting);
+            } else {
+                $setting->setValue($value);
+            }
         }
 
         $this->em->flush();
+    }
+
+    /**
+     * Remove plugin permissions
+     */
+    private function removePermissions()
+    {
+        $this->pluginsService->removePluginPermissions($this->pluginsService->collectPermissions($this->translator->trans('aes.name')));
     }
 
     /**
