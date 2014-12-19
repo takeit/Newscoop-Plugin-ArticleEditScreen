@@ -142,8 +142,8 @@ class EditorService
     /**
      * Updates default setting or creates new setting for the user
      *
-     * @param string     $option [description]
-     * @param string|int $value  [description]
+     * @param string     $option Option
+     * @param string|int $value  Value
      *
      * @return void
      */
