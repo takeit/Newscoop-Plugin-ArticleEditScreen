@@ -32,7 +32,7 @@ class Settings extends BaseSettings
      * @ORM\Column(type="string", length=100, name="varname")
      * @var string
      */
-    public $option;
+    protected $option;
 
     /**
      * @ORM\Column(type="string", length=100, name="value", nullable=true)
