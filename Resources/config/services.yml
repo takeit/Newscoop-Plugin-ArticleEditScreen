@@ -3,7 +3,7 @@ services:
         class: Newscoop\EditorBundle\EventListener\ConfigureMenuListener
         tags:
             - { name: kernel.event_listener, event: newscoop_newscoop.menu_configure, method: onMenuConfigure }
-        arguments: 
+        arguments:
             - @translator
 
     newscoop_editor.lifecyclesubscriber:
@@ -12,5 +12,18 @@ services:
             - @em
             - @fos_oauth_server.client_manager.default
             - @system_preferences_service
+            - @translator
+            - @newscoop.plugins.service
         tags:
             - { name: kernel.event_subscriber}
+
+    newscoop_editor.editor_service:
+        class: Newscoop\EditorBundle\Services\EditorService
+        arguments:  ["@em", "@user", "@newscoop.cache"]
+
+    newscoop_editor.permissions.listener:
+        class: Newscoop\EditorBundle\EventListener\PermissionsListener
+        arguments:
+            - @translator
+        tags:
+          - { name: kernel.event_listener, event: newscoop.plugins.permissions.register, method: registerPermissions }

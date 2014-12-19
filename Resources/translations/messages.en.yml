@@ -4,7 +4,66 @@ aes:
     locked: "The article has been locked by %username% (%realname%) %hours% hour(s) and %minutes% minute(s) ago."
     notfound: "Article couldn't be found."
     notfoundHead: "Article doesn't exist"
+    saved: "Successfully saved"
+  fields:
+    title: "Title"
   btn:
     unlock: "Unlock"
     cancel: "Cancel"
     view: "View"
+    save: "Save"
+  tip: "Title positions explanation..."
+  name: "Editor"
+  settingstext: "Settings"
+  permissions:
+    api: "Configure API permissions"
+    defaultsettings: "Configure default settings"
+  popover:
+    mobileview: "Mobile view popover..."
+    tabletview: "Tablet view popover..."
+    desktopview: "Desktop view popover..."
+    imagesmall: "Small image popover..."
+    imagemedium: "Medium image popover..."
+    imagelarge: "Large image popover..."
+    showswitches: "Switches popover..."
+    placeholder: "Placeholder popover..."
+    apiendpoint: "If the API endpoint is set to diffrent one than the default, change it to make the plugin working properly."
+  settings:
+    label:
+      viewports: "Viewports"
+      viewportssettings: "Viewports Settings"
+      imagessettings: "Image sizes Settings"
+      titlesettings: "Title position Settings"
+      switchessettings: "Switches Settings"
+      placeholdersettings: "Placeholder Settings"
+      images: "Images"
+      title: "Title position"
+      switches: "Switches"
+      placeholders: "Fields placeholders"
+      mobileview: "Mobile View"
+      pixels: "pixels"
+      yes: "Yes"
+      no: "No"
+      articletype: "Article type"
+      defaultplaceholder: "[please provide your content]"
+      apisettings: "API Settings"
+      api: "API"
+    form:
+      viewports:
+        mobile: "Mobile View"
+        tablet: "Tablet View"
+        desktop: "Desktop View"
+        errors:
+          mobile:
+            min: "The value of Mobile View should be {{ limit }} or more."
+            max: "The value of Mobile View cannot be longer than {{ limit }} characters long."
+      images:
+        small: "Small size"
+        medium: "Medium size"
+        large: "Large size"
+      title:
+        position: "Title position"
+      switches: "Show/hide standard switches"
+      placeholder: "Placeholder text"
+      defaultplaceholder: "Type placeholder text here..."
+      apiendpoint: "API endpoint"
