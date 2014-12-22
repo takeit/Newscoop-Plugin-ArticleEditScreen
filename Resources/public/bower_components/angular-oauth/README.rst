@@ -4,7 +4,6 @@ About
 This project provides an implementation of a client-side (implicit grant)
 OAuth 2.0 authorization flow.
 
-
 Features
 ========
 
@@ -37,7 +36,7 @@ Online
 
 Check out the demo by going to `example/demo.html via rawhithub.com`_.
 
-.. _example/demo.html via rawhithub.com: https://rawgithub.com/enginous/angular-oauth/master/example/demo.html
+.. _example/demo.html via rawhithub.com: https://rawgithub.com/angular-oauth/angular-oauth/master/example/demo.html
 
 
 Local
