@@ -139,7 +139,7 @@ class DefaultController extends Controller
             'articleTypeFields' => $types
         );
 
-        return json_encode($settings);
+        return json_encode($settings, JSON_NUMERIC_CHECK);
     }
 
     /**
