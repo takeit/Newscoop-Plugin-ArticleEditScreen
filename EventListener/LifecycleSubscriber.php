@@ -100,7 +100,7 @@ class LifecycleSubscriber implements EventSubscriberInterface
             'imagesmall' => 30,
             'imagemedium' => 50,
             'imagelarge' => 100,
-            'showswitches' => "Y",
+            'showswitches' => true,
             'placeholder' => $this->translator->trans("aes.settings.label.defaultplaceholder"),
             'apiendpoint' => "/api",
         );
