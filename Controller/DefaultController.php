@@ -13,6 +13,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Doctrine\Common\Collections\ArrayCollection;
 
 class DefaultController extends Controller
 {
@@ -93,21 +94,8 @@ class DefaultController extends Controller
      */
     private function createSettingsJson(Request $request, $userSettings, $client)
     {
-        $translator = $this->get('translator');
         $redirectUris = $client->getRedirectUris();
-        $types = array();
-        foreach ($userSettings['positions'] as $key => $value) {
-            $types[] = array(
-                $value->getName() => array(
-                    'title' => array(
-                        'name' => 'title',
-                        'displayName' => $translator->trans('aes.fields.title'),
-                        'order' => $value->getPosition()
-                    )
-                )
-            );
-        }
-
+        $types = $this->createArticleTypesSettings($userSettings['positions']);
         $settings = array(
             'API' => array(
                 'rootURI' => $request->getUriForPath(null),
@@ -135,11 +123,43 @@ class DefaultController extends Controller
                 'float' => 'none'
             ),
             'placeholder' => $userSettings['placeholder'],
-            'showSwitches' => $userSettings['showswitches'],
+            'showSwitches' => filter_var($userSettings['showswitches'], FILTER_VALIDATE_BOOLEAN),
             'articleTypeFields' => $types
         );
 
         return json_encode($settings, JSON_NUMERIC_CHECK);
+    }
+
+    /**
+     * Create clean array with article types settings from the PHP array
+     * which can be converted to JSON object
+     *
+     * @param ArrayCollection $articleTypes Article types array
+     *
+     * @return array article types
+     */
+    private function createArticleTypesSettings(ArrayCollection $articleTypes)
+    {
+        $translator = $this->get('translator');
+        $types = array();
+        foreach ($articleTypes as $key => $value) {
+            $types[] = array(
+                $value->getName() => array(
+                    'title' => array(
+                        'name' => 'title',
+                        'displayName' => $translator->trans('aes.fields.title'),
+                        'order' => $value->getPosition()
+                    )
+                )
+            );
+        }
+
+        $articleTypes = array();
+        foreach ($types as $value) {
+            $articleTypes[key($value)] = current($value);
+        }
+
+        return $articleTypes;
     }
 
     /**
