@@ -117,8 +117,8 @@ class SettingType extends AbstractType
             ->add('showswitches', 'choice', array(
                 'label' => 'aes.settings.form.switches',
                 'choices'   => array(
-                    'Y' => 'aes.settings.label.yes',
-                    'N' => 'aes.settings.label.no'
+                    'true' => 'aes.settings.label.yes',
+                    'false' => 'aes.settings.label.no'
                 ),
                 'error_bubbling' => true,
                 'multiple' => false,
@@ -138,7 +138,6 @@ class SettingType extends AbstractType
                 )
             ))
             ->add('positions', 'collection', array('type' => new PositionType(), 'options'  => array(
-                'em' => $options['em'],
                 'editorService' => $options['editorService']
             )));
 
@@ -161,7 +160,6 @@ class SettingType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setRequired(array(
-            'em',
             'editorService',
             'user'
         ));

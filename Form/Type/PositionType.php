@@ -18,9 +18,8 @@ class PositionType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $em = $options['em'];
         $editorService = $options['editorService'];
-        $builder->addEventListener(FormEvents::POST_SET_DATA, function (FormEvent $event) use ($em, $editorService) {
+        $builder->addEventListener(FormEvents::POST_SET_DATA, function (FormEvent $event) use ($editorService) {
             $positionObject = $event->getData();
             $form = $event->getForm();
             $form->add('titlePosition', 'choice', array(
@@ -38,7 +37,6 @@ class PositionType extends AbstractType
         ));
 
         $resolver->setRequired(array(
-            'em',
             'editorService'
         ));
     }
