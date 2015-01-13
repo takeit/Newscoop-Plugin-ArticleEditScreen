@@ -13,6 +13,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 use Doctrine\Common\Collections\ArrayCollection;
 
 class DefaultController extends Controller
@@ -167,7 +168,7 @@ class DefaultController extends Controller
      */
     public function navAction(Request $request)
     {
-        return new JsonResponse($this->renderView("NewscoopNewscoopBundle::admin_menu.html.twig"));
+        return new Response($this->renderView("NewscoopNewscoopBundle::admin_menu.html.twig"));
     }
 
     /**
