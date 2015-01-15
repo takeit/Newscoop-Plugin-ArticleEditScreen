@@ -11,10 +11,10 @@ aes:
         unlock: Unlock
         cancel: Cancel
         view: View
-        save: null
+        save: Save
     tip: 'Title positions explanation...'
     name: Editor
-    settingstext: null
+    settingstext: Settings
     permissions:
         api: 'Configure API permissions'
         defaultsettings: 'Configure default settings'
@@ -34,20 +34,20 @@ aes:
             viewportssettings: 'Viewports Settings'
             imagessettings: 'Image size Settings'
             titlesettings: 'Title position Settings'
-            switchessettings: null
+            switchessettings: 'Switch Settings'
             placeholdersettings: 'Placeholder Settings'
-            images: null
+            images: Images
             title: 'Title position'
-            switches: null
+            switches: Switches
             placeholders: 'Field placeholders'
             mobileview: 'Mobile View'
             pixels: pixels
-            yes: null
-            no: null
-            articletype: null
+            yes: Yes
+            no: No
+            articletype: 'Article type'
             defaultplaceholder: '[please provide your content]'
             apisettings: 'API Settings'
-            api: null
+            api: API
         form:
             viewports:
                 mobile: 'Mobile View'
