@@ -1,7 +1,7 @@
 aes:
     alerts:
-        lockedHead: null
-        locked: null
+        lockedHead: 'This article is locked'
+        locked: 'The article has been locked by %username% (%realname%) %hours% hour(s) and %minutes% minute(s) ago.'
         notfound: null
         notfoundHead: null
         saved: null
