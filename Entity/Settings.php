@@ -54,12 +54,19 @@ class Settings extends BaseSettings
     protected $created;
 
     /**
+     * @ORM\Column(type="boolean", name="is_global")
+     * @var boolean
+     */
+    protected $isGlobal;
+
+    /**
      * Construct
      */
     public function __construct()
     {
         $this->setCreatedAt(new \DateTime());
         $this->positions = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->setIsGlobal(false);
     }
 
     /**
@@ -141,6 +148,30 @@ class Settings extends BaseSettings
     public function setUser(User $user = null)
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Gets the value of isGlobal.
+     *
+     * @return boolean
+     */
+    public function getIsGlobal()
+    {
+        return $this->isGlobal;
+    }
+
+    /**
+     * Sets the value of isGlobal.
+     *
+     * @param boolean $isGlobal the is global
+     *
+     * @return self
+     */
+    public function setIsGlobal($isGlobal)
+    {
+        $this->isGlobal = $isGlobal;
 
         return $this;
     }

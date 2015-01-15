@@ -10,13 +10,6 @@
     <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
     <script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
     <script type="text/javascript">
-      //var CSClientId = '{{ clientId }}';
-      var CSBaseUrl = '/bundles/newscoopeditor/';
-      var articleInfo = {
-        articleNumber: {{ articleNumber }},
-        language: '{{ language }}'
-      };
-
       var AES_SETTINGS = {{ userSettings|raw }};
     </script>
     
