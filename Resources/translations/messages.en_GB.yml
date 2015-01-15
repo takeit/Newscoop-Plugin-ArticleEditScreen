@@ -2,68 +2,68 @@ aes:
     alerts:
         lockedHead: 'This article is locked'
         locked: 'The article has been locked by %username% (%realname%) %hours% hour(s) and %minutes% minute(s) ago.'
-        notfound: null
-        notfoundHead: null
-        saved: null
+        notfound: 'Article couldn''t be found.'
+        notfoundHead: 'Article doesn''t exist'
+        saved: 'Successfully saved'
     fields:
-        title: null
+        title: Title
     btn:
-        unlock: null
-        cancel: null
-        view: null
+        unlock: Unlock
+        cancel: Cancel
+        view: View
         save: null
-    tip: null
-    name: null
+    tip: 'Title positions explanation...'
+    name: Editor
     settingstext: null
     permissions:
-        api: null
-        defaultsettings: null
+        api: 'Configure API permissions'
+        defaultsettings: 'Configure default settings'
     popover:
-        mobileview: null
-        tabletview: null
-        desktopview: null
-        imagesmall: null
-        imagemedium: null
-        imagelarge: null
-        showswitches: null
-        placeholder: null
-        apiendpoint: null
+        mobileview: 'Mobile view popover...'
+        tabletview: 'Tablet view popover...'
+        desktopview: 'Desktop view popover...'
+        imagesmall: 'Small image popover...'
+        imagemedium: 'Medium image popover...'
+        imagelarge: 'Large image popover...'
+        showswitches: 'Switches popover...'
+        placeholder: 'Placeholder popover...'
+        apiendpoint: 'If the API endpoint is set to a different one than the default, change it to make the plugin work properly.'
     settings:
         label:
-            viewports: null
-            viewportssettings: null
-            imagessettings: null
-            titlesettings: null
+            viewports: Viewports
+            viewportssettings: 'Viewports Settings'
+            imagessettings: 'Image size Settings'
+            titlesettings: 'Title position Settings'
             switchessettings: null
-            placeholdersettings: null
+            placeholdersettings: 'Placeholder Settings'
             images: null
-            title: null
+            title: 'Title position'
             switches: null
-            placeholders: null
-            mobileview: null
-            pixels: null
+            placeholders: 'Field placeholders'
+            mobileview: 'Mobile View'
+            pixels: pixels
             yes: null
             no: null
             articletype: null
-            defaultplaceholder: null
-            apisettings: null
+            defaultplaceholder: '[please provide your content]'
+            apisettings: 'API Settings'
             api: null
         form:
             viewports:
-                mobile: null
-                tablet: null
-                desktop: null
+                mobile: 'Mobile View'
+                tablet: 'Tablet View'
+                desktop: 'Desktop View'
                 errors:
                     mobile:
-                        min: null
-                        max: null
+                        min: 'The value of Mobile View should be {{ limit }} or more.'
+                        max: 'The value of Mobile View cannot be longer than {{ limit }} characters.'
             images:
-                small: null
-                medium: null
-                large: null
+                small: 'Small size'
+                medium: 'Medium size'
+                large: 'Large size'
             title:
-                position: null
-            switches: null
-            placeholder: null
-            defaultplaceholder: null
-            apiendpoint: null
+                position: 'Title position'
+            switches: 'Show/hide standard switches'
+            placeholder: 'Placeholder text'
+            defaultplaceholder: 'Type placeholder text here...'
+            apiendpoint: 'API endpoint'
