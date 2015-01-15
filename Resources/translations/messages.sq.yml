@@ -1,0 +1,69 @@
+aes:
+    alerts:
+        lockedHead: null
+        locked: null
+        notfound: null
+        notfoundHead: null
+        saved: null
+    fields:
+        title: null
+    btn:
+        unlock: null
+        cancel: null
+        view: null
+        save: null
+    tip: null
+    name: null
+    settingstext: null
+    permissions:
+        api: null
+        defaultsettings: null
+    popover:
+        mobileview: null
+        tabletview: null
+        desktopview: null
+        imagesmall: null
+        imagemedium: null
+        imagelarge: null
+        showswitches: null
+        placeholder: null
+        apiendpoint: null
+    settings:
+        label:
+            viewports: null
+            viewportssettings: null
+            imagessettings: null
+            titlesettings: null
+            switchessettings: null
+            placeholdersettings: null
+            images: null
+            title: null
+            switches: null
+            placeholders: null
+            mobileview: null
+            pixels: null
+            yes: null
+            no: null
+            articletype: null
+            defaultplaceholder: null
+            apisettings: null
+            api: null
+        form:
+            viewports:
+                mobile: null
+                tablet: null
+                desktop: null
+                errors:
+                    mobile:
+                        min: null
+                        max: null
+            images:
+                small: null
+                medium: null
+                large: null
+            title:
+                position: null
+            switches: null
+            placeholder: null
+            defaultplaceholder: null
+            apiendpoint: null
