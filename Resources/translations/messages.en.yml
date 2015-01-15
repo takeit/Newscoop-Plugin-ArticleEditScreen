@@ -27,19 +27,19 @@ aes:
     imagelarge: "Large image popover..."
     showswitches: "Switches popover..."
     placeholder: "Placeholder popover..."
-    apiendpoint: "If the API endpoint is set to diffrent one than the default, change it to make the plugin working properly."
+    apiendpoint: "If the API endpoint is set to a different one than the default, change it to make the plugin work properly."
   settings:
     label:
       viewports: "Viewports"
       viewportssettings: "Viewports Settings"
-      imagessettings: "Image sizes Settings"
+      imagessettings: "Image size Settings"
       titlesettings: "Title position Settings"
-      switchessettings: "Switches Settings"
+      switchessettings: "Switch Settings"
       placeholdersettings: "Placeholder Settings"
       images: "Images"
       title: "Title position"
       switches: "Switches"
-      placeholders: "Fields placeholders"
+      placeholders: "Field placeholders"
       mobileview: "Mobile View"
       pixels: "pixels"
       yes: "Yes"
@@ -56,7 +56,7 @@ aes:
         errors:
           mobile:
             min: "The value of Mobile View should be {{ limit }} or more."
-            max: "The value of Mobile View cannot be longer than {{ limit }} characters long."
+            max: "The value of Mobile View cannot be longer than {{ limit }} characters."
       images:
         small: "Small size"
         medium: "Medium size"
