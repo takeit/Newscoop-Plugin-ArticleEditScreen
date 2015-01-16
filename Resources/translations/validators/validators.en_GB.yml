@@ -2,32 +2,32 @@ aes:
     form:
         viewports:
             mobile:
-                min: null
-                max: null
-                blank: null
+                min: 'The value of Mobile View should be {{ limit }} or more.'
+                max: 'The value of Mobile View should be {{ limit }} or less.'
+                blank: 'The value of Mobile View cannot be blank.'
             tablet:
-                min: null
-                max: null
-                blank: null
+                min: 'The value of Tablet View should be {{ limit }} or more.'
+                max: 'The value of Tablet View should be {{ limit }} or less.'
+                blank: 'The value of Tablet View cannot be blank.'
             desktop:
-                min: null
-                max: null
-                blank: null
+                min: 'The value of Desktop View should be {{ limit }} or more.'
+                max: 'The value of Desktop View should be {{ limit }} or less.'
+                blank: 'The value of Desktop View cannot be blank.'
         images:
             small:
-                min: null
-                max: null
-                blank: null
+                min: 'The value of Small size should be {{ limit }} or more.'
+                max: 'The value of Small size should be {{ limit }} or less.'
+                blank: 'The value of Small size cannot be blank.'
             medium:
-                min: null
-                max: null
-                blank: null
+                min: 'The value of Medium size should be {{ limit }} or more.'
+                max: 'The value of Medium size should be {{ limit }} or less.'
+                blank: 'The value of Medium size cannot be blank.'
             large:
-                min: null
-                max: null
-                blank: null
+                min: 'The value of Large size should be {{ limit }} or more.'
+                max: 'The value of Large size should be {{ limit }} or less.'
+                blank: 'The value of Large size cannot be blank.'
         placeholder:
-            max: null
+            max: 'The value of Placeholder cannot be longer than {{ limit }} characters.'
         apiendpoint:
-            blank: null
-            max: null
+            blank: 'The value of API endpoint cannot be blank.'
+            max: 'The value of API endpoint cannot be longer than {{ limit }} characters.'
