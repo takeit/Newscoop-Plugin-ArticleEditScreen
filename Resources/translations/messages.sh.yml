@@ -6,15 +6,15 @@ aes:
         notfoundHead: null
         saved: null
     fields:
-        title: null
+        title: Naslov
     btn:
-        unlock: null
-        cancel: null
-        view: null
-        save: null
+        unlock: Otključaj
+        cancel: Poništi
+        view: Prikaz
+        save: Snimi
     tip: null
     name: null
-    settingstext: null
+    settingstext: Podešavanja
     permissions:
         api: null
         defaultsettings: null
@@ -36,14 +36,14 @@ aes:
             titlesettings: null
             switchessettings: null
             placeholdersettings: null
-            images: null
+            images: Slike
             title: null
-            switches: null
+            switches: Svičevi
             placeholders: null
             mobileview: null
             pixels: null
-            yes: null
-            no: null
+            yes: Da
+            no: Ne
             articletype: null
             defaultplaceholder: null
             apisettings: null
