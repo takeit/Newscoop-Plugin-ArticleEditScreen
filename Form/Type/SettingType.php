@@ -153,6 +153,16 @@ class SettingType extends AbstractType
                             'maxMessage' => 'aes.form.apiendpoint.max'
                         ))
                     )
+                ))
+                ->add('default_image_size', 'choice', array(
+                    'label' => 'aes.settings.form.defaultimagesize',
+                    'choices' => array(
+                        'small' => 'aes.settings.form.imagesize.small',
+                        'medium' => 'aes.settings.form.imagesize.medium',
+                        'big' => 'aes.settings.form.imagesize.big',
+                    ),
+                    'required' => false,
+                    'empty_value'  => null
                 ));
             }
     }

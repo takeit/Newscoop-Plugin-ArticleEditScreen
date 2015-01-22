@@ -27,7 +27,8 @@ aes:
     imagelarge: "Large image popover..."
     showswitches: "Switches popover..."
     placeholder: "Placeholder popover..."
-    apiendpoint: "If the API endpoint is set to a different one than the default, change it to make the plugin work properly."
+    apiendpoint: "If the API endpoint is set to diffrent one than the default, change it to make the plugin working properly."
+    imagesize: "Default image size popover..."
   settings:
     label:
       viewports: "Viewports"
@@ -60,10 +61,15 @@ aes:
       images:
         small: "Small size"
         medium: "Medium size"
-        large: "Large size"
+        large: "Big size"
       title:
         position: "Title position"
       switches: "Show/hide standard switches"
       placeholder: "Placeholder text"
       defaultplaceholder: "Type placeholder text here..."
       apiendpoint: "API endpoint"
+      defaultimagesize: "Default image size"
+      imagesize:
+        small: "small"
+        medium: "medium"
+        big: "big"

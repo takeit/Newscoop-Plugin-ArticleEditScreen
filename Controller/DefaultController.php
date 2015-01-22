@@ -127,6 +127,7 @@ class DefaultController extends Controller
                 ),
                 'float' => 'none'
             ),
+            'image_size' => $userSettings["default_image_size"],
             'placeholder' => $userSettings['placeholder'],
             'showSwitches' => filter_var($userSettings['showswitches'], FILTER_VALIDATE_BOOLEAN),
             'articleTypeFields' => $types

@@ -105,7 +105,8 @@ class LifecycleSubscriber implements EventSubscriberInterface
         );
 
         $globalSettings = array(
-            'apiendpoint' => "/api"
+            'apiendpoint' => "/api",
+            'default_image_size' => 'medium'
         );
 
         $this->setUpSettings($settings);
