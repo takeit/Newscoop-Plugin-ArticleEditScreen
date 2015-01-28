@@ -16,6 +16,7 @@ use Newscoop\EditorBundle\Entity\Settings;
 use Newscoop\EditorBundle\Entity\Permissions;
 use Newscoop\EditorBundle\Form\Type\SettingType;
 use Newscoop\Entity\User;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class SettingsController extends Controller
 {
@@ -61,9 +62,19 @@ class SettingsController extends Controller
      */
     public function loadUsersAction(Request $request)
     {
+        $this->checkPermissions();
         $responseArray = $this->getUsersArray($request);
 
         return new JsonResponse($responseArray);
+    }
+
+    private function checkPermissions()
+    {
+        $userService = $this->get('user');
+        $user = $userService->getCurrentUser();
+        if (!$user->hasPermission('plugin_editor_permissions')) {
+            throw new AccessDeniedException();
+        }
     }
 
     private function getUsersArray(Request $request)
@@ -164,6 +175,7 @@ class SettingsController extends Controller
      */
     public function assignAllAction(Request $request)
     {
+        $this->checkPermissions();
         $em = $this->get('em');
         $users = $this->getUsersArrayByCriteria($request);
         foreach ($users as $key => $user) {
@@ -182,6 +194,7 @@ class SettingsController extends Controller
      */
     public function unassignAllAction(Request $request)
     {
+        $this->checkPermissions();
         $em = $this->get('em');
         $users = $this->getUsersArrayByCriteria($request);
         foreach ($users as $key => $user) {
@@ -215,6 +228,7 @@ class SettingsController extends Controller
      */
     public function unassignUserAction(Request $request, $userId)
     {
+        $this->checkPermissions();
         $status = false;
         $em = $this->get('em');
         if ($this->unassignSingleUser($userId)) {
@@ -232,6 +246,7 @@ class SettingsController extends Controller
      */
     public function assignUserAction(Request $request, $userId)
     {
+        $this->checkPermissions();
         $em = $this->get('em');
         try {
             $this->assignOrCreatePermission($userId);

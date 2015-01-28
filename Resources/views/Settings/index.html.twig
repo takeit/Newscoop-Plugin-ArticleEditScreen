@@ -43,7 +43,9 @@ th a, th a:hover {
             {% if hasPermission('plugin_editor_api') %}
             <li><a href="#api" data-toggle="tab">{{ 'aes.settings.label.api'|trans }}</a></li>
             {% endif %}
+            {% if hasPermission('plugin_editor_permissions') %}
             <li><a href="#permissions" data-toggle="tab">{{ 'aes.settings.label.permissions'|trans }}</a></li>
+            {% endif %}
         </ul>
         <div class="tab-content">
             <div class="tab-pane active" id="viewports">
@@ -160,6 +162,7 @@ th a, th a:hover {
                 </dl>
             </div>
             {% endif %}
+            {% if hasPermission('plugin_editor_permissions') %}
             <div class="tab-pane" id="permissions">
                 <h3>{{ 'aes.settings.label.permissionssettings'|trans }}</h3><br>
                 {{ renderTip('aes.tippermissions'|trans) }}<br>
@@ -185,6 +188,7 @@ th a, th a:hover {
                 </div>
                 </dl>
             </div>
+            {% endif %}
             <div class="save-button-bar">
                 <button type="submit" class="btn btn-sm btn-primary">{{ 'aes.btn.save'|trans }}</button>
             </div>
@@ -199,147 +203,20 @@ function popover(target, content) {
         content : content
     });
 };
-popover($('#mobileview'), '{{ 'aes.popover.mobileview'|trans }}');
-popover($('#desktopview'), '{{ 'aes.popover.desktopview'|trans }}');
-popover($('#tabletview'), '{{ 'aes.popover.tabletview'|trans }}');
-popover($('#imagesmall'), '{{ 'aes.popover.imagesmall'|trans }}');
-popover($('#imagemedium'), '{{ 'aes.popover.imagemedium'|trans }}');
-popover($('#imagelarge'), '{{ 'aes.popover.imagelarge'|trans }}');
-popover($('#showswitches'), '{{ 'aes.popover.showswitches'|trans }}');
-popover($('#placeholder'), '{{ 'aes.popover.placeholder'|trans }}');
+popover($('#mobileview'), Translator.trans('aes.popover.mobileview'));
+popover($('#desktopview'), Translator.trans('aes.popover.desktopview'));
+popover($('#tabletview'), Translator.trans('aes.popover.tabletview'));
+popover($('#imagesmall'), Translator.trans('aes.popover.imagesmall'));
+popover($('#imagemedium'), Translator.trans('aes.popover.imagemedium'));
+popover($('#imagelarge'), Translator.trans('aes.popover.imagelarge'));
+popover($('#showswitches'), Translator.trans('aes.popover.showswitches'));
+popover($('#placeholder'), Translator.trans('aes.popover.placeholder'));
 {% if hasPermission('plugin_editor_api') %}
-popover($('#apiendpoint'), '{{ 'aes.popover.apiendpoint'|trans }}');
-popover($('#default_image_size'), '{{ 'aes.popover.imagesize'|trans }}');
+popover($('#apiendpoint'), Translator.trans('aes.popover.apiendpoint'));
+popover($('#default_image_size'), Translator.trans('aes.popover.imagesize'));
 {% endif %}
 </script>
-<script type="text/javascript">
-    var dynatable = $('#users-table')
-    .dynatable({
-        inputs: {
-            paginationClass: 'pagination',
-            paginationActiveClass: 'current',
-            paginationDisabledClass: 'unavailable',
-            paginationPrev: '&laquo;',
-            paginationNext: '&raquo;',
-            pageText: '{{ 'aes.table.table_messages.page'|trans }}',
-            perPageText: '{{ 'aes.table.table_messages.perPageText'|trans }}',
-            pageText: '{{ 'aes.table.table_messages.pageText'|trans }}',
-            recordCountPageBoundTemplate: '{{ 'aes.table.table_messages.recordCountPageBoundTemplate'|trans }}',
-            recordCountPageUnboundedTemplate: '{{ 'aes.table.table_messages.recordCountPageUnboundedTemplate'|trans }}',
-            recordCountTotalTemplate: '{recordsQueryCount} {collectionName}',
-            recordCountFilteredTemplate: '{{ 'aes.table.table_messages.recordCountFilteredTemplate'|trans }}',
-            recordCountText: '{{ 'aes.table.table_messages.recordCountText'|trans }}',
-            recordCountTextTemplate: '{{ 'aes.table.table_messages.recordCountTextTemplate'|trans }}',
-            recordCountTemplate: '{{ 'aes.table.table_messages.recordCountTemplate'|trans }}',
-            processingText: '{{ 'aes.table.table_messages.processingText'|trans }}',
-        },
-        dataset: {
-            ajax: true,
-            ajaxUrl: Routing.generate('newscoop_editor_settings_loadusers'),
-            ajaxOnLoad: false,
-            records: [],
-            perPageDefault: 10,
-            perPageOptions: [10,20,50,100],
-        },
-        features: {
-            paginate: true,
-        },
-        writers: {
-            _cellWriter: function (column, record) {
-                if (column.id == 'toggle') {
-                    column.attributeWriter = function(record) {
-                        var checked = '';
-                        if (record.assigned) {
-                            checked = 'checked';
-                        }
-
-                        return '<input type="checkbox" '+checked+' name="index[]" value="'+record.id+'" class="table-checkbox">';
-                    }
-                }
-
-                if (column.id == 'updated') {
-                    column.attributeWriter = function(record) {
-                        return record.updated;
-                    }
-                }
-
-                var html = column.attributeWriter(record),
-                    td = '<td';
-
-                if (column.hidden || column.textAlign) {
-                  td += ' style="';
-                  // keep cells for hidden column headers hidden
-                  if (column.hidden) {
-                    td += 'display: none;';
-                  }
-                  // keep cells aligned as their column headers are aligned
-                  if (column.textAlign) {
-                    td += 'text-align: ' + column.textAlign + ';';
-                  }
-                  td += '"';
-                }
-                if (column.cssClass) {
-                  td += ' class="' + column.cssClass + '"';
-                }
-
-                return td + '>' + html + '</td>';
-            }
-        }
-    }).bind('dynatable:ajax:success', function (e, response) {
-        if (response.assignedAll) {
-            $('.toggle-checkbox').prop('checked', true);
-        } else {
-            $('.toggle-checkbox').prop('checked', false);
-        }
-    }).data('dynatable');
-
-    $('.toggle-checkbox').live('change', function() {
-        $(this).parents('table').find('.table-checkbox').prop('checked', this.checked);
-        if ($(this).prop("checked")) {
-            $.post(Routing.generate('newscoop_editor_settings_assignall'),
-                {'format': 'json'},
-                function(data, textStatus, jqXHR) {
-                    if (!data.status) {
-                        flashMessage('{{ 'aes.alerts.assigallnerror'|trans }}', 'error');
-                        return false;
-                    }
-                    dynatable.process();
-                    flashMessage('{{ 'aes.alerts.unassignedall'|trans }}');
-            });
-        } else {
-            $.post(Routing.generate('newscoop_editor_settings_unassignall'),
-                {'format': 'json'},
-                function(data, textStatus, jqXHR) {
-                    if (!data.status) {
-                        flashMessage('{{ 'aes.alerts.assignallerror'|trans }}', 'error');
-                        return false;
-                    }
-                    dynatable.process();
-                    flashMessage('{{ 'aes.alerts.unassignedall'|trans }}');
-            });
-        }
-    });
-
-    $('.table-checkbox').live('change', function(event) {
-        if (!$(this).prop("checked")) {
-            $.post(Routing.generate('newscoop_editor_settings_unassignuser', {userId: $(this).val()}), {'format': 'json'}, function(data, textStatus, jqXHR) {
-                if (!data.status) {
-                    flashMessage('{{ 'aes.alerts.unassignerror'|trans }}', 'error');
-                    return false;
-                }
-                dynatable.process();
-                flashMessage('{{ 'aes.alerts.unassigned'|trans }}');
-            });
-        } else {
-            $.post(Routing.generate('newscoop_editor_settings_assignuser', {userId: $(this).val()}), {'format': 'json'}, function(data, textStatus, jqXHR) {
-                if (!data.status) {
-                    flashMessage('{{ 'aes.alerts.assignerror'|trans }}', 'error');
-                    return false;
-                }
-                dynatable.process();
-                flashMessage('{{ 'aes.alerts.assigned'|trans }}');
-            });
-        }
-    });
-</script>
+{% if hasPermission('plugin_editor_permissions') %}
+<script src="{{ asset('/bundles/newscoopeditor/js/permissions.js') }}"></script>
+{% endif %}
 {% endblock %}

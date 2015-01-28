@@ -57,11 +57,10 @@ aes:
       page: "Page"
       perPageText: "Show: "
       pageText: "Pages: "
-      recordCountPageBoundTemplate: "{pageLowerBound} to {pageUpperBound} of"
-      recordCountPageUnboundedTemplate: "{recordsShown} of"
-      recordCountFilteredTemplate: " (filtered from {recordsTotal} total records)"
+      to: "to"
+      of: "of"
+      recordCountFilteredTemplate: " (filtered from %totalRecords% total records)"
       recordCountText: "Showing "
-      recordCountTemplate: "<span id='dynatable-record-count-{elementId}' class='dynatable-record-count'>{textTemplate}</span>"
       processingText: "Processing..."
   settings:
     label:
