@@ -84,7 +84,8 @@ class LifecycleSubscriber implements EventSubscriberInterface
     private function getClasses()
     {
         return array(
-          $this->em->getClassMetadata('Newscoop\EditorBundle\Entity\Settings')
+          $this->em->getClassMetadata('Newscoop\EditorBundle\Entity\Settings'),
+          $this->em->getClassMetadata('Newscoop\EditorBundle\Entity\Permissions')
         );
     }
 

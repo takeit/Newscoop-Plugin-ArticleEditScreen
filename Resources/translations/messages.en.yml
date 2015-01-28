@@ -5,6 +5,15 @@ aes:
     notfound: "Article couldn't be found."
     notfoundHead: "Article doesn't exist"
     saved: "Successfully saved"
+    assignedall: "All users have been assigned to use this editor"
+    assigned: "User has been assigned successfully"
+    unassigned: "User has been unassigned successfully"
+    assignerror: "Could not assign this user!"
+    unassignerror: "Could not unassign this user!"
+    assignallerror: "Could not assign all users!"
+    unassignallerror: "Could not unassign all users!"
+    unassignedall: "All users have been unassigned successfully"
+    assignedall: "All users have been unassigned successfully"
   fields:
     title: "Title"
   btn:
@@ -13,11 +22,14 @@ aes:
     view: "View"
     save: "Save"
   tip: "Title positions explanation..."
+  tippermissions: "User permissions tip..."
   name: "Editor"
   settingstext: "Settings"
+  none: "None"
   permissions:
     api: "Configure API permissions"
     defaultsettings: "Configure default settings"
+    permissions: "Assing/unassign users to the plugin"
   popover:
     mobileview: "Mobile view popover..."
     tabletview: "Tablet view popover..."
@@ -29,6 +41,28 @@ aes:
     placeholder: "Placeholder popover..."
     apiendpoint: "If the API endpoint is set to diffrent one than the default, change it to make the plugin working properly."
     imagesize: "Default image size popover..."
+  table:
+    th:
+      username: "Username"
+      updated: "Last modified"
+      firstname: "First name"
+      lastname: "Last name"
+      type: "User type"
+      email: "E-mail"
+    actions:
+      actions: "Actions"
+      assign: "Assign"
+    confirm_remove: "You realy want to remove this user?"
+    table_messages:
+      page: "Page"
+      perPageText: "Show: "
+      pageText: "Pages: "
+      recordCountPageBoundTemplate: "{pageLowerBound} to {pageUpperBound} of"
+      recordCountPageUnboundedTemplate: "{recordsShown} of"
+      recordCountFilteredTemplate: " (filtered from {recordsTotal} total records)"
+      recordCountText: "Showing "
+      recordCountTemplate: "<span id='dynatable-record-count-{elementId}' class='dynatable-record-count'>{textTemplate}</span>"
+      processingText: "Processing..."
   settings:
     label:
       viewports: "Viewports"
@@ -49,6 +83,8 @@ aes:
       defaultplaceholder: "[please provide your content]"
       apisettings: "API Settings"
       api: "API"
+      permissions: "Permissions"
+      permissionssettings: "Permissions Settings"
     form:
       viewports:
         mobile: "Mobile View"

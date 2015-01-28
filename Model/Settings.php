@@ -29,7 +29,7 @@ class Settings
      *
      * @return self
      */
-    protected function setPositions($positions)
+    public function setPositions($positions)
     {
         $this->positions = $positions;
 

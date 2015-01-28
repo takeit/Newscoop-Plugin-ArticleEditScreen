@@ -3,14 +3,20 @@
 {% block admin_page_title_content %}{{ 'aes.name'|trans }} - {{ 'aes.settingstext'|trans }}{% endblock %}
 {% block admin_stylesheets %}
 <link rel="stylesheet" href="{{ Newscoop['WEBSITE_URL'] }}/bundles/newscoopnewscoop/css/bootstrap.css">
+<link rel="stylesheet" href="{{ asset('/bundles/newscoopnewscoop/css/jquery.dynatable.css') }}">
+<link rel="stylesheet" href="{{ asset('/bundles/newscoopnewscoop/css/bootstrap-custom.css') }}">
 <style>
 .font-fix {
     font-size: 13px;
+}
+th a, th a:hover {
+    color: #000;
 }
 </style>
 {% endblock %}
 {% block admin_scripts %}
 <script type="text/javascript" src="{{ Newscoop['WEBSITE_URL'] }}/bundles/newscoopnewscoop/js/popover.js"></script>
+<script src="{{ asset('/bundles/newscoopnewscoop/js/jquery.dynatable.js') }}"></script>
 {% endblock %}
 {% block admin_content %}
 {% if form_errors(form) %}
@@ -26,7 +32,7 @@
 </div>
 {% endfor %}
 {{ form_start(form) }}
-<div class="system_pref">
+<div class="system_pref font-fix">
     <div class="tabbable tabs-left">
     	<ul class="nav nav-tabs">
             <li class="active"><a href="#viewports" data-toggle="tab">{{ 'aes.settings.label.viewports'|trans }}</a></li>
@@ -37,6 +43,7 @@
             {% if hasPermission('plugin_editor_api') %}
             <li><a href="#api" data-toggle="tab">{{ 'aes.settings.label.api'|trans }}</a></li>
             {% endif %}
+            <li><a href="#permissions" data-toggle="tab">{{ 'aes.settings.label.permissions'|trans }}</a></li>
         </ul>
         <div class="tab-content">
             <div class="tab-pane active" id="viewports">
@@ -153,8 +160,33 @@
                 </dl>
             </div>
             {% endif %}
+            <div class="tab-pane" id="permissions">
+                <h3>{{ 'aes.settings.label.permissionssettings'|trans }}</h3><br>
+                {{ renderTip('aes.tippermissions'|trans) }}<br>
+                <dl>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table id="users-table" class="table table-bordered table-hover table-striped" style="word-wrap: break-word;">
+                        <thead>
+                          <tr>
+                            <th data-dynatable-no-sort="true" data-dynatable-column="toggle" style="width: 30px;"><input class="toggle-checkbox" type="checkbox"></th>
+                            <th data-dynatable-column="username">{{ 'aes.table.th.username'|trans }}</th>
+                            <th data-dynatable-column="first_name">{{ 'aes.table.th.firstname'|trans }}</th>
+                            <th data-dynatable-column="last_name">{{ 'aes.table.th.lastname'|trans }}</th>
+                            <th>{{ 'aes.table.th.email'|trans }}</th>
+                            <th data-dynatable-column="types" data-dynatable-no-sort="true">{{ 'aes.table.th.type'|trans }}</th>
+                            <th data-dynatable-column="updated">{{ 'aes.table.th.updated'|trans }}</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+                </dl>
+            </div>
             <div class="save-button-bar">
-                <button type="submit" class="save-button">{{ 'aes.btn.save'|trans }}</button>
+                <button type="submit" class="btn btn-sm btn-primary">{{ 'aes.btn.save'|trans }}</button>
             </div>
         </div>
 	</div>
@@ -179,5 +211,135 @@ popover($('#placeholder'), '{{ 'aes.popover.placeholder'|trans }}');
 popover($('#apiendpoint'), '{{ 'aes.popover.apiendpoint'|trans }}');
 popover($('#default_image_size'), '{{ 'aes.popover.imagesize'|trans }}');
 {% endif %}
+</script>
+<script type="text/javascript">
+    var dynatable = $('#users-table')
+    .dynatable({
+        inputs: {
+            paginationClass: 'pagination',
+            paginationActiveClass: 'current',
+            paginationDisabledClass: 'unavailable',
+            paginationPrev: '&laquo;',
+            paginationNext: '&raquo;',
+            pageText: '{{ 'aes.table.table_messages.page'|trans }}',
+            perPageText: '{{ 'aes.table.table_messages.perPageText'|trans }}',
+            pageText: '{{ 'aes.table.table_messages.pageText'|trans }}',
+            recordCountPageBoundTemplate: '{{ 'aes.table.table_messages.recordCountPageBoundTemplate'|trans }}',
+            recordCountPageUnboundedTemplate: '{{ 'aes.table.table_messages.recordCountPageUnboundedTemplate'|trans }}',
+            recordCountTotalTemplate: '{recordsQueryCount} {collectionName}',
+            recordCountFilteredTemplate: '{{ 'aes.table.table_messages.recordCountFilteredTemplate'|trans }}',
+            recordCountText: '{{ 'aes.table.table_messages.recordCountText'|trans }}',
+            recordCountTextTemplate: '{{ 'aes.table.table_messages.recordCountTextTemplate'|trans }}',
+            recordCountTemplate: '{{ 'aes.table.table_messages.recordCountTemplate'|trans }}',
+            processingText: '{{ 'aes.table.table_messages.processingText'|trans }}',
+        },
+        dataset: {
+            ajax: true,
+            ajaxUrl: Routing.generate('newscoop_editor_settings_loadusers'),
+            ajaxOnLoad: false,
+            records: [],
+            perPageDefault: 10,
+            perPageOptions: [10,20,50,100],
+        },
+        features: {
+            paginate: true,
+        },
+        writers: {
+            _cellWriter: function (column, record) {
+                if (column.id == 'toggle') {
+                    column.attributeWriter = function(record) {
+                        var checked = '';
+                        if (record.assigned) {
+                            checked = 'checked';
+                        }
+
+                        return '<input type="checkbox" '+checked+' name="index[]" value="'+record.id+'" class="table-checkbox">';
+                    }
+                }
+
+                if (column.id == 'updated') {
+                    column.attributeWriter = function(record) {
+                        return record.updated;
+                    }
+                }
+
+                var html = column.attributeWriter(record),
+                    td = '<td';
+
+                if (column.hidden || column.textAlign) {
+                  td += ' style="';
+                  // keep cells for hidden column headers hidden
+                  if (column.hidden) {
+                    td += 'display: none;';
+                  }
+                  // keep cells aligned as their column headers are aligned
+                  if (column.textAlign) {
+                    td += 'text-align: ' + column.textAlign + ';';
+                  }
+                  td += '"';
+                }
+                if (column.cssClass) {
+                  td += ' class="' + column.cssClass + '"';
+                }
+
+                return td + '>' + html + '</td>';
+            }
+        }
+    }).bind('dynatable:ajax:success', function (e, response) {
+        if (response.assignedAll) {
+            $('.toggle-checkbox').prop('checked', true);
+        } else {
+            $('.toggle-checkbox').prop('checked', false);
+        }
+    }).data('dynatable');
+
+    $('.toggle-checkbox').live('change', function() {
+        $(this).parents('table').find('.table-checkbox').prop('checked', this.checked);
+        if ($(this).prop("checked")) {
+            $.post(Routing.generate('newscoop_editor_settings_assignall'),
+                {'format': 'json'},
+                function(data, textStatus, jqXHR) {
+                    if (!data.status) {
+                        flashMessage('{{ 'aes.alerts.assigallnerror'|trans }}', 'error');
+                        return false;
+                    }
+                    dynatable.process();
+                    flashMessage('{{ 'aes.alerts.unassignedall'|trans }}');
+            });
+        } else {
+            $.post(Routing.generate('newscoop_editor_settings_unassignall'),
+                {'format': 'json'},
+                function(data, textStatus, jqXHR) {
+                    if (!data.status) {
+                        flashMessage('{{ 'aes.alerts.assignallerror'|trans }}', 'error');
+                        return false;
+                    }
+                    dynatable.process();
+                    flashMessage('{{ 'aes.alerts.unassignedall'|trans }}');
+            });
+        }
+    });
+
+    $('.table-checkbox').live('change', function(event) {
+        if (!$(this).prop("checked")) {
+            $.post(Routing.generate('newscoop_editor_settings_unassignuser', {userId: $(this).val()}), {'format': 'json'}, function(data, textStatus, jqXHR) {
+                if (!data.status) {
+                    flashMessage('{{ 'aes.alerts.unassignerror'|trans }}', 'error');
+                    return false;
+                }
+                dynatable.process();
+                flashMessage('{{ 'aes.alerts.unassigned'|trans }}');
+            });
+        } else {
+            $.post(Routing.generate('newscoop_editor_settings_assignuser', {userId: $(this).val()}), {'format': 'json'}, function(data, textStatus, jqXHR) {
+                if (!data.status) {
+                    flashMessage('{{ 'aes.alerts.assignerror'|trans }}', 'error');
+                    return false;
+                }
+                dynatable.process();
+                flashMessage('{{ 'aes.alerts.assigned'|trans }}');
+            });
+        }
+    });
 </script>
 {% endblock %}
