@@ -89,7 +89,7 @@ var dynatable = $('#users-table')
                         return false;
                     }
                     dynatable.process();
-                    flashMessage(Translator.trans('aes.alerts.unassignedall'));
+                    flashMessage(Translator.trans('aes.alerts.assignedall'));
             });
         } else {
             $.post(Routing.generate('newscoop_editor_settings_unassignall'),
