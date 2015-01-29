@@ -21,6 +21,13 @@ services:
         class: Newscoop\EditorBundle\Services\EditorService
         arguments:  ["@em", "@user", "@newscoop.cache"]
 
+    newscoop_editor.hooks.listener:
+        class: "Newscoop\EditorBundle\EventListener\EditorListener"
+        arguments: ["@newscoop.plugins.service", "@router", "@user", "@em"]
+        tags:
+          - { name: kernel.event_listener, event: newscoop_admin.editor, method: generateEditorLink }
+
+
     newscoop_editor.permissions.listener:
         class: Newscoop\EditorBundle\EventListener\PermissionsListener
         arguments:
