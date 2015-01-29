@@ -18,7 +18,7 @@ use Newscoop\Entity\User;
 class SettingsController extends Controller
 {
     /**
-     * @Route("/admin/editor_plugin/settings/", options={"expose":true}, name="newscoop_admin_aes_settings")
+     * @Route("/admin/editor_plugin/settings/", options={"expose"=true}, name="newscoop_admin_aes_settings")
      */
     public function indexAction(Request $request)
     {

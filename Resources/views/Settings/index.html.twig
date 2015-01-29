@@ -3,14 +3,20 @@
 {% block admin_page_title_content %}{{ 'aes.name'|trans }} - {{ 'aes.settingstext'|trans }}{% endblock %}
 {% block admin_stylesheets %}
 <link rel="stylesheet" href="{{ Newscoop['WEBSITE_URL'] }}/bundles/newscoopnewscoop/css/bootstrap.css">
+<link rel="stylesheet" href="{{ asset('/bundles/newscoopnewscoop/css/jquery.dynatable.css') }}">
+<link rel="stylesheet" href="{{ asset('/bundles/newscoopnewscoop/css/bootstrap-custom.css') }}">
 <style>
 .font-fix {
     font-size: 13px;
+}
+th a, th a:hover {
+    color: #000;
 }
 </style>
 {% endblock %}
 {% block admin_scripts %}
 <script type="text/javascript" src="{{ Newscoop['WEBSITE_URL'] }}/bundles/newscoopnewscoop/js/popover.js"></script>
+<script src="{{ asset('/bundles/newscoopnewscoop/js/jquery.dynatable.js') }}"></script>
 {% endblock %}
 {% block admin_content %}
 {% if form_errors(form) %}
@@ -26,7 +32,7 @@
 </div>
 {% endfor %}
 {{ form_start(form) }}
-<div class="system_pref">
+<div class="system_pref font-fix">
     <div class="tabbable tabs-left">
     	<ul class="nav nav-tabs">
             <li class="active"><a href="#viewports" data-toggle="tab">{{ 'aes.settings.label.viewports'|trans }}</a></li>
@@ -36,6 +42,9 @@
             <li><a href="#placeholders" data-toggle="tab">{{ 'aes.settings.label.placeholders'|trans }}</a></li>
             {% if hasPermission('plugin_editor_api') %}
             <li><a href="#api" data-toggle="tab">{{ 'aes.settings.label.api'|trans }}</a></li>
+            {% endif %}
+            {% if hasPermission('plugin_editor_permissions') %}
+            <li><a href="#permissions" data-toggle="tab">{{ 'aes.settings.label.permissions'|trans }}</a></li>
             {% endif %}
         </ul>
         <div class="tab-content">
@@ -153,8 +162,35 @@
                 </dl>
             </div>
             {% endif %}
+            {% if hasPermission('plugin_editor_permissions') %}
+            <div class="tab-pane" id="permissions">
+                <h3>{{ 'aes.settings.label.permissionssettings'|trans }}</h3><br>
+                {{ renderTip('aes.tippermissions'|trans) }}<br>
+                <dl>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table id="users-table" class="table table-bordered table-hover table-striped" style="word-wrap: break-word;">
+                        <thead>
+                          <tr>
+                            <th data-dynatable-no-sort="true" data-dynatable-column="toggle" style="width: 30px;"><input class="toggle-checkbox" type="checkbox"></th>
+                            <th data-dynatable-column="username">{{ 'aes.table.th.username'|trans }}</th>
+                            <th data-dynatable-column="first_name">{{ 'aes.table.th.firstname'|trans }}</th>
+                            <th data-dynatable-column="last_name">{{ 'aes.table.th.lastname'|trans }}</th>
+                            <th>{{ 'aes.table.th.email'|trans }}</th>
+                            <th data-dynatable-column="types" data-dynatable-no-sort="true">{{ 'aes.table.th.type'|trans }}</th>
+                            <th data-dynatable-column="updated">{{ 'aes.table.th.updated'|trans }}</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+                </dl>
+            </div>
+            {% endif %}
             <div class="save-button-bar">
-                <button type="submit" class="save-button">{{ 'aes.btn.save'|trans }}</button>
+                <button type="submit" class="btn btn-sm btn-primary">{{ 'aes.btn.save'|trans }}</button>
             </div>
         </div>
 	</div>
@@ -167,17 +203,20 @@ function popover(target, content) {
         content : content
     });
 };
-popover($('#mobileview'), '{{ 'aes.popover.mobileview'|trans }}');
-popover($('#desktopview'), '{{ 'aes.popover.desktopview'|trans }}');
-popover($('#tabletview'), '{{ 'aes.popover.tabletview'|trans }}');
-popover($('#imagesmall'), '{{ 'aes.popover.imagesmall'|trans }}');
-popover($('#imagemedium'), '{{ 'aes.popover.imagemedium'|trans }}');
-popover($('#imagelarge'), '{{ 'aes.popover.imagelarge'|trans }}');
-popover($('#showswitches'), '{{ 'aes.popover.showswitches'|trans }}');
-popover($('#placeholder'), '{{ 'aes.popover.placeholder'|trans }}');
+popover($('#mobileview'), Translator.trans('aes.popover.mobileview'));
+popover($('#desktopview'), Translator.trans('aes.popover.desktopview'));
+popover($('#tabletview'), Translator.trans('aes.popover.tabletview'));
+popover($('#imagesmall'), Translator.trans('aes.popover.imagesmall'));
+popover($('#imagemedium'), Translator.trans('aes.popover.imagemedium'));
+popover($('#imagelarge'), Translator.trans('aes.popover.imagelarge'));
+popover($('#showswitches'), Translator.trans('aes.popover.showswitches'));
+popover($('#placeholder'), Translator.trans('aes.popover.placeholder'));
 {% if hasPermission('plugin_editor_api') %}
-popover($('#apiendpoint'), '{{ 'aes.popover.apiendpoint'|trans }}');
-popover($('#default_image_size'), '{{ 'aes.popover.imagesize'|trans }}');
+popover($('#apiendpoint'), Translator.trans('aes.popover.apiendpoint'));
+popover($('#default_image_size'), Translator.trans('aes.popover.imagesize'));
 {% endif %}
 </script>
+{% if hasPermission('plugin_editor_permissions') %}
+<script src="{{ asset('/bundles/newscoopeditor/js/permissions.js') }}"></script>
+{% endif %}
 {% endblock %}
