@@ -83,6 +83,14 @@
                     <dd>
                         {{ form_widget(form.imagelarge, {'attr' : {'class' : 'input_text'}}) }} %
                     </dd>
+                    {% if hasPermission('plugin_editor_api') %}
+                    <dt>
+                        <label>{{ form_label(form.default_image_size) }}: <small id="default_image_size">(?)</small></label>
+                    </dt>
+                    <dd>
+                        {{ form_widget(form.default_image_size, {'attr' : {'class' : 'input_select', 'style' : 'min-width: 0px;'}}) }}
+                    </dd>
+                    {% endif %}
                 </dl>
             </div>
             <div class="tab-pane" id="title">
@@ -167,6 +175,9 @@ popover($('#imagemedium'), '{{ 'aes.popover.imagemedium'|trans }}');
 popover($('#imagelarge'), '{{ 'aes.popover.imagelarge'|trans }}');
 popover($('#showswitches'), '{{ 'aes.popover.showswitches'|trans }}');
 popover($('#placeholder'), '{{ 'aes.popover.placeholder'|trans }}');
+{% if hasPermission('plugin_editor_api') %}
 popover($('#apiendpoint'), '{{ 'aes.popover.apiendpoint'|trans }}');
+popover($('#default_image_size'), '{{ 'aes.popover.imagesize'|trans }}');
+{% endif %}
 </script>
 {% endblock %}

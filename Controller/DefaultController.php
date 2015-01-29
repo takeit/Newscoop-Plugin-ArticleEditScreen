@@ -12,7 +12,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Doctrine\Common\Collections\ArrayCollection;
 
@@ -74,13 +73,16 @@ class DefaultController extends Controller
         $userSettings = $editorService->getSettingsByUser($user);
 
         $client = $em->getRepository('\Newscoop\GimmeBundle\Entity\Client')->findOneByName('newscoop_aes_'.$preferencesService->SiteSecretKey);
-        $settigns = $this->createSettingsJson($request, $userSettings, $client);
+        $articleInfo = array(
+            'articleNumber' => $articleNumber,
+            'language' => $language,
+        );
+
+        $settings = $this->createSettingsJson($request, $userSettings, $client, $articleInfo);
 
         return $this->render("NewscoopEditorBundle:Default:admin.html.twig", array(
             'clientId' => $client->getPublicId(),
-            'articleNumber' => $articleNumber,
-            'language' => $language,
-            'userSettings' => $settigns
+            'userSettings' => $settings
         ));
     }
 
@@ -90,14 +92,16 @@ class DefaultController extends Controller
      * @param Request                            $request      Request object
      * @param array                              $userSettings $userSettings
      * @param Newscoop\GimmeBundle\Entity\Client $client       OAuth client
+     * @param array                              $articleInfo  Article data
      *
      * @return string JSON string
      */
-    private function createSettingsJson(Request $request, $userSettings, $client)
+    private function createSettingsJson(Request $request, $userSettings, $client, $articleInfo)
     {
         $redirectUris = $client->getRedirectUris();
         $types = $this->createArticleTypesSettings($userSettings['positions']);
         $settings = array(
+            'articleInfo' => $articleInfo,
             'API' => array(
                 'rootURI' => $request->getUriForPath(null),
                 'endpoint' => $userSettings["apiendpoint"],
@@ -123,6 +127,7 @@ class DefaultController extends Controller
                 ),
                 'float' => 'none'
             ),
+            'image_size' => $userSettings["default_image_size"],
             'placeholder' => $userSettings['placeholder'],
             'showSwitches' => filter_var($userSettings['showswitches'], FILTER_VALIDATE_BOOLEAN),
             'articleTypeFields' => $types

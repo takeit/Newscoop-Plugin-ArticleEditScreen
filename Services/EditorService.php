@@ -67,7 +67,7 @@ class EditorService
         foreach ($settings as $option => $value) {
             $setting = $this->getSingleSettingByUserAndOption($user, $option);
             if (!$setting) {
-                $this->updateOrCreateSetting($option, $value);
+                $this->updateOrCreateSetting($option, $value, $user);
 
                 continue;
             }
@@ -75,6 +75,7 @@ class EditorService
             if ($setting->getValue() != $value) {
                 $setting->setValue($value);
             }
+
         }
 
         $this->em->flush();
@@ -144,10 +145,11 @@ class EditorService
      *
      * @param string     $option Option
      * @param string|int $value  Value
+     * @param User       $user   User
      *
      * @return void
      */
-    private function updateOrCreateSetting($option, $value)
+    private function updateOrCreateSetting($option, $value, $user)
     {
         $qb = $this->em->createQueryBuilder();
         $setting = $qb
@@ -159,7 +161,7 @@ class EditorService
             ->getQuery()
             ->getOneOrNullResult();
 
-        if ($setting) {
+        if ($setting && $setting->getIsGlobal()) {
             $setting->setValue($value);
 
             return;

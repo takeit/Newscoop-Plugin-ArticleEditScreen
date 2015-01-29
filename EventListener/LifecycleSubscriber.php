@@ -101,10 +101,27 @@ class LifecycleSubscriber implements EventSubscriberInterface
             'imagemedium' => 50,
             'imagelarge' => 100,
             'showswitches' => true,
-            'placeholder' => $this->translator->trans("aes.settings.label.defaultplaceholder"),
-            'apiendpoint' => "/api",
+            'placeholder' => $this->translator->trans("aes.settings.label.defaultplaceholder")
         );
 
+        $globalSettings = array(
+            'apiendpoint' => "/api",
+            'default_image_size' => 'medium'
+        );
+
+        $this->setUpSettings($settings);
+        $this->setUpSettings($globalSettings, true);
+    }
+
+    /**
+     * Setting up new default settings, when isGlobal is set to true for given setting,
+     * there will be the possibility to change this setting for all users.
+     *
+     * @param array   $settings Array of settings
+     * @param boolean $isGlobal If edit settings for all users
+     */
+    private function setUpSettings($settings, $isGlobal = false)
+    {
         $qb = $this->em->createQueryBuilder();
         foreach ($settings as $option => $value) {
             $setting = $this->em->getRepository('Newscoop\EditorBundle\Entity\Settings')
@@ -121,6 +138,7 @@ class LifecycleSubscriber implements EventSubscriberInterface
                 $setting->setOption($option);
                 $setting->setValue($value);
                 $setting->setUser(null);
+                $setting->setIsGlobal($isGlobal);
                 $this->em->persist($setting);
             } else {
                 $setting->setValue($value);
