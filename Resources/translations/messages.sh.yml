@@ -5,6 +5,14 @@ aes:
         notfound: null
         notfoundHead: null
         saved: null
+        assignedall: 'All users have been unassigned successfully'
+        assigned: 'User has been assigned successfully'
+        unassigned: 'User has been unassigned successfully'
+        assignerror: 'Could not assign this user!'
+        unassignerror: 'Could not unassign this user!'
+        assignallerror: 'Could not assign all users!'
+        unassignallerror: 'Could not unassign all users!'
+        unassignedall: 'All users have been unassigned successfully'
     fields:
         title: Naslov
     btn:
@@ -13,11 +21,14 @@ aes:
         view: Prikaz
         save: Snimi
     tip: null
+    tippermissions: 'User permissions tip...'
     name: null
     settingstext: Podešavanja
+    none: None
     permissions:
         api: null
         defaultsettings: null
+        permissions: 'Assing/unassign users to the plugin'
     popover:
         mobileview: null
         tabletview: null
@@ -28,6 +39,28 @@ aes:
         showswitches: null
         placeholder: null
         apiendpoint: null
+        imagesize: 'Default image size popover...'
+    table:
+        th:
+            username: Username
+            updated: 'Last modified'
+            firstname: 'First name'
+            lastname: 'Last name'
+            type: 'User type'
+            email: E-mail
+        actions:
+            actions: Actions
+            assign: Assign
+        confirm_remove: 'You realy want to remove this user?'
+        table_messages:
+            page: Page
+            perPageText: 'Show: '
+            pageText: 'Pages: '
+            to: to
+            of: of
+            recordCountFilteredTemplate: ' (filtered from %totalRecords% total records)'
+            recordCountText: 'Showing '
+            processingText: Processing...
     settings:
         label:
             viewports: null
@@ -48,6 +81,8 @@ aes:
             defaultplaceholder: null
             apisettings: null
             api: null
+            permissions: Permissions
+            permissionssettings: 'Permissions Settings'
         form:
             viewports:
                 mobile: null
@@ -67,3 +102,8 @@ aes:
             placeholder: null
             defaultplaceholder: null
             apiendpoint: null
+            defaultimagesize: 'Default image size'
+            imagesize:
+                small: small
+                medium: medium
+                big: big
