@@ -1,0 +1,222 @@
+{% extends 'NewscoopNewscoopBundle::admin_layout.html.twig' %}
+{% block admin_title %}{{ parent() }} - {{ 'aes.name'|trans }}{% endblock %}
+{% block admin_page_title_content %}{{ 'aes.name'|trans }} - {{ 'aes.settingstext'|trans }}{% endblock %}
+{% block admin_stylesheets %}
+<link rel="stylesheet" href="{{ Newscoop['WEBSITE_URL'] }}/bundles/newscoopnewscoop/css/bootstrap.css">
+<link rel="stylesheet" href="{{ asset('/bundles/newscoopnewscoop/css/jquery.dynatable.css') }}">
+<link rel="stylesheet" href="{{ asset('/bundles/newscoopnewscoop/css/bootstrap-custom.css') }}">
+<style>
+.font-fix {
+    font-size: 13px;
+}
+th a, th a:hover {
+    color: #000;
+}
+</style>
+{% endblock %}
+{% block admin_scripts %}
+<script type="text/javascript" src="{{ Newscoop['WEBSITE_URL'] }}/bundles/newscoopnewscoop/js/popover.js"></script>
+<script src="{{ asset('/bundles/newscoopnewscoop/js/jquery.dynatable.js') }}"></script>
+{% endblock %}
+{% block admin_content %}
+{% if form_errors(form) %}
+ <div class="alert alert-danger alert-dismissible font-fix" role="alert">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">{{ 'aes.btn.close'|trans}}</span></button>
+  {{ form_errors(form) }}
+</div>
+{% endif %}
+{% for flashMessage in app.session.flashbag.get('success') %}
+<div class="alert alert-success alert-dismissible font-fix" role="alert">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">{{ 'aes.btn.close'|trans}}</span></button>
+  <center>{{ flashMessage }}</center>
+</div>
+{% endfor %}
+{{ form_start(form) }}
+<div class="system_pref font-fix">
+    <div class="tabbable tabs-left">
+    	<ul class="nav nav-tabs">
+            <li class="active"><a href="#viewports" data-toggle="tab">{{ 'aes.settings.label.viewports'|trans }}</a></li>
+            <li><a href="#images" data-toggle="tab">{{ 'aes.settings.label.images'|trans }}</a></li>
+            <li><a href="#title" data-toggle="tab">{{ 'aes.settings.label.title'|trans }}</a></li>
+            <li><a href="#switches" data-toggle="tab">{{ 'aes.settings.label.switches'|trans }}</a></li>
+            <li><a href="#placeholders" data-toggle="tab">{{ 'aes.settings.label.placeholders'|trans }}</a></li>
+            {% if hasPermission('plugin_editor_api') %}
+            <li><a href="#api" data-toggle="tab">{{ 'aes.settings.label.api'|trans }}</a></li>
+            {% endif %}
+            {% if hasPermission('plugin_editor_permissions') %}
+            <li><a href="#permissions" data-toggle="tab">{{ 'aes.settings.label.permissions'|trans }}</a></li>
+            {% endif %}
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="viewports">
+            	<h3>{{ 'aes.settings.label.viewportssettings'|trans }}</h3>
+                <dl>
+                    <dt>
+                        <label>{{ form_label(form.mobileview) }}: <small id="mobileview">(?)</small></label>
+                    </dt>
+                    <dd>
+                        {{ form_widget(form.mobileview, {'attr' : {'class' : 'input_text'}}) }} {{ 'aes.settings.label.pixels'|trans }}
+                    </dd>
+                    <dt>
+                        <label>{{ form_label(form.tabletview) }}: <small id="tabletview">(?)</small></label>
+                    </dt>
+                    <dd>
+                        {{ form_widget(form.tabletview, {'attr' : {'class' : 'input_text'}}) }} {{ 'aes.settings.label.pixels'|trans }}
+                    </dd>
+                    <dt>
+                        <label>{{ form_label(form.desktopview) }}: <small id="desktopview">(?)</small></label>
+                    </dt>
+                    <dd>
+                        {{ form_widget(form.desktopview, {'attr' : {'class' : 'input_text'}}) }} {{ 'aes.settings.label.pixels'|trans }}
+                    </dd>
+                </dl>
+            </div>
+            <div class="tab-pane" id="images">
+            	<h3>{{ 'aes.settings.label.imagessettings'|trans }}</h3>
+                <dl>
+                    <dt>
+                        <label>{{ form_label(form.imagesmall) }}: <small id="imagesmall">(?)</small></label>
+                    </dt>
+                    <dd>
+                        {{ form_widget(form.imagesmall, {'attr' : {'class' : 'input_text'}}) }} %
+                    </dd>
+                   	<dt>
+                        <label>{{ form_label(form.imagemedium) }}: <small id="imagemedium">(?)</small></label>
+                    </dt>
+                    <dd>
+                        {{ form_widget(form.imagemedium, {'attr' : {'class' : 'input_text'}}) }} %
+                    </dd>
+                    <dt>
+                        <label>{{ form_label(form.imagelarge) }}: <small id="imagelarge">(?)</small></label>
+                    </dt>
+                    <dd>
+                        {{ form_widget(form.imagelarge, {'attr' : {'class' : 'input_text'}}) }} %
+                    </dd>
+                    {% if hasPermission('plugin_editor_api') %}
+                    <dt>
+                        <label>{{ form_label(form.default_image_size) }}: <small id="default_image_size">(?)</small></label>
+                    </dt>
+                    <dd>
+                        {{ form_widget(form.default_image_size, {'attr' : {'class' : 'input_select', 'style' : 'min-width: 0px;'}}) }}
+                    </dd>
+                    {% endif %}
+                </dl>
+            </div>
+            <div class="tab-pane" id="title">
+            	<h3>{{ 'aes.settings.label.titlesettings'|trans }}</h3>
+                <table class="table table-hover" style="font-size: 13px;">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>{{ 'aes.settings.label.articletype'|trans }}</th>
+                      <th>{{ 'aes.settings.form.title.position'|trans }}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for pos in form.positions %}
+                    <tr>
+                      <td>{{ loop.index }}</td>
+                      <td>{{ pos.vars.value.articleTypeName }}</td>
+                      <td>
+                        {{ form_widget(pos.titlePosition, {'attr' : {'class' : 'input_select'}}) }}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+                {{ renderTip('aes.tip'|trans) }}
+                <br>
+            </div>
+            <div class="tab-pane" id="switches">
+            	<h3>{{ 'aes.settings.label.switchessettings'|trans }}</h3>
+                <dl>
+                    <dt>
+                        <label>{{ form_label(form.showswitches) }}: <small id="showswitches">(?)</small></label>
+                    </dt>
+                    <dd>
+                        {{ form_widget(form.showswitches) }}
+                    </dd>
+                </dl>
+            </div>
+           	<div class="tab-pane" id="placeholders">
+            	<h3>{{ 'aes.settings.label.placeholdersettings'|trans }}</h3>
+                <dl>
+                    <dt>
+                        <label>{{ form_label(form.placeholder) }}: <small id="placeholder">(?)</small></label>
+                    </dt>
+                    <dd>
+                        {{ form_widget(form.placeholder, {'attr' : {'class' : 'input_select'}}) }}
+                    </dd>
+                </dl>
+            </div>
+            {% if hasPermission('plugin_editor_api') %}
+            <div class="tab-pane" id="api">
+                <h3>{{ 'aes.settings.label.apisettings'|trans }}</h3>
+                <dl>
+                    <dt>
+                        <label>{{ form_label(form.apiendpoint) }}: <small id="apiendpoint">(?)</small></label>
+                    </dt>
+                    <dd>
+                        {{ form_widget(form.apiendpoint, {'attr' : {'class' : 'input_select'}}) }}
+                    </dd>
+                </dl>
+            </div>
+            {% endif %}
+            {% if hasPermission('plugin_editor_permissions') %}
+            <div class="tab-pane" id="permissions">
+                <h3>{{ 'aes.settings.label.permissionssettings'|trans }}</h3><br>
+                {{ renderTip('aes.tippermissions'|trans) }}<br>
+                <dl>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table id="users-table" class="table table-bordered table-hover table-striped" style="word-wrap: break-word;">
+                        <thead>
+                          <tr>
+                            <th data-dynatable-no-sort="true" data-dynatable-column="toggle" style="width: 30px;"><input class="toggle-checkbox" type="checkbox"></th>
+                            <th data-dynatable-column="username">{{ 'aes.table.th.username'|trans }}</th>
+                            <th data-dynatable-column="first_name">{{ 'aes.table.th.firstname'|trans }}</th>
+                            <th data-dynatable-column="last_name">{{ 'aes.table.th.lastname'|trans }}</th>
+                            <th>{{ 'aes.table.th.email'|trans }}</th>
+                            <th data-dynatable-column="types" data-dynatable-no-sort="true">{{ 'aes.table.th.type'|trans }}</th>
+                            <th data-dynatable-column="updated">{{ 'aes.table.th.updated'|trans }}</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+                </dl>
+            </div>
+            {% endif %}
+            <div class="save-button-bar">
+                <button type="submit" class="btn btn-sm btn-primary">{{ 'aes.btn.save'|trans }}</button>
+            </div>
+        </div>
+	</div>
+</div>
+{{ form_end(form) }}
+<script type="text/javascript">
+function popover(target, content) {
+    target.popover({
+        trigger: 'hover',
+        content : content
+    });
+};
+popover($('#mobileview'), Translator.trans('aes.popover.mobileview'));
+popover($('#desktopview'), Translator.trans('aes.popover.desktopview'));
+popover($('#tabletview'), Translator.trans('aes.popover.tabletview'));
+popover($('#imagesmall'), Translator.trans('aes.popover.imagesmall'));
+popover($('#imagemedium'), Translator.trans('aes.popover.imagemedium'));
+popover($('#imagelarge'), Translator.trans('aes.popover.imagelarge'));
+popover($('#showswitches'), Translator.trans('aes.popover.showswitches'));
+popover($('#placeholder'), Translator.trans('aes.popover.placeholder'));
+{% if hasPermission('plugin_editor_api') %}
+popover($('#apiendpoint'), Translator.trans('aes.popover.apiendpoint'));
+popover($('#default_image_size'), Translator.trans('aes.popover.imagesize'));
+{% endif %}
+</script>
+{% if hasPermission('plugin_editor_permissions') %}
+<script src="{{ asset('/bundles/newscoopeditor/js/permissions.js') }}"></script>
+{% endif %}
+{% endblock %}
