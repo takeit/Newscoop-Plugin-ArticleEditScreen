@@ -10,28 +10,30 @@
                 <button class="btn btn-sf-invisible" ng-click="paneRelatedArticles.showAddFilter = !paneRelatedArticles.showAddFilter">
                 <span class="glyphicon" ng-class="{'glyphicon-plus': !paneRelatedArticles.showAddFilter,
                              'glyphicon-minus': paneRelatedArticles.showAddFilter}"></span>
-                <span class="add-text">FILTER ARTICLES</span>
+                <span class="add-text">ADVANCED FILTER</span>
                 </button>
             </div>
 
-            <div ng-show="paneRelatedArticles.showAddFilter" class="filters">
+            <div class="filters">
                 <form ng-submit="paneRelatedArticles.loadSearchResults()">
-                    <select ng-model="paneRelatedArticles.publicationFilter" ng-options="publication.name for publication in paneRelatedArticles.availablePublications" ng-change="paneRelatedArticles.loadAvailableFilters()">
-                        <option value="" class="">-- Publication --</option>
-                    </select>
-                    <select ng-model="paneRelatedArticles.issueFilter" ng-options="issue.title for issue in paneRelatedArticles.availableIssues" ng-change="paneRelatedArticles.loadAvailableFilters()">
-                        <option value="" class="">-- Issue --</option>
-                    </select>
-                    <select ng-model="paneRelatedArticles.sectionFilter" ng-options="section.title for section in paneRelatedArticles.availableSections">
-                        <option value="" class="">-- Section --</option>
-                    </select>
+                    <div ng-show="paneRelatedArticles.showAddFilter">
+                        <select ng-model="paneRelatedArticles.publicationFilter" ng-options="publication.name for publication in paneRelatedArticles.availablePublications" ng-change="paneRelatedArticles.loadAvailableFilters()">
+                            <option value="" class="">-- Publication --</option>
+                        </select>
+                        <select ng-model="paneRelatedArticles.issueFilter" ng-options="issue.title for issue in paneRelatedArticles.availableIssues" ng-change="paneRelatedArticles.loadAvailableFilters()">
+                            <option value="" class="">-- Issue --</option>
+                        </select>
+                        <select ng-model="paneRelatedArticles.sectionFilter" ng-options="section.title for section in paneRelatedArticles.availableSections">
+                            <option value="" class="">-- Section --</option>
+                        </select>
+                    </div>
                     <div class="input-group">
                         <input type="text" class="editor-input" ng-model="paneRelatedArticles.query" placeholder="Search">
                         <div class="remove" title="Remove" ng-click="paneRelatedArticles.clearSearch()">
                             <span class="glyphicon glyphicon-remove"></span>
                         </div>
                         <span class="input-group-btn">
-                            <button ng-disabled="!paneRelatedArticles.query" class="btn btn-primary btn-sm" type="submit">Filter</button>
+                            <button ng-disabled="!paneRelatedArticles.query || !paneRelatedArticles.articlesSearchResultsListRetrieved" class="btn btn-primary btn-sm" type="submit">Filter</button>
                         </span>
                     </div>
                 </form>
@@ -44,8 +46,12 @@
 
                 <!-- pinned -->
                 <div class="group">
-                    <div class="title">Pinned articles</div>
-                    <div class="related-articles-list" drag-sort="" items="paneRelatedArticles.assignedRelatedArticles" on-order-changed="paneRelatedArticles.orderChange(affectedItem, newIndex)">
+                    <div class="title pinned" ng-click="showPinnedArticles = !showPinnedArticles">
+                       <span class="glyphicon" ng-class="{'glyphicon-chevron-right': !showPinnedArticles,
+                                        'glyphicon-chevron-down': showPinnedArticles}">
+                        </span> Pinned articles
+                    </div>
+                    <div class="related-articles-list" ng-show="showPinnedArticles" drag-sort="" items="paneRelatedArticles.assignedRelatedArticles" on-order-changed="paneRelatedArticles.orderChange(affectedItem, newIndex)">
                         <div ng-repeat="article in paneRelatedArticles.assignedRelatedArticles track by article.articleId" class="related-article pinned">
                             <div class="drag-bar"></div>
                             <div class="remove" title="Remove" ng-click="paneRelatedArticles.confirmUnassignRelatedArticle(article)">
@@ -65,7 +71,7 @@
 
                 <!-- search results -->
                 <div class="group">
-                    <div class="title">Search results</div>
+                    <div class="title"><span class="glyphicon glyphicon-search"></span> Search results</div>
                     <!-- loader -->
                     <div ng-hide="paneRelatedArticles.articlesSearchResultsListRetrieved" class="load-anim">
                         <div class="rect1"></div>
