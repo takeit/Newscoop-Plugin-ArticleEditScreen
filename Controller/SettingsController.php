@@ -25,6 +25,7 @@ class SettingsController extends Controller
         $editorService = $this->get('newscoop_editor.editor_service');
         $userService = $this->get('user');
         $em = $this->get('em');
+        $cacheService = $this->get('newscoop.cache');
         $translator = $this->get('translator');
         $user = $userService->getCurrentUser();
 
@@ -43,6 +44,7 @@ class SettingsController extends Controller
             if ($form->isValid()) {
                 $data = $form->getData();
                 $editorService->addSettings($data, $user);
+                $cacheService->clearNamespace('editor_title_position');
                 $this->get('session')->getFlashBag()->add('success', $translator->trans('aes.alerts.saved'));
 
                 return $this->redirect($this->generateUrl('newscoop_admin_aes_settings'));

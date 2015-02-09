@@ -48,8 +48,18 @@ class PermissionsController extends Controller
         $criteria->is_public = null;
         $registered = $userService->countBy(array('status' => User::STATUS_ACTIVE));
         $pending = $userService->countBy(array('status' => User::STATUS_INACTIVE));
-        $cacheKey = array('users__'.md5(serialize($criteria)), $registered, $pending);
+        $assigned = $em->getRepository('Newscoop\EditorBundle\Entity\Permissions')->createQueryBuilder('p')
+            ->select('count(p)')
+            ->where('p.isAssigned = true')
+            ->getQuery()
+            ->getSingleScalarResult();
         $criteria->is_author = true;
+        $cacheKey = $cacheService->getCacheKey(array('users_permissions__'.md5(serialize($criteria)),
+            $registered,
+            $pending,
+            $assigned
+        ), 'editor_plugin_permissions');
+
         if ($cacheService->contains($cacheKey)) {
             $users = $cacheService->fetch($cacheKey);
         } else {
@@ -138,12 +148,14 @@ class PermissionsController extends Controller
     {
         $this->checkPermissions();
         $em = $this->get('em');
+        $cacheService = $this->get('newscoop.cache');
         $users = $this->getUsersArrayByCriteria($request);
         foreach ($users as $key => $user) {
             $this->assignOrCreatePermission($user['id']);
         }
 
         $em->flush();
+        $cacheService->clearNamespace('editor_plugin_permissions');
 
         return new JsonResponse(array(
             'status' => true
@@ -157,12 +169,14 @@ class PermissionsController extends Controller
     {
         $this->checkPermissions();
         $em = $this->get('em');
+        $cacheService = $this->get('newscoop.cache');
         $users = $this->getUsersArrayByCriteria($request);
         foreach ($users as $key => $user) {
             $this->unassignSingleUser($user['id']);
         }
 
         $em->flush();
+        $cacheService->clearNamespace('editor_plugin_permissions');
 
         return new JsonResponse(array(
             'status' => true
@@ -192,9 +206,11 @@ class PermissionsController extends Controller
         $this->checkPermissions();
         $status = false;
         $em = $this->get('em');
+        $cacheService = $this->get('newscoop.cache');
         if ($this->unassignSingleUser($userId)) {
             $status = true;
             $em->flush();
+            $cacheService->clearNamespace('editor_plugin_permissions');
         }
 
         return new JsonResponse(array(
@@ -209,8 +225,10 @@ class PermissionsController extends Controller
     {
         $this->checkPermissions();
         $em = $this->get('em');
+        $cacheService = $this->get('newscoop.cache');
         try {
             $this->assignOrCreatePermission($userId);
+            $cacheService->clearNamespace('editor_plugin_permissions');
             $em->flush();
         } catch (\Exception $e) {
             return new JsonResponse(array(

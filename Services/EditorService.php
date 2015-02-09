@@ -356,7 +356,7 @@ class EditorService
     public function generatePositions(Position $positionObject)
     {
         $repository = $this->em->getRepository('Newscoop\Entity\ArticleTypeField');
-        $cacheKey = $this->cacheService->getCacheKey(array('ArticleTypeField', $positionObject->getName()), 'article_type');
+        $cacheKey = $this->cacheService->getCacheKey(array('ArticleTypeField', $positionObject->getName()), 'editor_title_position');
         $choicesArray = array();
         if ($this->cacheService->contains($cacheKey)) {
             $choicesArray = $this->cacheService->fetch($cacheKey);
