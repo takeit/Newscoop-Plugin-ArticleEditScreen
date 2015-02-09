@@ -23,6 +23,7 @@ aes:
     save: "Save"
   tip: "Title positions explanation..."
   tippermissions: "User permissions tip..."
+  stylestip: "Custom styles tip..."
   name: "Editor"
   settingstext: "Settings"
   none: "None"
@@ -30,6 +31,7 @@ aes:
     api: "Configure API permissions"
     defaultsettings: "Configure default settings"
     permissions: "Assing/unassign users to the plugin"
+    styles: "Edit CSS stylesheet"
   popover:
     mobileview: "Mobile view popover..."
     tabletview: "Tablet view popover..."
@@ -84,6 +86,9 @@ aes:
       api: "API"
       permissions: "Permissions"
       permissionssettings: "Permissions Settings"
+      customstyle: "AES custom stylesheet"
+      styles: "Custom styles"
+      stylesettings: "Custom styles Settings"
     form:
       viewports:
         mobile: "Mobile View"

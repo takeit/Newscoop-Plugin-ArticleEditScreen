@@ -361,16 +361,7 @@ class EditorService
         if ($this->cacheService->contains($cacheKey)) {
             $choicesArray = $this->cacheService->fetch($cacheKey);
         } else {
-            $articleTypesFields = $this->em->getRepository('Newscoop\Entity\ArticleTypeField')
-                ->getFieldsForType($positionObject)
-                ->getArrayResult();
-
-            foreach ($articleTypesFields as $key => $value) {
-                if (null === $value['showInEditor'] || 0 === $value['showInEditor']) {
-                     unset($articleTypesFields[$key]);
-                }
-            }
-
+            $articleTypesFields = $this->getAvailableArticleTypeFields($positionObject);
             for ($i = 1; $i < count($articleTypesFields) + 2; $i++) {
                 $choicesArray[$i] = $i;
             }

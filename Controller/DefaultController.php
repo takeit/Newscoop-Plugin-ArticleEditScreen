@@ -79,10 +79,15 @@ class DefaultController extends Controller
         );
 
         $settings = $this->createSettingsJson($request, $userSettings, $client, $articleInfo);
+        $styles = $em->getRepository("Newscoop\EditorBundle\Entity\Settings")->findOneBy(array(
+            'option' => 'css_custom_style',
+            'isGlobal' => true
+        ));
 
         return $this->render("NewscoopEditorBundle:Default:admin.html.twig", array(
             'clientId' => $client->getPublicId(),
-            'userSettings' => $settings
+            'userSettings' => $settings,
+            'custom_styles' => $styles->getValue()
         ));
     }
 

@@ -107,7 +107,8 @@ class LifecycleSubscriber implements EventSubscriberInterface
 
         $globalSettings = array(
             'apiendpoint' => "/api",
-            'default_image_size' => 'medium'
+            'default_image_size' => 'medium',
+            'css_custom_style' => '/* '.$this->translator->trans('aes.settings.label.customstyle').' */'
         );
 
         $this->setUpSettings($settings);
