@@ -39,6 +39,7 @@ class PermissionsListener
          $event->registerPermissions($this->translator->trans('aes.name'), array(
             'plugin_editor_api' => $this->translator->trans('aes.permissions.api'),
             'plugin_editor_permissions' => $this->translator->trans('aes.permissions.permissions'),
+            'plugin_editor_styles' => $this->translator->trans('aes.permissions.styles'),
          ));
      }
  }

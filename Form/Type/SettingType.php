@@ -165,6 +165,13 @@ class SettingType extends AbstractType
                     'empty_value'  => null
                 ));
             }
+
+            if ($user->hasPermission("plugin_editor_styles")) {
+                $builder->add('css_custom_style', 'textarea', array(
+                    'error_bubbling' => true,
+                    'required' => false
+                ));
+            }
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
