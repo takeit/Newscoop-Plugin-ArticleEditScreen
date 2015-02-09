@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/plugin.css">
     <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
     <script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
+    <script src="{{ asset('bundles/bazingajstranslation/js/translator.min.js') }}"></script>
+    <script src="{{ url('bazinga_jstranslation_js') }}?locales={{ localeFromCookie }}"></script>
     <script type="text/javascript">
       var AES_SETTINGS = {{ userSettings|raw }};
     </script>
@@ -91,7 +93,6 @@
     var ngAlohaEditorConfig = { baseUrl: 'bower_components/ng-aloha-editor/' };
     </script>
 
-    
         <script src="scripts/modules.js"></script>
 
         <script src="scripts/scripts.js"></script>

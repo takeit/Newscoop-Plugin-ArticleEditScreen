@@ -1,33 +1,66 @@
 aes:
     alerts:
-        lockedHead: null
-        locked: null
-        notfound: null
-        notfoundHead: null
-        saved: null
+        lockedHead: 'Artiklen er låst'
+        locked: 'Artiklen blev låst af %username% (%realname%) for %hours% time(r) og %minutes% minutter siden.'
+        notfound: 'Artiklen kunne ikke findes.'
+        notfoundHead: 'Artiklen eksisterer ikke'
+        saved: Gemt
+        assignedall: 'All users have been unassigned successfully'
+        assigned: 'User has been assigned successfully'
+        unassigned: 'User has been unassigned successfully'
+        assignerror: 'Could not assign this user!'
+        unassignerror: 'Could not unassign this user!'
+        assignallerror: 'Could not assign all users!'
+        unassignallerror: 'Could not unassign all users!'
+        unassignedall: 'All users have been unassigned successfully'
     fields:
-        title: null
+        title: Titel
     btn:
-        unlock: null
-        cancel: null
-        view: null
-        save: null
+        unlock: 'Lås op'
+        cancel: Annullér
+        view: Se
+        save: Gem
     tip: null
-    name: null
-    settingstext: null
+    tippermissions: 'User permissions tip...'
+    name: Editor
+    settingstext: Indstillinger
+    none: None
     permissions:
-        api: null
-        defaultsettings: null
+        api: 'Indstil API tilladelser'
+        defaultsettings: 'Rediger standardindstillinger'
+        permissions: 'Assing/unassign users to the plugin'
     popover:
-        mobileview: null
-        tabletview: null
-        desktopview: null
-        imagesmall: null
-        imagemedium: null
-        imagelarge: null
-        showswitches: null
+        mobileview: 'Mobil popover...'
+        tabletview: 'Tablet popover...'
+        desktopview: 'Desktop popover...'
+        imagesmall: 'Lille billede popover...'
+        imagemedium: 'Mellem billede popover...'
+        imagelarge: 'Stort billede popover...'
+        showswitches: 'Indstillinger popover...'
         placeholder: null
         apiendpoint: null
+        imagesize: 'Default image size popover...'
+    table:
+        th:
+            username: Username
+            updated: 'Last modified'
+            firstname: 'First name'
+            lastname: 'Last name'
+            type: 'User type'
+            email: E-mail
+        actions:
+            actions: Actions
+            assign: Assign
+        confirm_remove: 'You realy want to remove this user?'
+        table_messages:
+            page: Page
+            perPageText: 'Show: '
+            pageText: 'Pages: '
+            to: to
+            of: of
+            recordCountFilteredTemplate: ' (filtered from %totalRecords% total records)'
+            recordCountText: 'Showing '
+            processingText: Processing...
     settings:
         label:
             viewports: null
@@ -36,34 +69,41 @@ aes:
             titlesettings: null
             switchessettings: null
             placeholdersettings: null
-            images: null
+            images: Billeder
             title: null
-            switches: null
+            switches: Indstillinger
             placeholders: null
             mobileview: null
             pixels: null
-            yes: null
-            no: null
-            articletype: null
+            yes: Ja
+            no: Nej
+            articletype: 'Artikel type'
             defaultplaceholder: null
-            apisettings: null
-            api: null
+            apisettings: 'API indstillinger'
+            api: API
+            permissions: Permissions
+            permissionssettings: 'Permissions Settings'
         form:
             viewports:
-                mobile: null
-                tablet: null
-                desktop: null
+                mobile: 'Mobil visning'
+                tablet: 'Tablet visning'
+                desktop: 'Desktop visning'
                 errors:
                     mobile:
                         min: null
                         max: null
             images:
-                small: null
-                medium: null
-                large: null
+                small: 'Lille størrelse'
+                medium: 'Mellem størrelse'
+                large: 'Stor størrelse'
             title:
                 position: null
             switches: null
             placeholder: null
             defaultplaceholder: null
             apiendpoint: null
+            defaultimagesize: 'Default image size'
+            imagesize:
+                small: small
+                medium: medium
+                big: big
