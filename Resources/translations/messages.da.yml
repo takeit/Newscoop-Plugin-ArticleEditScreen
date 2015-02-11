@@ -22,6 +22,7 @@ aes:
         save: Gem
     tip: null
     tippermissions: 'User permissions tip...'
+    stylestip: 'Custom styles tip...'
     name: Editor
     settingstext: Indstillinger
     none: None
@@ -29,6 +30,7 @@ aes:
         api: 'Indstil API tilladelser'
         defaultsettings: 'Rediger standardindstillinger'
         permissions: 'Assing/unassign users to the plugin'
+        styles: 'Edit CSS stylesheet'
     popover:
         mobileview: 'Mobil popover...'
         tabletview: 'Tablet popover...'
@@ -83,6 +85,9 @@ aes:
             api: API
             permissions: Permissions
             permissionssettings: 'Permissions Settings'
+            customstyle: 'AES custom stylesheet'
+            styles: 'Custom styles'
+            stylesettings: 'Custom styles Settings'
         form:
             viewports:
                 mobile: 'Mobil visning'

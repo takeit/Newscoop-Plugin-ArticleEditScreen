@@ -22,6 +22,7 @@ aes:
         save: Snimi
     tip: null
     tippermissions: 'User permissions tip...'
+    stylestip: 'Custom styles tip...'
     name: null
     settingstext: Podešavanja
     none: None
@@ -29,6 +30,7 @@ aes:
         api: null
         defaultsettings: null
         permissions: 'Assing/unassign users to the plugin'
+        styles: 'Edit CSS stylesheet'
     popover:
         mobileview: null
         tabletview: null
@@ -83,6 +85,9 @@ aes:
             api: null
             permissions: Permissions
             permissionssettings: 'Permissions Settings'
+            customstyle: 'AES custom stylesheet'
+            styles: 'Custom styles'
+            stylesettings: 'Custom styles Settings'
         form:
             viewports:
                 mobile: null
