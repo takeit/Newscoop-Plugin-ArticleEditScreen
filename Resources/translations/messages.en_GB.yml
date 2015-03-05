@@ -5,14 +5,14 @@ aes:
         notfound: 'Article couldn''t be found.'
         notfoundHead: 'Article doesn''t exist'
         saved: 'Successfully saved'
-        assignedall: 'All users have been unassigned successfully'
-        assigned: 'User has been assigned successfully'
-        unassigned: 'User has been unassigned successfully'
-        assignerror: 'Could not assign this user!'
-        unassignerror: 'Could not unassign this user!'
-        assignallerror: 'Could not assign all users!'
-        unassignallerror: 'Could not unassign all users!'
-        unassignedall: 'All users have been unassigned successfully'
+        assignedall: null
+        assigned: null
+        unassigned: null
+        assignerror: null
+        unassignerror: null
+        assignallerror: null
+        unassignallerror: null
+        unassignedall: null
     fields:
         title: Title
     btn:
@@ -21,16 +21,16 @@ aes:
         view: View
         save: Save
     tip: 'Title positions explanation...'
-    tippermissions: 'User permissions tip...'
-    stylestip: 'Custom styles tip...'
+    tippermissions: null
+    stylestip: null
     name: Editor
     settingstext: Settings
-    none: None
+    none: null
     permissions:
         api: 'Configure API permissions'
         defaultsettings: 'Configure default settings'
-        permissions: 'Assing/unassign users to the plugin'
-        styles: 'Edit CSS stylesheet'
+        permissions: null
+        styles: null
     popover:
         mobileview: 'Mobile view popover...'
         tabletview: 'Tablet view popover...'
@@ -41,40 +41,40 @@ aes:
         showswitches: 'Switches popover...'
         placeholder: 'Placeholder popover...'
         apiendpoint: 'If the API endpoint is set to a different one than the default, change it to make the plugin work properly.'
-        imagesize: 'Default image size popover...'
+        imagesize: null
     table:
         th:
-            username: Username
-            updated: 'Last modified'
-            firstname: 'First name'
-            lastname: 'Last name'
-            type: 'User type'
-            email: E-mail
+            username: null
+            updated: null
+            firstname: null
+            lastname: null
+            type: null
+            email: null
         actions:
-            actions: Actions
-            assign: Assign
-        confirm_remove: 'You realy want to remove this user?'
+            actions: null
+            assign: null
+        confirm_remove: null
         table_messages:
-            page: Page
-            perPageText: 'Show: '
-            pageText: 'Pages: '
-            to: to
-            of: of
-            recordCountFilteredTemplate: ' (filtered from %totalRecords% total records)'
-            recordCountText: 'Showing '
-            processingText: Processing...
+            page: null
+            perPageText: null
+            pageText: null
+            to: null
+            of: null
+            recordCountFilteredTemplate: null
+            recordCountText: null
+            processingText: null
     settings:
         label:
             viewports: Viewports
             viewportssettings: 'Viewports Settings'
-            imagessettings: 'Image size Settings'
+            imagessettings: null
             titlesettings: 'Title position Settings'
-            switchessettings: 'Switch Settings'
+            switchessettings: null
             placeholdersettings: 'Placeholder Settings'
             images: Images
             title: 'Title position'
             switches: Switches
-            placeholders: 'Field placeholders'
+            placeholders: null
             mobileview: 'Mobile View'
             pixels: pixels
             yes: Yes
@@ -83,11 +83,11 @@ aes:
             defaultplaceholder: '[please provide your content]'
             apisettings: 'API Settings'
             api: API
-            permissions: Permissions
-            permissionssettings: 'Permissions Settings'
-            customstyle: 'AES custom stylesheet'
-            styles: 'Custom styles'
-            stylesettings: 'Custom styles Settings'
+            permissions: null
+            permissionssettings: null
+            customstyle: null
+            styles: null
+            stylesettings: null
         form:
             viewports:
                 mobile: 'Mobile View'
@@ -96,19 +96,19 @@ aes:
                 errors:
                     mobile:
                         min: 'The value of Mobile View should be {{ limit }} or more.'
-                        max: 'The value of Mobile View cannot be longer than {{ limit }} characters.'
+                        max: null
             images:
                 small: 'Small size'
                 medium: 'Medium size'
-                large: 'Large size'
+                large: null
             title:
                 position: 'Title position'
             switches: 'Show/hide standard switches'
             placeholder: 'Placeholder text'
             defaultplaceholder: 'Type placeholder text here...'
             apiendpoint: 'API endpoint'
-            defaultimagesize: 'Default image size'
+            defaultimagesize: null
             imagesize:
-                small: small
-                medium: medium
-                big: big
+                small: null
+                medium: null
+                big: null

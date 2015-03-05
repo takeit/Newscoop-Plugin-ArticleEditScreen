@@ -5,14 +5,14 @@ aes:
         notfound: null
         notfoundHead: null
         saved: null
-        assignedall: 'All users have been unassigned successfully'
-        assigned: 'User has been assigned successfully'
-        unassigned: 'User has been unassigned successfully'
-        assignerror: 'Could not assign this user!'
-        unassignerror: 'Could not unassign this user!'
-        assignallerror: 'Could not assign all users!'
-        unassignallerror: 'Could not unassign all users!'
-        unassignedall: 'All users have been unassigned successfully'
+        assignedall: null
+        assigned: null
+        unassigned: null
+        assignerror: null
+        unassignerror: null
+        assignallerror: null
+        unassignallerror: null
+        unassignedall: null
     fields:
         title: null
     btn:
@@ -21,16 +21,16 @@ aes:
         view: null
         save: null
     tip: null
-    tippermissions: 'User permissions tip...'
-    stylestip: 'Custom styles tip...'
+    tippermissions: null
+    stylestip: null
     name: null
     settingstext: null
-    none: None
+    none: null
     permissions:
         api: null
         defaultsettings: null
-        permissions: 'Assing/unassign users to the plugin'
-        styles: 'Edit CSS stylesheet'
+        permissions: null
+        styles: null
     popover:
         mobileview: null
         tabletview: null
@@ -41,28 +41,28 @@ aes:
         showswitches: null
         placeholder: null
         apiendpoint: null
-        imagesize: 'Default image size popover...'
+        imagesize: null
     table:
         th:
-            username: Username
-            updated: 'Last modified'
-            firstname: 'First name'
-            lastname: 'Last name'
-            type: 'User type'
-            email: E-mail
+            username: null
+            updated: null
+            firstname: null
+            lastname: null
+            type: null
+            email: null
         actions:
-            actions: Actions
-            assign: Assign
-        confirm_remove: 'You realy want to remove this user?'
+            actions: null
+            assign: null
+        confirm_remove: null
         table_messages:
-            page: Page
-            perPageText: 'Show: '
-            pageText: 'Pages: '
-            to: to
-            of: of
-            recordCountFilteredTemplate: ' (filtered from %totalRecords% total records)'
-            recordCountText: 'Showing '
-            processingText: Processing...
+            page: null
+            perPageText: null
+            pageText: null
+            to: null
+            of: null
+            recordCountFilteredTemplate: null
+            recordCountText: null
+            processingText: null
     settings:
         label:
             viewports: null
@@ -83,11 +83,11 @@ aes:
             defaultplaceholder: null
             apisettings: null
             api: null
-            permissions: Permissions
-            permissionssettings: 'Permissions Settings'
-            customstyle: 'AES custom stylesheet'
-            styles: 'Custom styles'
-            stylesettings: 'Custom styles Settings'
+            permissions: null
+            permissionssettings: null
+            customstyle: null
+            styles: null
+            stylesettings: null
         form:
             viewports:
                 mobile: null
@@ -107,8 +107,8 @@ aes:
             placeholder: null
             defaultplaceholder: null
             apiendpoint: null
-            defaultimagesize: 'Default image size'
+            defaultimagesize: null
             imagesize:
-                small: small
-                medium: medium
-                big: big
+                small: null
+                medium: null
+                big: null
