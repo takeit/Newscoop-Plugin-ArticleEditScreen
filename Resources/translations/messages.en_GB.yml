@@ -29,8 +29,8 @@ aes:
     permissions:
         api: 'Configure API permissions'
         defaultsettings: 'Configure default settings'
-        permissions: null
-        styles: null
+        permissions: 'Assign/unassign users to the plugin'
+        styles: 'Edit CSS stylesheet'
     popover:
         mobileview: 'Mobile view popover...'
         tabletview: 'Tablet view popover...'
@@ -41,18 +41,18 @@ aes:
         showswitches: 'Switches popover...'
         placeholder: 'Placeholder popover...'
         apiendpoint: 'If the API endpoint is set to a different one than the default, change it to make the plugin work properly.'
-        imagesize: null
+        imagesize: 'Default image size popover...'
     table:
         th:
             username: null
             updated: null
             firstname: null
             lastname: null
-            type: null
+            type: 'User type'
             email: null
         actions:
             actions: null
-            assign: null
+            assign: Assign
         confirm_remove: null
         table_messages:
             page: null
@@ -60,21 +60,21 @@ aes:
             pageText: null
             to: null
             of: null
-            recordCountFilteredTemplate: null
+            recordCountFilteredTemplate: ' (filtered from %totalRecords% total records)'
             recordCountText: null
             processingText: null
     settings:
         label:
             viewports: Viewports
             viewportssettings: 'Viewports Settings'
-            imagessettings: null
+            imagessettings: 'Image size Settings'
             titlesettings: 'Title position Settings'
-            switchessettings: null
+            switchessettings: 'Switch Settings'
             placeholdersettings: 'Placeholder Settings'
             images: Images
             title: 'Title position'
             switches: Switches
-            placeholders: null
+            placeholders: 'Field placeholders'
             mobileview: 'Mobile View'
             pixels: pixels
             yes: Yes
@@ -83,11 +83,11 @@ aes:
             defaultplaceholder: '[please provide your content]'
             apisettings: 'API Settings'
             api: API
-            permissions: null
-            permissionssettings: null
-            customstyle: null
-            styles: null
-            stylesettings: null
+            permissions: Permissions
+            permissionssettings: 'Permissions Settings'
+            customstyle: 'AES custom stylesheet'
+            styles: 'Custom styles'
+            stylesettings: 'Custom style Settings'
         form:
             viewports:
                 mobile: 'Mobile View'
