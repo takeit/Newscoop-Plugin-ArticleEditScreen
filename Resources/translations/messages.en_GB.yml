@@ -5,14 +5,14 @@ aes:
         notfound: 'Article couldn''t be found.'
         notfoundHead: 'Article doesn''t exist'
         saved: 'Successfully saved'
-        assignedall: null
-        assigned: null
-        unassigned: null
-        assignerror: null
-        unassignerror: null
-        assignallerror: null
-        unassignallerror: null
-        unassignedall: null
+        assignedall: 'All users have been unassigned successfully'
+        assigned: 'User has been assigned successfully'
+        unassigned: 'User has been unassigned successfully'
+        assignerror: 'Could not assign this user!'
+        unassignerror: 'Could not unassign this user!'
+        assignallerror: 'Could not assign all users!'
+        unassignallerror: 'Could not unassign all users!'
+        unassignedall: 'All users have been unassigned successfully'
     fields:
         title: Title
     btn:
@@ -21,11 +21,11 @@ aes:
         view: View
         save: Save
     tip: 'Title positions explanation...'
-    tippermissions: null
-    stylestip: null
+    tippermissions: 'User permissions tip...'
+    stylestip: 'Custom styles tip...'
     name: Editor
     settingstext: Settings
-    none: null
+    none: None
     permissions:
         api: 'Configure API permissions'
         defaultsettings: 'Configure default settings'
@@ -44,25 +44,25 @@ aes:
         imagesize: 'Default image size popover...'
     table:
         th:
-            username: null
-            updated: null
-            firstname: null
-            lastname: null
+            username: Username
+            updated: 'Last modified'
+            firstname: 'First name'
+            lastname: 'Last name'
             type: 'User type'
-            email: null
+            email: E-mail
         actions:
-            actions: null
+            actions: Actions
             assign: Assign
-        confirm_remove: null
+        confirm_remove: 'Do you really want to remove this user?'
         table_messages:
-            page: null
-            perPageText: null
-            pageText: null
-            to: null
-            of: null
+            page: Page
+            perPageText: 'Show: '
+            pageText: 'Pages: '
+            to: to
+            of: of
             recordCountFilteredTemplate: ' (filtered from %totalRecords% total records)'
-            recordCountText: null
-            processingText: null
+            recordCountText: 'Showing '
+            processingText: Processing...
     settings:
         label:
             viewports: Viewports
@@ -96,19 +96,19 @@ aes:
                 errors:
                     mobile:
                         min: 'The value of Mobile View should be {{ limit }} or more.'
-                        max: null
+                        max: 'The value of Mobile View cannot be longer than {{ limit }} characters.'
             images:
                 small: 'Small size'
                 medium: 'Medium size'
-                large: null
+                large: 'Big size'
             title:
                 position: 'Title position'
             switches: 'Show/hide standard switches'
             placeholder: 'Placeholder text'
             defaultplaceholder: 'Type placeholder text here...'
             apiendpoint: 'API endpoint'
-            defaultimagesize: null
+            defaultimagesize: 'Default image size'
             imagesize:
-                small: null
-                medium: null
-                big: null
+                small: small
+                medium: medium
+                big: big
