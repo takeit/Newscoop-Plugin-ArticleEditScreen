@@ -25,12 +25,12 @@ aes:
     stylestip: null
     name: Editor
     settingstext: Indstillinger
-    none: null
+    none: Ingen
     permissions:
         api: 'Indstil API tilladelser'
         defaultsettings: 'Rediger standardindstillinger'
         permissions: null
-        styles: null
+        styles: 'Rediger CSS'
     popover:
         mobileview: 'Mobil popover...'
         tabletview: 'Tablet popover...'
@@ -41,33 +41,33 @@ aes:
         showswitches: 'Indstillinger popover...'
         placeholder: null
         apiendpoint: null
-        imagesize: null
+        imagesize: 'Standardstørrelse billede popover...'
     table:
         th:
-            username: null
-            updated: null
-            firstname: null
-            lastname: null
-            type: null
-            email: null
+            username: Brugernavn
+            updated: 'Sidst ændret'
+            firstname: Fornavn
+            lastname: Efternavn
+            type: Brugertype
+            email: E-mail
         actions:
-            actions: null
-            assign: null
-        confirm_remove: null
+            actions: Handlinger
+            assign: Tildel
+        confirm_remove: 'Vil du slette brugeren?'
         table_messages:
-            page: null
-            perPageText: null
-            pageText: null
-            to: null
-            of: null
+            page: Side
+            perPageText: 'Vis:'
+            pageText: 'Sider:'
+            to: til
+            of: af
             recordCountFilteredTemplate: null
-            recordCountText: null
-            processingText: null
+            recordCountText: Viser
+            processingText: Arbejder...
     settings:
         label:
             viewports: null
             viewportssettings: null
-            imagessettings: null
+            imagessettings: 'Indstillinger for billedstørrelse'
             titlesettings: null
             switchessettings: null
             placeholdersettings: null
@@ -75,16 +75,16 @@ aes:
             title: null
             switches: Indstillinger
             placeholders: null
-            mobileview: null
-            pixels: null
+            mobileview: 'Mobil visning'
+            pixels: pixels
             yes: Ja
             no: Nej
             articletype: 'Artikel type'
             defaultplaceholder: null
             apisettings: 'API indstillinger'
             api: API
-            permissions: null
-            permissionssettings: null
+            permissions: Tilladelser
+            permissionssettings: 'Indstillinger for tilladelser'
             customstyle: null
             styles: null
             stylesettings: null
@@ -100,7 +100,7 @@ aes:
             images:
                 small: 'Lille størrelse'
                 medium: 'Mellem størrelse'
-                large: null
+                large: 'Stor størrelse'
             title:
                 position: null
             switches: null
