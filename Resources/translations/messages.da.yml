@@ -5,14 +5,14 @@ aes:
         notfound: 'Artiklen kunne ikke findes.'
         notfoundHead: 'Artiklen eksisterer ikke'
         saved: Gemt
-        assignedall: null
-        assigned: null
-        unassigned: null
-        assignerror: null
-        unassignerror: null
-        assignallerror: null
-        unassignallerror: null
-        unassignedall: null
+        assignedall: 'Alle brugere blev fjernet'
+        assigned: 'Brugeren blev tilføjet'
+        unassigned: 'Brugeren blev fjernet'
+        assignerror: 'Brugeren kunne ikke tilføjes!'
+        unassignerror: 'Brugeren kunne ikke fjernes!'
+        assignallerror: 'Ikke alle brugere kunne tilføjes!'
+        unassignallerror: 'Ikke alle brugere kunne fjernes!'
+        unassignedall: 'Alle brugere blev fjernet'
     fields:
         title: Titel
     btn:
