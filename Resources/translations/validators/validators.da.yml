@@ -2,30 +2,30 @@ aes:
     form:
         viewports:
             mobile:
-                min: null
-                max: null
-                blank: null
+                min: 'Mobilvisning skal være {{ limit }} eller mere.'
+                max: 'Mobilvisning skal være {{ limit }} eller mindre.'
+                blank: 'Mobilvisning skal udfyldes.'
             tablet:
-                min: null
-                max: null
-                blank: null
+                min: 'Tabletvisning skal være {{ limit }} eller mere.'
+                max: 'Tabletvisning skal være {{ limit }} eller mindre.'
+                blank: 'Tabletvisning skal udfyldes.'
             desktop:
-                min: null
-                max: null
-                blank: null
+                min: 'Desktopvisning skal være {{ limit }} eller mere.'
+                max: 'Desktopvisning skal være {{ limit }} eller mindre.'
+                blank: 'Desktopvisning skal udfyldes.'
         images:
             small:
-                min: null
-                max: null
-                blank: null
+                min: 'Lille størrelse skal være {{ limit }} eller mere.'
+                max: 'Lille størrelse skal være {{ limit }} eller mindre.'
+                blank: 'Lille størrelse skal udfyldes.'
             medium:
-                min: null
-                max: null
-                blank: null
+                min: 'Mellem størrelse skal være {{ limit }} eller mere.'
+                max: 'Mellem størrelse skal være {{ limit }} eller mindre.'
+                blank: 'Mellem størrelse skal udfyldes.'
             large:
-                min: null
-                max: null
-                blank: null
+                min: 'Stor størrelse skal være {{ limit }} eller mere.'
+                max: 'Stor størrelse skal være {{ limit }} eller mindre.'
+                blank: 'Stor størrelse skal udfyldes.'
         placeholder:
             max: null
         apiendpoint:
