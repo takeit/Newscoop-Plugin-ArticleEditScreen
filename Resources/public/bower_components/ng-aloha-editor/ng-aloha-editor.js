@@ -32,7 +32,7 @@ Aloha = window.Aloha || {};
 Aloha.settings = Aloha.settings || {};
 
 var DirectiveSettings = {
-    baseUrl: ngAlohaEditorConfig.baseUrl + 'libs/alohaeditor-0.23.26/aloha/lib',
+    baseUrl: ngAlohaEditorConfig.baseUrl + 'libs/alohaeditor-0.26.4/aloha/lib',
     logLevels: {'error': true, 'warn': true, 'info': false, 'debug': false},
     errorhandling : false
 };
@@ -77,6 +77,18 @@ module.directive('aloha', ['$location', '$rootScope', function ($location, $root
                     // Absolute links pointing outside the angular app.
                     window.location.href = href;
                 }
+            }
+        });
+    }
+
+    /**
+    * Also, we don't want the default ctrl+a behaviour 
+    */
+    function replaceControlAHandler(elem) {
+        Aloha.jQuery(elem).on('keydown', function(e) {
+            if (e.keyCode === 65 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+                e.preventDefault();
+                return false;
             }
         });
     }
@@ -231,6 +243,7 @@ module.directive('aloha', ['$location', '$rootScope', function ($location, $root
             });
 
             replaceAngularLinkClickHandler(elem);
+            replaceControlAHandler(elem);
         }
     };
 }]);

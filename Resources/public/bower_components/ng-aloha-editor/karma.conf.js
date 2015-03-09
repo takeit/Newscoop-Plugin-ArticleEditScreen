@@ -19,9 +19,9 @@ module.exports = function(config) {
       'bower_components/requirejs/require.js',
       'bower_components/jquery/jquery.js',
       'test/*.spec.js',
-      'libs/alohaeditor-0.23.26/aloha/lib/vendor/jquery-1.7.2.js',
+      'libs/alohaeditor-0.26.4/aloha/lib/vendor/jquery-1.7.2.js',
       'test/test-configuration.js',
-      'libs/alohaeditor-0.23.26/aloha/lib/aloha.js',
+      'libs/alohaeditor-0.26.4/aloha/lib/aloha.js',
       'ng-aloha-editor.js',
     ],
 
