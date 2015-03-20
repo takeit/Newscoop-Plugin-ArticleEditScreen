@@ -5,12 +5,12 @@
  * @copyright 2014 Sourcefabric z.ú.
  * @license http://www.gnu.org/licenses/gpl-3.0.txt
  */
-
 namespace Newscoop\EditorBundle\EventListener;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Newscoop\EventDispatcher\Events\GenericEvent;
 use Newscoop\EditorBundle\Entity\Settings;
+use Symfony\Component\Finder\Finder;
 
 /**
  * Event lifecycle management
@@ -50,7 +50,7 @@ class LifecycleSubscriber implements EventSubscriberInterface
         $tool = new \Doctrine\ORM\Tools\SchemaTool($this->em);
         $tool->updateSchema($this->getClasses(), true);
 
-        $this->em->getProxyFactory()->generateProxyClasses($this->getClasses(), __DIR__ . '/../../../../library/Proxy');
+        $this->em->getProxyFactory()->generateProxyClasses($this->getClasses(), __DIR__.'/../../../../library/Proxy');
         $this->setPermissions();
         $this->addDefaultSettings();
     }
@@ -60,9 +60,8 @@ class LifecycleSubscriber implements EventSubscriberInterface
         $tool = new \Doctrine\ORM\Tools\SchemaTool($this->em);
         $tool->updateSchema($this->getClasses(), true);
 
-        $this->em->getProxyFactory()->generateProxyClasses($this->getClasses(), __DIR__ . '/../../../../library/Proxy');
+        $this->em->getProxyFactory()->generateProxyClasses($this->getClasses(), __DIR__.'/../../../../library/Proxy');
         $this->setPermissions();
-        $this->addDefaultSettings();
     }
 
     public function remove(GenericEvent $event)
@@ -85,7 +84,7 @@ class LifecycleSubscriber implements EventSubscriberInterface
     {
         return array(
           $this->em->getClassMetadata('Newscoop\EditorBundle\Entity\Settings'),
-          $this->em->getClassMetadata('Newscoop\EditorBundle\Entity\Permissions')
+          $this->em->getClassMetadata('Newscoop\EditorBundle\Entity\Permissions'),
         );
     }
 
@@ -94,6 +93,13 @@ class LifecycleSubscriber implements EventSubscriberInterface
      */
     private function addDefaultSettings()
     {
+        $finder = new Finder();
+        $finder->files()->in(__DIR__."/../Resources/public/css/")->name("aes-custom-styles.css");
+        $fileContent = "";
+        foreach ($finder as $file) {
+            $fileContent = $file->getContents();
+        }
+
         $settings = array(
             'mobileview' => 320,
             'tabletview' => 600,
@@ -102,13 +108,13 @@ class LifecycleSubscriber implements EventSubscriberInterface
             'imagemedium' => 50,
             'imagelarge' => 100,
             'showswitches' => true,
-            'placeholder' => $this->translator->trans("aes.settings.label.defaultplaceholder")
+            'placeholder' => $this->translator->trans("aes.settings.label.defaultplaceholder"),
         );
 
         $globalSettings = array(
             'apiendpoint' => "/api",
             'default_image_size' => 'medium',
-            'css_custom_style' => '/* '.$this->translator->trans('aes.settings.label.customstyle').' */'
+            'css_custom_style' => $fileContent,
         );
 
         $this->setUpSettings($settings);

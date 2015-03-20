@@ -5,7 +5,6 @@
  * @copyright 2015 Sourcefabric z.ú.
  * @license http://www.gnu.org/licenses/gpl-3.0.txt
  */
-
 namespace Newscoop\EditorBundle\EventListener;
 
 use Symfony\Component\EventDispatcher\GenericEvent;
@@ -49,7 +48,7 @@ class EditorListener
         if ($this->pluginsService->isEnabled($this->getPluginName()) && $this->hasAccessToEditor()) {
             $articleLink = $this->router->generate('newscoop_admin_aes', array(
                 'articleNumber' => $articleNumber,
-                'language' => $articleLanguage
+                'language' => $articleLanguage,
             ));
         }
 
@@ -58,7 +57,7 @@ class EditorListener
 
     private function getPluginName()
     {
-        $composerFile = __DIR__ . '/../composer.json';
+        $composerFile = __DIR__.'/../composer.json';
         $composerDefinitions = json_decode(file_get_contents($composerFile), true);
 
         return $composerDefinitions['name'];
