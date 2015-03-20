@@ -111,6 +111,7 @@ th a, th a:hover {
             </div>
             <div class="tab-pane" id="title">
             	<h3>{{ 'aes.settings.label.titlesettings'|trans }}</h3>
+                {{ renderTip('aes.tip'|trans) }}<br>
                 <table class="table table-hover" style="font-size: 13px;">
                   <thead>
                     <tr>
@@ -131,7 +132,6 @@ th a, th a:hover {
                     {% endfor %}
                   </tbody>
                 </table>
-                {{ renderTip('aes.tip'|trans) }}
                 <br>
             </div>
             <div class="tab-pane" id="switches">
@@ -171,7 +171,7 @@ th a, th a:hover {
             {% endif %}
             {% if hasPermission('plugin_editor_permissions') %}
             <div class="tab-pane" id="permissions">
-                <h3>{{ 'aes.settings.label.permissionssettings'|trans }}</h3><br>
+                <h3>{{ 'aes.settings.label.permissionssettings'|trans }}</h3>
                 {{ renderTip('aes.tippermissions'|trans) }}<br>
                 <dl>
                 <div class="row">
@@ -199,7 +199,7 @@ th a, th a:hover {
             {% if hasPermission('plugin_editor_styles') %}
             <div class="tab-pane" id="styles">
                 <h3>{{ 'aes.settings.label.stylesettings'|trans }}</h3>
-                {{ renderTip('aes.stylestip'|trans) }}
+                {{ renderTip('aes.stylestip'|trans) }}<br>
                 <dl>
                     <dd>
                         {{ form_widget(form.css_custom_style) }}
@@ -243,6 +243,18 @@ popover($('#imagemedium'), Translator.trans('aes.popover.imagemedium'));
 popover($('#imagelarge'), Translator.trans('aes.popover.imagelarge'));
 popover($('#showswitches'), Translator.trans('aes.popover.showswitches'));
 popover($('#placeholder'), Translator.trans('aes.popover.placeholder'));
+$('#permissions .coverMessageButton').click(function(e){
+    e.preventDefault();
+    if ($('#permissions .coverMessage').is(":visible")) {
+        $('.coverMessage').hide();
+    } else {
+        $('.coverMessage').show();
+    }
+})
+$('.nav-tabs li a').click(function(e){
+    e.preventDefault();
+    $('.coverMessage').hide();
+})
 {% if hasPermission('plugin_editor_api') %}
 popover($('#apiendpoint'), Translator.trans('aes.popover.apiendpoint'));
 popover($('#default_image_size'), Translator.trans('aes.popover.imagesize'));
