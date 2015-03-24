@@ -28,9 +28,9 @@ aes:
     save: "Save"
     okbtn: "Ok"
     restorecss: "Reset CSS"
-  tip: "Title positions explanation..."
-  tippermissions: "User permissions tip..."
-  stylestip: "Custom styles tip..."
+  tip: "The title of an article is per default ranked as the first item of an article. If you want it to go to a different position, below another article type field (for example the Catchline) please do so here."
+  tippermissions: "Please enable the checkbox for all users who should work with the Article Edit Screen plugin."
+  stylestip: "You can overwrite the default style of the Article Edit Screen view by providing your own css."
   name: "Editor"
   settingstext: "Settings"
   none: "None"
@@ -40,16 +40,16 @@ aes:
     permissions: "Assing/unassign users to the plugin"
     styles: "Edit CSS stylesheet"
   popover:
-    mobileview: "Mobile view popover..."
-    tabletview: "Tablet view popover..."
-    desktopview: "Desktop view popover..."
-    imagesmall: "Small image popover..."
-    imagemedium: "Medium image popover..."
-    imagelarge: "Large image popover..."
-    showswitches: "Switches popover..."
-    placeholder: "Placeholder popover..."
-    apiendpoint: "If the API endpoint is set to diffrent one than the default, change it to make the plugin working properly."
-    imagesize: "Default image size popover..."
+    mobileview: "Adjust the width of the viewport for smartphone usage. As an example: iPhone 5 screens are 640 pixels wide in portrait mode."
+    tabletview: "Adjust the width of the viewport for tablet usage. As an example: iPad mini screens are 768 pixels wide in portrait mode."
+    desktopview: "Adjust the width of the viewport for desktop usage. As an example: 13.3 inch laptops are normally 1360 pixels wide."
+    imagesmall: "There are three default image sizes available. Define a small image size in percentage. For example 25% of the full width of the content area."
+    imagemedium: "There are three default image sizes available. Define a medium image size in percentage. For example 50% of the full width of the content area."
+    imagelarge: "There are three default image sizes available. Define a big image size in percentage. For example 100% of the full width of the content area."
+    showswitches: "Newscoop has two standard switches: Show on Front-Page and Show on Section-Page. If you don't need them you can decide to hide them."
+    placeholder: "Empty fields will come with a default placeholder text. Please write it in here."
+    apiendpoint: "To make the plugin working properly it needs to be pointing to the API endpoint. The default setting is /api."
+    imagesize: "Define the default image size, for images being dragged and dropped to the article."
   table:
     th:
       username: "Username"
@@ -111,7 +111,7 @@ aes:
         large: "Big size"
       title:
         position: "Title position"
-      switches: "Show/hide standard switches"
+      switches: "Show standard switches"
       placeholder: "Placeholder text"
       defaultplaceholder: "Type placeholder text here..."
       apiendpoint: "API endpoint"
@@ -120,3 +120,87 @@ aes:
         small: "small"
         medium: "medium"
         big: "big"
+  msgs:
+    comments:
+      add:
+        success: "The comment has been added successfully."
+        error: "The comment could not be added, please try again."
+      change:
+        success: "Comments settings updated successfully."
+        error: "Failed to update comments settings."
+      hide:
+        popupHead: "Do you really want to hide selected comments?"
+        popup: "The comments will not be visible to readers."
+        success: "The selected comments have been hidden."
+        error: "Failed to hide selected comments."
+      changesingle:
+        success: "The comment status has been changed to %status%"
+        error: "Failed to change comment status."
+      delete:
+        popupHead: "Are you sure you want to delete selected comments?"
+        popup: "Deleted comments will not be visible, but will remain in the database."
+        success: "Selected comments have been deleted."
+        error: "Failed to delete selected comments."
+      reply:
+        success: "Successfully replied to a comment."
+        error: "Replying to a comment failed."
+      edit:
+        success: "The comment has been saved successfully."
+        error: "Failed to edit comment."
+    snippets:
+      add:
+        success: "The snippet has been added successfully."
+        error: "Failed to add the snippet."
+      remove:
+        popupHead: "Do you really want to remove this snippet?"
+        popup: "Should you change your mind, the snippet can always be added again."
+        success: "The snippet has been removed successfully."
+        error: "Failed to remove the snippet."
+    images:
+      attach:
+        success: "The image(s) have been attached successfully."
+        error: "Failed to attach image(s)."
+      detach:
+        popupHead: "Do you really want to detach this image from the article?"
+        popup: "Should you change your mind, the image can always be re-attached again."
+        success: "Image detached successfully."
+        error: "Failed to detach the image."
+    authors:
+      add:
+        success: "The author has been added successfully."
+        error: "Adding an author failed."
+      change:
+        success: "The author type has been changed successfully."
+        error: "Failed to change the author type."
+      remove:
+        popupHead: "Do you really want to remove this author?"
+        popup: "Should you change your mind, the same author can always be added again."
+        success: "Author has been removed successfully from this article."
+        error: "Failed to remove the author from this article."
+    relatedarticles:
+      pin:
+        success: "The article has been pinned successfully as a related article."
+        error: "Failed to pin the related article."
+      unpin:
+        popupHead: "Do you really want to unpin this related article?"
+        popup: "Should you change your mind, the related article can always be re-pinned again."
+        success: "Article has been unpinned successfully."
+        error: "Failed to unpin the article."
+      order:
+        success: "The order has been updated."
+        error: "Failed to update the order."
+    switches:
+      success: "The switches have been saved successfully."
+      error: "Failed to save switches."
+    topics:
+      add:
+        success: "The topic(s) have been added and assigned successfully to this article."
+        error: "Failed to add and assign new topic(s) to the article."
+      assign:
+        success: "The topic has been assigned successfully to this article"
+        error: "Assigning the topic to this article failed."
+      unassign:
+        popupHead: "Do you really want to unassign this topic from the article?"
+        popup: "Should you change your mind, the topic can always be re-assigned again."
+        success: "Topic(s) unassigned successfully."
+        error: "Failed to unassign topic(s) from the article."
