@@ -14,6 +14,7 @@ services:
             - @system_preferences_service
             - @translator
             - @newscoop.plugins.service
+            - @newscoop_editor.editor_service
         tags:
             - { name: kernel.event_subscriber}
 

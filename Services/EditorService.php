@@ -5,7 +5,6 @@
  * @copyright 2014 Sourcefabric z.ú.
  * @license http://www.gnu.org/licenses/gpl-3.0.txt
  */
-
 namespace Newscoop\EditorBundle\Services;
 
 use Newscoop\EditorBundle\Entity\Settings;
@@ -15,6 +14,7 @@ use Newscoop\EditorBundle\Model\Position;
 use Doctrine\Common\Collections\ArrayCollection;
 use Newscoop\Services\UserService;
 use Newscoop\Services\CacheService;
+use Symfony\Component\Finder\Finder;
 
 /**
  * Editor service
@@ -75,7 +75,6 @@ class EditorService
             if ($setting->getValue() != $value) {
                 $setting->setValue($value);
             }
-
         }
 
         $this->em->flush();
@@ -109,7 +108,7 @@ class EditorService
     {
         $transformedPositions = array();
         foreach ($positions as $key => $position) {
-            $fieldType = $position->getName() . self::FIELD_TYPE_MARKER;
+            $fieldType = $position->getName().self::FIELD_TYPE_MARKER;
             $transformedPositions[$fieldType] = $position->getPosition();
         }
 
@@ -132,7 +131,7 @@ class EditorService
             ->andWhere('s.option = :option')
             ->setParameters(array(
                 'user' => $user,
-                'option' => $option
+                'option' => $option,
             ))
             ->getQuery()
             ->getOneOrNullResult();
@@ -233,7 +232,7 @@ class EditorService
         foreach ($this->getArticleTypesCollection() as $key => $value) {
             $fieldProperties = $this->getAvailableArticleTypeFields($value);
             if (count($fieldProperties) > 0) {
-                $fieldsAndPositions[$value->getName() . self::FIELD_TYPE_MARKER] = 1; // set 1st position by default
+                $fieldsAndPositions[$value->getName().self::FIELD_TYPE_MARKER] = 1; // set 1st position by default
             }
         }
 
@@ -275,7 +274,7 @@ class EditorService
 
         foreach ($articleTypesFields as $key => $value) {
             if (null === $value['showInEditor'] || 0 === $value['showInEditor']) {
-                 unset($articleTypesFields[$key]);
+                unset($articleTypesFields[$key]);
             }
         }
 
@@ -374,5 +373,22 @@ class EditorService
         }
 
         return $choicesArray;
+    }
+
+    /**
+     * Gets default AES CSS
+     *
+     * @return string Default CSS
+     */
+    public function getDefaultCss()
+    {
+        $finder = new Finder();
+        $finder->files()->in(__DIR__."/../Resources/public/css/")->name("aes-custom-styles.css");
+        $fileContent = "";
+        foreach ($finder as $file) {
+            $fileContent = $file->getContents();
+        }
+
+        return $fileContent;
     }
 }
