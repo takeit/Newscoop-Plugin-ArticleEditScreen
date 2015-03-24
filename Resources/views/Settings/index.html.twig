@@ -208,33 +208,53 @@ th a, th a:hover {
             </div>
             {% endif %}
             <div class="save-button-bar">
+                <button type="submit" id="restore-css" data-toggle="modal" data-target="#aesModal" style="display: none;" class="btn btn-sm btn-default">{{ 'aes.btn.restorecss'|trans }}</button>
                 <button type="submit" class="btn btn-sm btn-primary">{{ 'aes.btn.save'|trans }}</button>
             </div>
         </div>
 	</div>
 </div>
 {{ form_end(form) }}
-<script>
-    var editor = CodeMirror.fromTextArea(document.getElementById("settings_form_css_custom_style"), {
-        lineNumbers: true,
-        matchBrackets: true,
-    });
+{% if hasPermission('plugin_editor_styles') %}
+<div class="modal fade" id="aesModal" tabindex="-1" role="dialog" aria-labelledby="aesModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">{{ 'aes.alerts.popup.resethead'|trans }}</h4>
+      </div>
+      <div class="modal-body font-fix">
+        {{ 'aes.alerts.popup.reset'|trans }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">{{ 'aes.btn.cancel'|trans }}</button>
+        <button type="button" id="confirm-reset" class="btn btn-primary">{{ 'aes.btn.okbtn'|trans }}</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+<script type="text/javascript">
+var editor = CodeMirror.fromTextArea(document.getElementById("settings_form_css_custom_style"), {
+    lineNumbers: true,
+    matchBrackets: true,
+});
 
-    $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+$('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
     var target;
     target = $(e.target).attr("href");
-          return $(target + ' .CodeMirror').each(function(i, el) {
-            return el.CodeMirror.refresh();
-        });
+        return $(target + ' .CodeMirror').each(function(i, el) {
+        return el.CodeMirror.refresh();
     });
-</script>
-<script type="text/javascript">
+});
+
 function popover(target, content) {
     target.popover({
         trigger: 'hover',
         content : content
     });
 };
+
 popover($('#mobileview'), Translator.trans('aes.popover.mobileview'));
 popover($('#desktopview'), Translator.trans('aes.popover.desktopview'));
 popover($('#tabletview'), Translator.trans('aes.popover.tabletview'));
@@ -253,8 +273,34 @@ $('#permissions .coverMessageButton').click(function(e){
 })
 $('.nav-tabs li a').click(function(e){
     e.preventDefault();
+    $('#restore-css').hide();
+    if ($(this).attr('href') == '#styles') {
+        $('#restore-css').show();
+    }
     $('.coverMessage').hide();
-})
+});
+{% if hasPermission('plugin_editor_styles') %}
+$('#confirm-reset').live('click', function () {
+    $.ajax({
+        type: "POST",
+        url: "{{ path('newscoop_admin_aes_settings_reset_css') }}",
+        dataType: "json",
+        success: function(msg){
+            $('#aesModal').modal('hide');
+            if (msg.status){
+                editor.setValue(msg.css);
+                flashMessage(Translator.trans('aes.alerts.resetcss'));
+            } else {
+                flashMessage(Translator.trans('aes.alerts.resetcsserror'), 'error');
+            }
+        },
+        error: function() {
+            $('#aesModal').modal('hide');
+            flashMessage(Translator.trans('aes.alerts.resetcsserror'), 'error');
+        }
+    });
+});
+{% endif %}
 {% if hasPermission('plugin_editor_api') %}
 popover($('#apiendpoint'), Translator.trans('aes.popover.apiendpoint'));
 popover($('#default_image_size'), Translator.trans('aes.popover.imagesize'));

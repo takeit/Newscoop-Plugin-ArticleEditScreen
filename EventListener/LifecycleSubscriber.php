@@ -10,7 +10,6 @@ namespace Newscoop\EditorBundle\EventListener;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Newscoop\EventDispatcher\Events\GenericEvent;
 use Newscoop\EditorBundle\Entity\Settings;
-use Symfony\Component\Finder\Finder;
 
 /**
  * Event lifecycle management
@@ -18,22 +17,20 @@ use Symfony\Component\Finder\Finder;
 class LifecycleSubscriber implements EventSubscriberInterface
 {
     private $em;
-
     private $clientManager;
-
     private $syspref;
-
     private $translator;
-
     private $pluginsService;
+    private $editorService;
 
-    public function __construct($em, $clientManager, $syspref, $translator, $pluginsService)
+    public function __construct($em, $clientManager, $syspref, $translator, $pluginsService, $editorService)
     {
         $this->em = $em;
         $this->clientManager = $clientManager;
         $this->syspref = $syspref;
         $this->translator = $translator;
         $this->pluginsService = $pluginsService;
+        $this->editorService = $editorService;
     }
 
     public function install(GenericEvent $event)
@@ -93,13 +90,6 @@ class LifecycleSubscriber implements EventSubscriberInterface
      */
     private function addDefaultSettings()
     {
-        $finder = new Finder();
-        $finder->files()->in(__DIR__."/../Resources/public/css/")->name("aes-custom-styles.css");
-        $fileContent = "";
-        foreach ($finder as $file) {
-            $fileContent = $file->getContents();
-        }
-
         $settings = array(
             'mobileview' => 320,
             'tabletview' => 600,
@@ -114,7 +104,7 @@ class LifecycleSubscriber implements EventSubscriberInterface
         $globalSettings = array(
             'apiendpoint' => "/api",
             'default_image_size' => 'medium',
-            'css_custom_style' => $fileContent,
+            'css_custom_style' => $this->editorService->getDefaultCss(),
         );
 
         $this->setUpSettings($settings);

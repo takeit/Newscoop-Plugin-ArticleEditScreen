@@ -5,15 +5,17 @@
  * @copyright 2014 Sourcefabric z.ú.
  * @license http://www.gnu.org/licenses/gpl-3.0.txt
  */
-
 namespace Newscoop\EditorBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Newscoop\EditorBundle\Entity\Settings;
 use Newscoop\EditorBundle\Form\Type\SettingType;
 use Newscoop\Entity\User;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class SettingsController extends Controller
 {
@@ -36,7 +38,7 @@ class SettingsController extends Controller
         $userSettings = $editorService->getSettingsByUser($user);
         $form = $this->createForm(new SettingType(), $userSettings, array(
             'editorService' => $editorService,
-            'user' => $user
+            'user' => $user,
         ));
 
         if ($request->getMethod() === "POST") {
@@ -54,5 +56,38 @@ class SettingsController extends Controller
         return $this->render("NewscoopEditorBundle:Settings:index.html.twig", array(
             'form' => $form->createView(),
         ));
+    }
+
+    /**
+     * @Route("/admin/editor_plugin/settings/reset-css/", options={"expose"=true}, name="newscoop_admin_aes_settings_reset_css")
+     * @Method("POST")
+     */
+    public function resetCssAction(Request $request)
+    {
+        $em = $this->get('em');
+        $editorService = $this->get('newscoop_editor.editor_service');
+        $userService = $this->get('user');
+        $user = $userService->getCurrentUser();
+        if (!$user || !$user->hasPermission('plugin_editor_styles')) {
+            throw new AccessDeniedException();
+        }
+
+        $defaultCss = $editorService->getDefaultCss();
+        $cssSetting = $em->getRepository('Newscoop\EditorBundle\Entity\Settings')->findOneBy(array(
+            'option' => 'css_custom_style',
+            'isGlobal' => true,
+        ));
+
+        if ($cssSetting) {
+            $cssSetting->setValue($defaultCss);
+            $em->flush();
+
+            return new JsonResponse(array(
+                'status' => true,
+                'css' => $defaultCss,
+            ));
+        }
+
+        return new JsonResponse(array('status' => false));
     }
 }

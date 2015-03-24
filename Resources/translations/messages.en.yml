@@ -1,5 +1,8 @@
 aes:
   alerts:
+    popup:
+      resethead: "Do you really want to reset your custom CSS?"
+      reset: "Your current CSS will be gone and the default one will be loaded instead."
     lockedHead: "This article is locked"
     locked: "The article has been locked by %username% (%realname%) %hours% hour(s) and %minutes% minute(s) ago."
     notfound: "Article couldn't be found."
@@ -14,6 +17,8 @@ aes:
     unassignallerror: "Could not unassign all users!"
     unassignedall: "All users have been unassigned successfully"
     assignedall: "All users have been unassigned successfully"
+    resetcsserror: "Failed to reset the CSS"
+    resetcss: "The CSS has been reseted successfully"
   fields:
     title: "Title"
   btn:
@@ -21,6 +26,8 @@ aes:
     cancel: "Cancel"
     view: "View"
     save: "Save"
+    okbtn: "Ok"
+    restorecss: "Reset CSS"
   tip: "Title positions explanation..."
   tippermissions: "User permissions tip..."
   stylestip: "Custom styles tip..."
