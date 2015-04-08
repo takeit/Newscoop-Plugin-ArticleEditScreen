@@ -1,5 +1,12 @@
 aes:
   label:
+    recommend: "Recommend"
+    unrecommend: "Unrecommend"
+    collapse: "Collapse"
+    expand: "Expand"
+    undo: "Undo"
+    redo: "Redo"
+    reply: "Reply"
     finishingauth: "Finishing authentication"
     selectedtext: "Selected text"
     linktext: "Link text"
