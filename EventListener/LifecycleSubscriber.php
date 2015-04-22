@@ -22,25 +22,34 @@ class LifecycleSubscriber implements EventSubscriberInterface
     private $translator;
     private $pluginsService;
     private $editorService;
+    private $router;
 
-    public function __construct($em, $clientManager, $syspref, $translator, $pluginsService, $editorService)
-    {
+    public function __construct(
+        $em,
+        $clientManager,
+        $syspref,
+        $translator,
+        $pluginsService,
+        $editorService
+    ) {
         $this->em = $em;
         $this->clientManager = $clientManager;
         $this->syspref = $syspref;
         $this->translator = $translator;
         $this->pluginsService = $pluginsService;
         $this->editorService = $editorService;
+        $this->router = $router;
     }
 
     public function install(GenericEvent $event)
     {
         $publications = $this->em->getRepository('Newscoop\Entity\Publication')->findAll();
         $publication = $publications[0];
+        $redirectUri = 'http://'.$publication->getDefaultAlias()->getName().$router->generate('aes_oauth_result');
         $client = $this->clientManager->createClient();
         $client->setName('newscoop_aes_'.$this->syspref->SiteSecretKey);
         $client->setPublication($publication);
-        $client->setRedirectUris(array($publication->getDefaultAlias()->getName()));
+        $client->setRedirectUris(array($redirectUri));
         $client->setAllowedGrantTypes(array('authorization_code'));
         $client->setTrusted(true);
         $this->clientManager->updateClient($client);
