@@ -9,7 +9,7 @@ Install
 
 First install the Plugin using Newscoop's Plugin Installer.
 
-```# php application/console plugins:install "terwey/plugin-newscoop-articleeditscreen"```
+```# php application/console plugins:install "newscoop/article-edit-screen"```
 
 Then install the Plugin assets.
 
