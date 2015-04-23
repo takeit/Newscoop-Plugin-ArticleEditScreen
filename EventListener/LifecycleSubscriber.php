@@ -30,7 +30,8 @@ class LifecycleSubscriber implements EventSubscriberInterface
         $syspref,
         $translator,
         $pluginsService,
-        $editorService
+        $editorService,
+        $router
     ) {
         $this->em = $em;
         $this->clientManager = $clientManager;
