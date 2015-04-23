@@ -1,7 +1,7 @@
 <article class="main-article-container" id="main-article" ng-controller="ArticleCtrl" ng-class="[panes.articleClass, platform.current]" dropped-images-container="">
   <div class="zen-buttons">
     <button class="btn btn-primary" ng-disabled="!articleService.modified" ng-click="save()">
-      Save
+      {{ ::('aes.btn.save'|trans) }} 
     </button>
     <button class="btn btn-sf-invisible zen-close" id="test-go-normal" ng-click="mode.goNormal()">
       <span class="glyphicon glyphicon-remove"></span>
@@ -32,7 +32,7 @@
       <div class="header">
         <span ng-click="showCustomFields = !showCustomFields">
           <i class="fa fa-chevron-{{showCustomFields ? 'down' : 'right'}}"></i>
-          Custom fields
+          {{ ::('aes.label.customfields'|trans) }}
         </span>
       </div>
 
@@ -54,7 +54,7 @@
         </ul>
 
         <div ng-show="nonContentFields.length < 1">
-          There are no metadata fields for this type of article
+          {{ ::('aes.label.nofields'|trans) }}
         </div>
       </div>
 
