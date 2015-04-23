@@ -15,6 +15,7 @@ services:
             - @translator
             - @newscoop.plugins.service
             - @newscoop_editor.editor_service
+            - @router
         tags:
             - { name: kernel.event_subscriber}
 

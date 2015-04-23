@@ -59,9 +59,9 @@ aes:
     search: "Search"
     pinnedarticles: "Pinned articles"
     searchresults: "Search results"
-    at: "at", "messages"
+    at: "at"
     published: "Published"
-    new: "New", "messages"
+    new: "New"
     submitted: "Submitted"
     pinarticle: "Pin article"
     switches: "Switches"
@@ -92,6 +92,12 @@ aes:
     replycomment: "Reply to this comment"
     articlepreview: "Article Preview"
     articleeditingenv: "Article Editing Environment"
+    attachedslideshows: "Attached Slideshows"
+    slideshows: "Slideshows"
+    itemscount: "{1} item|[0,Inf] items"
+    attachslideshows: "Attach Slideshow(s)"
+    attachdetach: "Attach / Detach"
+    createslideshow: "Create Slideshow"
   alerts:
     popup:
       resethead: "Do you really want to reset your custom CSS?"
@@ -112,6 +118,7 @@ aes:
     assignedall: "All users have been unassigned successfully"
     resetcsserror: "Failed to reset the CSS"
     resetcss: "The CSS has been reseted successfully"
+    authfinished: "Authentication finished."
   fields:
     title: "Title"
   btn:
@@ -316,3 +323,9 @@ aes:
         popup: "Should you change your mind, the topic can always be re-assigned again."
         success: "Topic(s) unassigned successfully."
         error: "Failed to unassign topic(s) from the article."
+    slideshows:
+      unassign:
+        popupHead: "Do you really want to unassign this slideshow from the article?"
+        popup: "Should you change your mind, the slideshow can always be re-assigned again."
+        success: "Slideshow unassigned successfully."
+        error: "Failed to unassign slideshow from the article."

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ 'aes.alerts.authfinished'|trans }}</title>
+    <style type="text/css" media="screen">
+        body {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #eee;
+        }
+        #container {
+            max-width: 550px;
+            margin: 0 auto;
+        }
+        .signin-heading {
+            color: #444;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+        <h1 class="signin-heading">{{ 'aes.alerts.authfinished'|trans }}</h1>
+    </div>
+
+    <script type="text/javascript">
+        var tokenRegex = new RegExp('access_token=(\\w+)'),
+            matches = tokenRegex.exec(window.location.hash),
+            token;
+
+        token = matches[1];
+        if (!sessionStorage.getItem('newscoop.aes.token') && token) {
+            sessionStorage.setItem('newscoop.aes.token', token);
+        }
+    </script>
+  </body>
+</html>
