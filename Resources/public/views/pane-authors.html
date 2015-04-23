@@ -1,7 +1,7 @@
 <section ng-controller="PaneAuthorsCtrl" class="tab-content authors-panel" id="authors-tab">
 
   <div class="panel-title">
-    Authors Management
+    {{ ::('aes.label.authorsmanagement'|trans) }}
   </div>
 
   <div class="add-author-box">
@@ -9,30 +9,30 @@
     <div class="heading">
       <button class="btn btn-sf-invisible" ng-click="showAddAuthor = !showAddAuthor">
         <span class="glyphicon" ng-class="{'glyphicon-plus': !showAddAuthor,
-                         'glyphicon-minus': showAddAuthor}"></span><span class="add-author">ADD AN AUTHOR</span>
+                         'glyphicon-minus': showAddAuthor}"></span><span class="add-author">{{ ::('aes.label.addanauthor'|trans) }}</span>
       </button>
     </div>
 
     <form ng-show="showAddAuthor">
-      <input type="hidden" ui-select2="select2Options" class="authorSearch" ng-model="newAuthor" data-placeholder="-- select new author --" ng-disabled="addingNewAuthor">
+      <input type="hidden" ui-select2="select2Options" class="authorSearch" ng-model="newAuthor" data-placeholder="-- {{ ::('aes.label.selectauthor'|trans) }} --" ng-disabled="addingNewAuthor">
 
       <br>
 
       <select ng-model="newAuthorRoleId" class="author-role" ng-options="role.id as role.name for role in (authorRoles |
                       availableRoles : newAuthor : authors)" ng-disabled="addingNewAuthor">
-        <option value="">-- choose author role --</option>
+        <option value="">-- {{ ::('aes.label.chooserole'|trans) }} --</option>
       </select>
 
       <div class="controls clearfix">
-        <button type="submit" class="btn btn-primary btn-sm pull-right" ng-click="addAuthorToArticle()" ng-disabled="addingNewAuthor || !newAuthorRoleId || !newAuthor">Add</button>
-        <button class="btn btn-default btn-sm pull-right" ng-click="clearNewAuthorForm()" ng-disabled="addingNewAuthor || (!newAuthorRoleId && !newAuthor)">Clear</button>
+        <button type="submit" class="btn btn-primary btn-sm pull-right" ng-click="addAuthorToArticle()" ng-disabled="addingNewAuthor || !newAuthorRoleId || !newAuthor">{{ ::('Add'|trans) }}</button>
+        <button class="btn btn-default btn-sm pull-right" ng-click="clearNewAuthorForm()" ng-disabled="addingNewAuthor || (!newAuthorRoleId && !newAuthor)">{{ ::('Clear'|trans) }}</button>
       </div>
     </form>
   </div>
 
   <div class="authors-wrapper" ng-class="{low: showAddAuthor, high: !showAddAuthor}">
 
-    <div class="attached-title">Attached Authors</div>
+    <div class="attached-title">{{ ::('aes.label.attachedauthors'|trans) }}</div>
 
     <div class="authors-list" drag-sort="" items="authors" on-order-changed="orderChanged()">
       <div ng-repeat="author in authors" class="author clearfix" ng-class="{actionsDisabled: author.updatingRole}">

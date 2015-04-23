@@ -1,7 +1,7 @@
 <section ng-controller="PaneSwitchesCtrl as psCtrl" class="tabcontent switches-panel">
 
   <div class="panel-title">
-    Switches
+    {{ ::('aes.settings.label.switches'|trans) }}
   </div>
 
   <div class="switches-list">
@@ -13,7 +13,7 @@
     </ul>
 
     <div class="controls clearfix">
-      <button class="btn btn-primary btn-sm save-button" ng-disabled="!psCtrl.modified || psCtrl.saveInProgress" ng-click="psCtrl.save()">Save</button>
+      <button class="btn btn-primary btn-sm save-button" ng-disabled="!psCtrl.modified || psCtrl.saveInProgress" ng-click="psCtrl.save()">{{ ::('Save'|trans) }}</button>
     </div>
   </div>
 

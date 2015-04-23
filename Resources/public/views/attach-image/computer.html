@@ -4,11 +4,11 @@
 
     <div class="drag-area" ng-class="{small: images.images2upload.length > 0}" drop-images="" handler="addToUploadList(files)">
       <div class="drag-area-title">
-        Drag Your Images Here
+        {{ ::('aes.label.draghere'|trans) }}
       </div>
       <div class="drag-area-button">
         <button class="btn btn-default" file-upload="" handler="addToUploadList(files)">
-          <span class="glyphicon glyphicon-upload"></span> or Select them from folder
+          <span class="glyphicon glyphicon-upload"></span> {{ ::('aes.label.orselect'|trans) }}
         </button>
       </div>
     </div>
@@ -16,7 +16,7 @@
     <div class="placeholder" ng-repeat="image in images2upload">
 
       <div class="remove">
-        <button type="button" class="close" title="Remove" ng-click="removeFromStaging(image)">×</button>
+        <button type="button" class="close" title="{{ ::('aes.btn.remove'|trans) }}" ng-click="removeFromStaging(image)">×</button>
       </div>
 
       <div class="progress">
@@ -32,11 +32,11 @@
         <span class="img-size" ng-show="image.width && image.height">{{image.width}} x {{image.height}}</span>
         <br>
 
-        <a class="set-for-all" ng-click="setForAllPhotographer(image.photographer)">Use for all</a>
-        <input ng-model="image.photographer" placeholder="Photographer">
+        <a class="set-for-all" ng-click="setForAllPhotographer(image.photographer)">{{ ::('aes.label.useforall'|trans) }}</a>
+        <input ng-model="image.photographer" placeholder="{{ ::('aes.label.photographer'|trans) }}">
 
-        <a class="set-for-all" ng-click="setForAllDescription(image.description)">Use for all</a>
-        <textarea ng-model="image.description" placeholder="Description" cols="40" rows="2"></textarea>
+        <a class="set-for-all" ng-click="setForAllDescription(image.description)">{{ ::('aes.label.useforall'|trans) }}</a>
+        <textarea ng-model="image.description" placeholder="{{ ::('aes.label.description'|trans) }}" cols="40" rows="2"></textarea>
       </div>
 
     </div>
@@ -44,10 +44,10 @@
 
   <div class="buttons-bar">
     <button type="button" class="btn btn-primary" ng-disabled="images.images2upload.length < 1 || uploading" ng-click="uploadStaged()">
-      Upload
+      {{ ::('aes.btn.upload'|trans) }}
     </button>
     <button type="button" class="btn btn-default" ng-disabled="images.images2upload.length < 1 || uploading" ng-click="clearStaged()">
-      Clear
+      {{ ::('aes.btn.clear'|trans) }}
     </button>
   </div>
 

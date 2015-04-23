@@ -1,14 +1,14 @@
 <section class="tabcontent info-pane" ng-controller="PaneInfoCtrl as infoCtrl">
 
   <div class="panel-title">
-    Article Info
+    {{ ::('aes.label.articleinfo'|trans) }}
   </div>
 
   <div class="info-list">
     <ul>
       <li>
         <div class="field-description">
-          Created:
+          {{ ::('aes.label.created'|trans) }}:
         </div>
         <div class="field-value">
           <ul>
@@ -18,7 +18,7 @@
       </li>
       <li>
         <div class="field-description">
-          Last updated:
+          {{ ::('aes.label.lastupdated'|trans) }}:
         </div>
         <div class="field-value">
           <ul>
@@ -28,7 +28,7 @@
       </li>
       <li>
         <div class="field-description">
-          Published on:
+          {{ ::('aes.label.publishedon'|trans) }}:
         </div>
         <div class="field-value">
           <ul>
@@ -38,7 +38,7 @@
       </li>
       <li>
         <div class="field-description">
-          Type:
+          {{ ::('aes.label.type'|trans) }}:
         </div>
         <div class="field-value">
           <ul>
@@ -48,11 +48,51 @@
       </li>
       <li>
         <div class="field-description">
-          Webcode:
+          {{ ::('aes.label.webcode'|trans) }}:
         </div>
         <div class="field-value">
           <ul>
             <li>{{::infoCtrl.article.webcode}}</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="field-description">
+          Language:
+        </div>
+        <div class="field-value">
+          <ul>
+            <li>{{::infoCtrl.article.languageData.name}} ({{::infoCtrl.article.languageData.RFC3066bis}})</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="field-description">
+          Publication:
+        </div>
+        <div class="field-value">
+          <ul>
+            <li>{{::infoCtrl.article.publication.name}}</li>
+          </ul>
+        </div>
+      </li>
+      <li ng-if="infoCtrl.article.issue">
+        <div class="field-description">
+          Issue:
+        </div>
+        <div class="field-value">
+          <ul>
+            <li>{{::infoCtrl.article.issue.title}}</li>
+          </ul>
+        </div>
+      </li>
+      <li ng-if="infoCtrl.article.section">
+        <div class="field-description">
+          Section:
+        </div>
+        <div class="field-value">
+          <ul>
+            <li>{{::infoCtrl.article.section.title}}</li>
           </ul>
         </div>
       </li>

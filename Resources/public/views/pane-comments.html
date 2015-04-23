@@ -1,10 +1,10 @@
 <section class="tabcontent comments-panel" ng-controller="CommentsCtrl">
   <div class="panel-title-button-group btn-group pull-right" bs-radio-group="" ng-model="globalShowStatus">
-    <button type="button" class="btn btn-default" ng-class="{active: {{globalShowStatus === 'expanded'}} }" title="{{globalShowStatus === 'expanded' ? 'Collapse' : 'Expand'}} Comments" ng-click="toggleShowStatus()"><i class="fa fa-sort"></i></button>
+    <button type="button" class="btn btn-default" ng-class="{active: {{globalShowStatus === 'expanded'}} }" title="{{globalShowStatus === 'expanded' ? ('aes.label.collapse'|trans) : ('aes.label.expand'|trans) }} Comments" ng-click="toggleShowStatus()"><i class="fa fa-sort"></i></button>
   </div>
 
   <div class="panel-title">
-    Comments
+    {{ ::('aes.label.comments'|trans) }}
   </div>
 
   <div class="commenting-options" ng-class="{
@@ -19,23 +19,23 @@
 
     <select class="disabled" ng-model="commentingSetting" ng-options="opt.value as opt.text for opt in commentingOpts" ng-disabled="isChangingCommenting" ng-change="updateCommentingDirtyFlag()"></select>
 
-    <button class="btn btn-default btn-xs" ng-disabled="!commentingOptDirty || isChangingCommenting" ng-click="changeCommentingSetting()">Apply</button>
+    <button class="btn btn-default btn-xs" ng-disabled="!commentingOptDirty || isChangingCommenting" ng-click="changeCommentingSetting()">{{ ::('aes.btn.apply'|trans) }}</button>
 
-    <label>Visible on Frontend:</label>
-    <span class="{{commentingSettingSrv !== commenting.DISABLED ? 'yes' : 'no'}}">{{commentingSettingSrv !== commenting.DISABLED ? 'yes' : 'no'}}</span>
+    <label>{{ ::('aes.label.visibleonfrontend'|trans) }}:</label>
+    <span class="{{commentingSettingSrv !== commenting.DISABLED ? 'yes' : 'no'}}">{{commentingSettingSrv !== commenting.DISABLED ? ('aes.label.yes'|trans) : ('aes.label.no'|trans) }}</span>
 
-    <label>Commenting:</label>
-    <span class="{{commentingSettingSrv === commenting.ENABLED ? 'yes' : 'no'}}">{{commentingSettingSrv === commenting.ENABLED ? 'yes' : 'no'}}</span>
+    <label>{{ ::('aes.label.commenting'|trans) }}:</label>
+    <span class="{{commentingSettingSrv === commenting.ENABLED ? 'yes' : 'no'}}">{{commentingSettingSrv === commenting.ENABLED ? ('aes.label.yes'|trans) : ('aes.label.no'|trans) }}</span>
   </div>
 
   <div class="add-element" ng-class="{expanded: adding,
                invisible: commentingSettingSrv !== commenting.ENABLED}">
     <div class="heading">
       <button class="btn btn-sf-invisible" data-test-button="add" ng-click="adding = true" ng-hide="adding">
-        <span class="glyphicon glyphicon-plus"></span><span class="add-text">POST A COMMENT</span>
+        <span class="glyphicon glyphicon-plus"></span><span class="add-text">{{ ::('aes.label.postcomment'|trans) }}</span>
       </button>
       <button class="btn btn-sf-invisible" ng-click="adding = false" ng-show="adding">
-        <span class="glyphicon glyphicon-minus"></span><span class="add-text">POST A COMMENT</span>
+        <span class="glyphicon glyphicon-minus"></span><span class="add-text">{{ ::('aes.label.postcomment'|trans) }}</span>
       </button>
     </div>
     <div ng-show="adding" class="body">
@@ -45,16 +45,16 @@
          placeholder="Author"
          ng-model="create.author"
          -->
-      <div class="input-name">Subject</div>
-      <input class="editor-input" placeholder="Subject" ng-model="create.subject" ng-disabled="isSending">
-      <div class="input-name">Comment</div>
+      <div class="input-name">{{ ::('Subject'|trans) }}</div>
+      <input class="editor-input" placeholder="{{ ::('Subject'|trans) }}" ng-model="create.subject" ng-disabled="isSending">
+      <div class="input-name">{{ ::('Comment'|trans) }}</div>
       <textarea class="editor-input" ng-model="create.message" ng-disabled="isSending"></textarea>
       <div class="controls">
         <button class="btn btn-primary btn-sm pull-right" data-test-button="new" ng-click="add({comment:create})" ng-disabled="isSending">
-          Send
+          {{ ::('Send'|trans) }}
         </button>
         <button class="btn btn-default btn-sm pull-right" ng-click="cancel()" ng-disabled="isSending">
-          Cancel
+          {{ ::('Cancel'|trans) }}
         </button>
       </div>
     </div>
@@ -62,7 +62,7 @@
 
   <div class="comment-controls">
     <div class="filters">
-      <span class="filters-label">View:</span>
+      <span class="filters-label">{{ ::('aes.label.view'|trans) }}:</span>
       <span ng-repeat="(key, value) in statuses" class="{{key}}-check">
         <input ng-model="value" type="checkbox" ng-change="toggle(key)">
         {{key}}
@@ -74,19 +74,19 @@
     <div class="status-buttons">
       <a class="btn btn-default btn-xs" ng-disabled="commentingSettingSrv === commenting.DISABLED
                       || countSelected() === 0" ng-click="comments.changeSelectedStatus('approved')">
-        Approve
+        {{ ::('aes.btn.approve'|trans) }}
       </a>
       <a class="btn btn-default btn-xs" ng-disabled="commentingSettingSrv === commenting.DISABLED
                       || countSelected() === 0" ng-click="comments.changeSelectedStatus('pending')">
-        Mark as New
+        {{ ::('aes.btn.markasnew'|trans) }}
       </a>
       <a class="btn btn-default btn-xs" ng-disabled="commentingSettingSrv === commenting.DISABLED
                       || countSelected() === 0" ng-click="confirmHideComments()">
-        Hide
+        {{ ::('aes.btn.hide'|trans) }}
       </a>
       <a class="btn btn-default btn-xs delete-button" ng-disabled="commentingSettingSrv === commenting.DISABLED
                       || countSelected() === 0" ng-click="confirmDeleteComments()">
-        Delete
+        {{ ::('aes.btn.delete'|trans) }}
       </a>
     </div>
   </div>
@@ -95,15 +95,15 @@
 
     <div class="liner"> <!-- does the style trick for the vertical lines -->
       <comment model="comment" ng-repeat="comment in filtered = (comments.displayed | filter:selected | sortComments:sorting.text)" class="{{comment.showStatus}} comment-{{comment.status}} level-{{comment.thread_level}}" allowreplying="(commentingSettingSrv === commenting.ENABLED)
-              && (comment.thread_level < 2)" confirm-hide-comments="confirmHideComments(commentId)" confirm-delete-comments="confirmDeleteComments(commentId)">
+              && (comment.thread_level < 2)" confirm-hide-comments="confirmHideComments(commentId)" confirm-delete-comments="confirmDeleteComments(commentId)" save-comment="saveComment(comment)" send-reply="sendReply(comment)">
       </comment>
     </div>
     <div class="empty-message" ng-show="filtered.length < 1">
-      No any comment matches your selection
+      {{ ::('aes.label.nocomments'|trans) }}
     </div>
     <div class="more-button-wrapper" ng-show="comments.canLoadMore">
       <button type="button" class="btn btn-default" ng-mouseover="comments.more()">
-        Show more comments
+        {{ ::('aes.label.showmorecomments'|trans) }}
       </button>
     </div>
   </div>
