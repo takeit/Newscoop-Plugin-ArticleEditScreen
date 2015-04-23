@@ -5,7 +5,6 @@
  * @copyright 2014 Sourcefabric z.ú.
  * @license http://www.gnu.org/licenses/gpl-3.0.txt
  */
-
 namespace Newscoop\EditorBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -33,7 +32,7 @@ class DefaultController extends Controller
         }
 
         if (!$language || !$articleNumber) {
-            return new RedirectResponse($this->generateUrl('newscoop_zendbridge_bridge_index') . 'articles/add_move.php');
+            return new RedirectResponse($this->generateUrl('newscoop_zendbridge_bridge_index').'articles/add_move.php');
         }
 
         if (null !== $articleNumber) {
@@ -46,7 +45,7 @@ class DefaultController extends Controller
                     'message' => $translator->trans('aes.alerts.notfound'),
                     'locked' => false,
                     'articleNumber' => $articleNumber,
-                    'language' => $language
+                    'language' => $language,
                 ));
             }
 
@@ -57,14 +56,14 @@ class DefaultController extends Controller
 
                 return $this->render("NewscoopEditorBundle:Alerts:alert.html.twig", array(
                     'message' => $translator->trans('aes.alerts.locked', array(
-                        '%realname%' => $lockUser['first_name'] . ' ' . $lockUser['last_name'],
+                        '%realname%' => $lockUser['first_name'].' '.$lockUser['last_name'],
                         '%username%' => $lockUser['username'],
                         '%hours%' => $timeDiffrence->h,
-                        '%minutes%' => $timeDiffrence->i
+                        '%minutes%' => $timeDiffrence->i,
 
                     )),
                     'locked' => true,
-                    'article' => $article[0]
+                    'article' => $article[0],
                 ));
             }
         }
@@ -81,13 +80,13 @@ class DefaultController extends Controller
         $settings = $this->createSettingsJson($request, $userSettings, $client, $articleInfo);
         $styles = $em->getRepository("Newscoop\EditorBundle\Entity\Settings")->findOneBy(array(
             'option' => 'css_custom_style',
-            'isGlobal' => true
+            'isGlobal' => true,
         ));
 
         return $this->render("NewscoopEditorBundle:Default:admin.html.twig", array(
             'clientId' => $client->getPublicId(),
             'userSettings' => $settings,
-            'custom_styles' => $styles->getValue()
+            'custom_styles' => $styles->getValue(),
         ));
     }
 
@@ -110,32 +109,33 @@ class DefaultController extends Controller
             'API' => array(
                 'rootURI' => $request->getUriForPath(null),
                 'endpoint' => $userSettings["apiendpoint"],
-                'full' => $request->getUriForPath(null) . $userSettings["apiendpoint"]
+                'full' => $request->getUriForPath(null).$userSettings["apiendpoint"],
             ),
             'auth' => array(
                 'client_id' => $client->getPublicId(),
                 'redirect_uri' => $redirectUris[0],
-                'server' => $request->getUriForPath($this->generateUrl('fos_oauth_server_authorize'))
+                'server' => $request->getUriForPath($this->generateUrl('fos_oauth_server_authorize')),
+                'tokenKeyName' => 'newscoop.aes.token',
             ),
             'article' => array(
                 'width' => array(
                     'desktop' => $userSettings['desktopview'],
                     'tablet' => $userSettings['tabletview'],
-                    'phone' => $userSettings['mobileview']
-                )
+                    'phone' => $userSettings['mobileview'],
+                ),
             ),
             'image' => array(
                 'width' => array(
-                    'small' => $userSettings['imagesmall'] . "%",
-                    'medium' => $userSettings['imagemedium'] . "%",
-                    'big' => $userSettings['imagelarge'] . "%"
+                    'small' => $userSettings['imagesmall']."%",
+                    'medium' => $userSettings['imagemedium']."%",
+                    'big' => $userSettings['imagelarge']."%",
                 ),
-                'float' => 'none'
+                'float' => 'none',
             ),
             'image_size' => $userSettings["default_image_size"],
             'placeholder' => $userSettings['placeholder'],
             'showSwitches' => filter_var($userSettings['showswitches'], FILTER_VALIDATE_BOOLEAN),
-            'articleTypeFields' => $types
+            'articleTypeFields' => $types,
         );
 
         return json_encode($settings, JSON_NUMERIC_CHECK);
@@ -159,9 +159,9 @@ class DefaultController extends Controller
                     'title' => array(
                         'name' => 'title',
                         'displayName' => $translator->trans('aes.fields.title'),
-                        'order' => $value->getPosition()
-                    )
-                )
+                        'order' => $value->getPosition(),
+                    ),
+                ),
             );
         }
 
@@ -203,7 +203,7 @@ class DefaultController extends Controller
 
         return new RedirectResponse($this->generateUrl('newscoop_admin_aes', array(
             'language' => $language,
-            'articleNumber' => $articleNumber
+            'articleNumber' => $articleNumber,
         )));
     }
 }

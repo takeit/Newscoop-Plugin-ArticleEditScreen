@@ -16,10 +16,10 @@
             margin: 0 auto;
         }
         .signin-heading {
-        	color: #444;
-			text-align: center;
-			font-size: 24px;
-			font-weight: bold;
+            color: #444;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
         }
     </style>
   </head>
@@ -30,24 +30,14 @@
     </div>
 
     <script type="text/javascript">
-    function getHashParams() {
-        var hashParams = {};
-        var e,a = /\+/g,r = /([^&;=]+)=?([^&;]*)/g,d = function (s) {
-        	return decodeURIComponent(s.replace(a, " "));
-        },
-        q = window.location.hash.substring(1);
+        var tokenRegex = new RegExp('access_token=(\\w+)'),
+            matches = tokenRegex.exec(window.location.hash),
+            token;
 
-        while (e = r.exec(q))
-        	hashParams[d(e[1])] = d(e[2]);
-        return hashParams;
-    }
-
-    var hashParams = getHashParams();
-    if (hashParams.access_token !== undefined) {
-        if (!sessionStorage.getItem('token')) {
-            sessionStorage.setItem('token', hashParams.access_token);
+        token = matches[1];
+        if (!sessionStorage.getItem('newscoop.aes.token') && token) {
+            sessionStorage.setItem('newscoop.aes.token', token);
         }
-    }
     </script>
   </body>
 </html>

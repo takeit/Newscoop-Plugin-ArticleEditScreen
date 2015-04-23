@@ -118,7 +118,7 @@ aes:
     assignedall: "All users have been unassigned successfully"
     resetcsserror: "Failed to reset the CSS"
     resetcss: "The CSS has been reseted successfully"
-    authfinished: 'Authentication finished.'
+    authfinished: "Authentication finished."
   fields:
     title: "Title"
   btn:

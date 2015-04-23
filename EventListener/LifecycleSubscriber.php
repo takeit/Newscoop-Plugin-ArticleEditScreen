@@ -45,7 +45,7 @@ class LifecycleSubscriber implements EventSubscriberInterface
     {
         $publications = $this->em->getRepository('Newscoop\Entity\Publication')->findAll();
         $publication = $publications[0];
-        $redirectUri = 'http://'.$publication->getDefaultAlias()->getName().$router->generate('aes_oauth_result');
+        $redirectUri = 'http://'.$publication->getDefaultAlias()->getName().$this->router->generate('aes_oauth_result');
         $client = $this->clientManager->createClient();
         $client->setName('newscoop_aes_'.$this->syspref->SiteSecretKey);
         $client->setPublication($publication);
