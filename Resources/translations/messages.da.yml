@@ -221,7 +221,7 @@ aes:
                 errors:
                     mobile:
                         min: 'Mobilvisning skal være {{ limit }} eller mere.'
-                        max: null
+                        max: 'Mobilvisning kan ikke være større end {{ limit }} tegn.'
             images:
                 small: 'Lille størrelse'
                 medium: 'Mellem størrelse'
