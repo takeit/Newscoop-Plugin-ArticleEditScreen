@@ -14,7 +14,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 class OAuthController extends Controller
 {
     /**
-     * @Route("/admin/editor_plugin/oauth/result/", options={"expose"=true}, name="aes_oauth_result")
+     * @Route("/editor_plugin/oauth/result/", options={"expose"=true}, name="aes_oauth_result")
      * @Method("GET")
      */
     public function oauthResultAction()
