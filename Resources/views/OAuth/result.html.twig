@@ -35,7 +35,7 @@
             token;
 
         token = matches[1];
-        if (!sessionStorage.getItem('newscoop.aes.token') && token) {
+        if (token) {
             sessionStorage.setItem('newscoop.aes.token', token);
         }
     </script>
