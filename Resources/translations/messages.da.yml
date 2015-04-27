@@ -1,5 +1,107 @@
 aes:
+    label:
+        recommend: Recommend
+        unrecommend: Unrecommend
+        collapse: Collapse
+        expand: Expand
+        undo: Undo
+        redo: Redo
+        reply: Reply
+        finishingauth: 'Finishing authentication'
+        selectedtext: 'Selected text'
+        linktext: 'Link text'
+        openlink: 'Open link in New window'
+        attachedimages: 'Attached Images'
+        approved: Approved
+        remove: Remove
+        images: Images
+        embedcode: 'Embed Code'
+        addsnippet: 'Add a snippet'
+        title: Title
+        snippettemplate: 'Snippet Template'
+        choosetemplate: 'choose a template'
+        templatefields: 'template fields marked with (*) are required'
+        attachedsnippets: 'Attached code snippets'
+        comments: Comments
+        postcomment: 'Post a Comment'
+        enabled: Enabled
+        disabled: Disabled
+        locked: Locked
+        visibleonfrontend: 'Visible on Frontend'
+        commenting: Commenting
+        expandcomments: 'Expand comments'
+        no: No
+        yes: Yes
+        view: View
+        all: All
+        hidden: Hidden
+        pending: Pending
+        nested: Nested
+        chronological: Chronological
+        chronologicalasc: 'Chronological (asc.)'
+        nocomments: 'No comment matches your selection'
+        articleinfo: 'Article Info'
+        created: Created
+        lastupdated: 'Last updated'
+        publishedon: 'Published on'
+        type: Type
+        webcode: Webcode
+        authorsmanagement: 'Authors Management'
+        addanauthor: 'Add an author'
+        selectauthor: 'select new author'
+        chooserole: 'choose author role'
+        attachedauthors: 'Attached Authors'
+        relatedarticles: 'Related Articles'
+        advancedfilter: 'Advanced filter'
+        publication: Publication
+        issue: Issue
+        section: Section
+        search: Search
+        pinnedarticles: 'Pinned articles'
+        searchresults: 'Search results'
+        at: at
+        published: Published
+        new: New
+        submitted: Submitted
+        pinarticle: 'Pin article'
+        switches: Switches
+        topics: Topics
+        addtopic: 'Add new topic'
+        selectparent: 'select parent topic'
+        addexistingtopics: 'Add existing topic(s)'
+        topicname: 'Topic name'
+        assignedtopics: 'Assigned Topics'
+        customfields: 'Custom fields'
+        nofields: 'There are no metadata fields for this type of article'
+        searchmedia: 'Search Media Archive'
+        displaying: Displaying
+        currentfilter: 'Current filter'
+        nodescription: 'No description'
+        loadmore: 'Load More'
+        showmorecomments: 'Show more comments'
+        draghere: 'Drag Your Images Here'
+        orselect: 'or Select them from folder'
+        useforall: 'Use for all'
+        description: Description
+        photographer: Photographer
+        enteraddress: 'Enter web address'
+        selectedimages: 'SELECTED IMAGES'
+        imagescount: '{1} image|[0,Inf] images'
+        attachimages: 'Attach Images'
+        authenticating: Authenticating
+        replycomment: 'Reply to this comment'
+        articlepreview: 'Article Preview'
+        articleeditingenv: 'Article Editing Environment'
+        attachedslideshows: 'Attached Slideshows'
+        slideshows: Slideshows
+        itemscount: '{1} item|[0,Inf] items'
+        attachslideshows: 'Attach Slideshow(s)'
+        attachdetach: 'Attach / Detach'
+        createslideshow: 'Create Slideshow'
     alerts:
+        popup:
+            resethead: 'Do you really want to reset your custom CSS?'
+            reset: 'Your current CSS will be gone and the default one will be loaded instead.'
         lockedHead: 'Artiklen er låst'
         locked: 'Artiklen blev låst af %username% (%realname%) for %hours% time(r) og %minutes% minutter siden.'
         notfound: 'Artiklen kunne ikke findes.'
@@ -13,6 +115,9 @@ aes:
         assignallerror: 'Ikke alle brugere kunne tilføjes!'
         unassignallerror: 'Ikke alle brugere kunne fjernes!'
         unassignedall: 'Alle brugere blev fjernet'
+        resetcsserror: 'Failed to reset the CSS'
+        resetcss: 'The CSS has been reseted successfully'
+        authfinished: 'Authentication finished.'
     fields:
         title: Titel
     btn:
@@ -20,6 +125,26 @@ aes:
         cancel: Annullér
         view: Se
         save: Gem
+        okbtn: Ok
+        restorecss: 'Reset CSS'
+        clear: Clear
+        add: Add
+        attachimage: 'Attach image'
+        setrenditions: 'Set renditions'
+        apply: Apply
+        approve: Approve
+        markasnew: 'Mark as a New'
+        hide: Hide
+        delete: Delete
+        filter: Filter
+        reply: Reply
+        zenmode: 'Zen mode'
+        previewarticle: 'Preview article'
+        editcaption: 'Edit Caption'
+        upload: Upload
+        discard: Discard
+        insertorderedlist: 'Insert Ordered List'
+        insertunorderedlist: 'Insert Unordered List'
     tip: null
     tippermissions: null
     stylestip: null
@@ -96,7 +221,7 @@ aes:
                 errors:
                     mobile:
                         min: 'Mobilvisning skal være {{ limit }} eller mere.'
-                        max: null
+                        max: 'Mobilvisning kan ikke være større end {{ limit }} tegn.'
             images:
                 small: 'Lille størrelse'
                 medium: 'Mellem størrelse'
@@ -112,3 +237,94 @@ aes:
                 small: lille
                 medium: mellem
                 big: stor
+                original: original
+    msgs:
+        comments:
+            add:
+                success: 'The comment has been added successfully.'
+                error: 'The comment could not be added, please try again.'
+            change:
+                success: 'Comments settings updated successfully.'
+                error: 'Failed to update comments settings.'
+            hide:
+                popupHead: 'Do you really want to hide selected comments?'
+                popup: 'The comments will not be visible to readers.'
+                success: 'The selected comments have been hidden.'
+                error: 'Failed to hide selected comments.'
+            changesingle:
+                success: 'The comment status has been changed to %status%'
+                error: 'Failed to change comment status.'
+            delete:
+                popupHead: 'Are you sure you want to delete selected comments?'
+                popup: 'Deleted comments will not be visible, but will remain in the database.'
+                success: 'Selected comments have been deleted.'
+                error: 'Failed to delete selected comments.'
+            reply:
+                success: 'Successfully replied to a comment.'
+                error: 'Replying to a comment failed.'
+            edit:
+                success: 'The comment has been saved successfully.'
+                error: 'Failed to edit comment.'
+        snippets:
+            add:
+                success: 'The snippet has been added successfully.'
+                error: 'Failed to add the snippet.'
+            remove:
+                popupHead: 'Do you really want to remove this snippet?'
+                popup: 'Should you change your mind, the snippet can always be added again.'
+                success: 'The snippet has been removed successfully.'
+                error: 'Failed to remove the snippet.'
+        images:
+            attach:
+                success: 'The image(s) have been attached successfully.'
+                error: 'Failed to attach image(s).'
+            detach:
+                popupHead: 'Do you really want to detach this image from the article?'
+                popup: 'Should you change your mind, the image can always be re-attached again.'
+                success: 'Image detached successfully.'
+                error: 'Failed to detach the image.'
+        authors:
+            add:
+                success: 'The author has been added successfully.'
+                error: 'Adding an author failed.'
+            change:
+                success: 'The author type has been changed successfully.'
+                error: 'Failed to change the author type.'
+            remove:
+                popupHead: 'Do you really want to remove this author?'
+                popup: 'Should you change your mind, the same author can always be added again.'
+                success: 'Author has been removed successfully from this article.'
+                error: 'Failed to remove the author from this article.'
+        relatedarticles:
+            pin:
+                success: 'The article has been pinned successfully as a related article.'
+                error: 'Failed to pin the related article.'
+            unpin:
+                popupHead: 'Do you really want to unpin this related article?'
+                popup: 'Should you change your mind, the related article can always be re-pinned again.'
+                success: 'Article has been unpinned successfully.'
+                error: 'Failed to unpin the article.'
+            order:
+                success: 'The order has been updated.'
+                error: 'Failed to update the order.'
+        switches:
+            success: 'The switches have been saved successfully.'
+            error: 'Failed to save switches.'
+        topics:
+            add:
+                success: 'The topic(s) have been added and assigned successfully to this article.'
+                error: 'Failed to add and assign new topic(s) to the article.'
+            assign:
+                success: 'The topic has been assigned successfully to this article'
+                error: 'Assigning the topic to this article failed.'
+            unassign:
+                popupHead: 'Do you really want to unassign this topic from the article?'
+                popup: 'Should you change your mind, the topic can always be re-assigned again.'
+                success: 'Topic(s) unassigned successfully.'
+                error: 'Failed to unassign topic(s) from the article.'
+        slideshows:
+            unassign:
+                popupHead: 'Do you really want to unassign this slideshow from the article?'
+                popup: 'Should you change your mind, the slideshow can always be re-assigned again.'
+                success: 'Slideshow unassigned successfully.'
+                error: 'Failed to unassign slideshow from the article.'
