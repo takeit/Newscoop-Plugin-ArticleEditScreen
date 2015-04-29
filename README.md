@@ -4,7 +4,10 @@ Article Edit Screen - Newscoop Plugin
 The new Article Edit Screen for Newscoop in the form of a Plugin.
 
 
-Install
+![aes](http://oi58.tinypic.com/fvll5i.jpg)
+
+
+Installation
 -------
 
 First install the Plugin using Newscoop's Plugin Installer.
