@@ -333,7 +333,7 @@ class EditorService
         $arrayCollection = new ArrayCollection();
         foreach ($options as $fieldName => $fieldValue) {
             if (strpos($fieldName, self::FIELD_TYPE_MARKER) !== false) {
-                $extractedFieldName = explode("_", $fieldName, 2);
+                $extractedFieldName = explode("_field", $fieldName, 2);
                 $position = new Position();
                 $position->setName($extractedFieldName[0]);
                 $position->setPosition($fieldValue);
