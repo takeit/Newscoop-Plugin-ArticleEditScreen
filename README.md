@@ -1,7 +1,7 @@
-Newscoop-Plugin-ArticleEditScreen
+Article Edit Screen - Newscoop Plugin
 =================================
 
-the new Article Edit Screen for Newscoop in the form of a Plugin
+The new Article Edit Screen for Newscoop in the form of a Plugin.
 
 
 Install
@@ -13,6 +13,6 @@ First install the Plugin using Newscoop's Plugin Installer.
 
 Then install the Plugin assets.
 
-```# php application/console assets:install public/ --symlink```
+```# php application/console assets:install public/```
 
-Now it's ready for use! You can find it in the Backend under Plugins -> Editor
+Now it's ready for use! You can find it in the Backend under `Plugins -> Editor`
