@@ -117,13 +117,6 @@ class DefaultController extends Controller
                 'server' => $request->getUriForPath($this->generateUrl('fos_oauth_server_authorize')),
                 'tokenKeyName' => 'newscoop.aes.token',
             ),
-            'article' => array(
-                'width' => array(
-                    'desktop' => $userSettings['desktopview'],
-                    'tablet' => $userSettings['tabletview'],
-                    'phone' => $userSettings['mobileview'],
-                ),
-            ),
             'image' => array(
                 'width' => array(
                     'small' => $userSettings['imagesmall']."%",

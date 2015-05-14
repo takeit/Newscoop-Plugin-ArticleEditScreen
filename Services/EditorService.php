@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package Newscoop\EditorBundle
  * @author Rafał Muszyński <rafal.muszynski@sourcefabric.org>
@@ -119,7 +120,7 @@ class EditorService
      * Gets single setting by user and option name
      *
      * @param User   $user   User
-     * @param string $option Option name e.g. "mobileview"
+     * @param string $option Option name e.g. "imagesmall"
      *
      * @return Settings|null Settings object or null
      */
