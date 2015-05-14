@@ -1,11 +1,11 @@
 <?php
+
 /**
  * @package Newscoop\EditorBundle
  * @author Rafał Muszyński <rafal.muszynski@sourcefabric.org>
  * @copyright 2014 Sourcefabric z.ú.
  * @license http://www.gnu.org/licenses/gpl-3.0.txt
  */
-
 namespace Newscoop\EditorBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
@@ -24,51 +24,6 @@ class SettingType extends AbstractType
     {
         $user = $options['user'];
         $builder
-            ->add('mobileview', 'integer', array(
-                'label' => 'aes.settings.form.viewports.mobile',
-                'error_bubbling' => true,
-                'required' => true,
-                'attr' => array('max' => self::MAX_LIMIT, 'min' => self::MIN_LIMIT),
-                'constraints' => array(
-                    new Assert\NotBlank(array('message' => 'aes.form.viewports.mobile.blank')),
-                    new Assert\Range(array(
-                        'max' => self::MAX_LIMIT,
-                        'min' => self::MIN_LIMIT,
-                        'minMessage' => 'aes.form.viewports.mobile.min',
-                        'maxMessage' => 'aes.form.viewports.mobile.max'
-                    ))
-                )
-            ))
-            ->add('tabletview', 'integer', array(
-                'label' => 'aes.settings.form.viewports.tablet',
-                'error_bubbling' => true,
-                'required' => true,
-                'attr' => array('max' => self::MAX_LIMIT, 'min' => self::MIN_LIMIT),
-                'constraints' => array(
-                    new Assert\NotBlank(array('message' => 'aes.form.viewports.tablet.blank')),
-                    new Assert\Range(array(
-                        'max' => self::MAX_LIMIT,
-                        'min' => self::MIN_LIMIT,
-                        'minMessage' => 'aes.form.viewports.tablet.min',
-                        'maxMessage' => 'aes.form.viewports.tablet.max'
-                    ))
-                )
-            ))
-            ->add('desktopview', 'integer', array(
-                'label' => 'aes.settings.form.viewports.desktop',
-                'error_bubbling' => true,
-                'required' => true,
-                'attr' => array('max' => self::MAX_LIMIT, 'min' => self::MIN_LIMIT),
-                'constraints' => array(
-                    new Assert\NotBlank(array('message' => 'aes.form.viewports.desktop.blank')),
-                    new Assert\Range(array(
-                        'max' => self::MAX_LIMIT,
-                        'min' => self::MIN_LIMIT,
-                        'minMessage' => 'aes.form.viewports.desktop.min',
-                        'maxMessage' => 'aes.form.viewports.desktop.max'
-                    ))
-                )
-            ))
             ->add('imagesmall', 'integer', array(
                 'label' => 'aes.settings.form.images.small',
                 'error_bubbling' => true,
@@ -80,9 +35,9 @@ class SettingType extends AbstractType
                         'max' => self::PERCENTAGE_MAX_LIMIT,
                         'min' => self::PERCENTAGE_MIN_LIMIT,
                         'minMessage' => 'aes.form.images.small.min',
-                        'maxMessage' => 'aes.form.images.small.max'
-                    ))
-                )
+                        'maxMessage' => 'aes.form.images.small.max',
+                    )),
+                ),
             ))
             ->add('imagemedium', 'integer', array(
                 'label' => 'aes.settings.form.images.medium',
@@ -95,9 +50,9 @@ class SettingType extends AbstractType
                         'max' => self::PERCENTAGE_MAX_LIMIT,
                         'min' => self::PERCENTAGE_MIN_LIMIT,
                         'minMessage' => 'aes.form.images.medium.min',
-                        'maxMessage' => 'aes.form.images.medium.max'
-                    ))
-                )
+                        'maxMessage' => 'aes.form.images.medium.max',
+                    )),
+                ),
             ))
             ->add('imagelarge', 'integer', array(
                 'label' => 'aes.settings.form.images.large',
@@ -110,15 +65,15 @@ class SettingType extends AbstractType
                         'max' => self::PERCENTAGE_MAX_LIMIT,
                         'min' => self::PERCENTAGE_MIN_LIMIT,
                         'minMessage' => 'aes.form.images.large.min',
-                        'maxMessage' => 'aes.form.images.large.max'
-                    ))
-                )
+                        'maxMessage' => 'aes.form.images.large.max',
+                    )),
+                ),
             ))
             ->add('showswitches', 'choice', array(
                 'label' => 'aes.settings.form.switches',
                 'choices'   => array(
                     'true' => 'aes.settings.label.yes',
-                    'false' => 'aes.settings.label.no'
+                    'false' => 'aes.settings.label.no',
                 ),
                 'error_bubbling' => true,
                 'multiple' => false,
@@ -133,16 +88,16 @@ class SettingType extends AbstractType
                 'constraints' => array(
                     new Assert\Length(array(
                         'max' => 100,
-                        'maxMessage' => 'aes.form.placeholder.max'
-                    ))
-                )
+                        'maxMessage' => 'aes.form.placeholder.max',
+                    )),
+                ),
             ))
             ->add('positions', 'collection', array('type' => new PositionType(), 'options'  => array(
-                'editorService' => $options['editorService']
+                'editorService' => $options['editorService'],
             )));
 
-            if ($user->hasPermission("plugin_editor_api")) {
-                $builder->add('apiendpoint', null, array(
+        if ($user->hasPermission("plugin_editor_api")) {
+            $builder->add('apiendpoint', null, array(
                     'label' => 'aes.settings.form.apiendpoint',
                     'error_bubbling' => true,
                     'required' => false,
@@ -150,9 +105,9 @@ class SettingType extends AbstractType
                         new Assert\NotBlank(array('message' => 'aes.form.apiendpoint.blank')),
                         new Assert\Length(array(
                             'max' => 20,
-                            'maxMessage' => 'aes.form.apiendpoint.max'
-                        ))
-                    )
+                            'maxMessage' => 'aes.form.apiendpoint.max',
+                        )),
+                    ),
                 ))
                 ->add('default_image_size', 'choice', array(
                     'label' => 'aes.settings.form.defaultimagesize',
@@ -162,23 +117,23 @@ class SettingType extends AbstractType
                         'big' => 'aes.settings.form.imagesize.big',
                     ),
                     'required' => false,
-                    'empty_value'  => null
+                    'empty_value'  => null,
                 ));
-            }
+        }
 
-            if ($user->hasPermission("plugin_editor_styles")) {
-                $builder->add('css_custom_style', 'textarea', array(
+        if ($user->hasPermission("plugin_editor_styles")) {
+            $builder->add('css_custom_style', 'textarea', array(
                     'error_bubbling' => true,
-                    'required' => false
+                    'required' => false,
                 ));
-            }
+        }
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setRequired(array(
             'editorService',
-            'user'
+            'user',
         ));
     }
 

@@ -39,8 +39,7 @@ th a, th a:hover {
 <div class="system_pref font-fix">
     <div class="tabbable tabs-left">
     	<ul class="nav nav-tabs">
-            <li class="active"><a href="#viewports" data-toggle="tab">{{ 'aes.settings.label.viewports'|trans }}</a></li>
-            <li><a href="#images" data-toggle="tab">{{ 'aes.settings.label.images'|trans }}</a></li>
+            <li class="active"><a href="#images" data-toggle="tab">{{ 'aes.settings.label.images'|trans }}</a></li>
             <li><a href="#title" data-toggle="tab">{{ 'aes.settings.label.title'|trans }}</a></li>
             <li><a href="#switches" data-toggle="tab">{{ 'aes.settings.label.switches'|trans }}</a></li>
             <li><a href="#placeholders" data-toggle="tab">{{ 'aes.settings.label.placeholders'|trans }}</a></li>
@@ -55,30 +54,7 @@ th a, th a:hover {
             {% endif %}
         </ul>
         <div class="tab-content">
-            <div class="tab-pane active" id="viewports">
-            	<h3>{{ 'aes.settings.label.viewportssettings'|trans }}</h3>
-                <dl>
-                    <dt>
-                        <label>{{ form_label(form.mobileview) }}: <small id="mobileview">(?)</small></label>
-                    </dt>
-                    <dd>
-                        {{ form_widget(form.mobileview, {'attr' : {'class' : 'input_text'}}) }} {{ 'aes.settings.label.pixels'|trans }}
-                    </dd>
-                    <dt>
-                        <label>{{ form_label(form.tabletview) }}: <small id="tabletview">(?)</small></label>
-                    </dt>
-                    <dd>
-                        {{ form_widget(form.tabletview, {'attr' : {'class' : 'input_text'}}) }} {{ 'aes.settings.label.pixels'|trans }}
-                    </dd>
-                    <dt>
-                        <label>{{ form_label(form.desktopview) }}: <small id="desktopview">(?)</small></label>
-                    </dt>
-                    <dd>
-                        {{ form_widget(form.desktopview, {'attr' : {'class' : 'input_text'}}) }} {{ 'aes.settings.label.pixels'|trans }}
-                    </dd>
-                </dl>
-            </div>
-            <div class="tab-pane" id="images">
+            <div class="tab-pane active" id="images">
             	<h3>{{ 'aes.settings.label.imagessettings'|trans }}</h3>
                 <dl>
                     <dt>
@@ -255,9 +231,6 @@ function popover(target, content) {
     });
 };
 
-popover($('#mobileview'), Translator.trans('aes.popover.mobileview'));
-popover($('#desktopview'), Translator.trans('aes.popover.desktopview'));
-popover($('#tabletview'), Translator.trans('aes.popover.tabletview'));
 popover($('#imagesmall'), Translator.trans('aes.popover.imagesmall'));
 popover($('#imagemedium'), Translator.trans('aes.popover.imagemedium'));
 popover($('#imagelarge'), Translator.trans('aes.popover.imagelarge'));

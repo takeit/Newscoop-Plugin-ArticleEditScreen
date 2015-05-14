@@ -159,9 +159,6 @@ aes:
     permissions: "Assing/unassign users to the plugin"
     styles: "Edit CSS stylesheet"
   popover:
-    mobileview: "Adjust the width of the viewport for smartphone usage. As an example: iPhone 5 screens are 640 pixels wide in portrait mode."
-    tabletview: "Adjust the width of the viewport for tablet usage. As an example: iPad mini screens are 768 pixels wide in portrait mode."
-    desktopview: "Adjust the width of the viewport for desktop usage. As an example: 13.3 inch laptops are normally 1360 pixels wide."
     imagesmall: "There are three default image sizes available. Define a small image size in percentage. For example 25% of the full width of the content area."
     imagemedium: "There are three default image sizes available. Define a medium image size in percentage. For example 50% of the full width of the content area."
     imagelarge: "There are three default image sizes available. Define a big image size in percentage. For example 100% of the full width of the content area."

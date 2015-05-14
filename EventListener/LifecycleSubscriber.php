@@ -100,9 +100,6 @@ class LifecycleSubscriber implements EventSubscriberInterface
     private function addDefaultSettings()
     {
         $settings = array(
-            'mobileview' => 320,
-            'tabletview' => 600,
-            'desktopview' => 920,
             'imagesmall' => 30,
             'imagemedium' => 50,
             'imagelarge' => 100,
