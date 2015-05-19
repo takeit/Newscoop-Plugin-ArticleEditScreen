@@ -1,18 +1,5 @@
 aes:
     form:
-        viewports:
-            mobile:
-                min: null
-                max: null
-                blank: null
-            tablet:
-                min: null
-                max: null
-                blank: null
-            desktop:
-                min: null
-                max: null
-                blank: null
         images:
             small:
                 min: null

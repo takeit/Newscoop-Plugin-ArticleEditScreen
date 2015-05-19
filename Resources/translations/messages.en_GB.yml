@@ -158,9 +158,6 @@ aes:
         permissions: 'Assign/unassign users to the plugin'
         styles: 'Edit CSS stylesheet'
     popover:
-        mobileview: 'Mobile view popover...'
-        tabletview: 'Tablet view popover...'
-        desktopview: 'Desktop view popover...'
         imagesmall: 'Small image popover...'
         imagemedium: 'Medium image popover...'
         imagelarge: 'Large image popover...'

@@ -158,9 +158,6 @@ aes:
         permissions: null
         styles: 'Rediger CSS'
     popover:
-        mobileview: 'Mobil popover...'
-        tabletview: 'Tablet popover...'
-        desktopview: 'Desktop popover...'
         imagesmall: 'Lille billede popover...'
         imagemedium: 'Mellem billede popover...'
         imagelarge: 'Stort billede popover...'

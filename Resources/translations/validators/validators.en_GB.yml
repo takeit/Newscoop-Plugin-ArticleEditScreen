@@ -1,18 +1,5 @@
 aes:
     form:
-        viewports:
-            mobile:
-                min: 'The value of Mobile View should be {{ limit }} or more.'
-                max: 'The value of Mobile View should be {{ limit }} or less.'
-                blank: 'The value of Mobile View cannot be blank.'
-            tablet:
-                min: 'The value of Tablet View should be {{ limit }} or more.'
-                max: 'The value of Tablet View should be {{ limit }} or less.'
-                blank: 'The value of Tablet View cannot be blank.'
-            desktop:
-                min: 'The value of Desktop View should be {{ limit }} or more.'
-                max: 'The value of Desktop View should be {{ limit }} or less.'
-                blank: 'The value of Desktop View cannot be blank.'
         images:
             small:
                 min: 'The value of Small size should be {{ limit }} or more.'

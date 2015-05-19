@@ -1,18 +1,5 @@
 aes:
     form:
-        viewports:
-            mobile:
-                min: 'Mobilvisning skal være {{ limit }} eller mere.'
-                max: 'Mobilvisning skal være {{ limit }} eller mindre.'
-                blank: 'Mobilvisning skal udfyldes.'
-            tablet:
-                min: 'Tabletvisning skal være {{ limit }} eller mere.'
-                max: 'Tabletvisning skal være {{ limit }} eller mindre.'
-                blank: 'Tabletvisning skal udfyldes.'
-            desktop:
-                min: 'Desktopvisning skal være {{ limit }} eller mere.'
-                max: 'Desktopvisning skal være {{ limit }} eller mindre.'
-                blank: 'Desktopvisning skal udfyldes.'
         images:
             small:
                 min: 'Lille størrelse skal være {{ limit }} eller mere.'

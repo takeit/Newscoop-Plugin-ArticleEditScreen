@@ -158,9 +158,6 @@ aes:
         permissions: null
         styles: null
     popover:
-        mobileview: null
-        tabletview: null
-        desktopview: null
         imagesmall: null
         imagemedium: null
         imagelarge: null
