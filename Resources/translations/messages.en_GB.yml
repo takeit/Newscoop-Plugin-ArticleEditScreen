@@ -1,107 +1,107 @@
 aes:
     label:
-        recommend: null
-        unrecommend: null
-        collapse: null
-        expand: null
-        undo: null
-        redo: null
-        reply: null
-        finishingauth: null
-        selectedtext: null
-        linktext: null
-        openlink: null
-        attachedimages: null
-        approved: null
-        remove: null
-        images: null
-        embedcode: null
-        addsnippet: null
-        title: null
-        snippettemplate: null
-        choosetemplate: null
-        templatefields: null
-        attachedsnippets: null
-        comments: null
-        postcomment: null
-        enabled: null
-        disabled: null
-        locked: null
-        visibleonfrontend: null
-        commenting: null
-        expandcomments: null
-        no: null
+        recommend: Recommend
+        unrecommend: Unrecommend
+        collapse: Collapse
+        expand: Expand
+        undo: Undo
+        redo: Redo
+        reply: Reply
+        finishingauth: 'Finishing authentication'
+        selectedtext: 'Selected text'
+        linktext: 'Link text'
+        openlink: 'Open link in new window'
+        attachedimages: 'Attached Images'
+        approved: Approved
+        remove: Remove
+        images: Images
+        embedcode: 'Embed Code'
+        addsnippet: 'Add a snippet'
+        title: Title
+        snippettemplate: 'Snippet Template'
+        choosetemplate: 'choose a template'
+        templatefields: 'template fields marked with (*) are required'
+        attachedsnippets: 'Attached code snippets'
+        comments: Comments
+        postcomment: 'Post a Comment'
+        enabled: Enabled
+        disabled: Disabled
+        locked: Locked
+        visibleonfrontend: 'Visible on Frontend'
+        commenting: Commenting
+        expandcomments: 'Expand comments'
+        no: No
         yes: null
         view: null
         all: null
         hidden: null
         pending: null
-        nested: null
-        chronological: null
-        chronologicalasc: null
-        nocomments: null
-        articleinfo: null
+        nested: Nested
+        chronological: Chronological
+        chronologicalasc: 'Chronological (ascending)'
+        nocomments: 'No comment matches your selection'
+        articleinfo: 'Article Info'
         created: null
         lastupdated: null
-        publishedon: null
+        publishedon: 'Published on'
         type: null
         webcode: null
-        authorsmanagement: null
-        addanauthor: null
-        selectauthor: null
-        chooserole: null
-        attachedauthors: null
+        authorsmanagement: 'Author Management'
+        addanauthor: 'Add an author'
+        selectauthor: 'select new author'
+        chooserole: 'choose author role'
+        attachedauthors: 'Attached Authors'
         relatedarticles: null
-        advancedfilter: null
+        advancedfilter: 'Advanced filter'
         publication: null
         issue: null
         section: null
         search: null
-        pinnedarticles: null
-        searchresults: null
+        pinnedarticles: 'Pinned articles'
+        searchresults: 'Search results'
         at: null
         published: null
         new: null
         submitted: null
-        pinarticle: null
+        pinarticle: 'Pin article'
         switches: null
         topics: null
         addtopic: null
-        selectparent: null
-        addexistingtopics: null
+        selectparent: 'select parent topic'
+        addexistingtopics: 'Add existing topic(s)'
         topicname: null
-        assignedtopics: null
-        customfields: null
-        nofields: null
-        searchmedia: null
-        displaying: null
-        currentfilter: null
-        nodescription: null
-        loadmore: null
+        assignedtopics: 'Assigned Topics'
+        customfields: 'Custom fields'
+        nofields: 'There are no metadata fields for this type of article'
+        searchmedia: 'Search Media Archive'
+        displaying: Displaying
+        currentfilter: 'Current filter'
+        nodescription: 'No description'
+        loadmore: 'Load More'
         showmorecomments: null
-        draghere: null
-        orselect: null
+        draghere: 'Drag Your Images Here'
+        orselect: 'or Select them from folder'
         useforall: null
         description: null
         photographer: null
-        enteraddress: null
-        selectedimages: null
-        imagescount: null
-        attachimages: null
-        authenticating: null
-        replycomment: null
-        articlepreview: null
-        articleeditingenv: null
+        enteraddress: 'Enter web address'
+        selectedimages: 'SELECTED IMAGES'
+        imagescount: '{1} image|[0,Inf] images'
+        attachimages: 'Attach Images'
+        authenticating: Authenticating
+        replycomment: 'Reply to this comment'
+        articlepreview: 'Article Preview'
+        articleeditingenv: 'Article Editing Environment'
         attachedslideshows: null
         slideshows: null
-        itemscount: null
-        attachslideshows: null
-        attachdetach: null
-        createslideshow: null
+        itemscount: '{1} item|[0,Inf] items'
+        attachslideshows: 'Attach Slideshow(s)'
+        attachdetach: 'Attach / Detach'
+        createslideshow: 'Create Slideshow'
     alerts:
         popup:
-            resethead: null
-            reset: null
+            resethead: 'Do you really want to reset your custom CSS?'
+            reset: 'Your current CSS will be gone and the default one will be loaded instead.'
         lockedHead: 'This article is locked'
         locked: 'The article has been locked by %username% (%realname%) %hours% hour(s) and %minutes% minute(s) ago.'
         notfound: 'Article couldn''t be found.'
@@ -115,9 +115,9 @@ aes:
         assignallerror: 'Could not assign all users!'
         unassignallerror: 'Could not unassign all users!'
         unassignedall: 'All users have been unassigned successfully'
-        resetcsserror: null
-        resetcss: null
-        authfinished: null
+        resetcsserror: 'Failed to reset the CSS'
+        resetcss: 'The CSS has been reset successfully'
+        authfinished: 'Authentication finished.'
     fields:
         title: Title
     btn:
@@ -126,29 +126,29 @@ aes:
         view: View
         save: Save
         okbtn: null
-        restorecss: null
+        restorecss: 'Reset CSS'
         clear: null
         add: null
-        attachimage: null
-        setrenditions: null
-        apply: null
+        attachimage: 'Attach image'
+        setrenditions: 'Set renditions'
+        apply: Apply
         approve: null
-        markasnew: null
+        markasnew: 'Mark as new'
         hide: null
         delete: null
         filter: null
         reply: null
-        zenmode: null
-        previewarticle: null
-        editcaption: null
+        zenmode: 'Zen mode'
+        previewarticle: 'Preview article'
+        editcaption: 'Edit Caption'
         upload: null
         discard: null
-        insertorderedlist: null
-        insertunorderedlist: null
+        insertorderedlist: 'Insert Ordered List'
+        insertunorderedlist: 'Insert Unordered List'
         submit: null
-    tip: null
-    tippermissions: null
-    stylestip: null
+    tip: 'The title of an article is ranked as the first item of an article by default. If you want it to go to a different position, below another article type field (for example the Catchline) please do so here.'
+    tippermissions: 'Please enable the checkbox for all users who should work with the Article Edit Screen plugin.'
+    stylestip: 'You can overwrite the default style of the Article Edit Screen view by providing your own CSS.'
     name: Editor
     settingstext: Settings
     none: None
@@ -158,13 +158,13 @@ aes:
         permissions: 'Assign/unassign users to the plugin'
         styles: 'Edit CSS stylesheet'
     popover:
-        imagesmall: null
-        imagemedium: null
-        imagelarge: null
+        imagesmall: 'There are three default image sizes available. Define a small image size as a percentage. For example, 25% of the full width of the content area.'
+        imagemedium: 'There are three default image sizes available. Define a medium image size as a percentage. For example, 50% of the full width of the content area.'
+        imagelarge: 'There are three default image sizes available. Define a large image size as a  percentage. For example, 100% of the full width of the content area.'
         showswitches: null
-        placeholder: null
-        apiendpoint: null
-        imagesize: null
+        placeholder: 'Empty fields will have a default placeholder text. Please enter it here.'
+        apiendpoint: 'To make the plugin work properly it needs to point to the API endpoint. The default setting is /api.'
+        imagesize: 'Define the default image size for images being dragged and dropped into the article.'
     table:
         th:
             username: Username
@@ -226,7 +226,7 @@ aes:
                 large: 'Big size'
             title:
                 position: 'Title position'
-            switches: null
+            switches: 'Show standard switches'
             placeholder: 'Placeholder text'
             defaultplaceholder: 'Type placeholder text here...'
             apiendpoint: 'API endpoint'
@@ -235,103 +235,103 @@ aes:
                 small: small
                 medium: medium
                 big: big
-                original: null
+                original: original
     msgs:
         comments:
             add:
-                success: null
-                error: null
+                success: 'The comment has been added successfully.'
+                error: 'The comment could not be added, please try again.'
             change:
-                success: null
-                error: null
+                success: 'Comment settings updated successfully.'
+                error: 'Failed to update comment settings.'
             hide:
-                popupHead: null
-                popup: null
-                success: null
-                error: null
+                popupHead: 'Do you really want to hide the selected comments?'
+                popup: 'The comments will not be visible to readers.'
+                success: 'The selected comments have been hidden.'
+                error: 'Failed to hide selected comments.'
             changesingle:
-                success: null
-                error: null
+                success: 'The comment status has been changed to %status%'
+                error: 'Failed to change comment status.'
             delete:
-                popupHead: null
-                popup: null
-                success: null
-                error: null
+                popupHead: 'Are you sure you want to delete the selected comments?'
+                popup: 'Deleted comments will not be visible, but will remain in the database.'
+                success: 'The selected comments have been deleted.'
+                error: 'Failed to delete the selected comments.'
             reply:
-                success: null
-                error: null
+                success: 'Successfully replied to a comment.'
+                error: 'Replying to a comment failed.'
             edit:
-                success: null
-                error: null
+                success: 'The comment has been saved successfully.'
+                error: 'Failed to edit comment.'
         snippets:
             add:
-                success: null
-                error: null
+                success: 'The snippet has been added successfully.'
+                error: 'Failed to add the snippet.'
             remove:
-                popupHead: null
-                popup: null
-                success: null
-                error: null
+                popupHead: 'Do you really want to remove this snippet?'
+                popup: 'Should you change your mind, the snippet can always be added again.'
+                success: 'The snippet has been removed successfully.'
+                error: 'Failed to remove the snippet.'
         images:
             attach:
-                success: null
-                error: null
+                success: 'The image(s) have been attached successfully.'
+                error: 'Failed to attach image(s).'
             detach:
-                popupHead: null
-                popup: null
-                success: null
-                error: null
+                popupHead: 'Do you really want to detach this image from the article?'
+                popup: 'Should you change your mind, the image can always be re-attached again.'
+                success: 'Image detached successfully.'
+                error: 'Failed to detach the image.'
         authors:
             add:
-                success: null
-                error: null
+                success: 'The author has been added successfully.'
+                error: 'Adding an author failed.'
             change:
-                success: null
-                error: null
+                success: 'The author type has been changed successfully.'
+                error: 'Failed to change the author type.'
             remove:
-                popupHead: null
-                popup: null
-                success: null
-                error: null
+                popupHead: 'Do you really want to remove this author?'
+                popup: 'Should you change your mind, the same author can always be added again.'
+                success: 'The author has been removed successfully from this article.'
+                error: 'Failed to remove the author from this article.'
         relatedarticles:
             pin:
-                success: null
-                error: null
+                success: 'The article has been pinned successfully as a related article.'
+                error: 'Failed to pin the related article.'
             unpin:
-                popupHead: null
-                popup: null
-                success: null
-                error: null
+                popupHead: 'Do you really want to unpin this related article?'
+                popup: 'Should you change your mind, the related article can always be re-pinned again.'
+                success: 'Article has been unpinned successfully.'
+                error: 'Failed to unpin the article.'
             order:
-                success: null
-                error: null
+                success: 'The order has been updated.'
+                error: 'Failed to update the order.'
         switches:
-            success: null
-            error: null
+            success: 'The switches have been saved successfully.'
+            error: 'Failed to save switches.'
         topics:
             add:
-                success: null
-                error: null
+                success: 'The topic(s) have been added and assigned successfully to this article.'
+                error: 'Failed to add and assign new topic(s) to the article.'
             assign:
-                success: null
-                error: null
+                success: 'The topic has been assigned successfully to this article.'
+                error: 'Assigning the topic to this article failed.'
             unassign:
-                popupHead: null
-                popup: null
-                success: null
-                error: null
+                popupHead: 'Do you really want to unassign this topic from the article?'
+                popup: 'Should you change your mind, the topic can always be re-assigned again.'
+                success: 'Topic(s) unassigned successfully.'
+                error: 'Failed to unassign topic(s) from the article.'
         slideshows:
             unassign:
-                popupHead: null
-                popup: null
-                success: null
-                error: null
+                popupHead: 'Do you really want to unassign this slideshow from the article?'
+                popup: 'Should you change your mind, the slideshow can always be re-assigned again.'
+                success: 'Slideshow unassigned successfully.'
+                error: 'Failed to unassign slideshow from the article.'
         feedback:
-            success: null
-            error: null
-            email: null
-            name: null
-            msg: null
+            success: 'The feedback message has been sent successfully.'
+            error: 'Failed to send the feedback message. Please try again later.'
+            email: 'Enter email address'
+            name: 'Enter name'
+            msg: 'Enter feedback message'
             header: null
             modalHead: null
-            info: null
+            info: 'The Article Edit Screen plugin is a fresh piece of software and still in beta. Thanks for helping us to further improve the plugin by providing your feedback in the form of ideas, requests or bug reports.'
