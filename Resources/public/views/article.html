@@ -1,7 +1,7 @@
 <article class="main-article-container" id="main-article" ng-controller="ArticleCtrl" ng-class="[panes.articleClass, platform.current]" dropped-images-container="">
   <div class="zen-buttons">
     <button class="btn btn-primary" ng-disabled="!articleService.modified" ng-click="save()">
-      {{ ::('aes.btn.save'|trans) }} 
+      {{ ::('aes.btn.save'|trans) }}
     </button>
     <button class="btn btn-sf-invisible zen-close" id="test-go-normal" ng-click="mode.goNormal()">
       <span class="glyphicon glyphicon-remove"></span>
