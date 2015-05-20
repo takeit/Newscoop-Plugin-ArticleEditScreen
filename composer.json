@@ -1,6 +1,6 @@
 {
     "name": "newscoop/article-edit-screen",
-    "version": "1.0.0-beta.5",
+    "version": "1.0.0-beta.6",
     "description": "The new and improved Article Edit Screen",
     "license": "GPL-3.0",
     "type": "newscoop-plugin",
