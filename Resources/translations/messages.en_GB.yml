@@ -31,45 +31,45 @@ aes:
         commenting: Commenting
         expandcomments: 'Expand comments'
         no: No
-        yes: null
-        view: null
-        all: null
-        hidden: null
-        pending: null
+        yes: Yes
+        view: View
+        all: All
+        hidden: Hidden
+        pending: Pending
         nested: Nested
         chronological: Chronological
         chronologicalasc: 'Chronological (ascending)'
         nocomments: 'No comment matches your selection'
         articleinfo: 'Article Info'
-        created: null
-        lastupdated: null
+        created: Created
+        lastupdated: 'Last updated'
         publishedon: 'Published on'
-        type: null
-        webcode: null
+        type: Type
+        webcode: Webcode
         authorsmanagement: 'Author Management'
         addanauthor: 'Add an author'
         selectauthor: 'select new author'
         chooserole: 'choose author role'
         attachedauthors: 'Attached Authors'
-        relatedarticles: null
+        relatedarticles: 'Related Articles'
         advancedfilter: 'Advanced filter'
-        publication: null
-        issue: null
-        section: null
-        search: null
+        publication: Publication
+        issue: Issue
+        section: Section
+        search: Search
         pinnedarticles: 'Pinned articles'
         searchresults: 'Search results'
-        at: null
-        published: null
-        new: null
-        submitted: null
+        at: at
+        published: Published
+        new: New
+        submitted: Submitted
         pinarticle: 'Pin article'
-        switches: null
-        topics: null
-        addtopic: null
+        switches: Switches
+        topics: Topics
+        addtopic: 'Add new topic'
         selectparent: 'select parent topic'
         addexistingtopics: 'Add existing topic(s)'
-        topicname: null
+        topicname: 'Topic name'
         assignedtopics: 'Assigned Topics'
         customfields: 'Custom fields'
         nofields: 'There are no metadata fields for this type of article'
@@ -78,12 +78,12 @@ aes:
         currentfilter: 'Current filter'
         nodescription: 'No description'
         loadmore: 'Load More'
-        showmorecomments: null
+        showmorecomments: 'Show more comments'
         draghere: 'Drag Your Images Here'
         orselect: 'or Select them from folder'
-        useforall: null
-        description: null
-        photographer: null
+        useforall: 'Use for all'
+        description: Description
+        photographer: Photographer
         enteraddress: 'Enter web address'
         selectedimages: 'SELECTED IMAGES'
         imagescount: '{1} image|[0,Inf] images'
@@ -92,8 +92,8 @@ aes:
         replycomment: 'Reply to this comment'
         articlepreview: 'Article Preview'
         articleeditingenv: 'Article Editing Environment'
-        attachedslideshows: null
-        slideshows: null
+        attachedslideshows: 'Attached Slideshows'
+        slideshows: Slideshows
         itemscount: '{1} item|[0,Inf] items'
         attachslideshows: 'Attach Slideshow(s)'
         attachdetach: 'Attach / Detach'
@@ -125,27 +125,27 @@ aes:
         cancel: Cancel
         view: View
         save: Save
-        okbtn: null
+        okbtn: Ok
         restorecss: 'Reset CSS'
-        clear: null
-        add: null
+        clear: Clear
+        add: Add
         attachimage: 'Attach image'
         setrenditions: 'Set renditions'
         apply: Apply
-        approve: null
+        approve: Approve
         markasnew: 'Mark as new'
-        hide: null
-        delete: null
-        filter: null
-        reply: null
+        hide: Hide
+        delete: Delete
+        filter: Filter
+        reply: Reply
         zenmode: 'Zen mode'
         previewarticle: 'Preview article'
         editcaption: 'Edit Caption'
-        upload: null
-        discard: null
+        upload: Upload
+        discard: Discard
         insertorderedlist: 'Insert Ordered List'
         insertunorderedlist: 'Insert Unordered List'
-        submit: null
+        submit: Submit
     tip: 'The title of an article is ranked as the first item of an article by default. If you want it to go to a different position, below another article type field (for example the Catchline) please do so here.'
     tippermissions: 'Please enable the checkbox for all users who should work with the Article Edit Screen plugin.'
     stylestip: 'You can overwrite the default style of the Article Edit Screen view by providing your own CSS.'
@@ -161,7 +161,7 @@ aes:
         imagesmall: 'There are three default image sizes available. Define a small image size as a percentage. For example, 25% of the full width of the content area.'
         imagemedium: 'There are three default image sizes available. Define a medium image size as a percentage. For example, 50% of the full width of the content area.'
         imagelarge: 'There are three default image sizes available. Define a large image size as a  percentage. For example, 100% of the full width of the content area.'
-        showswitches: null
+        showswitches: 'Newscoop has two standard switches: Show on Front Page, and Show on Section Page. If you don''t need them, you can decide to hide them.'
         placeholder: 'Empty fields will have a default placeholder text. Please enter it here.'
         apiendpoint: 'To make the plugin work properly it needs to point to the API endpoint. The default setting is /api.'
         imagesize: 'Define the default image size for images being dragged and dropped into the article.'
@@ -332,6 +332,6 @@ aes:
             email: 'Enter email address'
             name: 'Enter name'
             msg: 'Enter feedback message'
-            header: null
-            modalHead: null
+            header: Feedback
+            modalHead: 'Send Feedback'
             info: 'The Article Edit Screen plugin is a fresh piece of software and still in beta. Thanks for helping us to further improve the plugin by providing your feedback in the form of ideas, requests or bug reports.'
