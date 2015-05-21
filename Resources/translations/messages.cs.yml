@@ -3,23 +3,23 @@ aes:
         recommend: null
         unrecommend: null
         collapse: null
-        expand: null
+        expand: Rozšířit
         undo: null
         redo: null
         reply: null
         finishingauth: null
-        selectedtext: null
+        selectedtext: 'Vybraný text'
         linktext: null
         openlink: null
-        attachedimages: null
+        attachedimages: 'Připojené obrázky'
         approved: null
         remove: null
         images: null
         embedcode: null
-        addsnippet: null
+        addsnippet: 'Přidat snippet'
         title: null
-        snippettemplate: null
-        choosetemplate: null
+        snippettemplate: 'Vzor Snippetu'
+        choosetemplate: 'Vybrat vzor'
         templatefields: null
         attachedsnippets: null
         comments: null
@@ -40,16 +40,16 @@ aes:
         chronological: null
         chronologicalasc: null
         nocomments: null
-        articleinfo: null
+        articleinfo: 'Informace k článku'
         created: null
         lastupdated: null
         publishedon: null
         type: null
         webcode: null
         authorsmanagement: null
-        addanauthor: null
-        selectauthor: null
-        chooserole: null
+        addanauthor: 'Přidat autora'
+        selectauthor: 'vybrat nového autora'
+        chooserole: 'vybrat roli autora'
         attachedauthors: null
         relatedarticles: null
         advancedfilter: null
@@ -58,7 +58,7 @@ aes:
         section: null
         search: null
         pinnedarticles: null
-        searchresults: null
+        searchresults: 'Prohledat výsledky'
         at: null
         published: null
         new: null
@@ -69,7 +69,7 @@ aes:
         addtopic: null
         selectparent: null
         addexistingtopics: null
-        topicname: null
+        topicname: 'Jméno tématu'
         assignedtopics: null
         customfields: null
         nofields: null
