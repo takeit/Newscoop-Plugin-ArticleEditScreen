@@ -1,0 +1,20 @@
+aes:
+    form:
+        images:
+            small:
+                min: null
+                max: null
+                blank: null
+            medium:
+                min: null
+                max: null
+                blank: null
+            large:
+                min: null
+                max: null
+                blank: null
+        placeholder:
+            max: null
+        apiendpoint:
+            blank: null
+            max: null
