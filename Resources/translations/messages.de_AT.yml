@@ -140,6 +140,7 @@ aes:
         reply: null
         zenmode: null
         previewarticle: null
+        livearticle: 'Go to live article'
         editcaption: null
         upload: null
         discard: null
