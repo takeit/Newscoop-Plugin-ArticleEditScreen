@@ -140,7 +140,7 @@ aes:
         reply: Reply
         zenmode: 'Zen mode'
         previewarticle: 'Preview article'
-        livearticle: 'Go to live article'
+        livearticle: null
         editcaption: 'Edit Caption'
         upload: Upload
         discard: Discard
