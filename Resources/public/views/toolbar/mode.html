@@ -25,12 +25,12 @@
   </div>
 
   <div ng-controller="ArticlePreviewCtrl as previewCtrl" class="preview-btn">
-    <button type="button" class="btn btn-default btn-sm" title="Preview article" ng-show="wfStatus.value === Article.wfStatus.PUBLISHED
+    <button type="button" class="btn btn-default btn-sm" title="{{ ::('aes.btn.livearticle'|trans) }}" ng-show="wfStatus.value === Article.wfStatus.PUBLISHED
         || wfStatus.value === Article.wfStatus.PUBLISHED_W_ISS" ng-click="previewCtrl.openLiveView()">
       <i class="fa fa-external-link"></i>
     </button>
 
-    <button type="button" class="btn btn-default btn-sm" title="Preview article" ng-hide="wfStatus.value === Article.wfStatus.PUBLISHED
+    <button type="button" class="btn btn-default btn-sm" title="{{ ::('aes.btn.previewarticle'|trans) }}" ng-hide="wfStatus.value === Article.wfStatus.PUBLISHED
         || wfStatus.value === Article.wfStatus.PUBLISHED_W_ISS" ng-click="previewCtrl.openPreview()">
       <i class="fa fa-eye"></i>
     </button>
