@@ -116,7 +116,7 @@ aes:
         unassignallerror: 'Could not unassign all users!'
         unassignedall: 'All users have been unassigned successfully'
         resetcsserror: 'Failed to reset the CSS'
-        resetcss: null
+        resetcss: 'The CSS has been reset successfully'
         authfinished: 'Authentication finished.'
     fields:
         title: Title
@@ -164,7 +164,7 @@ aes:
         imagelarge: 'There are three default image sizes available. Define a large image size as a  percentage. For example, 100% of the full width of the content area.'
         showswitches: 'Newscoop has two standard switches: Show on Front Page, and Show on Section Page. If you don''t need them, you can decide to hide them.'
         placeholder: 'Empty fields will have a default placeholder text. Please enter it here.'
-        apiendpoint: null
+        apiendpoint: 'To make the plugin work properly, it needs to point to the API endpoint. The default setting is /api'
         imagesize: 'Define the default image size for images being dragged and dropped into the article.'
     table:
         th:
