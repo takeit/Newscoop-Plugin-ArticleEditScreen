@@ -1,6 +1,6 @@
 <?php
+
 /**
- * @package Newscoop\EditorBundle
  * @author Rafał Muszyński <rafal.muszynski@sourcefabric.org>
  * @copyright 2014 Sourcefabric z.ú.
  * @license http://www.gnu.org/licenses/gpl-3.0.txt
@@ -12,7 +12,7 @@ use Newscoop\EventDispatcher\Events\GenericEvent;
 use Newscoop\EditorBundle\Entity\Settings;
 
 /**
- * Event lifecycle management
+ * Event lifecycle management.
  */
 class LifecycleSubscriber implements EventSubscriberInterface
 {
@@ -95,7 +95,7 @@ class LifecycleSubscriber implements EventSubscriberInterface
     }
 
     /**
-     * Add default settings to database
+     * Add default settings to database.
      */
     private function addDefaultSettings()
     {
@@ -103,12 +103,12 @@ class LifecycleSubscriber implements EventSubscriberInterface
             'imagesmall' => 30,
             'imagemedium' => 50,
             'imagelarge' => 100,
-            'showswitches' => true,
-            'placeholder' => $this->translator->trans("aes.settings.label.defaultplaceholder"),
+            'showswitches' => 'true',
+            'placeholder' => $this->translator->trans('aes.settings.label.defaultplaceholder'),
         );
 
         $globalSettings = array(
-            'apiendpoint' => "/api",
+            'apiendpoint' => '/api',
             'default_image_size' => 'medium',
             'css_custom_style' => $this->editorService->getDefaultCss(),
         );
@@ -121,8 +121,8 @@ class LifecycleSubscriber implements EventSubscriberInterface
      * Setting up new default settings, when isGlobal is set to true for given setting,
      * there will be the possibility to change this setting for all users.
      *
-     * @param array   $settings Array of settings
-     * @param boolean $isGlobal If edit settings for all users
+     * @param array $settings Array of settings
+     * @param bool  $isGlobal If edit settings for all users
      */
     private function setUpSettings($settings, $isGlobal = false)
     {
@@ -153,7 +153,7 @@ class LifecycleSubscriber implements EventSubscriberInterface
     }
 
     /**
-     * Remove plugin permissions
+     * Remove plugin permissions.
      */
     private function removePermissions()
     {
@@ -161,7 +161,7 @@ class LifecycleSubscriber implements EventSubscriberInterface
     }
 
     /**
-     * Collect plugin permissions
+     * Collect plugin permissions.
      */
     private function setPermissions()
     {
