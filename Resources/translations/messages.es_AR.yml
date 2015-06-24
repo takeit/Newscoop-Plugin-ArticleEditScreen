@@ -1,0 +1,338 @@
+aes:
+    label:
+        recommend: null
+        unrecommend: null
+        collapse: null
+        expand: null
+        undo: null
+        redo: null
+        reply: null
+        finishingauth: null
+        selectedtext: null
+        linktext: null
+        openlink: null
+        attachedimages: null
+        approved: null
+        remove: null
+        images: null
+        embedcode: null
+        addsnippet: null
+        title: null
+        snippettemplate: null
+        choosetemplate: null
+        templatefields: null
+        attachedsnippets: null
+        comments: null
+        postcomment: null
+        enabled: null
+        disabled: null
+        locked: null
+        visibleonfrontend: null
+        commenting: null
+        expandcomments: null
+        no: null
+        yes: null
+        view: null
+        all: null
+        hidden: null
+        pending: null
+        nested: null
+        chronological: null
+        chronologicalasc: null
+        nocomments: null
+        articleinfo: null
+        created: null
+        lastupdated: null
+        publishedon: null
+        type: null
+        webcode: null
+        authorsmanagement: null
+        addanauthor: null
+        selectauthor: null
+        chooserole: null
+        attachedauthors: null
+        relatedarticles: null
+        advancedfilter: null
+        publication: null
+        issue: null
+        section: null
+        search: null
+        pinnedarticles: null
+        searchresults: null
+        at: null
+        published: null
+        new: null
+        submitted: null
+        pinarticle: null
+        switches: null
+        topics: null
+        addtopic: null
+        selectparent: null
+        addexistingtopics: null
+        topicname: null
+        assignedtopics: null
+        customfields: null
+        nofields: null
+        searchmedia: null
+        displaying: null
+        currentfilter: null
+        nodescription: null
+        loadmore: null
+        showmorecomments: null
+        draghere: null
+        orselect: null
+        useforall: null
+        description: null
+        photographer: null
+        enteraddress: null
+        selectedimages: null
+        imagescount: null
+        attachimages: null
+        authenticating: null
+        replycomment: null
+        articlepreview: null
+        articleeditingenv: null
+        attachedslideshows: null
+        slideshows: null
+        itemscount: null
+        attachslideshows: null
+        attachdetach: null
+        createslideshow: null
+    alerts:
+        popup:
+            resethead: null
+            reset: null
+        lockedHead: null
+        locked: null
+        notfound: null
+        notfoundHead: null
+        saved: null
+        assignedall: null
+        assigned: null
+        unassigned: null
+        assignerror: null
+        unassignerror: null
+        assignallerror: null
+        unassignallerror: null
+        unassignedall: null
+        resetcsserror: null
+        resetcss: null
+        authfinished: null
+    fields:
+        title: null
+    btn:
+        unlock: null
+        cancel: null
+        view: null
+        save: null
+        okbtn: null
+        restorecss: null
+        clear: null
+        add: null
+        attachimage: null
+        setrenditions: null
+        apply: null
+        approve: null
+        markasnew: null
+        hide: null
+        delete: null
+        filter: null
+        reply: null
+        zenmode: null
+        previewarticle: null
+        livearticle: null
+        editcaption: null
+        upload: null
+        discard: null
+        insertorderedlist: null
+        insertunorderedlist: null
+        submit: null
+    tip: null
+    tippermissions: null
+    stylestip: null
+    name: null
+    settingstext: null
+    none: null
+    permissions:
+        api: null
+        defaultsettings: null
+        permissions: null
+        styles: null
+    popover:
+        imagesmall: null
+        imagemedium: null
+        imagelarge: null
+        showswitches: null
+        placeholder: null
+        apiendpoint: null
+        imagesize: null
+    table:
+        th:
+            username: null
+            updated: null
+            firstname: null
+            lastname: null
+            type: null
+            email: null
+        actions:
+            actions: null
+            assign: null
+        confirm_remove: null
+        table_messages:
+            page: null
+            perPageText: null
+            pageText: null
+            to: null
+            of: null
+            recordCountFilteredTemplate: null
+            recordCountText: null
+            processingText: null
+    settings:
+        label:
+            viewports: null
+            viewportssettings: null
+            imagessettings: null
+            titlesettings: null
+            switchessettings: null
+            placeholdersettings: null
+            images: null
+            title: null
+            switches: null
+            placeholders: null
+            mobileview: null
+            pixels: null
+            yes: null
+            no: null
+            articletype: null
+            defaultplaceholder: null
+            apisettings: null
+            api: null
+            permissions: null
+            permissionssettings: null
+            customstyle: null
+            styles: null
+            stylesettings: null
+        form:
+            viewports:
+                mobile: null
+                tablet: null
+                desktop: null
+                errors:
+                    mobile:
+                        min: null
+                        max: null
+            images:
+                small: null
+                medium: null
+                large: null
+            title:
+                position: null
+            switches: null
+            placeholder: null
+            defaultplaceholder: null
+            apiendpoint: null
+            defaultimagesize: null
+            imagesize:
+                small: null
+                medium: null
+                big: null
+                original: null
+    msgs:
+        comments:
+            add:
+                success: null
+                error: null
+            change:
+                success: null
+                error: null
+            hide:
+                popupHead: null
+                popup: null
+                success: null
+                error: null
+            changesingle:
+                success: null
+                error: null
+            delete:
+                popupHead: null
+                popup: null
+                success: null
+                error: null
+            reply:
+                success: null
+                error: null
+            edit:
+                success: null
+                error: null
+        snippets:
+            add:
+                success: null
+                error: null
+            remove:
+                popupHead: null
+                popup: null
+                success: null
+                error: null
+        images:
+            attach:
+                success: null
+                error: null
+            detach:
+                popupHead: null
+                popup: null
+                success: null
+                error: null
+        authors:
+            add:
+                success: null
+                error: null
+            change:
+                success: null
+                error: null
+            remove:
+                popupHead: null
+                popup: null
+                success: null
+                error: null
+        relatedarticles:
+            pin:
+                success: null
+                error: null
+            unpin:
+                popupHead: null
+                popup: null
+                success: null
+                error: null
+            order:
+                success: null
+                error: null
+        switches:
+            success: null
+            error: null
+        topics:
+            add:
+                success: null
+                error: null
+            assign:
+                success: null
+                error: null
+            unassign:
+                popupHead: null
+                popup: null
+                success: null
+                error: null
+        slideshows:
+            unassign:
+                popupHead: null
+                popup: null
+                success: null
+                error: null
+        feedback:
+            success: null
+            error: null
+            email: null
+            name: null
+            msg: null
+            header: null
+            modalHead: null
+            info: null
