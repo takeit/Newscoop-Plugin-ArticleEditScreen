@@ -2,7 +2,9 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="{{ localeFromCookie }}">
+<!--<![endif]-->
   <head>
 
     <base href="/bundles/newscoopeditor/">
@@ -10,7 +12,7 @@
     <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
     <script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
     <script src="{{ asset('bundles/bazingajstranslation/js/translator.min.js') }}"></script>
-    <script src="{{ url('bazinga_jstranslation_js') }}?locales={{ localeFromCookie }}"></script>
+    <script src="{{ url('bazinga_jstranslation_js') }}?locales={{ localeFromCookie }},en"></script>
     <script type="text/javascript">
       var AES_SETTINGS = {{ userSettings|raw }};
     </script>
