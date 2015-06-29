@@ -1,10 +1,11 @@
 <?php
+
 /**
- * @package Newscoop\EditorBundle
  * @author Rafał Muszyński <rafal.muszynski@sourcefabric.org>
  * @copyright 2014 Sourcefabric z.ú.
  * @license http://www.gnu.org/licenses/gpl-3.0.txt
  */
+
 namespace Newscoop\EditorBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -41,7 +42,7 @@ class DefaultController extends Controller
                 ->getArrayResult();
 
             if (empty($article)) {
-                return $this->render("NewscoopEditorBundle:Alerts:alert.html.twig", array(
+                return $this->render('NewscoopEditorBundle:Alerts:alert.html.twig', array(
                     'message' => $translator->trans('aes.alerts.notfound'),
                     'locked' => false,
                     'articleNumber' => $articleNumber,
@@ -54,7 +55,7 @@ class DefaultController extends Controller
             if ($lockTime && $lockUser) {
                 $timeDiffrence = $lockTime->diff(new \DateTime());
 
-                return $this->render("NewscoopEditorBundle:Alerts:alert.html.twig", array(
+                return $this->render('NewscoopEditorBundle:Alerts:alert.html.twig', array(
                     'message' => $translator->trans('aes.alerts.locked', array(
                         '%realname%' => $lockUser['first_name'].' '.$lockUser['last_name'],
                         '%username%' => $lockUser['username'],
@@ -83,7 +84,7 @@ class DefaultController extends Controller
             'isGlobal' => true,
         ));
 
-        return $this->render("NewscoopEditorBundle:Default:admin.html.twig", array(
+        return $this->render('NewscoopEditorBundle:Default:admin.html.twig', array(
             'clientId' => $client->getPublicId(),
             'userSettings' => $settings,
             'custom_styles' => $styles->getValue(),
@@ -91,7 +92,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * Creates json with user settings for the editor
+     * Creates json with user settings for the editor.
      *
      * @param Request                            $request      Request object
      * @param array                              $userSettings $userSettings
@@ -108,8 +109,8 @@ class DefaultController extends Controller
             'articleInfo' => $articleInfo,
             'API' => array(
                 'rootURI' => $request->getUriForPath(null),
-                'endpoint' => $userSettings["apiendpoint"],
-                'full' => $request->getUriForPath(null).$userSettings["apiendpoint"],
+                'endpoint' => $userSettings['apiendpoint'],
+                'full' => $request->getUriForPath(null).$userSettings['apiendpoint'],
             ),
             'auth' => array(
                 'client_id' => $client->getPublicId(),
@@ -119,13 +120,13 @@ class DefaultController extends Controller
             ),
             'image' => array(
                 'width' => array(
-                    'small' => $userSettings['imagesmall']."%",
-                    'medium' => $userSettings['imagemedium']."%",
-                    'big' => $userSettings['imagelarge']."%",
+                    'small' => $userSettings['imagesmall'].'%',
+                    'medium' => $userSettings['imagemedium'].'%',
+                    'big' => $userSettings['imagelarge'].'%',
                 ),
                 'float' => 'none',
             ),
-            'image_size' => $userSettings["default_image_size"],
+            'image_size' => $userSettings['default_image_size'],
             'placeholder' => $userSettings['placeholder'],
             'showSwitches' => filter_var($userSettings['showswitches'], FILTER_VALIDATE_BOOLEAN),
             'articleTypeFields' => $types,
@@ -136,7 +137,7 @@ class DefaultController extends Controller
 
     /**
      * Create clean array with article types settings from the PHP array
-     * which can be converted to JSON object
+     * which can be converted to JSON object.
      *
      * @param ArrayCollection $articleTypes Article types array
      *
@@ -171,7 +172,13 @@ class DefaultController extends Controller
      */
     public function navAction(Request $request)
     {
-        return new Response($this->renderView("NewscoopNewscoopBundle::admin_menu.html.twig"));
+        // sets current locale based on cookie
+        // so the menu can be translated
+        if ($request->cookies->has('TOL_Language')) {
+            $request->setLocale($request->cookies->get('TOL_Language'));
+        }
+
+        return new Response($this->renderView('NewscoopNewscoopBundle::admin_menu.html.twig'));
     }
 
     /**
