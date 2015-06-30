@@ -56,7 +56,7 @@ aes:
         publication: Publication
         issue: Issue
         section: Section
-        language: null
+        language: Language
         search: Search
         pinnedarticles: 'Pinned articles'
         searchresults: 'Search results'
