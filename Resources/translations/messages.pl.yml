@@ -1,163 +1,164 @@
 aes:
     label:
-        recommend: null
-        unrecommend: null
-        collapse: null
-        expand: null
-        undo: null
-        redo: null
-        reply: null
-        finishingauth: null
-        selectedtext: null
-        linktext: null
-        openlink: null
-        attachedimages: null
-        approved: null
-        remove: null
-        images: null
-        embedcode: null
-        addsnippet: null
-        title: null
-        snippettemplate: null
-        choosetemplate: null
-        templatefields: null
-        attachedsnippets: null
-        comments: null
-        postcomment: null
-        enabled: null
-        disabled: null
-        locked: null
-        visibleonfrontend: null
-        commenting: null
-        expandcomments: null
-        no: null
-        yes: null
-        view: null
-        all: null
-        hidden: null
-        pending: null
-        nested: null
-        chronological: null
-        chronologicalasc: null
-        nocomments: null
-        articleinfo: null
-        created: null
-        lastupdated: null
-        publishedon: null
-        type: null
-        webcode: null
-        authorsmanagement: null
-        addanauthor: null
-        selectauthor: null
-        chooserole: null
-        attachedauthors: null
-        relatedarticles: null
+        recommend: Poleć
+        unrecommend: 'Niepolecany '
+        collapse: Zwiń
+        expand: Rozwiń
+        undo: Cofnij
+        redo: Przywróć
+        reply: Odpowiedz
+        finishingauth: 'Trwa kończenie uwierzytelniania'
+        selectedtext: 'Zaznaczony tekst'
+        linktext: 'Tekst adresu URL'
+        openlink: 'Otwórz link w nowym oknie'
+        attachedimages: 'Załączone zdjęcia'
+        approved: Zatwierdzony
+        remove: Usuń
+        images: Zdjęcia
+        embedcode: 'Kod Embed'
+        addsnippet: 'Dodaj kawałek kodu'
+        title: Tytuł
+        snippettemplate: 'Szablon kawałka kodu'
+        choosetemplate: 'wybierz szablon'
+        templatefields: 'pola szablonów oznaczone jako (*) są wymagane'
+        attachedsnippets: 'Załączone kawałki kodu'
+        comments: Komentarze
+        postcomment: 'Dodaj komentarz'
+        enabled: Aktywny
+        disabled: Wyłączone
+        locked: Zablokowane
+        visibleonfrontend: 'Widoczne na front-end'
+        commenting: Komentowanie
+        expandcomments: 'Rozwiń komentarze'
+        no: Nie
+        yes: Tak
+        view: Widok
+        all: Wszystko
+        hidden: Ukryte
+        pending: Oczekujące
+        nested: Zagnieżdżone
+        chronological: Chronologicznie
+        chronologicalasc: 'Chronologicznie (rosnąco)'
+        nocomments: 'Żaden komentarz nie spełnia kryterium wyboru'
+        articleinfo: 'Informacje o artykule'
+        created: Utworzony
+        lastupdated: 'Ostatnio zaktualizowany'
+        publishedon: 'Opublikowany o'
+        type: Typ
+        webcode: 'Kod internetowy'
+        authorsmanagement: 'Zarządzanie autorami'
+        addanauthor: 'Dodaj autora'
+        selectauthor: 'wybierz nowego autora'
+        chooserole: 'wybierz rolę autora'
+        attachedauthors: 'Załączeni autorzy'
+        relatedarticles: 'Powiązane artykuły'
         advancedfilter: null
-        publication: null
-        issue: null
-        section: null
-        search: null
-        pinnedarticles: null
-        searchresults: null
-        at: null
-        published: null
-        new: null
-        submitted: null
-        pinarticle: null
-        switches: null
-        topics: null
-        addtopic: null
-        selectparent: null
-        addexistingtopics: null
-        topicname: null
-        assignedtopics: null
-        customfields: null
-        nofields: null
-        searchmedia: null
-        displaying: null
-        currentfilter: null
-        nodescription: null
-        loadmore: null
-        showmorecomments: null
-        draghere: null
-        orselect: null
-        useforall: null
-        description: null
-        photographer: null
-        enteraddress: null
-        selectedimages: null
-        imagescount: null
-        attachimages: null
-        authenticating: null
-        replycomment: null
-        articlepreview: null
-        articleeditingenv: null
-        attachedslideshows: null
-        slideshows: null
-        itemscount: null
-        attachslideshows: null
-        attachdetach: null
-        createslideshow: null
+        publication: Publikacja
+        issue: Wydanie
+        section: Sekcja
+        language: null
+        search: Szukaj
+        pinnedarticles: 'Przypięte artykuły'
+        searchresults: 'Wyniki wyszukiwania'
+        at: w
+        published: Opublikowane
+        new: Nowy
+        submitted: Wysłane
+        pinarticle: 'Podepnij artykuł'
+        switches: Przełączniki
+        topics: Tematy
+        addtopic: 'Dodaj nowy temat'
+        selectparent: 'wybierz rodzica dla tematu'
+        addexistingtopics: 'Dodaj istniejące/y temat(y)'
+        topicname: 'Nazwa tematu'
+        assignedtopics: 'Załączone tematy'
+        customfields: 'Własne pola'
+        nofields: 'Brak pól meta danych dla artykuły takiego typu'
+        searchmedia: 'Przeszukaj Bibliotekę Mediów'
+        displaying: Wyświetlanie
+        currentfilter: 'Aktualny filtr'
+        nodescription: 'Brak opisu'
+        loadmore: 'Wczytaj więcej'
+        showmorecomments: 'Pokaż więcej komentarzy'
+        draghere: 'Przeciągnij tutaj swoje zdjęcia'
+        orselect: 'lub wybierz je z folderu'
+        useforall: 'Zastosuj dla wszystkich'
+        description: Opis
+        photographer: Fotograf
+        enteraddress: 'Wprowadź adres internetowy'
+        selectedimages: 'WYBRANE ZDJĘCIA'
+        imagescount: '{1} zdjęcie|[0,Inf] zdjęć'
+        attachimages: 'Załącz zdjęcia'
+        authenticating: Uwierzytelnianie
+        replycomment: 'Odpowiedz na komentarz'
+        articlepreview: 'Podgląd artykułu'
+        articleeditingenv: 'Środowisko edycji artykułu'
+        attachedslideshows: 'Załączone galerie'
+        slideshows: Galerie
+        itemscount: '{1} element|[0,Inf] elementów'
+        attachslideshows: 'Dodaj galerie'
+        attachdetach: 'Załącz / Odłącz'
+        createslideshow: 'Utwórz galerię'
     alerts:
         popup:
-            resethead: null
-            reset: null
-        lockedHead: null
-        locked: null
-        notfound: null
-        notfoundHead: null
-        saved: null
-        assignedall: null
-        assigned: null
-        unassigned: null
-        assignerror: null
-        unassignerror: null
-        assignallerror: null
-        unassignallerror: null
-        unassignedall: null
-        resetcsserror: null
-        resetcss: null
-        authfinished: null
+            resethead: 'Czy na pewno chcesz przywrócić domyślny arkusz stylów CSS?'
+            reset: 'Dotychczasowe style CSS przepadną. Domyślny arkusz stylów zostanie załadowany.'
+        lockedHead: 'Ten artykuł jest zablokowany'
+        locked: 'Ten artykuł został zablokowany przez użytkownika %username% (%realname%) %hours% godzin(ę) i %minutes% miut(ę) temu.'
+        notfound: 'Nie znaleziono artykułu.'
+        notfoundHead: 'Artykuł nie istnieje'
+        saved: 'Zapisano pomyślnie'
+        assignedall: 'Wszyscy użytkownicy zostali odznaczeni pomyślnie'
+        assigned: 'Użytkownik został zaznaczony pomyślnie'
+        unassigned: 'Użytkownik został odznaczony pomyślnie'
+        assignerror: 'Nie można zaznaczyć użytkownika!'
+        unassignerror: 'Nie można odznaczyć tego użytkownika!'
+        assignallerror: 'Nie można zaznaczyć wszystkich użytkowników!'
+        unassignallerror: 'Nie można odznaczyć wszystkich użytkowników!'
+        unassignedall: 'Wszyscy użytkownicy zostali odznaczeni pomyślnie'
+        resetcsserror: 'Nie można było przywrócić domyślnego arkusza stylów.'
+        resetcss: 'Domyślny arkusz stylów CSS został przywrócony pomyślnie'
+        authfinished: 'Zakończono uwierzytelnianie.'
     fields:
-        title: null
+        title: Tytuł
     btn:
-        unlock: null
-        cancel: null
-        view: null
-        save: null
-        okbtn: null
-        restorecss: null
-        clear: null
-        add: null
-        attachimage: null
-        setrenditions: null
-        apply: null
-        approve: null
-        markasnew: null
-        hide: null
-        delete: null
-        filter: null
-        reply: null
-        zenmode: null
-        previewarticle: null
-        livearticle: null
-        editcaption: null
-        upload: null
-        discard: null
-        insertorderedlist: null
-        insertunorderedlist: null
-        submit: null
-    tip: null
-    tippermissions: null
-    stylestip: null
-    name: null
-    settingstext: null
-    none: null
+        unlock: Odblokuj
+        cancel: Anuluj
+        view: Widok
+        save: Zapisz
+        okbtn: Ok
+        restorecss: 'Przywróć domyślny CSS'
+        clear: Wyczyść
+        add: Dodaj
+        attachimage: 'Załącz zdjęcie'
+        setrenditions: 'Ustaw obrazki'
+        apply: Zastosuj
+        approve: Zaakceptuj
+        markasnew: 'Oznacz jako "Nowy"'
+        hide: Schowaj
+        delete: Usuń
+        filter: Filtrowanie
+        reply: Odpowiedz
+        zenmode: 'Tryb zen'
+        previewarticle: 'Podgląd artykułu'
+        livearticle: 'Zobacz artykuł na żywo'
+        editcaption: 'Edytuj podpis'
+        upload: Wgraj
+        discard: Odrzuć
+        insertorderedlist: 'Wstaw Posortowaną Listę'
+        insertunorderedlist: 'Wstaw Nieposortowaną Listę'
+        submit: Wyślij
+    tip: 'Tytuł artykułu znajduje się domyślnie na pierwszej pozycji artykułu. Jeśli chcesz ustawić inną pozycję, pod innym polem typu artykułu (np. Slogan), należy to zrobić tutaj.'
+    tippermissions: 'Proszę zaznaczyć pole wyboru dla użytkowników, którzy powinni pracować z nowym edytorem artykułów.'
+    stylestip: 'Możesz nadpisać domyślny styl wyglądu edytora poprzez wprowadzenie własnego.'
+    name: Edytor
+    settingstext: Ustawienia
+    none: Brak
     permissions:
-        api: null
-        defaultsettings: null
-        permissions: null
-        styles: null
+        api: 'Konfiguracja uprawnień API'
+        defaultsettings: 'Konfiguruj podstawowe ustawienia'
+        permissions: 'Przypisz/cofnij dostęp użytkownikowi do/od nowego edytora'
+        styles: 'Edytuj arkusz stylów CSS'
     popover:
         imagesmall: null
         imagemedium: null
@@ -168,94 +169,94 @@ aes:
         imagesize: null
     table:
         th:
-            username: null
-            updated: null
-            firstname: null
-            lastname: null
-            type: null
-            email: null
+            username: 'Nazwa użytkownika'
+            updated: 'Ostatnia modyfikacja'
+            firstname: Imię
+            lastname: Nazwisko
+            type: 'Typ użytkownika'
+            email: Email
         actions:
-            actions: null
-            assign: null
-        confirm_remove: null
+            actions: Akcje
+            assign: Przypisz
+        confirm_remove: 'Na pewno chcesz usunąć tego użytkownika?'
         table_messages:
-            page: null
-            perPageText: null
-            pageText: null
-            to: null
-            of: null
-            recordCountFilteredTemplate: null
-            recordCountText: null
-            processingText: null
+            page: Strona
+            perPageText: 'Pokazuje: '
+            pageText: 'Strony: '
+            to: do
+            of: z
+            recordCountFilteredTemplate: ' (wyszukane z %totalRecords% wszystkich wyników)'
+            recordCountText: 'Wyświetla '
+            processingText: Przetważanie...
     settings:
         label:
-            viewports: null
-            viewportssettings: null
-            imagessettings: null
-            titlesettings: null
-            switchessettings: null
-            placeholdersettings: null
-            images: null
-            title: null
-            switches: null
-            placeholders: null
-            mobileview: null
-            pixels: null
-            yes: null
-            no: null
-            articletype: null
-            defaultplaceholder: null
-            apisettings: null
-            api: null
-            permissions: null
-            permissionssettings: null
-            customstyle: null
-            styles: null
-            stylesettings: null
+            viewports: 'Rozmiary okna edytora'
+            viewportssettings: 'Ustawienia rozmiarów okna'
+            imagessettings: 'Ustawienia rozmiaru zdjęcia'
+            titlesettings: 'Ustawienia pozycji tytułu'
+            switchessettings: 'Ustawienia przełącznika'
+            placeholdersettings: 'Ustawienia wypełniacza'
+            images: Zdjęcia
+            title: 'Pozycja tytułu'
+            switches: Przełączniki
+            placeholders: 'Wypełniacze pól'
+            mobileview: 'Widok mobilny'
+            pixels: pikseli
+            yes: Tak
+            no: Nie
+            articletype: 'Typ artykułu'
+            defaultplaceholder: '[proszę wprowadzić swoją zawartość]'
+            apisettings: 'Ustawienia API'
+            api: API
+            permissions: Uprawnienia
+            permissionssettings: 'Ustawienia uprawnień'
+            customstyle: 'Wygląd edytora'
+            styles: 'Własne style'
+            stylesettings: 'Ustawienia własnych stylów'
         form:
             viewports:
-                mobile: null
-                tablet: null
-                desktop: null
+                mobile: 'Widok mobilny'
+                tablet: 'Widok tablet-a'
+                desktop: 'Widok komputerowy'
                 errors:
                     mobile:
-                        min: null
-                        max: null
+                        min: 'Wartość pola widoku mobilnego powinna być {{ limit }} lub większa.'
+                        max: 'Wartość pola widoku mobilnego nie może przekraczać {{ limit }} znaków.'
             images:
-                small: null
-                medium: null
-                large: null
+                small: 'Mały rozmiar'
+                medium: 'Średni rozmiar'
+                large: 'Duży rozmiar'
             title:
-                position: null
-            switches: null
-            placeholder: null
-            defaultplaceholder: null
-            apiendpoint: null
-            defaultimagesize: null
+                position: 'Pozycja tytułu'
+            switches: 'Pokaż standardowe przełączniki'
+            placeholder: 'Tekst wypełniacza'
+            defaultplaceholder: 'Wprowadź tutaj tekst wypełniacza...'
+            apiendpoint: 'Punkt końcowy API'
+            defaultimagesize: 'Domyślny rozmiar zdjęcia'
             imagesize:
-                small: null
-                medium: null
-                big: null
-                original: null
+                small: mały
+                medium: średni
+                big: duży
+                original: oryginalny
     msgs:
         comments:
             add:
-                success: null
-                error: null
+                success: 'Komentarz został dodany pomyślnie.'
+                error: 'Komentarz nie może być dodany, proszę spróbować później.'
             change:
-                success: null
-                error: null
+                success: 'Ustawienia komentarzy zostały zaktualizowane pomyślnie.'
+                error: 'Nie można zaktualizować ustawień komentarzy.'
             hide:
-                popupHead: null
-                popup: null
-                success: null
-                error: null
+                popupHead: 'Czy na pewno chcesz ukryć zaznaczone komentarze?'
+                popup: 'Komentarze nie będą widoczne dla czytelników.'
+                success: 'Zaznaczone komentarze zostały ukryte.'
+                error: 'Nie można ukryć zaznaczonych komentarzy.'
             changesingle:
-                success: null
-                error: null
+                success: 'Status komentarza został zmieniony na %status%'
+                error: 'Nie można zmienić statusu komentarza.'
             delete:
-                popupHead: null
-                popup: null
+                popupHead: 'Jesteś pewien/pewna, że chcesz usunąć zaznaczone komentarze?'
+                popup: 'Usunięte komentarze nie będą widoczne, jednak nadal pozostaną w bazie danych.'
                 success: null
                 error: null
             reply:
@@ -333,6 +334,6 @@ aes:
             email: null
             name: null
             msg: null
-            header: null
+            header: 'Wyślij opinię'
             modalHead: null
             info: null

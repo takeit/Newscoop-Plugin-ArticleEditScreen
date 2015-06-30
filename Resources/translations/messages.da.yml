@@ -56,6 +56,7 @@ aes:
         publication: null
         issue: null
         section: null
+        language: null
         search: null
         pinnedarticles: null
         searchresults: null
