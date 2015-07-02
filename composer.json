@@ -1,9 +1,14 @@
 {
-    "name": "newscoop/article-edit-screen",
-    "version": "1.0.0-beta.9",
-    "description": "The new and improved Article Edit Screen",
+    "name": "newscoop/scoopwriter",
+    "version": "1.0.0-beta.10",
+    "description": "Newscoop's distraction free article edit screen",
     "license": "GPL-3.0",
     "type": "newscoop-plugin",
+    "keywords":[
+        "visual editor",
+        "journalism",
+        "articles"
+    ],
     "authors": [
         {
             "name": "Yorick Terweijden",
@@ -16,6 +21,10 @@
         {
             "name": "Rafał Muszyński",
             "email": "rafal.muszynski@sourcefabric.org"
+        },
+        {
+            "name": "Mark Lewis",
+            "email": "mark.lewis@sourcefabric.org"
         }
     ],
     "require": {
