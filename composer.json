@@ -1,6 +1,6 @@
 {
     "name": "newscoop/scoopwriter",
-    "version": "1.0.0-beta.10",
+    "version": "1.0.0-beta.11",
     "description": "Newscoop's distraction free article edit screen",
     "license": "GPL-3.0",
     "type": "newscoop-plugin",
