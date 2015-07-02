@@ -4,6 +4,11 @@
     "description": "Newscoop's distraction free article edit screen",
     "license": "GPL-3.0",
     "type": "newscoop-plugin",
+    "keywords":[
+        "visual editor",
+        "journalism",
+        "articles"
+    ],
     "authors": [
         {
             "name": "Yorick Terweijden",
