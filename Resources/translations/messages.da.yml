@@ -151,7 +151,7 @@ aes:
     tip: null
     tippermissions: null
     stylestip: null
-    name: Editor
+    name: null
     settingstext: Indstillinger
     none: Ingen
     permissions:
