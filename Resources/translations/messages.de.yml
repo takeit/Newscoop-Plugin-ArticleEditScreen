@@ -72,8 +72,8 @@ aes:
         addexistingtopics: 'Bestehende Themen hinzufügen'
         topicname: 'Name des Themas'
         assignedtopics: 'Hinzugefügte Themen'
-        customfields: null
-        nofields: null
+        customfields: 'Nicht redaktionelle Felder (Metadaten)'
+        nofields: 'Für diesen Artikeltyp wurden keine nicht redaktionellen Felder (Metadaten) definiert'
         searchmedia: 'Medienarchiv durchsuchen'
         displaying: Angezeigt
         currentfilter: 'Aktueller Filter'
@@ -330,10 +330,10 @@ aes:
                 error: 'Fehler: Die Bildstrecke konnte nicht vom Artikel entkoppelt werden.'
         feedback:
             success: 'Feedback wurde erfolgreich verschickt. Vielen Dank!'
-            error: null
-            email: null
-            name: null
-            msg: null
-            header: null
-            modalHead: null
-            info: null
+            error: 'Fehler: Feedback konnte nicht versendet werden. Bitte erneut versuchen.'
+            email: 'E-Mail Adresse eingeben'
+            name: 'Name eingeben'
+            msg: 'Feedback-Nachricht eintragen'
+            header: Feedback
+            modalHead: 'Sende Feedback'
+            info: 'Das Scoopwriter Plugin ist ganz "frische" Software und befindet sich noch im Beta-Modus. Feedback in Form von Ideen, Anforderungen, Fehlermeldungen oder Lob, hilft uns unser Plugin noch besser zu machen. Danke! '

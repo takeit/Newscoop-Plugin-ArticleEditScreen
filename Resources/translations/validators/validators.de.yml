@@ -2,19 +2,19 @@ aes:
     form:
         images:
             small:
-                min: null
-                max: null
-                blank: null
+                min: 'Der Wert für kleine Größe sollte {{ limit }} oder mehr betragen.'
+                max: 'Der Wert für kleine Größe sollte {{ limit }} oder weniger betragen.'
+                blank: 'Der Wert für kleine Größe muss eingetragen werden.'
             medium:
-                min: null
-                max: null
-                blank: null
+                min: 'Der Wert für mittlere Größe sollte {{ limit }} oder mehr betragen.'
+                max: 'Der Wert für mittlere Größe sollte {{ limit }} oder weniger betragen.'
+                blank: 'Der Wert für mittlere Größe muss eingetragen werden.'
             large:
-                min: null
-                max: null
-                blank: null
+                min: 'Der Wert für große Größe sollte {{ limit }} oder mehr betragen.'
+                max: 'Der Wert für große Größe sollte {{ limit }} oder weniger betragen'
+                blank: 'Der Wert für große Größe muss eingetragen werden.'
         placeholder:
-            max: null
+            max: 'Der Text des Platzhalters darf {{ limit }} Zeichen nicht überschreiten.'
         apiendpoint:
-            blank: null
-            max: null
+            blank: 'Der Wert für den API Endpunkt muss eingetragen werden.'
+            max: 'Der Wert für den API Endpunkt darf nicht länger als {{ limit }} Zeichen lang sein.'
