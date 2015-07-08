@@ -87,40 +87,40 @@ aes:
         photographer: Fotograf/in
         enteraddress: 'Web-Adresse eingeben'
         selectedimages: 'Ausgewählte Bilder'
-        imagescount: null
-        attachimages: null
-        authenticating: null
-        replycomment: null
-        articlepreview: null
-        articleeditingenv: null
-        attachedslideshows: null
-        slideshows: null
-        itemscount: null
-        attachslideshows: null
-        attachdetach: null
-        createslideshow: null
+        imagescount: '{1} Bild|[0,Inf] Bilder'
+        attachimages: 'Bilder hinzufügen'
+        authenticating: 'Authentifizierung läuft'
+        replycomment: 'Auf diesen Kommentar antworten'
+        articlepreview: 'Artikel Vorschau'
+        articleeditingenv: Scoopwriter
+        attachedslideshows: 'Angehängte Bildstrecken'
+        slideshows: Bildstrecken
+        itemscount: '{1} Element|[0,Inf] Elemente'
+        attachslideshows: 'Bildstrecke(n) hinzufügen'
+        attachdetach: 'Hinzufügen / Entfernen'
+        createslideshow: 'Bildstrecke erstellen'
     alerts:
         popup:
-            resethead: null
-            reset: null
-        lockedHead: null
-        locked: null
-        notfound: null
-        notfoundHead: null
-        saved: null
-        assignedall: null
-        assigned: null
-        unassigned: null
-        assignerror: null
-        unassignerror: null
-        assignallerror: null
-        unassignallerror: null
-        unassignedall: null
-        resetcsserror: null
-        resetcss: null
-        authfinished: null
+            resethead: 'Benutzerdefiniertes CSS wirklich zurücksetzen?'
+            reset: 'Derzeitiges CSS wird entfernt und mit dem Standard CSS überschrieben.'
+        lockedHead: 'Dieser Artikel ist gesperrt'
+        locked: 'Dieser Artikel ist seit %hours% hour(s) and %minutes% minute(s)  gesperrt von %username% (%realname%).'
+        notfound: 'Der Artikel konnte nicht gefunden werden'
+        notfoundHead: 'Dieser Artikel existiert nicht.'
+        saved: 'Erfolgreich gespeichert'
+        assignedall: 'Alle Nutzer wurden erfolgreich entfernt'
+        assigned: 'Der Nutzer wurde erfolgreich hinzugefügt'
+        unassigned: 'Der Nutzer wurde erfolgreich entfernt'
+        assignerror: 'Fehler: Der Nutzer konnte nicht hinzugefügt werden!'
+        unassignerror: 'Fehler: Der Nutzer konnte nicht entfernt werden!'
+        assignallerror: 'Fehler: Nicht alle Nutzer konnten hinzugefügt werden!'
+        unassignallerror: 'Fehler: Nicht alle Nutzer konnten entfernt werden!'
+        unassignedall: 'Alle Nutzer wurden erfolgreich entfernt '
+        resetcsserror: 'Fehler: Das CSS konnte nicht zurückgesetzt werden!'
+        resetcss: 'Das CSS wurde erfolgreich zurückgesetzt.'
+        authfinished: 'Authentifizierung abgeschlossen.'
     fields:
-        title: null
+        title: Titel
     btn:
         unlock: null
         cancel: null
