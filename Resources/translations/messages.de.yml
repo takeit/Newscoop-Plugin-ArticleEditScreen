@@ -24,10 +24,10 @@ aes:
         attachedsnippets: 'Hinzugefügte Code-Schnipsel'
         comments: Kommentare
         postcomment: 'Kommentar abschicken'
-        enabled: null
-        disabled: null
-        locked: null
-        visibleonfrontend: null
+        enabled: Aktiviert
+        disabled: Deaktiviert
+        locked: Gesperrt
+        visibleonfrontend: 'Sichtbar im Frontend'
         commenting: null
         expandcomments: null
         no: null
