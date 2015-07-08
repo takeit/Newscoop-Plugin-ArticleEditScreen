@@ -148,19 +148,19 @@ aes:
         insertorderedlist: 'Nummerierte Liste einfügen'
         insertunorderedlist: 'Liste einfügen'
         submit: Einpflegen
-    tip: null
-    tippermissions: null
-    stylestip: null
-    name: null
-    settingstext: null
-    none: null
+    tip: 'Der Titel eines Artikels wird standardmäßig immer als erstes Element eines Artikels gelistet. Wenn der Titel an anderer Position angezeigt werden soll (z.B. unterhalb des Feldes Spitzmarke) dann hier bitte die gewünschte Position auswählen.'
+    tippermissions: 'Bitte die Checkbox für alle Nutzer markieren, die das Scoopwriter Plugin nutzen sollen.'
+    stylestip: 'Das Standard Design des Scoopwriter Plugins kann mit eigenen CSS überschrieben werden.'
+    name: Scoopwriter
+    settingstext: Einstellungen
+    none: Keine
     permissions:
-        api: null
-        defaultsettings: null
-        permissions: null
-        styles: null
+        api: 'API Berechtigungen konfigurieren'
+        defaultsettings: 'Standardeinstellungen konfigurieren'
+        permissions: 'Nutzer zum Plugin hinzufügen / vom Plugin entfernen'
+        styles: 'CSS Designvorlage bearbeiten'
     popover:
-        imagesmall: null
+        imagesmall: 'Für Bilder sind drei Standardgrößen definiert. Bitte eine kleine Bildgröße in Prozent definieren. Beispielsweise 25% von der Breite der Haupttext-Spalte.'
         imagemedium: null
         imagelarge: null
         showswitches: null
