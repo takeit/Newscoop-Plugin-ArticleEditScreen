@@ -217,51 +217,51 @@ aes:
             viewports:
                 mobile: 'Mobile Ansicht'
                 tablet: 'Tablet Ansicht'
-                desktop: null
+                desktop: 'Desktop Ansicht'
                 errors:
                     mobile:
-                        min: null
-                        max: null
+                        min: 'Der Wert für Mobile Ansicht sollte mindestens {{ limit }} oder mehr betragen.'
+                        max: 'Der Wert für Mobile Ansicht darf nicht länger als {{ limit }} Zeichen sein.'
             images:
-                small: null
-                medium: null
-                large: null
+                small: 'Kleine Größe'
+                medium: 'Mittlere Größe'
+                large: 'Große Größe'
             title:
-                position: null
-            switches: null
-            placeholder: null
-            defaultplaceholder: null
-            apiendpoint: null
-            defaultimagesize: null
+                position: Titelposition
+            switches: 'Standard-Schalter anzeigen'
+            placeholder: Platzhaltertext
+            defaultplaceholder: 'Platzhaltertext hier eingeben...'
+            apiendpoint: 'API Endpunkt'
+            defaultimagesize: 'Standard Bildgröße'
             imagesize:
-                small: null
-                medium: null
-                big: null
-                original: null
+                small: klein
+                medium: mittel
+                big: groß
+                original: original
     msgs:
         comments:
             add:
-                success: null
-                error: null
+                success: 'Der Kommentar wurde erfolgreich hinzugefügt.'
+                error: 'Der Kommentar konnte nicht hinzugefügt werden. Bitte erneut versuchen.'
             change:
-                success: null
-                error: null
+                success: 'Die Einstellungen für Kommentare wurden erfolgreich aktualisiert.'
+                error: 'Fehler beim Aktualisieren der Einstellungen für Kommentare.'
             hide:
-                popupHead: null
-                popup: null
-                success: null
-                error: null
+                popupHead: 'Ausgewählte Kommentare wirklich verbergen?'
+                popup: 'Die Kommentare werden den Lesern nicht mehr angezeigt.'
+                success: 'Die ausgewählten Kommentare wurden verborgen.'
+                error: 'Fehler: Die ausgewählten Kommentare konnten nicht verborgen werden.'
             changesingle:
-                success: null
-                error: null
+                success: 'Der Kommentar-Status wurde erfolgreich geändert in  %status%.'
+                error: 'Fehler: Der Kommentar-Status konnte nicht geändert werden.'
             delete:
-                popupHead: null
-                popup: null
-                success: null
-                error: null
+                popupHead: 'Wirklich die ausgewählten Kommentare löschen?'
+                popup: 'Gelöschte Kommentare werden nicht mehr angezeigt, verbleiben aber in der Datenbank.'
+                success: 'Ausgewählte Kommentare wurden gelöscht.'
+                error: 'Fehler: Die ausgewählten Kommentare konnten nicht gelöscht werden.'
             reply:
-                success: null
-                error: null
+                success: 'Auf den Kommentar wurde erfolgreich geantwortet.'
+                error: 'Fehler: Das Beantworten des Kommentars schlug fehl.'
             edit:
                 success: null
                 error: null
