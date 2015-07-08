@@ -1,29 +1,29 @@
 aes:
     label:
         recommend: Empfehlen
-        unrecommend: null
-        collapse: null
-        expand: null
-        undo: null
-        redo: null
-        reply: null
-        finishingauth: null
-        selectedtext: null
-        linktext: null
-        openlink: null
-        attachedimages: null
-        approved: null
-        remove: null
-        images: null
-        embedcode: null
-        addsnippet: null
-        title: null
-        snippettemplate: null
-        choosetemplate: null
-        templatefields: null
-        attachedsnippets: null
-        comments: null
-        postcomment: null
+        unrecommend: 'Empfehlung zurücknehmen'
+        collapse: Einklappen
+        expand: Aufklappen
+        undo: 'Rückgängig: Eingabe'
+        redo: 'Wiederholen: Eingabe'
+        reply: Antworten
+        finishingauth: 'Die Authentifizierung wird abgeschlossen'
+        selectedtext: 'Ausgewählter Text'
+        linktext: Link-Text
+        openlink: 'Link in neuem Fenster öffnen'
+        attachedimages: 'Angehängte Bilder'
+        approved: Genehmigt
+        remove: Entfernen
+        images: Bilder
+        embedcode: 'Code-Schnipsel für externe Inhalte'
+        addsnippet: 'Code-Schnipsel hinzufügen'
+        title: Titel
+        snippettemplate: 'Code-Schnipsel Template'
+        choosetemplate: 'Template auswählen'
+        templatefields: 'Templatefelder mit (*) sind Pflichtfelder'
+        attachedsnippets: 'Hinzugefügte Code-Schnipsel'
+        comments: Kommentare
+        postcomment: 'Kommentar abschicken'
         enabled: null
         disabled: null
         locked: null
