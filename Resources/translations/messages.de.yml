@@ -160,18 +160,18 @@ aes:
         permissions: 'Nutzer zum Plugin hinzufügen / vom Plugin entfernen'
         styles: 'CSS Designvorlage bearbeiten'
     popover:
-        imagesmall: 'Für Bilder sind drei Standardgrößen definiert. Bitte eine kleine Bildgröße in Prozent definieren. Beispielsweise 25% von der Breite der Haupttext-Spalte.'
-        imagemedium: null
-        imagelarge: null
-        showswitches: null
-        placeholder: null
-        apiendpoint: null
-        imagesize: null
+        imagesmall: 'Für Bilder sind drei Standardgrößen definiert. Eine kleine Bildgröße kann in Prozent definiert werden. Beispielsweise 25% von der Breite der Haupttext-Spalte.'
+        imagemedium: 'Für Bilder sind drei Standardgrößen definiert. Eine mittlere Bildgröße kann in Prozent definiert werden. Beispielsweise 50% von der Breite der Haupttext-Spalte.'
+        imagelarge: 'Für Bilder sind drei Standardgrößen definiert. Eine große Bildgröße kann in Prozent definiert werden. Beispielsweise 100% von der Breite der Haupttext-Spalte.'
+        showswitches: 'Newscoop hat zwei Standardschalter: "Artikel auf Homepage anzeigen" und "Artikel auf Rubrikenseite anzeigen". Wenn diese Schalter nicht benötigt werden, können sie verborgen werden.'
+        placeholder: 'Leere Felder werden mit einem Standardtext angezeigt. Bitte Standardtext hier festlegen. '
+        apiendpoint: 'Damit das Plugin richtig funktioniert, muss es mit dem richtigen API Endpunkt verknüpft sein. Die Standardeinstellung ist "/api".'
+        imagesize: 'Hier definieren welche Standardgröße genutzt werden soll, wenn Bilder mit Drag und Drop in den Artikeltext eingefügt werden.'
     table:
         th:
-            username: null
-            updated: null
-            firstname: null
+            username: Benutzername
+            updated: 'Zuletzt geändert'
+            firstname: Vorname
             lastname: null
             type: null
             email: null
