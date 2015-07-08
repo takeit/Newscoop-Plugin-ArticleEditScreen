@@ -48,30 +48,30 @@ aes:
         webcode: Webcode
         authorsmanagement: 'Autoren Management'
         addanauthor: 'Neuen Autor hinzufügen'
-        selectauthor: null
-        chooserole: null
-        attachedauthors: null
-        relatedarticles: null
-        advancedfilter: null
-        publication: null
-        issue: null
-        section: null
-        language: null
-        search: null
-        pinnedarticles: null
-        searchresults: null
-        at: null
-        published: null
-        new: null
-        submitted: null
-        pinarticle: null
-        switches: null
-        topics: null
-        addtopic: null
-        selectparent: null
-        addexistingtopics: null
-        topicname: null
-        assignedtopics: null
+        selectauthor: 'Neuen Autor auswählen'
+        chooserole: 'Rolle des Autors auswählen'
+        attachedauthors: 'Hinzugefügte Autoren'
+        relatedarticles: 'Verwandte Artikel'
+        advancedfilter: 'Erweiterte Filter'
+        publication: Publikation
+        issue: Ausgabe
+        section: Rubrik
+        language: Sprache
+        search: 'Suche '
+        pinnedarticles: 'Hinzugefügte Artikel'
+        searchresults: Suchergebnisse
+        at: an
+        published: Veröffentlicht
+        new: Neu
+        submitted: Eingepflegt
+        pinarticle: 'Artikel hinzufügen'
+        switches: Schalter
+        topics: Themen
+        addtopic: 'Neues Thema hinzufügen'
+        selectparent: 'Übergeordnetes Thema auswählen'
+        addexistingtopics: 'Bestehende Themen hinzufügen'
+        topicname: 'Name des Themas'
+        assignedtopics: 'Hinzugefügte Themen'
         customfields: null
         nofields: null
         searchmedia: null
