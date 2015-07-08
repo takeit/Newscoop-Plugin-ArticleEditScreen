@@ -1,6 +1,6 @@
 aes:
     label:
-        recommend: null
+        recommend: Empfehlen
         unrecommend: null
         collapse: null
         expand: null
