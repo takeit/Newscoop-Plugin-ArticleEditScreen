@@ -28,26 +28,26 @@ aes:
         disabled: Deaktiviert
         locked: Gesperrt
         visibleonfrontend: 'Sichtbar im Frontend'
-        commenting: null
-        expandcomments: null
-        no: null
-        yes: null
-        view: null
-        all: null
-        hidden: null
-        pending: null
-        nested: null
-        chronological: null
-        chronologicalasc: null
-        nocomments: null
-        articleinfo: null
-        created: null
-        lastupdated: null
-        publishedon: null
-        type: null
-        webcode: null
-        authorsmanagement: null
-        addanauthor: null
+        commenting: Kommentieren
+        expandcomments: 'Kommentare ausklappen'
+        no: Nein
+        yes: Ja
+        view: Ansicht
+        all: Alle
+        hidden: Versteckt
+        pending: 'Noch ausstehend (Pending)'
+        nested: Verschachtelt
+        chronological: Chronologisch
+        chronologicalasc: 'Chronologisch (aufsteigend)'
+        nocomments: 'Der Auswahl entspricht kein Kommentar'
+        articleinfo: Artikel-Info
+        created: Erstellt
+        lastupdated: 'Zuletzt aktualisiert'
+        publishedon: 'Publiziert am'
+        type: Typ
+        webcode: Webcode
+        authorsmanagement: 'Autoren Management'
+        addanauthor: 'Neuen Autor hinzufügen'
         selectauthor: null
         chooserole: null
         attachedauthors: null
