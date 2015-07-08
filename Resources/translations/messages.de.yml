@@ -172,51 +172,51 @@ aes:
             username: Benutzername
             updated: 'Zuletzt geändert'
             firstname: Vorname
-            lastname: null
-            type: null
-            email: null
+            lastname: Nachname
+            type: Benutzertyp
+            email: E-Mail
         actions:
-            actions: null
-            assign: null
-        confirm_remove: null
+            actions: Aktionen
+            assign: Zuweisen
+        confirm_remove: 'Diesen Benutzer wirklich entfernen?'
         table_messages:
-            page: null
-            perPageText: null
-            pageText: null
-            to: null
-            of: null
-            recordCountFilteredTemplate: null
-            recordCountText: null
-            processingText: null
+            page: Seite
+            perPageText: 'Zeige:'
+            pageText: 'Seiten:'
+            to: zu
+            of: von
+            recordCountFilteredTemplate: '(Gefiltert aus %totalRecords% Einträgen)'
+            recordCountText: 'Zeige '
+            processingText: 'In Berarbeitung...'
     settings:
         label:
-            viewports: null
-            viewportssettings: null
-            imagessettings: null
-            titlesettings: null
-            switchessettings: null
-            placeholdersettings: null
-            images: null
-            title: null
-            switches: null
-            placeholders: null
-            mobileview: null
-            pixels: null
-            yes: null
-            no: null
-            articletype: null
-            defaultplaceholder: null
-            apisettings: null
-            api: null
-            permissions: null
-            permissionssettings: null
-            customstyle: null
-            styles: null
-            stylesettings: null
+            viewports: Ansichten
+            viewportssettings: 'Einstellungen für Ansichten'
+            imagessettings: 'Einstellungen für Bildgrößen'
+            titlesettings: 'Titelposition definieren'
+            switchessettings: 'Einstellungen für Schalter'
+            placeholdersettings: 'Platzhaltertext einstellen'
+            images: Bilder
+            title: Titelposition
+            switches: Schalter
+            placeholders: 'Platzhalter für Artikelfelder'
+            mobileview: 'Mobile Ansicht'
+            pixels: Pixel
+            yes: Ja
+            no: Nein
+            articletype: Artikeltyp
+            defaultplaceholder: '[Bitte Inhalt eingeben]'
+            apisettings: 'API Einstellungen'
+            api: API
+            permissions: Berechtigungen
+            permissionssettings: 'Einstellungen der Berechtigungen'
+            customstyle: 'Benutzerdefinierte Designvorlage für Scoopwriter'
+            styles: 'Benutzerdefinierte Designs'
+            stylesettings: 'Einstellungen für benutzerdefinierte Designs'
         form:
             viewports:
-                mobile: null
-                tablet: null
+                mobile: 'Mobile Ansicht'
+                tablet: 'Tablet Ansicht'
                 desktop: null
                 errors:
                     mobile:
