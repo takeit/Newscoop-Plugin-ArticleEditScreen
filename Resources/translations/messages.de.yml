@@ -260,27 +260,27 @@ aes:
                 success: 'Ausgewählte Kommentare wurden gelöscht.'
                 error: 'Fehler: Die ausgewählten Kommentare konnten nicht gelöscht werden.'
             reply:
-                success: 'Auf den Kommentar wurde erfolgreich geantwortet.'
+                success: 'Antwort auf Kommentar erfolgreich.'
                 error: 'Fehler: Das Beantworten des Kommentars schlug fehl.'
             edit:
-                success: null
-                error: null
+                success: 'Der Kommentar wurde erfolgreich gespeichert.'
+                error: 'Fehler beim Bearbeiten des Kommentars.'
         snippets:
             add:
-                success: null
-                error: null
+                success: 'Der Code-Schnipsel wurde erfolgreich hinzugefügt.'
+                error: 'Fehler: Der Code-Schnipsel konnte nicht hinzugefügt werden.'
             remove:
-                popupHead: null
-                popup: null
-                success: null
-                error: null
+                popupHead: 'Diesen Code-Schnipsel wirklich entfernen?'
+                popup: 'Der Code-Schnipsel kann später wieder hinzugefügt werden.'
+                success: 'Der Code-Schnipsel wurde erfolgreich entfernt.'
+                error: 'Fehler: Der Code-Schnipsel konnte nicht entfernt werden.'
         images:
             attach:
-                success: null
-                error: null
+                success: 'Bild(er) erfolgreich angehängt.'
+                error: 'Fehler: Bild(er) konnten nicht angehängt werden.'
             detach:
-                popupHead: null
-                popup: null
+                popupHead: 'Dieses Bild wirklich vom Artikel entkoppeln?'
+                popup: 'Das Bild kann dem Artikel später wieder angehängt werden.'
                 success: null
                 error: null
         authors:
