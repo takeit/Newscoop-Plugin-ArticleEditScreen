@@ -122,32 +122,32 @@ aes:
     fields:
         title: Titel
     btn:
-        unlock: null
-        cancel: null
-        view: null
-        save: null
-        okbtn: null
-        restorecss: null
-        clear: null
-        add: null
-        attachimage: null
-        setrenditions: null
-        apply: null
-        approve: null
-        markasnew: null
-        hide: null
-        delete: null
-        filter: null
-        reply: null
-        zenmode: null
-        previewarticle: null
-        livearticle: null
-        editcaption: null
-        upload: null
-        discard: null
-        insertorderedlist: null
-        insertunorderedlist: null
-        submit: null
+        unlock: Freigeben
+        cancel: Abbrechen
+        view: Ansehen
+        save: Speichern
+        okbtn: Ok
+        restorecss: 'CSS zurücksetzen'
+        clear: Löschen
+        add: Hinzufügen
+        attachimage: 'Bild hinzufügen'
+        setrenditions: 'Bildzuschnitte festlegen'
+        apply: Anwenden
+        approve: Genehmigen
+        markasnew: 'Als "Neu" markieren'
+        hide: Verbergen
+        delete: Löschen
+        filter: Filter
+        reply: Antworten
+        zenmode: 'Zen Mode'
+        previewarticle: 'Artikel in der Vorschau ansehen'
+        livearticle: 'Gehe zu veröffentlichtem Artikel'
+        editcaption: 'Bildlegende bearbeiten'
+        upload: Upload
+        discard: Verwerfen
+        insertorderedlist: 'Nummerierte Liste einfügen'
+        insertunorderedlist: 'Liste einfügen'
+        submit: Einpflegen
     tip: null
     tippermissions: null
     stylestip: null
