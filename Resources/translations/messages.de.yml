@@ -74,19 +74,19 @@ aes:
         assignedtopics: 'Hinzugefügte Themen'
         customfields: null
         nofields: null
-        searchmedia: null
-        displaying: null
-        currentfilter: null
-        nodescription: null
-        loadmore: null
-        showmorecomments: null
-        draghere: null
-        orselect: null
-        useforall: null
-        description: null
-        photographer: null
-        enteraddress: null
-        selectedimages: null
+        searchmedia: 'Medienarchiv durchsuchen'
+        displaying: Angezeigt
+        currentfilter: 'Aktueller Filter'
+        nodescription: 'Keine Beschreibung'
+        loadmore: 'Weitere laden'
+        showmorecomments: 'Weitere Kommentare anzeigen'
+        draghere: 'Bilder herziehen und einfügen'
+        orselect: 'Bilder aus Ordner auswählen'
+        useforall: 'Für alle Bilder verwenden'
+        description: Beschreibung
+        photographer: Fotograf/in
+        enteraddress: 'Web-Adresse eingeben'
+        selectedimages: 'Ausgewählte Bilder'
         imagescount: null
         attachimages: null
         authenticating: null
