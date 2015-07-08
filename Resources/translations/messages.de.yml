@@ -280,56 +280,56 @@ aes:
                 error: 'Fehler: Bild(er) konnten nicht angehängt werden.'
             detach:
                 popupHead: 'Dieses Bild wirklich vom Artikel entkoppeln?'
-                popup: 'Das Bild kann dem Artikel später wieder angehängt werden.'
-                success: null
-                error: null
+                popup: 'Bild kann dem Artikel später wieder angehängt werden.'
+                success: 'Bild wurde erfolgreich vom Artikel entkoppelt.'
+                error: 'Fehler: Bild konnte nicht vom Artikel entkoppelt werden.'
         authors:
             add:
-                success: null
-                error: null
+                success: 'Autor wurde erfolgreich hinzugefügt.'
+                error: 'Fehler: Der Autor konnte nicht hinzugefügt werden.'
             change:
-                success: null
-                error: null
+                success: 'Der Autoren-Typ wurde erfolgreich geändert.'
+                error: 'Fehler: Der Autoren-Typ konnte nicht geändert werden.'
             remove:
-                popupHead: null
-                popup: null
-                success: null
-                error: null
+                popupHead: 'Diesen Autor wirklich entfernen?'
+                popup: 'Der Autor kann später wieder hinzugefügt werden.'
+                success: 'Autor wurde erfolgreich vom Artikel entfernt'
+                error: 'Fehler: Der Autor konnte nicht vom Artikel entfernt werden.'
         relatedarticles:
             pin:
-                success: null
-                error: null
+                success: 'Der Artikel wurde erfolgreich als verwandter Artikel hinzugefügt.'
+                error: 'Fehler: Der Artikel konnte nicht als verwandter Artikel hinzugefügt werden.'
             unpin:
-                popupHead: null
-                popup: null
-                success: null
-                error: null
+                popupHead: 'Den verwandten Artikel wirklich vom Artikel entkoppeln?'
+                popup: 'Der verwandte Artikel kann später jederzeit wieder hinzugefügt werden.'
+                success: 'Der verwandte Artikel wurde erfolgreich vom Artikel entkoppelt.'
+                error: 'Fehler: Der verwandte Artikel konnte nicht vom Artikel entkoppelt werden.'
             order:
-                success: null
-                error: null
+                success: 'Die Reihenfolge wurde aktualisiert.'
+                error: 'Fehler: Die Reihenfolge konnte nicht aktualisiert werden.'
         switches:
-            success: null
-            error: null
+            success: 'Die Schalter wurden erfolgreich gespeichert.'
+            error: 'Fehler: Die Schalter konnten nicht gespeichert werden.'
         topics:
             add:
-                success: null
-                error: null
+                success: 'Das Thema / Die Themen wurden erfolgreich gespeichert und dem Artikel hinzugefügt.'
+                error: 'Fehler: Das Thema / Die Themen konnten nicht gespeichert und dem Artikel hinzugefügt werden.'
             assign:
-                success: null
-                error: null
+                success: 'Das Thema wurde dem Artikel erfolgreich hinzugefügt.'
+                error: 'Fehler: Das Thema konnte dem Artikel nicht hinzugefügt werden.'
             unassign:
-                popupHead: null
-                popup: null
-                success: null
-                error: null
+                popupHead: 'Dieses Thema wirklich vom Artikel entkoppeln?'
+                popup: 'Das Thema kann dem Artikel jederzeit wieder hinzugefügt werden.'
+                success: 'Das Thema / Die Themen wurden erfolgreich vom Artikel entkoppelt.'
+                error: 'Fehler: Das Thema / Die Themen konnten nicht  vom Artikel entkoppelt werden.'
         slideshows:
             unassign:
-                popupHead: null
-                popup: null
-                success: null
-                error: null
+                popupHead: 'Die Bildstrecke wirklich vom Artikel entkoppeln?'
+                popup: 'Die Bildstrecke kann jederzeit wieder hinzugefügt werden. '
+                success: 'Die Bildstrecke wurde erfolgreich vom Artikel entkoppelt.'
+                error: 'Fehler: Die Bildstrecke konnte nicht vom Artikel entkoppelt werden.'
         feedback:
-            success: null
+            success: 'Feedback wurde erfolgreich verschickt. Vielen Dank!'
             error: null
             email: null
             name: null
