@@ -15,7 +15,7 @@ aes:
         approved: Zatwierdzony
         remove: Usuń
         images: Zdjęcia
-        embedcode: 'Kod Embed'
+        embedcode: 'Kody Embed'
         addsnippet: 'Dodaj kawałek kodu'
         title: Tytuł
         snippettemplate: 'Szablon kawałka kodu'
@@ -92,7 +92,7 @@ aes:
         authenticating: Uwierzytelnianie
         replycomment: 'Odpowiedz na komentarz'
         articlepreview: 'Podgląd artykułu'
-        articleeditingenv: 'Środowisko edycji artykułu'
+        articleeditingenv: null
         attachedslideshows: 'Załączone galerie'
         slideshows: Galerie
         itemscount: '{1} element|[0,Inf] elementów'
@@ -149,9 +149,9 @@ aes:
         insertunorderedlist: 'Wstaw Nieposortowaną Listę'
         submit: Wyślij
     tip: 'Tytuł artykułu znajduje się domyślnie na pierwszej pozycji artykułu. Jeśli chcesz ustawić inną pozycję, pod innym polem typu artykułu (np. Slogan), należy to zrobić tutaj.'
-    tippermissions: 'Proszę zaznaczyć pole wyboru dla użytkowników, którzy powinni pracować z nowym edytorem artykułów.'
-    stylestip: 'Możesz nadpisać domyślny styl wyglądu edytora poprzez wprowadzenie własnego.'
-    name: Edytor
+    tippermissions: null
+    stylestip: null
+    name: null
     settingstext: Ustawienia
     none: Brak
     permissions:
@@ -192,9 +192,9 @@ aes:
         label:
             viewports: 'Rozmiary okna edytora'
             viewportssettings: 'Ustawienia rozmiarów okna'
-            imagessettings: 'Ustawienia rozmiaru zdjęcia'
+            imagessettings: 'Ustawienia rozmiaru zdjęć'
             titlesettings: 'Ustawienia pozycji tytułu'
-            switchessettings: 'Ustawienia przełącznika'
+            switchessettings: 'Ustawienia przełączników'
             placeholdersettings: 'Ustawienia wypełniacza'
             images: Zdjęcia
             title: 'Pozycja tytułu'

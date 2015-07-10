@@ -92,7 +92,7 @@ aes:
         authenticating: Authenticating
         replycomment: 'Reply to this comment'
         articlepreview: 'Article Preview'
-        articleeditingenv: 'Article Editing Environment'
+        articleeditingenv: Scoopwriter
         attachedslideshows: 'Attached Slideshows'
         slideshows: Slideshows
         itemscount: '{1} item|[0,Inf] items'
@@ -149,9 +149,9 @@ aes:
         insertunorderedlist: 'Insert Unordered List'
         submit: Submit
     tip: 'The title of an article is ranked as the first item of an article by default. If you want it to go to a different position, below another article type field (for example the Catchline) please do so here.'
-    tippermissions: 'Please enable the checkbox for all users who should work with the Article Edit Screen plugin.'
-    stylestip: 'You can overwrite the default style of the Article Edit Screen view by providing your own CSS.'
-    name: Editor
+    tippermissions: 'Please enable the checkbox for all users who should work with the Scoopwriter plugin.'
+    stylestip: 'You can overwrite the default style of the Scoopwriter view by providing your own CSS.'
+    name: null
     settingstext: Settings
     none: None
     permissions:
@@ -336,4 +336,4 @@ aes:
             msg: 'Enter feedback message'
             header: Feedback
             modalHead: 'Send Feedback'
-            info: 'The Article Edit Screen plugin is a fresh piece of software and still in beta. Thanks for helping us to further improve the plugin by providing your feedback in the form of ideas, requests or bug reports.'
+            info: 'The Scoopwriter plugin is a fresh piece of software and still in beta. Thanks for helping us to further improve the plugin by providing your feedback in the form of ideas, requests or bug reports.'

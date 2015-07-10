@@ -1,339 +1,339 @@
 aes:
     label:
-        recommend: null
-        unrecommend: null
-        collapse: null
-        expand: null
-        undo: null
-        redo: null
-        reply: null
-        finishingauth: null
-        selectedtext: null
-        linktext: null
-        openlink: null
-        attachedimages: null
-        approved: null
-        remove: null
-        images: null
-        embedcode: null
-        addsnippet: null
-        title: null
-        snippettemplate: null
-        choosetemplate: null
-        templatefields: null
-        attachedsnippets: null
-        comments: null
-        postcomment: null
-        enabled: null
-        disabled: null
-        locked: null
-        visibleonfrontend: null
-        commenting: null
-        expandcomments: null
-        no: null
-        yes: null
-        view: null
-        all: null
-        hidden: null
-        pending: null
-        nested: null
-        chronological: null
-        chronologicalasc: null
-        nocomments: null
-        articleinfo: null
-        created: null
-        lastupdated: null
-        publishedon: null
-        type: null
-        webcode: null
-        authorsmanagement: null
-        addanauthor: null
-        selectauthor: null
-        chooserole: null
-        attachedauthors: null
-        relatedarticles: null
-        advancedfilter: null
-        publication: null
-        issue: null
-        section: null
-        language: null
-        search: null
-        pinnedarticles: null
-        searchresults: null
-        at: null
-        published: null
-        new: null
-        submitted: null
-        pinarticle: null
-        switches: null
-        topics: null
-        addtopic: null
-        selectparent: null
-        addexistingtopics: null
-        topicname: null
-        assignedtopics: null
-        customfields: null
-        nofields: null
-        searchmedia: null
-        displaying: null
-        currentfilter: null
-        nodescription: null
-        loadmore: null
-        showmorecomments: null
-        draghere: null
-        orselect: null
-        useforall: null
-        description: null
-        photographer: null
-        enteraddress: null
-        selectedimages: null
-        imagescount: null
-        attachimages: null
-        authenticating: null
-        replycomment: null
-        articlepreview: null
-        articleeditingenv: null
-        attachedslideshows: null
-        slideshows: null
-        itemscount: null
-        attachslideshows: null
-        attachdetach: null
-        createslideshow: null
+        recommend: Empfehlen
+        unrecommend: 'Empfehlung zurücknehmen'
+        collapse: Einklappen
+        expand: Aufklappen
+        undo: 'Rückgängig: Eingabe'
+        redo: 'Wiederholen: Eingabe'
+        reply: Antworten
+        finishingauth: 'Die Authentifizierung wird abgeschlossen'
+        selectedtext: 'Ausgewählter Text'
+        linktext: Link-Text
+        openlink: 'Link in neuem Fenster öffnen'
+        attachedimages: 'Angehängte Bilder'
+        approved: Genehmigt
+        remove: Entfernen
+        images: Bilder
+        embedcode: 'Code-Schnipsel für externe Inhalte'
+        addsnippet: 'Code-Schnipsel hinzufügen'
+        title: Titel
+        snippettemplate: 'Code-Schnipsel Template'
+        choosetemplate: 'Template auswählen'
+        templatefields: 'Templatefelder mit (*) sind Pflichtfelder'
+        attachedsnippets: 'Hinzugefügte Code-Schnipsel'
+        comments: Kommentare
+        postcomment: 'Kommentar abschicken'
+        enabled: Aktiviert
+        disabled: Deaktiviert
+        locked: Gesperrt
+        visibleonfrontend: 'Sichtbar im Frontend'
+        commenting: Kommentieren
+        expandcomments: 'Kommentare ausklappen'
+        no: Nein
+        yes: Ja
+        view: Ansicht
+        all: Alle
+        hidden: Versteckt
+        pending: 'Noch ausstehend (Pending)'
+        nested: Verschachtelt
+        chronological: Chronologisch
+        chronologicalasc: 'Chronologisch (aufsteigend)'
+        nocomments: 'Der Auswahl entspricht kein Kommentar'
+        articleinfo: Artikel-Info
+        created: Erstellt
+        lastupdated: 'Zuletzt aktualisiert'
+        publishedon: 'Publiziert am'
+        type: Typ
+        webcode: Webcode
+        authorsmanagement: 'Autoren Management'
+        addanauthor: 'Neuen Autor hinzufügen'
+        selectauthor: 'Neuen Autor auswählen'
+        chooserole: 'Rolle des Autors auswählen'
+        attachedauthors: 'Hinzugefügte Autoren'
+        relatedarticles: 'Verwandte Artikel'
+        advancedfilter: 'Erweiterte Filter'
+        publication: Publikation
+        issue: Ausgabe
+        section: Rubrik
+        language: Sprache
+        search: 'Suche '
+        pinnedarticles: 'Hinzugefügte Artikel'
+        searchresults: Suchergebnisse
+        at: an
+        published: Veröffentlicht
+        new: Neu
+        submitted: Eingepflegt
+        pinarticle: 'Artikel hinzufügen'
+        switches: Schalter
+        topics: Themen
+        addtopic: 'Neues Thema hinzufügen'
+        selectparent: 'Übergeordnetes Thema auswählen'
+        addexistingtopics: 'Bestehende Themen hinzufügen'
+        topicname: 'Name des Themas'
+        assignedtopics: 'Hinzugefügte Themen'
+        customfields: 'Nicht redaktionelle Felder (Metadaten)'
+        nofields: 'Für diesen Artikeltyp wurden keine nicht redaktionellen Felder (Metadaten) definiert'
+        searchmedia: 'Medienarchiv durchsuchen'
+        displaying: Angezeigt
+        currentfilter: 'Aktueller Filter'
+        nodescription: 'Keine Beschreibung'
+        loadmore: 'Weitere laden'
+        showmorecomments: 'Weitere Kommentare anzeigen'
+        draghere: 'Bilder herziehen und einfügen'
+        orselect: 'Bilder aus Ordner auswählen'
+        useforall: 'Für alle Bilder verwenden'
+        description: Beschreibung
+        photographer: Fotograf/in
+        enteraddress: 'Web-Adresse eingeben'
+        selectedimages: 'Ausgewählte Bilder'
+        imagescount: '{1} Bild|[0,Inf] Bilder'
+        attachimages: 'Bilder hinzufügen'
+        authenticating: 'Authentifizierung läuft'
+        replycomment: 'Auf diesen Kommentar antworten'
+        articlepreview: 'Artikel Vorschau'
+        articleeditingenv: Scoopwriter
+        attachedslideshows: 'Angehängte Bildstrecken'
+        slideshows: Bildstrecken
+        itemscount: '{1} Element|[0,Inf] Elemente'
+        attachslideshows: 'Bildstrecke(n) hinzufügen'
+        attachdetach: 'Hinzufügen / Entfernen'
+        createslideshow: 'Bildstrecke erstellen'
     alerts:
         popup:
-            resethead: null
-            reset: null
-        lockedHead: null
-        locked: null
-        notfound: null
-        notfoundHead: null
-        saved: null
-        assignedall: null
-        assigned: null
-        unassigned: null
-        assignerror: null
-        unassignerror: null
-        assignallerror: null
-        unassignallerror: null
-        unassignedall: null
-        resetcsserror: null
-        resetcss: null
-        authfinished: null
+            resethead: 'Benutzerdefiniertes CSS wirklich zurücksetzen?'
+            reset: 'Derzeitiges CSS wird entfernt und mit dem Standard CSS überschrieben.'
+        lockedHead: 'Dieser Artikel ist gesperrt'
+        locked: 'Dieser Artikel ist seit %hours% hour(s) and %minutes% minute(s)  gesperrt von %username% (%realname%).'
+        notfound: 'Der Artikel konnte nicht gefunden werden'
+        notfoundHead: 'Dieser Artikel existiert nicht.'
+        saved: 'Erfolgreich gespeichert'
+        assignedall: 'Alle Nutzer wurden erfolgreich entfernt'
+        assigned: 'Der Nutzer wurde erfolgreich hinzugefügt'
+        unassigned: 'Der Nutzer wurde erfolgreich entfernt'
+        assignerror: 'Fehler: Der Nutzer konnte nicht hinzugefügt werden!'
+        unassignerror: 'Fehler: Der Nutzer konnte nicht entfernt werden!'
+        assignallerror: 'Fehler: Nicht alle Nutzer konnten hinzugefügt werden!'
+        unassignallerror: 'Fehler: Nicht alle Nutzer konnten entfernt werden!'
+        unassignedall: 'Alle Nutzer wurden erfolgreich entfernt '
+        resetcsserror: 'Fehler: Das CSS konnte nicht zurückgesetzt werden!'
+        resetcss: 'Das CSS wurde erfolgreich zurückgesetzt.'
+        authfinished: 'Authentifizierung abgeschlossen.'
     fields:
-        title: null
+        title: Titel
     btn:
-        unlock: null
-        cancel: null
-        view: null
-        save: null
-        okbtn: null
-        restorecss: null
-        clear: null
-        add: null
-        attachimage: null
-        setrenditions: null
-        apply: null
-        approve: null
-        markasnew: null
-        hide: null
-        delete: null
-        filter: null
-        reply: null
-        zenmode: null
-        previewarticle: null
-        livearticle: null
-        editcaption: null
-        upload: null
-        discard: null
-        insertorderedlist: null
-        insertunorderedlist: null
-        submit: null
-    tip: null
-    tippermissions: null
-    stylestip: null
-    name: null
-    settingstext: null
-    none: null
+        unlock: Freigeben
+        cancel: Abbrechen
+        view: Ansehen
+        save: Speichern
+        okbtn: Ok
+        restorecss: 'CSS zurücksetzen'
+        clear: Löschen
+        add: Hinzufügen
+        attachimage: 'Bild hinzufügen'
+        setrenditions: 'Bildzuschnitte festlegen'
+        apply: Anwenden
+        approve: Genehmigen
+        markasnew: 'Als "Neu" markieren'
+        hide: Verbergen
+        delete: Löschen
+        filter: Filter
+        reply: Antworten
+        zenmode: 'Zen Mode'
+        previewarticle: 'Artikel in der Vorschau ansehen'
+        livearticle: 'Gehe zu veröffentlichtem Artikel'
+        editcaption: 'Bildlegende bearbeiten'
+        upload: Upload
+        discard: Verwerfen
+        insertorderedlist: 'Nummerierte Liste einfügen'
+        insertunorderedlist: 'Liste einfügen'
+        submit: Einpflegen
+    tip: 'Der Titel eines Artikels wird standardmäßig immer als erstes Element eines Artikels gelistet. Wenn der Titel an anderer Position angezeigt werden soll (z.B. unterhalb des Feldes Spitzmarke) dann hier bitte die gewünschte Position auswählen.'
+    tippermissions: 'Bitte die Checkbox für alle Nutzer markieren, die das Scoopwriter Plugin nutzen sollen.'
+    stylestip: 'Das Standard Design des Scoopwriter Plugins kann mit eigenen CSS überschrieben werden.'
+    name: Scoopwriter
+    settingstext: Einstellungen
+    none: Keine
     permissions:
-        api: null
-        defaultsettings: null
-        permissions: null
-        styles: null
+        api: 'API Berechtigungen konfigurieren'
+        defaultsettings: 'Standardeinstellungen konfigurieren'
+        permissions: 'Nutzer zum Plugin hinzufügen / vom Plugin entfernen'
+        styles: 'CSS Designvorlage bearbeiten'
     popover:
-        imagesmall: null
-        imagemedium: null
-        imagelarge: null
-        showswitches: null
-        placeholder: null
-        apiendpoint: null
-        imagesize: null
+        imagesmall: 'Für Bilder sind drei Standardgrößen definiert. Eine kleine Bildgröße kann in Prozent definiert werden. Beispielsweise 25% von der Breite der Haupttext-Spalte.'
+        imagemedium: 'Für Bilder sind drei Standardgrößen definiert. Eine mittlere Bildgröße kann in Prozent definiert werden. Beispielsweise 50% von der Breite der Haupttext-Spalte.'
+        imagelarge: 'Für Bilder sind drei Standardgrößen definiert. Eine große Bildgröße kann in Prozent definiert werden. Beispielsweise 100% von der Breite der Haupttext-Spalte.'
+        showswitches: 'Newscoop hat zwei Standardschalter: "Artikel auf Homepage anzeigen" und "Artikel auf Rubrikenseite anzeigen". Wenn diese Schalter nicht benötigt werden, können sie verborgen werden.'
+        placeholder: 'Leere Felder werden mit einem Standardtext angezeigt. Bitte Standardtext hier festlegen. '
+        apiendpoint: 'Damit das Plugin richtig funktioniert, muss es mit dem richtigen API Endpunkt verknüpft sein. Die Standardeinstellung ist "/api".'
+        imagesize: 'Hier definieren welche Standardgröße genutzt werden soll, wenn Bilder mit Drag und Drop in den Artikeltext eingefügt werden.'
     table:
         th:
-            username: null
-            updated: null
-            firstname: null
-            lastname: null
-            type: null
-            email: null
+            username: Benutzername
+            updated: 'Zuletzt geändert'
+            firstname: Vorname
+            lastname: Nachname
+            type: Benutzertyp
+            email: E-Mail
         actions:
-            actions: null
-            assign: null
-        confirm_remove: null
+            actions: Aktionen
+            assign: Zuweisen
+        confirm_remove: 'Diesen Benutzer wirklich entfernen?'
         table_messages:
-            page: null
-            perPageText: null
-            pageText: null
-            to: null
-            of: null
-            recordCountFilteredTemplate: null
-            recordCountText: null
-            processingText: null
+            page: Seite
+            perPageText: 'Zeige:'
+            pageText: 'Seiten:'
+            to: zu
+            of: von
+            recordCountFilteredTemplate: '(Gefiltert aus %totalRecords% Einträgen)'
+            recordCountText: 'Zeige '
+            processingText: 'In Berarbeitung...'
     settings:
         label:
-            viewports: null
-            viewportssettings: null
-            imagessettings: null
-            titlesettings: null
-            switchessettings: null
-            placeholdersettings: null
-            images: null
-            title: null
-            switches: null
-            placeholders: null
-            mobileview: null
-            pixels: null
-            yes: null
-            no: null
-            articletype: null
-            defaultplaceholder: null
-            apisettings: null
-            api: null
-            permissions: null
-            permissionssettings: null
-            customstyle: null
-            styles: null
-            stylesettings: null
+            viewports: Ansichten
+            viewportssettings: 'Einstellungen für Ansichten'
+            imagessettings: 'Einstellungen für Bildgrößen'
+            titlesettings: 'Titelposition definieren'
+            switchessettings: 'Einstellungen für Schalter'
+            placeholdersettings: 'Platzhaltertext einstellen'
+            images: Bilder
+            title: Titelposition
+            switches: Schalter
+            placeholders: 'Platzhalter für Artikelfelder'
+            mobileview: 'Mobile Ansicht'
+            pixels: Pixel
+            yes: Ja
+            no: Nein
+            articletype: Artikeltyp
+            defaultplaceholder: '[Bitte Inhalt eingeben]'
+            apisettings: 'API Einstellungen'
+            api: API
+            permissions: Berechtigungen
+            permissionssettings: 'Einstellungen der Berechtigungen'
+            customstyle: 'Benutzerdefinierte Designvorlage für Scoopwriter'
+            styles: 'Benutzerdefinierte Designs'
+            stylesettings: 'Einstellungen für benutzerdefinierte Designs'
         form:
             viewports:
-                mobile: null
-                tablet: null
-                desktop: null
+                mobile: 'Mobile Ansicht'
+                tablet: 'Tablet Ansicht'
+                desktop: 'Desktop Ansicht'
                 errors:
                     mobile:
-                        min: null
-                        max: null
+                        min: 'Der Wert für Mobile Ansicht sollte mindestens {{ limit }} oder mehr betragen.'
+                        max: 'Der Wert für Mobile Ansicht darf nicht länger als {{ limit }} Zeichen sein.'
             images:
-                small: null
-                medium: null
-                large: null
+                small: 'Kleine Größe'
+                medium: 'Mittlere Größe'
+                large: 'Große Größe'
             title:
-                position: null
-            switches: null
-            placeholder: null
-            defaultplaceholder: null
-            apiendpoint: null
-            defaultimagesize: null
+                position: Titelposition
+            switches: 'Standard-Schalter anzeigen'
+            placeholder: Platzhaltertext
+            defaultplaceholder: 'Platzhaltertext hier eingeben...'
+            apiendpoint: 'API Endpunkt'
+            defaultimagesize: 'Standard Bildgröße'
             imagesize:
-                small: null
-                medium: null
-                big: null
-                original: null
+                small: klein
+                medium: mittel
+                big: groß
+                original: original
     msgs:
         comments:
             add:
-                success: null
-                error: null
+                success: 'Der Kommentar wurde erfolgreich hinzugefügt.'
+                error: 'Der Kommentar konnte nicht hinzugefügt werden. Bitte erneut versuchen.'
             change:
-                success: null
-                error: null
+                success: 'Die Einstellungen für Kommentare wurden erfolgreich aktualisiert.'
+                error: 'Fehler beim Aktualisieren der Einstellungen für Kommentare.'
             hide:
-                popupHead: null
-                popup: null
-                success: null
-                error: null
+                popupHead: 'Ausgewählte Kommentare wirklich verbergen?'
+                popup: 'Die Kommentare werden den Lesern nicht mehr angezeigt.'
+                success: 'Die ausgewählten Kommentare wurden verborgen.'
+                error: 'Fehler: Die ausgewählten Kommentare konnten nicht verborgen werden.'
             changesingle:
-                success: null
-                error: null
+                success: 'Der Kommentar-Status wurde erfolgreich geändert in  %status%.'
+                error: 'Fehler: Der Kommentar-Status konnte nicht geändert werden.'
             delete:
-                popupHead: null
-                popup: null
-                success: null
-                error: null
+                popupHead: 'Wirklich die ausgewählten Kommentare löschen?'
+                popup: 'Gelöschte Kommentare werden nicht mehr angezeigt, verbleiben aber in der Datenbank.'
+                success: 'Ausgewählte Kommentare wurden gelöscht.'
+                error: 'Fehler: Die ausgewählten Kommentare konnten nicht gelöscht werden.'
             reply:
-                success: null
-                error: null
+                success: 'Antwort auf Kommentar erfolgreich.'
+                error: 'Fehler: Das Beantworten des Kommentars schlug fehl.'
             edit:
-                success: null
-                error: null
+                success: 'Der Kommentar wurde erfolgreich gespeichert.'
+                error: 'Fehler beim Bearbeiten des Kommentars.'
         snippets:
             add:
-                success: null
-                error: null
+                success: 'Der Code-Schnipsel wurde erfolgreich hinzugefügt.'
+                error: 'Fehler: Der Code-Schnipsel konnte nicht hinzugefügt werden.'
             remove:
-                popupHead: null
-                popup: null
-                success: null
-                error: null
+                popupHead: 'Diesen Code-Schnipsel wirklich entfernen?'
+                popup: 'Der Code-Schnipsel kann später wieder hinzugefügt werden.'
+                success: 'Der Code-Schnipsel wurde erfolgreich entfernt.'
+                error: 'Fehler: Der Code-Schnipsel konnte nicht entfernt werden.'
         images:
             attach:
-                success: null
-                error: null
+                success: 'Bild(er) erfolgreich angehängt.'
+                error: 'Fehler: Bild(er) konnten nicht angehängt werden.'
             detach:
-                popupHead: null
-                popup: null
-                success: null
-                error: null
+                popupHead: 'Dieses Bild wirklich vom Artikel entkoppeln?'
+                popup: 'Bild kann dem Artikel später wieder angehängt werden.'
+                success: 'Bild wurde erfolgreich vom Artikel entkoppelt.'
+                error: 'Fehler: Bild konnte nicht vom Artikel entkoppelt werden.'
         authors:
             add:
-                success: null
-                error: null
+                success: 'Autor wurde erfolgreich hinzugefügt.'
+                error: 'Fehler: Der Autor konnte nicht hinzugefügt werden.'
             change:
-                success: null
-                error: null
+                success: 'Der Autoren-Typ wurde erfolgreich geändert.'
+                error: 'Fehler: Der Autoren-Typ konnte nicht geändert werden.'
             remove:
-                popupHead: null
-                popup: null
-                success: null
-                error: null
+                popupHead: 'Diesen Autor wirklich entfernen?'
+                popup: 'Der Autor kann später wieder hinzugefügt werden.'
+                success: 'Autor wurde erfolgreich vom Artikel entfernt'
+                error: 'Fehler: Der Autor konnte nicht vom Artikel entfernt werden.'
         relatedarticles:
             pin:
-                success: null
-                error: null
+                success: 'Der Artikel wurde erfolgreich als verwandter Artikel hinzugefügt.'
+                error: 'Fehler: Der Artikel konnte nicht als verwandter Artikel hinzugefügt werden.'
             unpin:
-                popupHead: null
-                popup: null
-                success: null
-                error: null
+                popupHead: 'Den verwandten Artikel wirklich vom Artikel entkoppeln?'
+                popup: 'Der verwandte Artikel kann später jederzeit wieder hinzugefügt werden.'
+                success: 'Der verwandte Artikel wurde erfolgreich vom Artikel entkoppelt.'
+                error: 'Fehler: Der verwandte Artikel konnte nicht vom Artikel entkoppelt werden.'
             order:
-                success: null
-                error: null
+                success: 'Die Reihenfolge wurde aktualisiert.'
+                error: 'Fehler: Die Reihenfolge konnte nicht aktualisiert werden.'
         switches:
-            success: null
-            error: null
+            success: 'Die Schalter wurden erfolgreich gespeichert.'
+            error: 'Fehler: Die Schalter konnten nicht gespeichert werden.'
         topics:
             add:
-                success: null
-                error: null
+                success: 'Das Thema / Die Themen wurden erfolgreich gespeichert und dem Artikel hinzugefügt.'
+                error: 'Fehler: Das Thema / Die Themen konnten nicht gespeichert und dem Artikel hinzugefügt werden.'
             assign:
-                success: null
-                error: null
+                success: 'Das Thema wurde dem Artikel erfolgreich hinzugefügt.'
+                error: 'Fehler: Das Thema konnte dem Artikel nicht hinzugefügt werden.'
             unassign:
-                popupHead: null
-                popup: null
-                success: null
-                error: null
+                popupHead: 'Dieses Thema wirklich vom Artikel entkoppeln?'
+                popup: 'Das Thema kann dem Artikel jederzeit wieder hinzugefügt werden.'
+                success: 'Das Thema / Die Themen wurden erfolgreich vom Artikel entkoppelt.'
+                error: 'Fehler: Das Thema / Die Themen konnten nicht  vom Artikel entkoppelt werden.'
         slideshows:
             unassign:
-                popupHead: null
-                popup: null
-                success: null
-                error: null
+                popupHead: 'Die Bildstrecke wirklich vom Artikel entkoppeln?'
+                popup: 'Die Bildstrecke kann jederzeit wieder hinzugefügt werden. '
+                success: 'Die Bildstrecke wurde erfolgreich vom Artikel entkoppelt.'
+                error: 'Fehler: Die Bildstrecke konnte nicht vom Artikel entkoppelt werden.'
         feedback:
-            success: null
-            error: null
-            email: null
-            name: null
-            msg: null
-            header: null
-            modalHead: null
-            info: null
+            success: 'Feedback wurde erfolgreich verschickt. Vielen Dank!'
+            error: 'Fehler: Feedback konnte nicht versendet werden. Bitte erneut versuchen.'
+            email: 'E-Mail Adresse eingeben'
+            name: 'Name eingeben'
+            msg: 'Feedback-Nachricht eintragen'
+            header: Feedback
+            modalHead: 'Sende Feedback'
+            info: 'Das Scoopwriter Plugin ist ganz "frische" Software und befindet sich noch im Beta-Modus. Feedback in Form von Ideen, Anforderungen, Fehlermeldungen oder Lob, hilft uns unser Plugin noch besser zu machen. Danke! '
