@@ -99,6 +99,7 @@ aes:
         attachslideshows: null
         attachdetach: null
         createslideshow: null
+        helptranslate: 'Help us to translate Scoopwriter'
     alerts:
         popup:
             resethead: null

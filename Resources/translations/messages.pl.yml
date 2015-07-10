@@ -99,6 +99,7 @@ aes:
         attachslideshows: 'Dodaj galerie'
         attachdetach: 'Załącz / Odłącz'
         createslideshow: 'Utwórz galerię'
+        helptranslate: 'Help us to translate Scoopwriter'
     alerts:
         popup:
             resethead: 'Czy na pewno chcesz przywrócić domyślny arkusz stylów CSS?'

@@ -99,6 +99,7 @@ aes:
         attachslideshows: 'Attach Slideshow(s)'
         attachdetach: 'Attach / Detach'
         createslideshow: 'Create Slideshow'
+        helptranslate: 'Help us to translate Scoopwriter'
     alerts:
         popup:
             resethead: 'Do you really want to reset your custom CSS?'
