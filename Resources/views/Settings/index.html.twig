@@ -6,15 +6,7 @@
 <link rel="stylesheet" href="{{ asset('/bundles/newscoopnewscoop/css/jquery.dynatable.css') }}">
 <link rel="stylesheet" href="{{ asset('/bundles/newscoopnewscoop/css/bootstrap-custom.css') }}">
 <link rel="stylesheet" href="{{ asset('/bundles/newscoopeditor/css/codemirror.css') }}">
-<style>
-.font-fix {
-    font-size: 13px;
-}
-th a, th a:hover {
-    color: #000;
-}
-.CodeMirror {background: none;margin: 2px; width: 100%; height: 400px;border: 1px solid #C0C0C0;}
-</style>
+<link rel="stylesheet" href="{{ asset('/bundles/newscoopeditor/css/backend.css') }}">
 {% endblock %}
 {% block admin_scripts %}
 <script type="text/javascript" src="{{ Newscoop['WEBSITE_URL'] }}/bundles/newscoopnewscoop/js/popover.js"></script>
@@ -37,6 +29,10 @@ th a, th a:hover {
 {% endfor %}
 {{ form_start(form) }}
 <div class="system_pref font-fix">
+    <a class="link" href="https://www.transifex.com/projects/p/newscoop/" target="_blank">
+        {{ 'aes.label.helptranslate'|trans }}
+        <span class="glyphicon glyphicon-share-alt"></span>
+    </a>
     <div class="tabbable tabs-left">
     	<ul class="nav nav-tabs">
             <li class="active"><a href="#images" data-toggle="tab">{{ 'aes.settings.label.images'|trans }}</a></li>
