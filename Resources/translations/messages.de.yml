@@ -99,7 +99,7 @@ aes:
         attachslideshows: 'Bildstrecke(n) hinzufügen'
         attachdetach: 'Hinzufügen / Entfernen'
         createslideshow: 'Bildstrecke erstellen'
-        helptranslate: 'Help us to translate Scoopwriter'
+        helptranslate: null
     alerts:
         popup:
             resethead: 'Benutzerdefiniertes CSS wirklich zurücksetzen?'

@@ -99,7 +99,7 @@ aes:
         attachslideshows: 'Attach Slideshow(s)'
         attachdetach: 'Attach / Detach'
         createslideshow: 'Create Slideshow'
-        helptranslate: 'Help us to translate Scoopwriter'
+        helptranslate: null
     alerts:
         popup:
             resethead: 'Do you really want to reset your custom CSS?'
@@ -152,7 +152,7 @@ aes:
     tip: 'The title of an article is ranked as the first item of an article by default. If you want it to go to a different position, below another article type field (for example the Catchline) please do so here.'
     tippermissions: 'Please enable the checkbox for all users who should work with the Scoopwriter plugin.'
     stylestip: 'You can overwrite the default style of the Scoopwriter view by providing your own CSS.'
-    name: null
+    name: Scoopwriter
     settingstext: Settings
     none: None
     permissions:
