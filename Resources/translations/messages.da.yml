@@ -2,104 +2,104 @@ aes:
     label:
         recommend: Anbefal
         unrecommend: 'Anbefal ikke'
-        collapse: null
-        expand: null
-        undo: null
-        redo: null
+        collapse: Skjul
+        expand: Vis
+        undo: Fortryd
+        redo: Gentag
         reply: Svar
-        finishingauth: null
-        selectedtext: null
-        linktext: null
-        openlink: null
-        attachedimages: null
+        finishingauth: 'Afslutter godkendelse'
+        selectedtext: 'Valgte tekst'
+        linktext: 'Link tekst'
+        openlink: 'Åben link i nyt vindue'
+        attachedimages: 'Vedhæftede billeder'
         approved: Godkendt
         remove: Fjern
         images: Billeder
-        embedcode: null
+        embedcode: 'Indlejr kode'
         addsnippet: null
         title: Titel
         snippettemplate: null
-        choosetemplate: null
-        templatefields: null
+        choosetemplate: 'vælg en skabelon'
+        templatefields: 'skabelon felter markeret med (*) er obligatoriske'
         attachedsnippets: null
         comments: Kommentarer
         postcomment: 'Skriv en kommentar'
         enabled: 'Slået til'
         disabled: 'Slået fra'
         locked: Låst
-        visibleonfrontend: null
-        commenting: null
-        expandcomments: null
+        visibleonfrontend: 'Synlig i frontend'
+        commenting: Kommentarer
+        expandcomments: 'Udvid kommentarer'
         no: Nej
         yes: Ja
         view: Se
         all: Alle
         hidden: Skjult
         pending: Afventer
-        nested: null
-        chronological: null
-        chronologicalasc: null
+        nested: Indlejret
+        chronological: Kronologisk
+        chronologicalasc: 'Kronologisk (stigende)'
         nocomments: null
-        articleinfo: null
+        articleinfo: 'Artikel info'
         created: Oprettet
         lastupdated: 'Sidst opdateret'
-        publishedon: null
+        publishedon: Udgivet
         type: Type
         webcode: Webkode
-        authorsmanagement: null
-        addanauthor: null
-        selectauthor: null
-        chooserole: null
-        attachedauthors: null
+        authorsmanagement: Forfattere
+        addanauthor: 'Tilføj forfatter'
+        selectauthor: 'vælg ny forfatter'
+        chooserole: 'vælg forfatter rolle'
+        attachedauthors: 'Vedhæftede forfattere'
         relatedarticles: 'Relaterede artikler'
-        advancedfilter: null
+        advancedfilter: 'Avanceret filter'
         publication: Publikation
         issue: Udgivelse
         section: Sektion
-        language: null
+        language: Sprog
         search: Søg
-        pinnedarticles: null
-        searchresults: null
+        pinnedarticles: 'Vedhæftede artikler'
+        searchresults: Søgeresultater
         at: på
         published: Udgivet
         new: Ny
         submitted: Indsendt
-        pinarticle: null
+        pinarticle: 'Vedhæft artikel'
         switches: Indstillinger
         topics: Emner
         addtopic: 'Tilføj nyt emne'
-        selectparent: null
-        addexistingtopics: null
+        selectparent: 'vælg emnets forælder'
+        addexistingtopics: 'Tilføj eksisterende emne(r)'
         topicname: 'Emnets navn'
-        assignedtopics: null
+        assignedtopics: 'Valgte emner'
         customfields: null
-        nofields: null
-        searchmedia: null
-        displaying: null
-        currentfilter: null
-        nodescription: null
-        loadmore: null
+        nofields: 'Denne type artikel har ingen felter til metadata'
+        searchmedia: 'Søg i mediearkiv'
+        displaying: Viser
+        currentfilter: 'Valgt filter'
+        nodescription: 'Ingen beskrivelse'
+        loadmore: 'Hent flere'
         showmorecomments: 'Vis flere kommentarer'
-        draghere: null
-        orselect: null
+        draghere: 'Træk dine billeder hertil'
+        orselect: 'eller vælg dem fra en mappe'
         useforall: 'Brug til alle'
         description: Beskrivelse
         photographer: Fotograf
         enteraddress: null
-        selectedimages: null
+        selectedimages: 'VALGTE BILLEDER'
         imagescount: null
-        attachimages: null
-        authenticating: null
-        replycomment: null
+        attachimages: 'Vedhæft billeder'
+        authenticating: Godkender
+        replycomment: 'Svar på kommentaren'
         articlepreview: null
-        articleeditingenv: null
-        attachedslideshows: null
+        articleeditingenv: Scoopwriter
+        attachedslideshows: 'Vedhæftede gallerier'
         slideshows: Gallerier
         itemscount: null
-        attachslideshows: null
-        attachdetach: null
-        createslideshow: null
-        helptranslate: null
+        attachslideshows: 'Vedhæft galleri(er)'
+        attachdetach: Vedhæft/Fjern
+        createslideshow: 'Opret galleri'
+        helptranslate: 'Hjælp med at oversætte Scoopwriter'
     alerts:
         popup:
             resethead: null
@@ -129,30 +129,30 @@ aes:
         save: Gem
         okbtn: OK
         restorecss: null
-        clear: null
+        clear: Ryd
         add: Tilføj
-        attachimage: null
-        setrenditions: null
+        attachimage: 'Vedhæft billede'
+        setrenditions: 'Vælg billedudgaver'
         apply: null
         approve: Godkend
-        markasnew: null
+        markasnew: 'Marker som ny'
         hide: Skjul
         delete: Slet
         filter: Filtrér
         reply: Svar
-        zenmode: null
+        zenmode: 'Zen tilstand'
         previewarticle: null
         livearticle: 'Gå til live artiklen'
         editcaption: null
         upload: Upload
         discard: null
-        insertorderedlist: null
-        insertunorderedlist: null
+        insertorderedlist: 'Nummereret liste'
+        insertunorderedlist: Liste
         submit: Send
     tip: null
     tippermissions: null
     stylestip: null
-    name: null
+    name: Scoopwriter
     settingstext: Indstillinger
     none: Ingen
     permissions:
@@ -321,7 +321,7 @@ aes:
             unassign:
                 popupHead: null
                 popup: null
-                success: null
+                success: 'Emne(r) blev fjernet.'
                 error: null
         slideshows:
             unassign:
@@ -332,9 +332,9 @@ aes:
         feedback:
             success: null
             error: null
-            email: null
-            name: null
-            msg: null
+            email: Email
+            name: Navn
+            msg: Besked
             header: Feedback
             modalHead: 'Send feedback'
             info: null
