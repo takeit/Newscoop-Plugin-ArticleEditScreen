@@ -1,105 +1,105 @@
 aes:
     label:
-        recommend: null
-        unrecommend: null
-        collapse: null
-        expand: null
-        undo: null
-        redo: null
-        reply: null
-        finishingauth: null
-        selectedtext: null
-        linktext: null
-        openlink: null
-        attachedimages: null
-        approved: null
-        remove: null
-        images: null
-        embedcode: null
+        recommend: Anbefal
+        unrecommend: 'Anbefal ikke'
+        collapse: Skjul
+        expand: Vis
+        undo: Fortryd
+        redo: Gentag
+        reply: Svar
+        finishingauth: 'Afslutter godkendelse'
+        selectedtext: 'Valgte tekst'
+        linktext: 'Link tekst'
+        openlink: 'Åben link i nyt vindue'
+        attachedimages: 'Vedhæftede billeder'
+        approved: Godkendt
+        remove: Fjern
+        images: Billeder
+        embedcode: 'Indlejr kode'
         addsnippet: null
-        title: null
+        title: Titel
         snippettemplate: null
-        choosetemplate: null
-        templatefields: null
+        choosetemplate: 'vælg en skabelon'
+        templatefields: 'skabelon felter markeret med (*) er obligatoriske'
         attachedsnippets: null
-        comments: null
-        postcomment: null
-        enabled: null
-        disabled: null
-        locked: null
-        visibleonfrontend: null
-        commenting: null
-        expandcomments: null
-        no: null
-        yes: null
-        view: null
-        all: null
-        hidden: null
-        pending: null
-        nested: null
-        chronological: null
-        chronologicalasc: null
+        comments: Kommentarer
+        postcomment: 'Skriv en kommentar'
+        enabled: 'Slået til'
+        disabled: 'Slået fra'
+        locked: Låst
+        visibleonfrontend: 'Synlig i frontend'
+        commenting: Kommentarer
+        expandcomments: 'Udvid kommentarer'
+        no: Nej
+        yes: Ja
+        view: Se
+        all: Alle
+        hidden: Skjult
+        pending: Afventer
+        nested: Indlejret
+        chronological: Kronologisk
+        chronologicalasc: 'Kronologisk (stigende)'
         nocomments: null
-        articleinfo: null
-        created: null
-        lastupdated: null
-        publishedon: null
-        type: null
-        webcode: null
-        authorsmanagement: null
-        addanauthor: null
-        selectauthor: null
-        chooserole: null
-        attachedauthors: null
-        relatedarticles: null
-        advancedfilter: null
-        publication: null
-        issue: null
-        section: null
-        language: null
-        search: null
-        pinnedarticles: null
-        searchresults: null
-        at: null
-        published: null
-        new: null
-        submitted: null
-        pinarticle: null
-        switches: null
-        topics: null
-        addtopic: null
-        selectparent: null
-        addexistingtopics: null
-        topicname: null
-        assignedtopics: null
+        articleinfo: 'Artikel info'
+        created: Oprettet
+        lastupdated: 'Sidst opdateret'
+        publishedon: Udgivet
+        type: Type
+        webcode: Webkode
+        authorsmanagement: Forfattere
+        addanauthor: 'Tilføj forfatter'
+        selectauthor: 'vælg ny forfatter'
+        chooserole: 'vælg forfatter rolle'
+        attachedauthors: 'Vedhæftede forfattere'
+        relatedarticles: 'Relaterede artikler'
+        advancedfilter: 'Avanceret filter'
+        publication: Publikation
+        issue: Udgivelse
+        section: Sektion
+        language: Sprog
+        search: Søg
+        pinnedarticles: 'Vedhæftede artikler'
+        searchresults: Søgeresultater
+        at: på
+        published: Udgivet
+        new: Ny
+        submitted: Indsendt
+        pinarticle: 'Vedhæft artikel'
+        switches: Indstillinger
+        topics: Emner
+        addtopic: 'Tilføj nyt emne'
+        selectparent: 'vælg emnets forælder'
+        addexistingtopics: 'Tilføj eksisterende emne(r)'
+        topicname: 'Emnets navn'
+        assignedtopics: 'Valgte emner'
         customfields: null
-        nofields: null
-        searchmedia: null
-        displaying: null
-        currentfilter: null
-        nodescription: null
-        loadmore: null
-        showmorecomments: null
-        draghere: null
-        orselect: null
-        useforall: null
-        description: null
-        photographer: null
+        nofields: 'Denne type artikel har ingen felter til metadata'
+        searchmedia: 'Søg i mediearkiv'
+        displaying: Viser
+        currentfilter: 'Valgt filter'
+        nodescription: 'Ingen beskrivelse'
+        loadmore: 'Hent flere'
+        showmorecomments: 'Vis flere kommentarer'
+        draghere: 'Træk dine billeder hertil'
+        orselect: 'eller vælg dem fra en mappe'
+        useforall: 'Brug til alle'
+        description: Beskrivelse
+        photographer: Fotograf
         enteraddress: null
-        selectedimages: null
+        selectedimages: 'VALGTE BILLEDER'
         imagescount: null
-        attachimages: null
-        authenticating: null
-        replycomment: null
+        attachimages: 'Vedhæft billeder'
+        authenticating: Godkender
+        replycomment: 'Svar på kommentaren'
         articlepreview: null
-        articleeditingenv: null
-        attachedslideshows: null
-        slideshows: null
+        articleeditingenv: Scoopwriter
+        attachedslideshows: 'Vedhæftede gallerier'
+        slideshows: Gallerier
         itemscount: null
-        attachslideshows: null
-        attachdetach: null
-        createslideshow: null
-        helptranslate: null
+        attachslideshows: 'Vedhæft galleri(er)'
+        attachdetach: Vedhæft/Fjern
+        createslideshow: 'Opret galleri'
+        helptranslate: 'Hjælp med at oversætte Scoopwriter'
     alerts:
         popup:
             resethead: null
@@ -127,32 +127,32 @@ aes:
         cancel: Annullér
         view: Se
         save: Gem
-        okbtn: null
+        okbtn: OK
         restorecss: null
-        clear: null
-        add: null
-        attachimage: null
-        setrenditions: null
+        clear: Ryd
+        add: Tilføj
+        attachimage: 'Vedhæft billede'
+        setrenditions: 'Vælg billedudgaver'
         apply: null
-        approve: null
-        markasnew: null
-        hide: null
-        delete: null
-        filter: null
-        reply: null
-        zenmode: null
+        approve: Godkend
+        markasnew: 'Marker som ny'
+        hide: Skjul
+        delete: Slet
+        filter: Filtrér
+        reply: Svar
+        zenmode: 'Zen tilstand'
         previewarticle: null
-        livearticle: null
+        livearticle: 'Gå til live artiklen'
         editcaption: null
-        upload: null
+        upload: Upload
         discard: null
-        insertorderedlist: null
-        insertunorderedlist: null
-        submit: null
+        insertorderedlist: 'Nummereret liste'
+        insertunorderedlist: Liste
+        submit: Send
     tip: null
     tippermissions: null
     stylestip: null
-    name: null
+    name: Scoopwriter
     settingstext: Indstillinger
     none: Ingen
     permissions:
@@ -321,7 +321,7 @@ aes:
             unassign:
                 popupHead: null
                 popup: null
-                success: null
+                success: 'Emne(r) blev fjernet.'
                 error: null
         slideshows:
             unassign:
@@ -332,9 +332,9 @@ aes:
         feedback:
             success: null
             error: null
-            email: null
-            name: null
-            msg: null
-            header: null
-            modalHead: null
+            email: Email
+            name: Navn
+            msg: Besked
+            header: Feedback
+            modalHead: 'Send feedback'
             info: null
