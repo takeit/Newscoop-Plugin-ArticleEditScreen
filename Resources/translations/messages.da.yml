@@ -1,76 +1,76 @@
 aes:
     label:
-        recommend: null
-        unrecommend: null
+        recommend: Anbefal
+        unrecommend: 'Anbefal ikke'
         collapse: null
         expand: null
         undo: null
         redo: null
-        reply: null
+        reply: Svar
         finishingauth: null
         selectedtext: null
         linktext: null
         openlink: null
         attachedimages: null
-        approved: null
-        remove: null
-        images: null
+        approved: Godkendt
+        remove: Fjern
+        images: Billeder
         embedcode: null
         addsnippet: null
-        title: null
+        title: Titel
         snippettemplate: null
         choosetemplate: null
         templatefields: null
         attachedsnippets: null
-        comments: null
-        postcomment: null
-        enabled: null
-        disabled: null
-        locked: null
+        comments: Kommentarer
+        postcomment: 'Skriv en kommentar'
+        enabled: 'Slået til'
+        disabled: 'Slået fra'
+        locked: Låst
         visibleonfrontend: null
         commenting: null
         expandcomments: null
-        no: null
-        yes: null
-        view: null
-        all: null
-        hidden: null
-        pending: null
+        no: Nej
+        yes: Ja
+        view: Se
+        all: Alle
+        hidden: Skjult
+        pending: Afventer
         nested: null
         chronological: null
         chronologicalasc: null
         nocomments: null
         articleinfo: null
-        created: null
-        lastupdated: null
+        created: Oprettet
+        lastupdated: 'Sidst opdateret'
         publishedon: null
-        type: null
-        webcode: null
+        type: Type
+        webcode: Webkode
         authorsmanagement: null
         addanauthor: null
         selectauthor: null
         chooserole: null
         attachedauthors: null
-        relatedarticles: null
+        relatedarticles: 'Relaterede artikler'
         advancedfilter: null
-        publication: null
-        issue: null
-        section: null
+        publication: Publikation
+        issue: Udgivelse
+        section: Sektion
         language: null
-        search: null
+        search: Søg
         pinnedarticles: null
         searchresults: null
-        at: null
-        published: null
-        new: null
-        submitted: null
+        at: på
+        published: Udgivet
+        new: Ny
+        submitted: Indsendt
         pinarticle: null
-        switches: null
-        topics: null
-        addtopic: null
+        switches: Indstillinger
+        topics: Emner
+        addtopic: 'Tilføj nyt emne'
         selectparent: null
         addexistingtopics: null
-        topicname: null
+        topicname: 'Emnets navn'
         assignedtopics: null
         customfields: null
         nofields: null
@@ -79,12 +79,12 @@ aes:
         currentfilter: null
         nodescription: null
         loadmore: null
-        showmorecomments: null
+        showmorecomments: 'Vis flere kommentarer'
         draghere: null
         orselect: null
-        useforall: null
-        description: null
-        photographer: null
+        useforall: 'Brug til alle'
+        description: Beskrivelse
+        photographer: Fotograf
         enteraddress: null
         selectedimages: null
         imagescount: null
@@ -94,7 +94,7 @@ aes:
         articlepreview: null
         articleeditingenv: null
         attachedslideshows: null
-        slideshows: null
+        slideshows: Gallerier
         itemscount: null
         attachslideshows: null
         attachdetach: null
@@ -127,28 +127,28 @@ aes:
         cancel: Annullér
         view: Se
         save: Gem
-        okbtn: null
+        okbtn: OK
         restorecss: null
         clear: null
-        add: null
+        add: Tilføj
         attachimage: null
         setrenditions: null
         apply: null
-        approve: null
+        approve: Godkend
         markasnew: null
-        hide: null
-        delete: null
-        filter: null
-        reply: null
+        hide: Skjul
+        delete: Slet
+        filter: Filtrér
+        reply: Svar
         zenmode: null
         previewarticle: null
-        livearticle: null
+        livearticle: 'Gå til live artiklen'
         editcaption: null
-        upload: null
+        upload: Upload
         discard: null
         insertorderedlist: null
         insertunorderedlist: null
-        submit: null
+        submit: Send
     tip: null
     tippermissions: null
     stylestip: null
@@ -335,6 +335,6 @@ aes:
             email: null
             name: null
             msg: null
-            header: null
-            modalHead: null
+            header: Feedback
+            modalHead: 'Send feedback'
             info: null
