@@ -1,10 +1,11 @@
 <?php
+
 /**
- * @package Newscoop\EditorBundle
  * @author Rafał Muszyński <rafal.muszynski@sourcefabric.org>
  * @copyright 2014 Sourcefabric z.ú.
  * @license http://www.gnu.org/licenses/gpl-3.0.txt
  */
+
 namespace Newscoop\EditorBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -41,7 +42,7 @@ class SettingsController extends Controller
             'user' => $user,
         ));
 
-        if ($request->getMethod() === "POST") {
+        if ($request->getMethod() === 'POST') {
             $form->handleRequest($request);
             if ($form->isValid()) {
                 $data = $form->getData();
@@ -53,7 +54,7 @@ class SettingsController extends Controller
             }
         }
 
-        return $this->render("NewscoopEditorBundle:Settings:index.html.twig", array(
+        return $this->render('NewscoopEditorBundle:Settings:index.html.twig', array(
             'form' => $form->createView(),
         ));
     }
