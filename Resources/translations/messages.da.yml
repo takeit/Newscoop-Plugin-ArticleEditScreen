@@ -16,12 +16,12 @@ aes:
         remove: Fjern
         images: Billeder
         embedcode: 'Indlejr kode'
-        addsnippet: null
+        addsnippet: 'Tilføj udklip'
         title: Titel
-        snippettemplate: null
+        snippettemplate: 'Udklips skabelon'
         choosetemplate: 'vælg en skabelon'
         templatefields: 'skabelon felter markeret med (*) er obligatoriske'
-        attachedsnippets: null
+        attachedsnippets: 'Vedhæft kode udklip'
         comments: Kommentarer
         postcomment: 'Skriv en kommentar'
         enabled: 'Slået til'
@@ -72,7 +72,7 @@ aes:
         addexistingtopics: 'Tilføj eksisterende emne(r)'
         topicname: 'Emnets navn'
         assignedtopics: 'Valgte emner'
-        customfields: null
+        customfields: 'Brugerdefinerede felter'
         nofields: 'Denne type artikel har ingen felter til metadata'
         searchmedia: 'Søg i mediearkiv'
         displaying: Viser
@@ -85,13 +85,13 @@ aes:
         useforall: 'Brug til alle'
         description: Beskrivelse
         photographer: Fotograf
-        enteraddress: null
+        enteraddress: 'Indtast webadresse'
         selectedimages: 'VALGTE BILLEDER'
         imagescount: null
         attachimages: 'Vedhæft billeder'
         authenticating: Godkender
         replycomment: 'Svar på kommentaren'
-        articlepreview: null
+        articlepreview: 'Artikel smugkig'
         articleeditingenv: Scoopwriter
         attachedslideshows: 'Vedhæftede gallerier'
         slideshows: Gallerier
@@ -102,8 +102,8 @@ aes:
         helptranslate: 'Hjælp med at oversætte Scoopwriter'
     alerts:
         popup:
-            resethead: null
-            reset: null
+            resethead: 'Vil du nulstille brugerdefineret CSS?'
+            reset: 'Din nuværende CSS bliver slettet og erstattet med standarden.'
         lockedHead: 'Artiklen er låst'
         locked: 'Artiklen blev låst af %username% (%realname%) for %hours% time(r) og %minutes% minutter siden.'
         notfound: 'Artiklen kunne ikke findes.'
@@ -117,9 +117,9 @@ aes:
         assignallerror: 'Ikke alle brugere kunne tilføjes!'
         unassignallerror: 'Ikke alle brugere kunne fjernes!'
         unassignedall: 'Alle brugere blev fjernet'
-        resetcsserror: null
-        resetcss: null
-        authfinished: null
+        resetcsserror: 'CSS kunne ikke nulstilles'
+        resetcss: 'CSS blev nulstillet'
+        authfinished: 'Godkendelse afsluttet.'
     fields:
         title: Titel
     btn:
@@ -128,12 +128,12 @@ aes:
         view: Se
         save: Gem
         okbtn: OK
-        restorecss: null
+        restorecss: 'Nulstil CSS'
         clear: Ryd
         add: Tilføj
         attachimage: 'Vedhæft billede'
         setrenditions: 'Vælg billedudgaver'
-        apply: null
+        apply: Anvend
         approve: Godkend
         markasnew: 'Marker som ny'
         hide: Skjul
@@ -141,9 +141,9 @@ aes:
         filter: Filtrér
         reply: Svar
         zenmode: 'Zen tilstand'
-        previewarticle: null
+        previewarticle: 'Smugkig på artiklen'
         livearticle: 'Gå til live artiklen'
-        editcaption: null
+        editcaption: 'Rediger billedtekst'
         upload: Upload
         discard: null
         insertorderedlist: 'Nummereret liste'
@@ -194,7 +194,7 @@ aes:
             viewports: null
             viewportssettings: null
             imagessettings: 'Indstillinger for billedstørrelse'
-            titlesettings: null
+            titlesettings: 'Indstillinger for titel placering'
             switchessettings: null
             placeholdersettings: null
             images: Billeder
@@ -232,34 +232,34 @@ aes:
             switches: null
             placeholder: null
             defaultplaceholder: null
-            apiendpoint: null
+            apiendpoint: 'API endepunkt'
             defaultimagesize: 'Standard billedstørrelse'
             imagesize:
                 small: lille
                 medium: mellem
                 big: stor
-                original: null
+                original: original
     msgs:
         comments:
             add:
-                success: null
-                error: null
+                success: 'Kommentaren blev tilføjet'
+                error: 'Kommentaren kunne ikke tilføjes. Prøv igen.'
             change:
-                success: null
-                error: null
+                success: 'Kommentar indstillinger blev opdateret.'
+                error: 'Kommentar indstillinger kunne ikke opdateres.'
             hide:
-                popupHead: null
-                popup: null
-                success: null
-                error: null
+                popupHead: 'Vil du skjule de valgte kommentarer?'
+                popup: 'Kommentarerne vil ikke være synlige for læserne.'
+                success: 'De valgte kommentarer blev skjult'
+                error: 'De valgte kommentarer kunne ikke skjules.'
             changesingle:
-                success: null
-                error: null
+                success: 'Kommentarens status blev ændret til %status%'
+                error: 'Kommentarens status kunne ikke ændres.'
             delete:
-                popupHead: null
-                popup: null
-                success: null
-                error: null
+                popupHead: 'Vil du slette de valgte kommentarer?'
+                popup: 'Slettede kommentarer vil ikke være synlige, men findes stadig i databasen.'
+                success: 'De valgte kommentarer blev slettet.'
+                error: 'De valgte kommentarer kunne ikke slettes.'
             reply:
                 success: null
                 error: null
