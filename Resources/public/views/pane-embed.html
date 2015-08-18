@@ -1,4 +1,4 @@
-<section class="tabcontent embed-panel" ng-controller="PaneSnippetsCtrl" auto-list-offset="">
+<section class="tabcontent embed-panel" ng-controller="PaneSnippetsCtrl" auto-list-offset>
 
   <div class="panel-title">
     {{ ::('aes.label.embedcode'|trans) }}
@@ -15,10 +15,10 @@
 
     <form name="addSnippet" class="body" ng-show="showAddSnippet">
       <div class="input-name">{{ ::('aes.label.title'|trans) }}</div>
-      <input name="snippetTitle" required="" class="editor-input" placeholder="Title" ng-model="newSnippet.name">
+      <input name="snippetTitle" required class="editor-input" placeholder="Title" ng-model="newSnippet.name">
 
       <div class="input-name">{{ ::('aes.label.snippettemplate'|trans) }}</div>
-      <select name="snippetTemplate" required="" ng-model="newSnippet.template" ng-options="template as template.name for
+      <select name="snippetTemplate" required ng-model="newSnippet.template" ng-options="template as template.name for
                       template in snippetTemplates" ng-disabled="addingNewSnippet">
         <option value="">-- {{ ::('aes.label.choosetemplate'|trans) }} --</option>
       </select>
@@ -28,9 +28,9 @@
       <div class="input-name" ng-repeat-start="field in (newSnippet ? newSnippet.template.fields : [])" ng-if="field.name != 'Endpoint'">{{field.name}}<span ng-if="field.required">*</span>
             ({{field.type}})
       </div>
-      <div class="template-field" ng-switch="field.type" ng-repeat-end="" ng-if="field.name != 'Endpoint'">
+      <div class="template-field" ng-switch="field.type" ng-repeat-end ng-if="field.name != 'Endpoint'">
         <textarea ng-switch-when="textarea" name="{{field.name}}" placeholder="{{field.default}}" ng-required="field.required" ng-model="field.value"></textarea>
-        <input ng-switch-default="" type="{{inputFieldTypes[field.type] || 'text'}}" name="{{field.name}}" placeholder="{{field.default}}" ng-required="field.required" ng-model="field.value">
+        <input ng-switch-default type="{{inputFieldTypes[field.type] || 'text'}}" name="{{field.name}}" placeholder="{{field.default}}" ng-required="field.required" ng-model="field.value">
       </div>
 
       <div class="controls">
