@@ -1,5 +1,5 @@
 <section class="tabcontent comments-panel" ng-controller="CommentsCtrl">
-  <div class="panel-title-button-group btn-group pull-right" bs-radio-group="" ng-model="globalShowStatus">
+  <div class="panel-title-button-group btn-group pull-right" bs-radio-group ng-model="globalShowStatus">
     <button type="button" class="btn btn-default" ng-class="{active: {{globalShowStatus === 'expanded'}} }" title="{{globalShowStatus === 'expanded' ? ('aes.label.collapse'|trans) : ('aes.label.expand'|trans) }} Comments" ng-click="toggleShowStatus()"><i class="fa fa-sort"></i></button>
   </div>
 

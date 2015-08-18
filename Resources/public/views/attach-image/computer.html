@@ -2,12 +2,12 @@
 
   <div class="image-uploading">
 
-    <div class="drag-area" ng-class="{small: images.images2upload.length > 0}" drop-images="" handler="addToUploadList(files)">
+    <div class="drag-area" ng-class="{small: images.images2upload.length > 0}" drop-images handler="addToUploadList(files)">
       <div class="drag-area-title">
         {{ ::('aes.label.draghere'|trans) }}
       </div>
       <div class="drag-area-button">
-        <button class="btn btn-default" file-upload="" handler="addToUploadList(files)">
+        <button class="btn btn-default" file-upload handler="addToUploadList(files)">
           <span class="glyphicon glyphicon-upload"></span> {{ ::('aes.label.orselect'|trans) }}
         </button>
       </div>

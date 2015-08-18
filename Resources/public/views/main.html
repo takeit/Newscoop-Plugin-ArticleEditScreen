@@ -1,15 +1,15 @@
 <div ng-controller="MainCtrl">
 
   <div class="authoring-environment" ng-class="{'zen-mode': mode.zen}" ng-if="auth">
-      <div ng-include="" src="'views/toolbar.html'"></div>
-      <div ng-include="" src="'views/panes.html'"></div>
-      <div ng-include="" src="'views/article.html'" class="main-article-container-container"></div>
+      <div ng-include src="'views/toolbar.html'"></div>
+      <div ng-include src="'views/panes.html'"></div>
+      <div ng-include src="'views/article.html'" class="main-article-container-container"></div>
       <div ng-controller="FeedbackForm as feedbackCtrl">
         <div class="feedback-button" ng-click="feedbackCtrl.feedbackModal()">
           <i class="fa fa-envelope"></i>{{::('aes.msgs.feedback.header'|trans)}}
         </div>
       </div>
-      <div ng-include="" src="'views/modal.html'"></div>
+      <div ng-include src="'views/modal.html'"></div>
   </div>
   <div class="auth" ng-if="!auth">
       {{ ::('aes.label.authenticating'|trans) }}

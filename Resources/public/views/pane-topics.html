@@ -15,7 +15,7 @@
 
       <form name="addTopic" class="body" ng-show="showAddNew">
         <div class="input-name">{{ ::('Title'|trans) }}</div>
-        <input name="topicTitle" required="" class="editor-input" placeholder="Title" ng-model="newTopic.title">
+        <input name="topicTitle" required class="editor-input" placeholder="Title" ng-model="newTopic.title">
 
         <span class="error-msg" ng-show="addTopic.topicTitle.$error.duplicate">
           {{ ::('aes.msgs.topics.add.exists'|trans) }}
