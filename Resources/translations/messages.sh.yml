@@ -100,6 +100,8 @@ aes:
         attachdetach: null
         createslideshow: null
         helptranslate: null
+        editorialcomments: 'Editorial Comments'
+        resolve: Resolve
     alerts:
         popup:
             resethead: null
@@ -338,3 +340,7 @@ aes:
             header: null
             modalHead: null
             info: null
+        editorialcomments:
+            resolve:
+                success: 'The comment has been resolved successfully.'
+                error: 'The comment could not be resolved.'
