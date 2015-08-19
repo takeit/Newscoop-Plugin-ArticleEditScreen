@@ -100,8 +100,8 @@ aes:
         attachdetach: 'Załącz / Odłącz'
         createslideshow: 'Utwórz galerię'
         helptranslate: null
-        editorialcomments: 'Editorial Comments'
-        resolve: Resolve
+        editorialcomments: null
+        resolve: null
     alerts:
         popup:
             resethead: 'Czy na pewno chcesz przywrócić domyślny arkusz stylów CSS?'
@@ -342,5 +342,5 @@ aes:
             info: null
         editorialcomments:
             resolve:
-                success: 'The comment has been resolved successfully.'
-                error: 'The comment could not be resolved.'
+                success: null
+                error: null
