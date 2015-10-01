@@ -1,36 +1,36 @@
 <?php
+
 /**
- * @package Newscoop\EditorBundle
  * @author Rafał Muszyński <rafal.muszynski@sourcefabric.org>
  * @copyright 2014 Sourcefabric z.ú.
  * @license http://www.gnu.org/licenses/gpl-3.0.txt
  */
-
 namespace Newscoop\EditorBundle\EventListener;
 
 use Newscoop\EventDispatcher\Events\PluginPermissionsEvent;
-use Symfony\Component\Translation\Translator;
+use Symfony\Component\Translation\TranslatorInterface;
 
 class PermissionsListener
 {
     /**
-     * Translator
-     * @var Translator
-     */
+      * TranslatorInterface.
+      *
+      * @var Translator
+      */
      protected $translator;
 
      /**
-      * Construct
+      * Construct.
       *
-      * @param Translator $translator Translator object
+      * @param TranslatorInterface $translator Translator object
       */
-     public function __construct(Translator $translator)
+     public function __construct(TranslatorInterface $translator)
      {
          $this->translator = $translator;
      }
 
      /**
-      * Register plugin permissions in Newscoop ACL
+      * Register plugin permissions in Newscoop ACL.
       *
       * @param PluginPermissionsEvent $event
       */
@@ -42,4 +42,4 @@ class PermissionsListener
             'plugin_editor_styles' => $this->translator->trans('aes.permissions.styles'),
          ));
      }
- }
+}
