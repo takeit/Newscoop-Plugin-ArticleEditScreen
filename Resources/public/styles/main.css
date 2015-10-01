@@ -6568,14 +6568,14 @@ a:hover .big-icon-info {
 .active a:hover .big-icon-info {
   background-position: -70px -156px;
 }
-.big-icon-relatedarticles {
+.big-icon-featuredarticles {
   background-position: 0 -182px;
 }
-a:hover .big-icon-relatedarticles {
+a:hover .big-icon-featuredarticles {
   background-position: -35px -182px;
 }
-.active .big-icon-relatedarticles,
-.active a:hover .big-icon-relatedarticles {
+.active .big-icon-featuredarticles,
+.active a:hover .big-icon-featuredarticles {
   background-position: -70px -182px;
 }
 .big-icon-slideshows {
@@ -6597,6 +6597,16 @@ a:hover .big-icon-editorial_comments {
 .active .big-icon-editorial_comments,
 .active a:hover .big-icon-editorial_comments {
   background-position: -70px -236px;
+}
+.big-icon-relatedarticles {
+  background-position: 0 -260px;
+}
+a:hover .big-icon-relatedarticles {
+  background-position: -35px -260px;
+}
+.active .big-icon-relatedarticles,
+.active a:hover .big-icon-relatedarticles {
+  background-position: -70px -260px;
 }
 /* Font awesome */
 .fa {
@@ -10776,6 +10786,102 @@ a:hover {
   border: none;
   color: #636363;
 }
+.authoring-environment .articleslists-pane .add-element {
+  overflow: visible;
+  background-color: #ebebeb;
+  margin: 10px 0;
+}
+.authoring-environment .articleslists-pane .add-element:last-child {
+  margin: 10px 0 20px 0;
+}
+.authoring-environment .articleslists-pane .add-element .heading {
+  padding: 0px;
+}
+.authoring-environment .articleslists-pane .add-element .heading button {
+  line-height: 1em;
+  box-shadow: none;
+  padding: 8px 8px 10px 8px;
+  margin: 0;
+  width: 100%;
+  text-align: left;
+}
+.authoring-environment .articleslists-pane .add-element .heading button .add-text {
+  font-size: 12px;
+  padding: 0 5px;
+}
+.authoring-environment .articleslists-pane .add-element .heading button:hover {
+  background: #e6e6e6;
+}
+.authoring-environment .articleslists-pane .assigned-title {
+  position: relative;
+  clear: both;
+  padding: 0;
+  margin-top: 12px;
+  background-color: #f8f8f8;
+}
+.authoring-environment .articleslists-pane .assigned-title:before {
+  content: " ";
+  position: absolute;
+  top: 10px;
+  left: 160px;
+  right: 0px;
+  background: #dcdcdc;
+  height: 1px;
+}
+.authoring-environment .articleslists-pane .list {
+  position: absolute;
+  top: 155px;
+  right: 12px;
+  bottom: 18px;
+  left: 12px;
+  overflow: auto;
+  padding: 0;
+}
+.authoring-environment .articleslists-pane .list::-webkit-scrollbar {
+  width: 14px !important;
+  height: 8px;
+  margin: -1px 0;
+}
+.authoring-environment .articleslists-pane .list::-webkit-scrollbar-thumb {
+  background: #949494;
+  border-left: 6px solid rgba(0, 0, 0, 0) !important;
+  background-clip: padding-box !important;
+}
+.authoring-environment .articleslists-pane .list::-webkit-scrollbar-thumb:hover {
+  background: #6e6e6e;
+  border-left: 6px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+}
+.authoring-environment .articleslists-pane .list .panel {
+  position: relative;
+  padding: 8px 25px 8px 12px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 8px;
+  -webkit-box-shadow: 0 1px 0px #e0e0e0;
+  -moz-box-shadow: 0 1px 0px #e0e0e0;
+  box-shadow: 0 1px 0px #e0e0e0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  word-break: break-all;
+}
+.authoring-environment .articleslists-pane .list .panel:hover {
+  border: 1px solid #ccc;
+}
+.authoring-environment .articleslists-pane .list .panel .unassign {
+  position: absolute;
+  top: 8px;
+  right: 9px;
+  cursor: pointer;
+  color: gainsboro;
+}
+.authoring-environment .articleslists-pane .list .panel .unassign:hover {
+  color: gray;
+}
+.authoring-environment .articleslists-pane .list .panel div:hover {
+  cursor: pointer;
+}
 .authoring-environment .topics-pane .add-element {
   overflow: visible;
   background-color: #ebebeb;
@@ -11624,6 +11730,17 @@ a:hover {
 }
 .modal.modalLogin .modal-dialog .modal-login .modal-body {
   padding: 0;
+}
+.modal.featuredArticlesModal .modal-dialog {
+  width: 723px;
+}
+.modal.featuredArticlesModal .modal-dialog .modal-body {
+  padding: 0;
+}
+.modal.featuredArticlesModal .modal-dialog .modal-header {
+  min-height: 1px;
+  background: none;
+  padding: 0 17px;
 }
 /* Spinner animation */
 .load-anim.pull-right {
