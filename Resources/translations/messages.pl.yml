@@ -100,6 +100,8 @@ aes:
         attachdetach: 'Załącz / Odłącz'
         createslideshow: 'Utwórz galerię'
         helptranslate: null
+        editorialcomments: null
+        resolve: null
     alerts:
         popup:
             resethead: 'Czy na pewno chcesz przywrócić domyślny arkusz stylów CSS?'
@@ -338,3 +340,7 @@ aes:
             header: 'Wyślij opinię'
             modalHead: null
             info: null
+        editorialcomments:
+            resolve:
+                success: null
+                error: null

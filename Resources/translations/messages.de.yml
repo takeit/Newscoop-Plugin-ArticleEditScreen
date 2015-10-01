@@ -100,6 +100,8 @@ aes:
         attachdetach: 'Hinzufügen / Entfernen'
         createslideshow: 'Bildstrecke erstellen'
         helptranslate: null
+        editorialcomments: null
+        resolve: null
     alerts:
         popup:
             resethead: 'Benutzerdefiniertes CSS wirklich zurücksetzen?'
@@ -338,3 +340,7 @@ aes:
             header: Feedback
             modalHead: 'Sende Feedback'
             info: 'Das Scoopwriter Plugin ist ganz "frische" Software und befindet sich noch im Beta-Modus. Feedback in Form von Ideen, Anforderungen, Fehlermeldungen oder Lob, hilft uns unser Plugin noch besser zu machen. Danke! '
+        editorialcomments:
+            resolve:
+                success: null
+                error: null

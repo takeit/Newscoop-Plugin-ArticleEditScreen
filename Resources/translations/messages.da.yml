@@ -100,6 +100,8 @@ aes:
         attachdetach: Vedhæft/Fjern
         createslideshow: 'Opret galleri'
         helptranslate: 'Hjælp med at oversætte Scoopwriter'
+        editorialcomments: null
+        resolve: null
     alerts:
         popup:
             resethead: 'Vil du nulstille brugerdefineret CSS?'
@@ -338,3 +340,7 @@ aes:
             header: Feedback
             modalHead: 'Send feedback'
             info: null
+        editorialcomments:
+            resolve:
+                success: null
+                error: null

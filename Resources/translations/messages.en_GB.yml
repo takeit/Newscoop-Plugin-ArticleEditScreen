@@ -100,6 +100,8 @@ aes:
         attachdetach: 'Attach / Detach'
         createslideshow: 'Create Slideshow'
         helptranslate: 'Help us to translate Scoopwriter'
+        editorialcomments: 'Editorial Comments'
+        resolve: Resolve
     alerts:
         popup:
             resethead: 'Do you really want to reset your custom CSS?'
@@ -338,3 +340,7 @@ aes:
             header: Feedback
             modalHead: 'Send Feedback'
             info: 'The Scoopwriter plugin is a fresh piece of software and still in beta. Thanks for helping us to further improve the plugin by providing your feedback in the form of ideas, requests or bug reports.'
+        editorialcomments:
+            resolve:
+                success: 'The comment has been resolved successfully.'
+                error: 'The comment could not be resolved.'
