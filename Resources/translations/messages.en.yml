@@ -72,6 +72,10 @@ aes:
     addexistingtopics: "Add existing topic(s)"
     topicname: "Topic name"
     assignedtopics: "Assigned Topics"
+    articleslists: "Featured Articles Lists"
+    addexistingarticleslists: "Add an article to the existing list(s)"
+    assignedarticleslists: "Assigned Lists"
+    unassignarticleslist: "Unassign an article from the Featured Articles List"
     customfields: "Custom fields"
     nofields: "There are no metadata fields for this type of article"
     searchmedia: "Search Media Archive"
@@ -345,3 +349,15 @@ aes:
       resolve:
         success: "The comment has been resolved successfully."
         error: "The comment could not be resolved."
+    articleslists:
+      add:
+        success: "The articles list(s) have been added and assigned successfully to this article."
+        error: "Failed to add and assign new articles list(s) to the article."
+      assign:
+        success: "The articles list has been assigned successfully to this article."
+        error: "Assigning the articles list to this article failed."
+      unassign:
+        popupHead: "Do you really want to unassign this articles list from the article?"
+        popup: "Should you change your mind, the articles list can always be re-assigned again."
+        success: "Articles List(s) unassigned successfully."
+        error: "Failed to unassign articles list(s) from the article."
